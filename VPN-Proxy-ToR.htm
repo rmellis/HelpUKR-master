@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<style>
+/* unvisited link */
+a:link {
+  color: lightblue;
+}
+
+/* visited link */
+a:visited {
+  color: lightblue;
+}
+
+/* mouse over link */
+a:hover {
+  color: lightgreen;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+</style>
+<html lang="en" class="">
+<script type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  
+  <title>VPN | Proxy | ToR - Help Ukraine</title>
+
+  <meta name="robots" content="noindex">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <link rel="canonical" href="https://codepen.io/goodkatz/pen/LYPGxQz">
+
+  
+  
+
+  <style class="INLINE_PEN_STYLESHEET_ID">
+    @import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+body {
+  margin:0;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  letter-spacing: 2px;
+  font-size:48px;
+}
+p {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+  font-size:14px;
+  color: #333333;
+}
+
+.header {
+  position:relative;
+  text-align:center;
+  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+  color:white;
+}
+.logo {
+  width:50px;
+  fill:white;
+  padding-right:15px;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.inner-header {
+  height:65vh;
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex { /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+}
+
+.content {
+  position:relative;
+  height:20vh;
+  text-align:center;
+  background-color: yellow;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  h1 {
+    font-size:24px;
+  }
+}
+.style3 {
+	font-size: 18px;
+	font-family: "Courier New", Courier, monospace;
+	color: #333333;
+}
+  .style5 {color: #FFFFFF}
+  .style7 {font-family: "Courier New", Courier, monospace; font-size: 18px;}
+  .style8 {
+	font-size: 24px;
+	font-weight: bold;
+	font-style: italic;
+}
+  .style9 {font-family: "Courier New", Courier, monospace}
+  .style10 {
+	font-size: 12px;
+	font-style: italic;
+	color: #CCCCCC;
+}
+  .style11 {color: #FFFFCC}
+  .style12 {font-size: 18px; font-family: "Courier New", Courier, monospace; color: #FFFFCC; }
+  .style13 {font-size: 19px}
+  .style14 {font-size: 20px}
+  .style16 {
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 20px;
+}
+  .style18 {
+	font-size: 36px;
+	color: #FFFFFF;
+}
+  .style19 {
+	color: #0000FF;
+	font-weight: bold;
+}
+  .style20 {font-family: "Courier New", Courier, monospace; font-size: 24px; }
+  .style21 {font-size: 36px; color: #FFFFFF; font-family: "Courier New", Courier, monospace; }
+  </style>
+
+  
+<script src="./iframeConsoleRunner-d0f3648046d2aaca07bd0037b9e061a26c74a8a999b75672ad6a638cca641472.js.download"></script>
+<script src="./iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js.download"></script>
+<script src="./iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js.download"></script>
+<script type="text/JavaScript">
+<!--
+
+
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('back2.png')">
+  <!--Hey! This is the original version
+of Simple CSS Waves-->
+
+<div class="header">
+  <div align="center">
+    <table width="200" border="0">
+      <tr>
+        <td height="47"><p align="left" class="style18"><u><a href="javascript:window.history.back();" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('back','','back2.png',1)"><img src="back1.png" alt="Go Back" name="back" width="70" height="48" border="0"></a></u></p>        </td>
+        <td height="47"><div align="center"><span class="style21"><u><b>VPN | Proxy | ToR</b></u> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></td>
+      </tr>
+      <tr>
+        <td height="89" colspan="2"><p class="style3 style5 style13"><span class="style16">Before dedicating your computer's resources to help Ukraine in the cyber war ageist Russia, it's important you cover your identity as some Internet service providers will not like you doing this and may pass your information on in a report of cyber security violations.<br>
+a lot of ISP's won’t mind as you're helping Ukraine, for example Virgin Media in the UK. &nbsp;_________________________________________________________________</span></p>
+        <p class="style3 style5 style14">&nbsp;&nbsp;&nbsp;&nbsp;Follow this guide to keep yourself secure. </p></td>
+      </tr>
+      <tr>
+        <td><span class="style12"><span class="style8">VPN</span>:</span></td>
+        <td><div align="right" class="style9"><strong>source:</strong> Ukraine IT Army <span class="style10">Getting Started PDF </span></div></td>
+      </tr>
+      <tr>
+        <td colspan="2"><p class="style3" style="
+    margin-top: 0px;
+    margin-bottom: 0px;
+"> <span class="style11">Get yourself a good VPN service.<br>
+          A VPN hides your public IP address by substituting it for the public<br>
+          IP address of the VPN termination host or its internet breakout. So in case of an investigation your<br>
+          public IP will not show.<br>
+          Here’s a list of VPN providers. Some of them are paid and others come with<br>
+          a free trial:</span><br>
+          <a href="https://www.top10vpn.com/top10/freetrials/?v=header&bsid=c15ense1kw287&gclid=EAIaIQobChMIs8i9ouii9gIVnIODBx07PgGMEAAYAi" target="_blank">https://www.top10vpn.com/top10/freetrials/?v=header&amp;bsid=c15ense1kw287&amp;gclid=EAIaIQobChMIs8i9ouii9gIVnIODBx07PgGMEAAYAi<br>
+            AAEgJkkfD_BwE</a></p></td>
+      </tr>
+      <tr>
+        <td width="242" height="202"><div align="center"></div>
+        <p align="center"></p></td>
+        <td width="1063"><span class="style3"><br>
+              <span class="style5">• TunnelBear : </span></span><span class="style7"><a href="https://www.tunnelbear.com" target="_blank">https://www.tunnelbear.com</a></span><span class="style3"><span class="style5"><br>
+                • PureVPN : <a href="https://www.purevpn.com" target="_blank">https://www.purevpn.com</a><br>
+                • SurfShark : <a href="https://surfshark.com" target="_blank">https://surfshark.com</a><br>
+                • Proton VPN : <a href="https://protonvpn.com" target="_blank">https://protonvpn.com</a><br>
+                • Express VPN (12$) : <a href="https://www.expressvpn.com" target="_blank">https://www.expressvpn.com</a><br>
+                • airVPN : <a href="https://airvpn.org" target="_blank">https://airvpn.org</a><br>
+                • Cryptostorm : <a href="https://cryptostorm.is" target="_blank">https://cryptostorm.is</a><br>
+                • Perfect Privacy : <a href="https://perfect-privacy.com" target="_blank">https://perfect-privacy.com</a><br>
+                • Mullvad VPN : <a href="https://mullvad.net" target="_blank">https://mullvad.net</a> </span></span></td>
+      </tr>
+    </table>
+    <table width="909" border="0">
+      <tr>
+        <td height="21" colspan="2">&nbsp;</td>
+      </tr>
+      
+      <tr>
+        <td width="182"><span class="style12"><span class="style8">Proxy</span>:</span></td>
+        <td><div align="right" class="style9"><strong>source:</strong><span class="style10"> rmellis </span></div></td>
+      </tr>
+      <tr>
+        <td colspan="2"><p class="style3" style="
+    margin-top: 0px;
+    margin-bottom: 0px;
+"> <span class="style11">Use a web Proxy or Browser addon to protect your activity’s when using a <br>
+          pre-ready automated HTTP flood site.<br>
+          A Proxy is a quick and easy way to hides your public IP address from websites you visit.<br>
+          there are several ways to run through a proxy, the most common being a simple web proxy, this is a website that allows you to redirect all your activity’s through there server's, they are commonly used in schools or places off businesses to access blocked sites like YouTube, Facebook ect..<br>
+        Heres a list of proxy websites found from a quick google search..
+</span></p>        </td>
+      </tr>
+      <tr>
+        <td height="122"><div align="center"></div></td>
+        <td width="717"><span class="style3"><span class="style5">• ProxySite : </span></span><span class="style7"><a href="https://www.proxysite.com/" target="_blank">https://www.proxysite.com/</a></span><span class="style3"><span class="style5"><br>
+          • ProxyScrape : <a href="https://proxyscrape.com/web-proxy" target="_blank">https://proxyscrape.com/web-proxy</a><br>
+          • HideStar : <a href="https://hidester.com/proxy/" target="_blank">https://hidester.com/proxy/</a><br>
+          • hide.me : <a href="https://hide.me/en/proxy" target="_blank">https://hide.me/en/proxy</a><br>
+          • Kproxy : <a href="https://www.kproxy.com/index.jsp#home" target="_blank">https://www.kproxy.com/</a><br>
+          • HideMyAss : <a href="https://www.hidemyass.com/en-gb/proxy" target="_blank">https://www.hidemyass.com/</a></span></span></td>
+      </tr>
+      <tr>
+        <td height="78" colspan="2"><p class="style12">You can find a Browser Addon for proxies on your browsers  Web Store, e.g., Chrome Web Store.<br>
+          ensure the addon you choose is verified by google or  whoever provides your browser, some proxy plugin developers sneak malware into  them.<br>
+        </p></td>
+      </tr>
+      
+      <tr>
+        <td width="182"><span class="style12"><span class="style8">ToR</span>:</span></td>
+        <td><div align="right" class="style9"><strong>source:</strong><span class="style10"> clario </span></div></td>
+      </tr>
+<tr></tr>
+      <tr>
+        <td height="78" colspan="2"><p class="style12" style="
+    margin-top: 0px;
+">The Tor browser is a free, open-source project enabling you to surf the web anonymously. The title is an acronym originating from the phrase “the onion router”.<br>
+          The Tor browser network is built of layers upon layers of independent nodes run by Tor users.</p>
+          <p class="style12">The key difference between Tor and a VPN is how there are multiple VPN tools and service providers available but only one Tor browser network.  </p>
+          <p class="style12">Tor relies on a decentralized layer of independent nodes to transfer data securely, while VPN software connects to a central server to provide a secure VPN tunnel.</p>
+          <p class="style12">Another common difference between the two is the specifics of their use.   </p>
+          <p class="style12">If your online activity is related to the <strong>transmission of extremely sensitive information</strong> or might get you in trouble in countries with strict censorship laws, <strong>Tor is the best option to go for.</strong> The reason is obvious, since VPN providers still have to be registered, pay taxes, and comply with legislation</p>
+          <p class="style12"><strong>When should you use Tor?</strong><br> 
+          Tor is more effective than a VPN in the following cases: </p>
+          <p class="style12"><strong>You want to stay safe while accessing geo-restricted content.</strong><br> 
+          Using Tor is a good way to protect your privacy when you’re trying to access content that’s prohibited in your country. This includes geographical limitations (accessing US-only content from Europe or Australia for example), avoiding censorship in countries like Iran and China, and much more.</p>
+          <p class="style12"> <strong>You want to access the dark web.</strong> <br>
+          Tor’s Hidden Services is also the gateway to the dark web. It is made up of websites that are only accessible through a Tor connection and cannot be found through search engines like Google. The dark web is often associated with criminals whichis why it's illegal in some countries.</strong><br>
+          You want to stay away from browser trackers. If you want to use the internet and leave no digital footprint, using the Tor browser is the best solution. It’s almost impossible to trace a connection to the original user, so you can surf the web without leaving any identifying signs behind.</p></td>
+      </tr>
+    </table>
+    <table width="909" border="0">
+      <tr>
+        <td height="22"><div align="center"></div></td>
+        <td width="717"><span class="style3"><span class="style5">• ToR : </span></span><span class="style7"><a href="https://www.torproject.org/download/" target="_blank">https://www.torproject.org/download/</a></span></td>
+      </tr>
+    </table>
+    <p><!--Waves Container-->
+    </p>
+  </div>
+  <div>
+<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+<defs>
+<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+</defs>
+<g class="parallax">
+<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(252,186,3,0.7"></use>
+<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(252,186,3,0.5)"></use>
+<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(252,186,3,0.3)"></use>
+<use xlink:href="#gentle-wave" x="48" y="7" fill="#fcd303"></use>
+</g>
+</svg>
+</div>
+<!--Waves end-->
+</div>
+<!--Header ends-->
+
+<!--Content starts-->
+<div class="content flex">
+  <table width="944" border="0">
+    <tr>
+      <td><div align="center" class="style20">www.helpukr.xyz</div></td>
+    </tr>
+    <tr>
+      <td><div align="center" class="style9"><a href="https://www.helpukr.xyz"><span class="style19">Click Here</span></a> to go back to the front page where you can support Ukraine with both Donations in cash or crypto aswell as find ways to use your computer to help. </div></td>
+    </tr>
+  </table>
+</div>
+<!--Content ends-->
+  
+<script src="./stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js.download"></script>
+  
+
+
+</body></html>

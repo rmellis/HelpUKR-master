@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<style>
+/* unvisited link */
+a:link {
+  color: lightblue;
+}
+
+/* visited link */
+a:visited {
+  color: lightblue;
+}
+
+/* mouse over link */
+a:hover {
+  color: lightgreen;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+.style22 {
+	font-size: 21px;
+	color: #FFFFFF;
+}
+</style>
+<html lang="en" class="">
+<script type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  
+  <title>Warning about this method | Help Ukraine</title>
+
+  <meta name="robots" content="noindex">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <link rel="canonical" href="https://codepen.io/goodkatz/pen/LYPGxQz">
+
+  
+  
+
+  <style class="INLINE_PEN_STYLESHEET_ID">
+    @import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+body {
+  margin:0;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  letter-spacing: 2px;
+  font-size:48px;
+}
+p {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+  font-size:14px;
+  color: #333333;
+}
+
+.header {
+  position:relative;
+  text-align:center;
+  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+  color:white;
+}
+.logo {
+  width:50px;
+  fill:white;
+  padding-right:15px;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.inner-header {
+  height:65vh;
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex { /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+}
+
+.content {
+  position:relative;
+  height:20vh;
+  text-align:center;
+  background-color: yellow;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  h1 {
+    font-size:24px;
+  }
+}
+.style3 {
+	font-size: 18px;
+	font-family: "Courier New", Courier, monospace;
+	color: #333333;
+}
+  .style5 {color: #FFFFFF}
+  .style9 {font-family: "Courier New", Courier, monospace}
+  .style14 {
+	font-size: 21px;
+	color: #333333;
+}
+  .style18 {
+	font-size: 36px;
+	color: #FFFFFF;
+}
+  .style19 {
+	color: #0000FF;
+	font-weight: bold;
+}
+  .style20 {font-family: "Courier New", Courier, monospace; font-size: 24px; }
+.style23 {font-size: 20px; font-weight: bold;}
+  .style24 {font-size: 28px}
+  .style26 {font-size: 12px}
+  .style27 {font-size: 18px; font-family: "Courier New", Courier, monospace; color: #FFFFFF; }
+  .style29 {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 36px;
+	font-weight: bold;
+}
+.style31 {font-size: 26px}
+  .style32 {font-family: "Courier New", Courier, monospace; font-size: 18px; }
+  .style33 {color: #FFAEAE}
+  </style>
+
+  
+<script src="./iframeConsoleRunner-d0f3648046d2aaca07bd0037b9e061a26c74a8a999b75672ad6a638cca641472.js.download"></script>
+<script src="./iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js.download"></script>
+<script src="./iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js.download"></script>
+<script type="text/JavaScript">
+<!--
+
+
+
+//-->
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('back2.png')">
+  <!--Hey! This is the original version
+of Simple CSS Waves-->
+
+<div class="header">
+  <div align="center">
+    <table width="200" border="0">
+      <!--DWLayoutTable-->
+      <tr>
+        <td width="70" height="59"><a href="index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('back','','back2.png',1)"><img src="back1.png" alt="Back to previous page" name="back" width="70" height="48" border="0"></a></td>
+        <td width="797" height="59"><p align="center" class="style18" style="
+    margin-bottom: 0px;
+    margin-top: 16px;
+"><u><span class="style33">Warning</span> about this method..</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td>
+      </tr>
+      <tr>
+        <td height="198" colspan="2"><p class="style3"><span class="style22"><span class="style24">This page is a mass HTTP flooder,</span><br>
+        </span><span class="style5">it works by sending  thousands of requests to a pre-set list of sites. It’s Highly recommended you  use the ToR Browser or sat least a VPN before proceeding, not only will the ToR  Browser conceal your identity, but it will limit the number of requests it  makes to something more stable for slower and / or older machines.<br>
+          <span class="style23">&nbsp;&nbsp;_________________________________________________________________<br>
+          </span></span></p>
+          <div align="center"><span class="style29"><a href="https://stop-russian-desinformation.near.page/">Click Here to continue to this site and join thousands of others helping Ukraine</a></span><br>
+          <span class="style23">&nbsp;&nbsp;&nbsp;<span class="style31">_________________________________________________________________</span></span></div>
+          <p class="style3 style5 style14"><span class="style5">&nbsp;&nbsp;&nbsp;&nbsp;Screenshot:(<span class="style26">stop-russian-desinformation.near.page</span>)</span><br>
+        </p>        
+        <table width="860" border="0">
+          <tr>
+            <td width="605"><span class="style3 style5 style14"><img src="https://i.imgur.com/6hMtGdn.png" width="591" height="597"/></span></td>
+            <td width="245"><p class="style27">This site works by making a flood of requests to a ton of Russian sites from YOUR computer that will assist in the war by helping to keep Russian websites down that aid the war on Russia’s side. Websites will be flooded by a Pre-Set Priority list of requests of both normal and malformed data, depending on what Russian company or government is aiding in murdering innocent Ukrainian civilians at that time.
+</p>
+              <p class="style27"><a href="VPN-Proxy-ToR.htm">Click Here</a> for a list of ways you can secure your online identity.<br>
+              Recomended : ToR          </p></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td height="21" colspan="2"><div align="left" class="style32">On their own these attacks aren’t very effective, however with people like you all around the globe helping out by donating some of your computer’s resources will be very effective in taking down the Russian propaganda.</div></td>
+      </tr>
+    </table>
+    <p><!--Waves Container-->
+    </p>
+  </div>
+  <div>
+<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+<defs>
+<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+</defs>
+<g class="parallax">
+<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(252,186,3,0.7"></use>
+<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(252,186,3,0.5)"></use>
+<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(252,186,3,0.3)"></use>
+<use xlink:href="#gentle-wave" x="48" y="7" fill="#fcd303"></use>
+</g>
+</svg>
+</div>
+<!--Waves end-->
+</div>
+<!--Header ends-->
+
+<!--Content starts-->
+<div class="content flex">
+  <table width="944" border="0">
+    <tr>
+      <td><div align="center" class="style20">www.helpukr.xyz</div></td>
+    </tr>
+    <tr>
+      <td><div align="center" class="style9"><a href="https://www.helpukr.xyz"><span class="style19">Click Here</span></a> to go back to the front page where you can support Ukraine with both Donations in cash or crypto aswell as find ways to use your computer to help. </div></td>
+    </tr>
+  </table>
+</div>
+<!--Content ends-->
+  
+<script src="./stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js.download"></script>
+  
+
+
+</body></html>

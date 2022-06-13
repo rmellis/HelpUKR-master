@@ -1,51 +1,489 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.helpukr.xyz/index.htm</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.helpukr.xyz/index.html</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>http://www.helpukr.xyz/day41p2.htm</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.helpukr.xyz/helpukr.live/index.htm</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>http://www.helpukr.xyz/day40.htm</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>http://www.helpukr.xyz/day39.htm</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.helpukr.xyz/helpukr.live/index.htm</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>http://www.helpukr.xyz/day38.htm</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>http://www.helpukr.xyz/day37.htm</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>http://www.helpukr.xyz/day41.htm</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>http://www.helpukr.xyz/day42.htm</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>http://www.helpukr.xyz/day40p2.htm</loc>
-    <changefreq>daily</changefreq>
-  </url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://www.helpukr.xyz/</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/flood-via-browser.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/ddos-help.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/it-army.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/donate-to-ukraine.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/news.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/vpns.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/proxies.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/tor.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/HelpUKR.pdf</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/rss.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/days.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/telegram.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/OSINT.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/youtube.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/tiktok.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/AutoScrollBETA/scrollDonate.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/AutoScrollBETA/scrollCyber.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/index.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day109.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day108.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day107.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day106.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day105.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day104.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day103.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day102.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day101.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day100.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day99.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day98.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day97.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day96.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day95.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day94.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day93.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day92.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/proxys.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day91.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day90.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day89.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day88.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day87.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day86.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day85.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day84.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day83.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day82.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day81.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day80.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day79.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day78.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day77.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day76.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day75.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day74.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day73.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day72.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day71.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day70.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day69.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day68.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day67.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day66.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day65.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day64.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day63.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day62.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day61.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day60.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day59.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day58.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day57.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day56.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day55.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day54.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day53.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day52.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day51.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day50.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day49.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day48.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day47.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day46.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day45.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day44.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day43.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day42.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day41.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day40.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day39.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day38.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day37.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day36.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.helpukr.xyz/day35.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.helpukr.xyz/AutoScrollBETA/scrollNo.htm</loc>
+  <lastmod>2022-06-13T03:56:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
 </urlset>

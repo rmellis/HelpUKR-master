@@ -1,5 +1,5 @@
 # HelpUKR-HOSTED
-#### this is the Master Repo for the site "helpukr.xyz" www.helpukr.xyz
+#### This is the Hosted Repo for the site "helpukr.xyz" www.helpukr.xyz
 HelpUKR offers lots of ways to help support Ukraine, from simply using your computer to donating to charities.
 We offer the best JavaScript based website flood tool for efficiently participating in flooding Russian propaganda and infrastructure helping aid Putin's war, It's always keep up-to-date with the daily targets chosen by the IT Army of Ukraine and has great success rates. We do this because of all the people being murdered, tortured and raped every day, cities being destroyed randomly, the 15000+ War crimes that happen every day since the war started. There will be a new page for each day until this war ends and Putin is removed from power.
 As well as browser flood tools, we offer a huge archive of information for all related subjects.

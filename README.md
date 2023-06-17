@@ -6,6 +6,10 @@ As well as browser flood tools, we offer a huge archive of information for all r
 
 ## Screenshot:
 ![Screenshot](https://i.imgur.com/toklkAG.jpg)
+## Interactive elements preview:
+there are also various elements throughout the site you can interact with for more details on a specific topic, below are animated screenshots from "Ukraine Aid Ops" and "Knitting for Ukraine" widgets
+
+![Screenshot](https://i.imgur.com/70jvShi.gif)  ![Screenshot](https://i.imgur.com/4dYHOpk.gif)
 
 ## Flood Russian Propaganda & Infrastructure:
 Every day the IT Army of Ukraine release a new list of targets to flood for that day, targets are selected carefully by an intellagance team who look int what's happening, who's spreading propaganda, what services are aiding the war ect.

@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<!-- helpukr.xyz -->
+<head>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1100, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="mask-icon" href="favicon.ico" color="#111">
+<link rel="canonical" href="favicon.ico">
+<title>DDoS Help - Help Ukraine</title>
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  hight: 0px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #34a8eb;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #63c6ff
+  ;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow;
+}
+table {
+  border: 3px solid;
+  border-radius: 25px;
+  border-color: #fffd9c;
+}
+.style20 {font-weight: bold}
+</style>
+
+<style class="INLINE_PEN_STYLESHEET_ID">
+    @import url(//fonts.googleapis.com/css?family=Lato:300:400);
+body {
+    margin: 0;
+    background-image: url(mobile-bgs/ddos-help.png);
+    background-repeat: repeat;
+}
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  letter-spacing: 2px;
+  font-size:48px;
+}
+p {
+	font-family: 'Lato', sans-serif;
+	letter-spacing: 1px;
+	font-size:14px;
+	color: #FFFFFF;
+	text-align: left;
+}
+.header {
+	position: relative;
+	background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+	color: white;
+}
+.logo {
+  width:50px;
+  fill:white;
+  padding-right:15px;
+  display:inline-block;
+  vertical-align: middle;
+}
+.inner-header {
+  height:65vh;
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+.flex { /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.waves {
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+}
+.content {
+  position:relative;
+  height:20vh;
+  text-align:center;
+  background-color: yellow;
+}
+/* Animation */
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% {
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  h1 {
+    font-size:24px;
+  }
+}
+  .style3 {
+	font-size: 24px;
+	font-family: "Courier New", Courier, monospace;
+	color: #000066;
+	font-weight: normal;
+}
+  .style4 {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 12px;
+}
+.style7 {font-size: 32px}
+  body,td,th {
+	color: #FFFFFF;
+	text-align: center;
+	border-radius: 10px;
+}
+  a:link {
+	color: #FFFF66;
+	text-decoration: none;
+}
+a:visited {
+	color: #FFFF66;
+	text-decoration: none;
+}
+a:hover {
+	color: #FFCC66;
+	text-decoration: underline;
+}
+a:active {
+	color: #FFFF66;
+	text-decoration: none;
+}
+</style>
+
+<script type="text/JavaScript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+</script>
+
+<style type="text/css">
+.App__app-infinity-root_oWTYjHpu[data-v-30750c37]{width:100vw;height:100vh;position:fixed;z-index:9999999999;background:rgba(0,0,0,0.151);top:0px;left:0px;overflow:hidden;display:flex;align-items:center;justify-content:center}.App__app-infinity-root_oWTYjHpu *[data-v-30750c37]{all:initial;line-height:normal;font-family:'Didact Gothic'}.App__app-infinity-root_oWTYjHpu .App__modal_2AmObnlq[data-v-30750c37]{width:580px;height:380px;display:flex;position:relative;flex-direction:column;align-items:flex-start;background-size:cover;padding-top:60px;padding-left:40px;transition:0.2s ease;transform:scale(0.8);opacity:0;box-sizing:border-box;overflow:hidden}.App__app-infinity-root_oWTYjHpu .App__modal_2AmObnlq .App__bg_26IhAl-s[data-v-30750c37]{position:absolute;top:-178px;right:-229px;background-size:contain;background-repeat:no-repeat;width:680px;height:680px;z-index:-1}.App__app-infinity-root_oWTYjHpu .App__modal_2AmObnlq .App__title_3PUPKFHQ[data-v-30750c37]{margin-top:10px;font-size:30px;font-weight:600;color:white}.App__app-infinity-root_oWTYjHpu .App__modal_2AmObnlq .App__subtitle_CrJbwup5[data-v-30750c37]{margin-top:10px;font-size:22px;color:white}.App__app-infinity-root_oWTYjHpu .App__modal_2AmObnlq .App__list_2EZssklE[data-v-30750c37]{display:flex;flex-direction:column;margin-top:20px;margin-left:4px}.App__app-infinity-root_oWTYjHpu .App__modal_2AmObnlq .App__list_2EZssklE .App__item_3p4UGIAt[data-v-30750c37]{display:flex;align-items:center;margin:6px 0;font-size:18px;color:white}.App__app-infinity-root_oWTYjHpu .App__modal_2AmObnlq .App__list_2EZssklE .App__item_3p4UGIAt img[data-v-30750c37]{margin-right:10px;margin-bottom:-3px;width:14px;height:auto}.App__app-infinity-root_oWTYjHpu .App__modal_2AmObnlq .App__rate-btn_1bvgWF3U[data-v-30750c37]{all:initial;margin-top:25px;font-size:14px;color:white;width:120px;display:flex;align-items:center;justify-content:center;background:#ff9f4a;border-radius:70px;padding:12px 20px;margin-left:15px;box-sizing:border-box;font-family:'Didact Gothic';cursor:pointer}
+</style>
+
+</head>
+<body onload="MM_preloadImages('https://i.imgur.com/Gvaitq7.png')">
+	<div class="header"><ul>
+	  <table width="1059" border="0" align="center" style="border-top-width: 0px;border-bottom-width: 0px;border-right-width: 0px;border-left-width: 0px;margin-top: 5px;">
+	    <tbody>
+	      <tr>
+	        <td width="1103" bgcolor="#294e6b">
+			  <ul style="margin-left: 5px;">
+	          <li2></li2>
+	          <li2><a href="index.htm"><span style="color: #fff">Home</span></a></li2>
+	          <li2><a href="flood-via-browser.htm"><span style="color: #fff">Browser Flood Tool</span></a></li2>
+	          <li2><a class="active" href="ddos-help.htm"><span style="color: #696969"><strong>DDoS Help</strong></span></a></li2>
+	          <li2><a href="it-army.htm"><span style="color: #fff">IT Army</span></a></li2>
+	          <li2><a href="donate-to-ukraine.htm"><span style="color: #fff">Donate to Ukraine</span></a></li2>
+	          <li2><a href="news.htm"><span style="color: #fff">News</span></a></li2>
+	          <li2><a href="vpns.htm"><span style="color: #fff">VPN</span></a></li2>
+	          <li2><a href="proxies.htm"><span style="color: #fff">Proxie's</span></a></li2>
+	          <li2><a href="tor.htm"><span style="color: #fff">ToR</span></a></li2>
+            </ul></td>
+          </tr>
+        </tbody>
+      </table>
+	</ul>
+	  <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  overflow: hidden;
+}
+li2 {
+  float: left;
+  margin-bottom: 6px;
+  margin-left: 6px;
+  margin-top: 6px;
+}
+
+
+li2 a {
+  display: block;
+  color: white;
+  border-radius: 8px;
+  margin-right: 4px;
+  text-align: center;
+  padding: 3px 18px;
+  text-decoration: none;
+}
+
+li2 a:hover:not(.active) {
+  background-color: #4F8398;
+}
+
+.active {
+  background-color: #fffd9c;
+}
+      </style>
+<br>
+<table style="border-width: 1px 0px 0px 0px;" border="0" width="752" align="center">
+<tbody>
+<tr>
+<td style="text-align: center;" width="647"><span class="style7" style="margin-top: 0px; margin-bottom: 5px; padding-top: 14px; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;">helpukr.xyz &nbsp;-&nbsp; <strong>Help Support Ukraine!</strong></span></td>
+</tr>
+</tbody>
+</table><table width="960" border="0" align="center" style="
+    border-bottom-width: 0px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 0px;
+">
+    <tbody><tr>
+      <td width="845" height="59"><div align="center" style="font-family: lato">If you are at a device with more control over like a Computer, you can use much more advance DDoS techniques, this allows you to have your computer generate complex payloads of data, abstract query’s and all kinds of other server abusing craziness.
+          <br>
+        In this section we’ll detail all kinds of useful software that can be used to attack our targets from. </div></td>
+      </tr>
+</tbody></table><table width="952" border="0" align="center" fraggable="false" style="border-right-width: 0px;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;">
+  <tbody>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><p style="font-size: 20px; font-family: lato; margin-bottom: 0px;"><strong>First and most important:</strong></p></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><blockquote style="margin-top: 0px;margin-bottom: 0px;margin-left: 56px;margin-right: 0px;">
+        <p style="margin-top: 0px;margin-bottom: 0px;"><span style="font-size: 20px; font-family: lato; margin-bottom: 0px;"> Get A Trusted VPN to both protect your identity and make your attacks more effective</span>.</p>
+      </blockquote></td>
+    </tr>
+    <tr>
+      <td width="156" height="245" valign="middle" style="text-align: right; font-family: lato;"><img src="https://i.imgur.com/jG3DqRc.png" draggable="false" width="148" height="232" alt="VPN Example"></td>
+      <td width="786" align="left" valign="top" style="text-align: left; font-family: lato;"><p style="margin-top: 0px;"><strong><span style="color: #fffadc; background-color: #333333">OpenVPN</span></strong>&nbsp;<br>
+        <span style="color: #ffffff;">It's Free,  secure and offers thousands of locations  all over the world.<br>
+They are able to offer an extremely well refined &amp; powerful VPN service to  the world for free.<br>
+Trusted by millions of users worldwide.<br>
+This service is hosted and managed by a company that deals in commercial  products to fund it.<br>
+They aspire to create the best VPN platform they possible can  for free, and do their best to ensure its better than the competition by  backing it with their companies assets.<br>
+For more info, Click the link: <a href="https://openvpn.net/faq/what-is-openvpn/" target="_blank">What Is OpenVPN? | OpenVPN</a>.</span> <br>
+<em>Extra  addition: OpenVPN removed Russian servers from their list, you can download the  Russian config files here: <a href="http://zozulya.com.ua/" target="_blank">http://zozulya.com.ua/</a>and  add the config files into OpenVPN It's a free Russian VPN..</em></p>
+        <p style="margin-top: 0px;margin-bottom: 0px;"><span style="color: #fffadc; background-color: #333333;"><strong>Proton VPN</strong></span>&nbsp;<br>
+          ProtonVPN is owned and operated by Proton Technologies AG. ProtonVPN is a sibling to&nbsp;<a href="https://protonmail.com/about" target="_blank" rel="nofollow"><u>ProtonMail</u></a>, a secure email service built to protect activists, journalists, and others worldwide<br>
+          Like OpenVPN, ProtonVPN has a free version, however its recomended to get at least the $5 package to get access to a lot more IP's that will be a lot more effective for our tasks.<br>
+        For more info, click the link: <a href="https://protonvpn.com/">Proton VPN:  Protect Yourself Online</a></p></td>
+    </tr>
+    <tr>
+      <td height="21" colspan="2" style="text-align: left; font-family: lato;"><a href="vpns.htm">Click Here <span style="font-size:11px;">(or the VPN button at top of page)</span> to See a bigger list of VPN's</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<table width="952" border="0" align="center" fraggable="false" style="border-right-width: 0px;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;">
+  <tbody>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><p style="font-size: 20px; font-family: lato; margin-bottom: 0px;"><strong>Types of DDoS Attack:</strong></p></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><blockquote style="margin-top: 0px;margin-bottom: 0px;margin-left: 56px;margin-right: 0px;">
+        <p style="margin-top: 0px;margin-bottom: 0px;"><span style="font-size: 20px; font-family: lato; margin-bottom: 0px;"> There are several ways you can go about dosing a target</span>.</p>
+      </blockquote></td>
+    </tr>
+    <tr>
+      <td width="156" height="98" align="center" valign="middle" style="text-align: right; font-family: lato;"><img src="https://i.imgur.com/rBrHD1e.png" draggable="false" width="143" height="84" alt=""/></td>
+      <td width="786" align="left" valign="top" style="text-align: left; font-family: lato;">
+        <p style="margin-top: 0px;margin-bottom: 0px;">The OSI model is a perfect example to reveal the types of DDoS attacks. The OSI layer is divided into 7 types and according to it, the different types of attacks come under different levels of OSI layers. Where all DDoS attacks involve target base or traffic networks, hereby attacks are classified into 3 categories that are application-layer attacks, protocol attacks, volumetric attacks. According to the target vector,<br>
+          the attackers plan to use one or multiple methods.<br>
+        DDoS attacks are used to suspend online services and make them unavailable to end-users.</p></td>
+    </tr>
+    </tbody>
+</table>
+<table width="950" border="0" align="center" fraggable="false" style="border-right-width: 0px;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;">
+  <tbody>
+    <tr>
+      <td colspan="5" style="text-align: left; font-family: lato;"><p style="font-size: 20px; font-family: lato; margin-bottom: 0px;"><strong>What are the types of DDoS attacks?</strong></p></td>
+    </tr>
+    <tr>
+      <td colspan="5" style="text-align: left; font-family: lato;"><blockquote style="margin-top: 0px;margin-bottom: 0px;margin-left: 56px;margin-right: 0px;">
+        <p style="margin-top: 0px;margin-bottom: 0px;"><span style="font-size: 20px; font-family: lato; margin-bottom: 0px;"> DDoS attacks are divided into several types:</span>.</p>
+      </blockquote></td>
+    </tr>
+    <tr>
+      <td width="56" height="117" rowspan="2" valign="middle" style="text-align: left; font-family: lato;">&nbsp;</td>
+      <td width="257" rowspan="2" valign="middle" style="text-align: left; font-family: lato;"><span style="font-size:20px;">
+		  1. Application layer attacks<br>
+		  2. Protocol attacks<br>
+		  3. Volumetric attacks</span></td>
+      <td colspan="3" align="left" valign="top" style="text-align: left; font-family: lato;height: 20px;"><p style="margin-top: 0px;margin-bottom: 0px;"><span style="font-size:16px;">Some common DDoS attacks are listed below:</span></p></td>
+      </tr>
+    <tr>
+      <td width="111" height="59" align="left" valign="top" style="text-align: left; font-family: lato;">1. UDP Flood<br>
+        2. 
+        ICMP Flood<br>
+        3.         SYN Flood<br>
+        </td>
+      <td width="142" align="left" valign="top" style="text-align: left; font-family: lato;">4. Ping of Death<br>
+        5.
+        NTP Amplification <br>
+        6. HTTP Flood<br></td>
+      <td width="362" align="left" valign="top" style="text-align: left; font-family: lato;">7.         Slowloris </td>
+    </tr>
+    </tbody>
+</table>
+<table width="952" border="0" align="center" fraggable="false" style="border-right-width: 0px;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;">
+  <tbody>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><p style="font-size: 20px; font-family: lato; margin-bottom: 0px;"><strong> Different types of DDoS attacks <strong>explained</strong>:</strong></p></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><blockquote style="margin-top: 0px;margin-bottom: 0px;margin-left: 56px;margin-right: 0px;">
+        <p style="margin-top: 0px;margin-bottom: 0px;"><span style="font-size: 20px; font-family: lato; margin-bottom: 0px;">Application layer attacks</span></p>
+      </blockquote></td>
+    </tr>
+    <tr>
+      <td width="156" height="117" valign="middle" style="text-align: right; font-family: lato;"><img src="https://i.imgur.com/9qnghqN.png" draggable="false"/></td>
+      <td width="786" align="left" valign="top" style="text-align: left; font-family: lato;"><p style="margin-top: 0px;margin-bottom: 0px;">These are sometimes been known as <strong>layer 7</strong> attacks to destruct the resources available in the target area. The DDoS attack is mainly in the area where webpages are created and transmitted through requests (HTTPS). An HTTP request can be too small on the client side but the response from the server is too large as it may hold multiple files and queries to build a webpage. Mostly this type of attack is difficult to protect as the traffic may be a concern to determine as malicious.<br>
+        The HTTP flood is an example of applying the press button again and again in a web engine browser on many systems at a time making the server flood with requests and occurring denial of service to users. The HTTPS flood attacks range from one to many, i.e. simple implementations access one URL and complex implementations access many URLs with attacking IP addresses.</p></td>
+    </tr>
+  </tbody>
+</table>
+<table width="952" border="0" align="center" fraggable="false" style="border-right-width: 0px;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;">
+  <tbody>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><blockquote style="margin-top: 0px;margin-bottom: 0px;margin-left: 56px;margin-right: 0px;">
+        <p style="margin-top: 0px;margin-bottom: 0px;"><span style="font-size: 20px; font-family: lato; margin-bottom: 0px;">Protocol attacks</span></p>
+        </blockquote></td>
+    </tr>
+    <tr>
+      <td width="156" height="117" valign="middle" style="text-align: right; font-family: lato;"><img src="https://i.imgur.com/4fabKIS.png" draggable="false"/></td>
+      <td width="786" align="left" valign="top" style="text-align: left; font-family: lato;"><p style="margin-top: 0px;margin-bottom: 0px;">They mainly utilize layers 3 and 4 of the protocol stack to make the target not been accessed. These attacks consume the state capacity of web servers and firewalls etc.</p>
+        <p style="margin-top: 0px;margin-bottom: 0px;">Here is an example of SYN Flood where requests are being unanswered and the process continues. For example, labor in a supply room gets a request from outside of the storeroom for a package. By hearing this, the labor goes and gets the package and waits for the final confirmation before he takes the package out of the storeroom. By the time the labor gets many more requests and without confirmation, the process goes unanswered and waits for the final step to closed.</p></td>
+    </tr>
+  </tbody>
+</table>
+<table width="952" border="0" align="center" fraggable="false" style="border-right-width: 0px;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;">
+  <tbody>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><blockquote style="margin-top: 0px;margin-bottom: 0px;margin-left: 56px;margin-right: 0px;">
+        <p style="margin-top: 0px;margin-bottom: 0px;"><span style="font-size: 20px; font-family: lato; margin-bottom: 0px;">Volume attacks</span></p>
+      </blockquote></td>
+    </tr>
+    <tr>
+      <td width="156" height="117" valign="middle" style="text-align: right; font-family: lato;"><img src="https://i.imgur.com/bvkXgfb.png" draggable="false"/></td>
+      <td width="786" align="left" valign="top" style="text-align: left; font-family: lato;"><p style="margin-top: 0px;margin-bottom: 0px;">This kind of DDoS attack will consume to use the bandwidth of target and internet networks. <br>
+        To succeed in this attack, attackers overflow the website with malicious traffic. This results in the stoppage of legitimate traffic and results in denial of service.</p>
+        <p>Some DDoS attacks are mentioned below:</p>
+        <ol>
+          <li>UDP or User Datagram Protocol is a DDoS attack that is initiated by forwarding a huge number of UDP packets to other ports. The far distance host will reply accordingly as :<br>
+            <br>
+•Checking for application or no application listens at that port.<br>
+•Replying with ICMP packets
+          <br>
+          •          Usually, UDP flood attacks tools are of 2 types as Low Orbit Ion Cannon and UDP unicorn
+          <br>
+          •          These attacks can be handled by implementing firewalls at end networks to filter out malicious traffic.<br>
+&nbsp;&nbsp;&nbsp; It attacks the end networks with a packet having static or random Internet protocol addresses. </li></ol>
+        <ol start="2">
+          <li>ICMP Flood or Ping Flood follows the same principle as UDP Flood and it is a common DDoS attack where the striker ruins down the victim&rsquo;s system by continuously sending requests called pings. There are several ping commands like n,l,t where the n command is the number of times requests are being sent, the l command tells us the amount of data sent in a packet, and the t command is used to ping data.</li>
+          <li>TCP SYN Flood is a DDoS attack where client and server establish a three-way handshake which is described below:</li>
+        </ol>
+        <p>First of all, the client is requesting for connection by sending an SYN message to the server-side. Once the server receives the connection request, it sends back an acknowledgment message to the client, to which the client responds with acceptance, and thereby the connection has been established.</p>
+        <p>Here the striker sends continuous messages (SYN) to the server, mostly having a false IP address. The server receives being unknown lots of requests for connections. Either way the server attacked with malicious requests sends the acknowledgment, but it waits from the client-side for the same.</p>
+        <ol start="4">
+          <li>Slowloris is a high-level attack where one server takes down others without hampering services on the same networks. Slowloris by its name creates a connection to the target server by sending only partial requests. The server keeps this connection open which later overflows and leads to denial of service.</li>
+          <li>Those attackers are mainly focused on attacks due to some ideology, Extortion, Business rivalry, etc.</li>
+          <li>Zero Based DDoS attacks include unknown attacks and have no patch left behind.</li>
+        </ol></td>
+    </tr>
+  </tbody>
+</table>
+<table width="952" border="0" align="center" fraggable="false" style="border-right-width: 0px;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;">
+  <tbody>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><p style="font-size: 20px; font-family: lato; margin-bottom: 0px;"><strong>Top recomended simple DDoS tools</strong> </p></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><blockquote style="margin-top: 0px;margin-bottom: 0px;margin-left: 56px;margin-right: 0px;">
+        <p style="margin-top: 0px;margin-bottom: 0px;"><span style="font-size: 20px; font-family: lato; margin-bottom: 0px;">Before moving on to a big list of DDoS tools, here are the most simple and effective ones.</span></p>
+      </blockquote></td>
+    </tr>
+    <tr>
+      <td width="190" height="98" align="center" valign="top" style="text-align: right; font-family: lato;"><b><span style="font-size: 20px; margin-bottom: 0px;">Death by 1000 Needles</span></b><br>
+        <img src="https://i.imgur.com/5G6I6eX.png" draggable="false" width="227" height="140"/></td>
+      <td width="752" align="left" valign="top" style="text-align: left; font-family: lato;"><p style="margin-top: 0px;margin-bottom: 0px;"><br>
+        Death By 1000 Needles is one of the simplest and most effective tools of all to flood Russian propaganda and infrastructure, It's as simple as downloading an app and opening it on your PC.<br>
+        Built in the GO Language it can flood every protocol on each daily target list with little to no effort, not only that but the target lists are automatically updated allowing us to better coordinate our attacks and inflict the maximum amount of damage onto the targets.<br>
+        It supports lots of platforms including: Windows, Linux, BSD, Solaris and, macOS as well as supporting multiple architectures (ARM, x86, x64).<br>
+        If you’re OS / architecture isn’t supported you can get the source from GitHub and try and compile it for your platform, It's been done on Android a few times, IOS 1 or 2 times.</p></td>
+    </tr>
+  </tbody>
+</table>
+<table width="952" border="0" align="center" fraggable="false" style="border-right-width: 0px;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;">
+  <tbody>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><blockquote style="margin-top: 0px;margin-bottom: 0px;margin-left: 56px;margin-right: 0px;">
+        <p style="margin-top: 0px;margin-bottom: 0px;"><span style="font-size: 20px; font-family: lato; margin-bottom: 0px;"><a href="https://github.com/arriven/db1000n" target="_blank">Visit the GitHub</a> | <a href="https://github.com/arriven/db1000n/releases" target="_blank">Download Death by 10000 Needles via the GitHub Releases</a></span><br>
+          <br>
+        </p>
+        </blockquote></td>
+    </tr>
+    <tr>
+      <td width="190" height="98" align="center" valign="top" style="text-align: right; font-family: lato;"><b><span style="font-size: 20px; margin-bottom: 0px;"> Disbalancer <b>Liberator</b></span></b><br>
+        <img src="https://i.imgur.com/zG6GH8a.png" draggable="false" width="227"/></td>
+      <td width="752" align="left" valign="top" style="text-align: left; font-family: lato;"><p style="margin-top: 0px;margin-bottom: 0px;"><br>
+        Disbalancer is another easy to use DDoS app that works a lot like Death by 1000 needles.
+Disbalancer have their own targets so there targets might not always be the same as ours, they are however good legit targets and o occasionally overlap with our targets.
+          <br>
+          Just like db1000n did, it has support for a lot of platforms, including Windows, MacOS and Linux<br>
+          <br>
+Warning: This app is seen as a virus, It's not so no need to worry, the reason it thinks it's a virus is because from what the computer understands is you have an single .exe file on your machine that when open displays no window by default and then floods tons of services. Its best to open it with CMD or any other console application to see a window. <br>
+        </p></td>
+    </tr>
+  </tbody>
+</table>
+<table width="952" border="0" align="center" fraggable="false" style="border-right-width: 0px;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;">
+  <tbody>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><blockquote style="margin-top: 0px;margin-bottom: 0px;margin-left: 56px;margin-right: 0px;">
+        <p style="margin-top: 0px;margin-bottom: 0px;"><span style="font-size: 20px; font-family: lato; margin-bottom: 0px;"><a href="https://github.com/disbalancer-project" target="_blank">Visit the GitHub</a> | <a href="https://github.com/disbalancer-project/main/releases" target="_blank">Download Disbalancer - Liberator via GitHub</a> | <a href="https://blog.disbalancer.com/disbalancer-launches-liberator/">Visit their website</a></span><br>
+          <br>
+        </p>
+      </blockquote></td>
+    </tr>
+    <tr>
+      <td width="227" height="98" align="center" valign="top" style="text-align: right; font-family: lato;"><b><span style="font-size: 20px; margin-bottom: 0px;">helpukr.xyz <em>http(s)</em> flood</span></b><img src="https://i.imgur.com/rgoeRvR.png" draggable="false" width="201" height="310"/>&nbsp;&nbsp;</td>
+      <td width="715" align="left" valign="top" style="text-align: left; font-family: lato;"><p style="margin-top: 0px;margin-bottom: 0px;"><br>
+        HTTP Floods are a extremely easy way to flood a target.<br>
+        They are simply webpages that when accessed in a browser are instructed to send requests to a defined list of targeted russian websites over and over again.</p>
+        <p style="margin-top: 0px;margin-bottom: 0px;">some the main benefits of this kind of flood is that you can use it on any device with a browser, no need to install any software, no need to root your mobile device to run it, and it's the safest way to flood a target if you for whatever reason refuse to use a VPN, Proxy or even Tor (which I've seen a few times).
+          If you want to use the ToR browser to preform your attacks then a http(s) browser flood is one of the best ways to go about it, though you can use a Linux distribution called "parrot OS" to run your entire network through ToR for the other tools.
+          <br>
+          Our browser flood tool is updated every morning with the new targets put out by the IT Army of Ukraine, We are always the first to update the targets and likely the most frequently updated browser flood tool out there.
+          We work on a by day basis, meaning each day there will be a new .htm webpage available on our site for you to use, you can access it from the main index page or click the link as soon as it's posted in the IT Army of Ukraine's [English] Telegram Server.<br>
+          We use GitHub to host which is a very powerful Microsoft service, it guarantees our site flood pages will always be available until the end of Putin’s prophetic war.
+        We’ve tested our flood site to be working on: Android 6 and above from default browsers, IOS 9 and above, MacOS Leopard and above (Actively run on a powerMac G5 Quad), All Linux with a GUI, All BSD with a GUI, Windows xp and above, Smart TV Browsers, Xbox One, PS4, PS5 &amp; now Windows Phones (tested with Lumia 650 and Lumia 950) </p></td>
+    </tr>
+  </tbody>
+</table>
+<table width="952" border="0" align="center" fraggable="false" style="border-right-width: 0px;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;">
+  <tbody>
+    <tr>
+      <td width="942" height="24" colspan="2" style="text-align: left; font-family: lato;"><blockquote style="margin-top: 0px;margin-bottom: 0px;margin-left: 56px;margin-right: 0px;">
+        <p style="margin-top: 0px;margin-bottom: 0px;"><span style="font-size: 20px; font-family: lato; margin-bottom: 0px;"><a href="flood-via-browser.htm" target="_blank">Go to &quot;Browser Flood Tool&quot; section of this website.</a> | <a href="https://github.com/helpukr/helpukr.github.io" target="_blank">Visit the GitHub</a></span><br>
+          </p>
+        </blockquote></td>
+    </tr>
+    </tbody>
+</table>
+<table width="952" border="0" align="center" fraggable="false" style="border-right-width: 0px;border-top-width: 0px;border-left-width: 0px;border-bottom-width: 0px;">
+  <tbody>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><p style="font-size: 20px; font-family: lato; margin-bottom: 0px;"><strong>The following infomation is sourced from <i>Step 4</i> and above in the </strong>"How to get started"<strong> PDF file</strong></p></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><blockquote style="margin-top: 0px;margin-bottom: 0px;margin-left: 56px;margin-right: 0px;">
+        <p style="margin-top: 0px;margin-bottom: 0px;">view the origional document <a href="https://cdn.discordapp.com/attachments/418117731150200862/980246479371403294/How_to_get_started_v1_9.pdf">How to get started v1_9.pdf</a> here</p>
+      </blockquote></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><blockquote style="margin-top: 0px;margin-bottom: 0px;margin-right: 0px;">
+        <p style="margin-top: 0px;margin-bottom: 0px;"><span style="font-size: 20px; margin-bottom: 0px;"><u>Attack (Test) Programs</u></span></p>
+      </blockquote></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: left; font-family: lato;"><p><span style="font-size: 18px; margin-bottom: 0px;">Get yourself a good attack (DDOS) program. On the sites themselves are examples on how to use   them.<br>
+        If you have to bypass Cloudfare UAN anti-DDOS, you could use:</span></p>
+        <p><span style="font-size: 18px"><a href="https://github.com/yottaiq/CloudAttack" target="_blank">https://github.com/yottaiq/CloudAttack</a></span></p>
+        <p><span style="font-size: 18px">Here are a few others (non Cloudfare):</span></p>
+        <blockquote>
+          <p><span style="font-size: 20px"><u>4.1 Slowloris</u></span></p>
+        </blockquote>
+        <p><span style="font-size: 18px">Slowloris is basically an HTTP Denial of Service attack that affects threaded servers. It works like 
+          this:</span></p>
+        <blockquote>
+          <p><span style="font-size: 18px">1. We start making lots of HTTP requests.<br>
+            </span><span style="font-size: 18px">2. We send headers periodically (every ~15 seconds) to keep the connections open.</span><br>
+            <span style="font-size: 18px">3. We never close the connection unless the server does so. If the server closes a connection,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then we create a new one keep doing the same thing</span></p>
+        </blockquote>
+        <p><span style="font-size: 18px">This exhausts the servers thread pool and the server can't reply to other people. In order to run the 
+          attack, we need the logic of slowloris, however we won't write it by ourselves, instead, use the 
+          Python Slowloris implementation from an open source repository in Github.</span></p>
+        <p><span style="font-size: 18px">https://github.com/gkbrk/slowloris</span></p>
+        <p><span style="font-size: 18px">The script runs 150 sockets by default. After the installation just run:</span></p>
+        <p><span style="font-size: 18px">$ python3 slowloris.py [website url] -s [number of sockets] </span></p>
+        <blockquote>
+          <p><span style="font-size: 20px"><u>4.2 Manyloris</u></span></p>
+        </blockquote>
+        <p><span style="font-size: 18px">Manyloris is a neat tool that allows to run Slowloris for multiple targets. It receives a list of 
+          targets and ports. You must have slowloris installed before you can run Manyloris. The 
+          targetlist is easy to make. Just create a simple text (.txt) file with the following format (add 
+          as many targets as you like):</span></p>
+        <p><span style="font-size: 14px; font-family: pt-mono; font-style: normal; font-weight: 400;"><i>123.423.1.1:80:443</i></span><br>
+          <span style="font-size: 14px; font-family: pt-mono; font-style: normal; font-weight: 400;"><i>12.1.612.123:80:443:8443</i></span><br>
+          <span style="font-size: 14px; font-family: pt-mono; font-style: normal; font-weight: 400;"><i>231.23.522.3:443:80</i></span><br>
+          <span style="font-size: 14px; font-family: pt-mono; font-style: normal; font-weight: 400;"><i>141.101.123.30:443</i></span></p>
+        <p><span style="font-size: 18px">For each target in the list, your system will start a slowloris attack.</span></p>
+        <p><span style="font-size: 18px"><a href="https://github.com/mjalt96/Manyloris" target="_blank">https://github.com/mjalt96/Manyloris</a></span></p>
+        <blockquote>
+          <p><span style="font-size: 20px"><u>4.3 Bombardier</u></span></p>
+        </blockquote>
+        <p><span style="font-size: 18px"><a href="https://github.com/codesenberg/bombardier/releases/tag/v1.2.5" target="_blank">https://github.com/codesenberg/bombardier/releases/tag/v1.2.5</a></span></p>
+        <p><span style="font-size: 18px">(example use : Example usage - ./bombardier-linux-amd64 --duration=240h --connections=1000 --
+          latencies https://lenta.ru)</span></p>
+        <p><span style="font-size: 18px">It maybe wise to run your query in a docker: </span></p>
+        <p><span style="font-size: 18px"><a href="https://github.com/nitupkcuf/runner" target="_blank">https://github.com/nitupkcuf/runner</a></span></p>
+        <p><span style="font-size: 18px"><i>[More information required]</i></span></p>
+        <blockquote>
+          <p><span style="font-size: 20px"><u>4.4 DB1000N</u></span></p>
+        </blockquote>
+        <p><span style="font-size: 18px">Check our own program - Death by 1000 needles (DB1000N)</span></p>
+        <p><span style="font-size: 18px"><a href="https://github.com/Arriven/db1000n" target="_blank">https://github.com/Arriven/db1000n</a></span></p>
+        <p><span style="font-size: 18px">This is software for coordinated DDoS attacks on the occupier’s infrastructure. The main advantage of this method is that users only need to run the program on a PC to carry out attacks, and all coordination will be carried out and configured by administrators with the support of cyber security specialists.</span></p>
+        <p><span style="font-size: 18px">Instructions for use and all necessary links are on the main website:</span></p>
+        <p><span style="font-size: 18px"><a href="https://hackmd.io/pl_ucHTWQUmO9ubmzRT1tQ" target="_blank">https://hackmd.io/pl_ucHTWQUmO9ubmzRT1tQ</a></span></p>
+        <p><span style="font-size: 18px">Please join everyone and download the program to your PC before the evening attacks, because 
+          then we will carry out the first attack with DB1000N. Stay tuned in the channel and look for 
+          upcoming updates.</span></p>
+        <table width="583" border="0" align="center">
+          <tbody>
+            <tr>
+              <td width="458"><h3 style="margin-top: 0px;margin-bottom: 0px;"><span style="color:#FFFF00;margin-right: 450px;"> INFO :</span></h3>
+                <p>&nbsp;&nbsp;Here’s a cool neat ARP Spoofing article, also known as ARP Poisoning<br>
+                  &nbsp;&nbsp;actually used for Man in the Middle (MitM) attacks. This can be very effective<br>
+                  &nbsp;&nbsp;if you happen to know the IP addresses of routers along the way.</p>
+                <p style="margin-bottom: 0px;"><a href="https://medium.com/geekculture/simple-but-powerful-denial-of-service-dos-attack-8c7dfd60045f" target="_blank">&nbsp;&nbsp;https://medium.com/geekculture/simple-but-powerful-denial-of-service-<br>
+                  &nbsp;&nbsp;&nbsp;dos-&nbsp;attack-8c7dfd60045f</a></p></td>
+            </tr>
+          </tbody>
+        </table>Ty R3X, for this contribution on proxychains.
+
+        <p><span style="font-size: 18px">This area of the origional documentation is outdated, so it has been replaced with details on our html flood tool.. If you want to view the origional content, <a href="https://cdn.discordapp.com/attachments/418117731150200862/980246479371403294/How_to_get_started_v1_9.pdf" target="_blank">open this PDF</a> (also listed above).</span></p>
+        <p><span style="font-size: 18px">Every day we create a new .htm page that allows you to flood the daily targets with minimum effort.<br>
+          You can download these .htm pages and load them into the ToR browser, from there you can flood these targets via the iP address given by the ToR Browser.<br>
+          You don't need a VPN for this, so long as you are making use of the ToR Browser.<br>
+          Follow the instructions on the page to download a local copy of the .htm page or grab it off our GitHub.</span></p>
+        <p><span style="font-size: 18px"><a href="https://github.com/helpukr/helpukr.github.io" target="_blank">https://github.com/helpukr/helpukr.github.io</a></span></p>
+        <blockquote>
+          <p><span style="font-size: 20px"><u>4.5 How to create a local HTML page (For Windows)</u></span></p></blockquote>
+        <p><span style="font-size: 18px">1. Open the github page and click on the current day's file with the extension .htm e.g. day94.htm</span></p>
+        <p><img src="https://i.imgur.com/LzTn8CS.png" draggable="false" width="846" height="313"/></p>
+        <p><span style="font-size: 18px">2. Select the code as you would normally select text in a document.</span></p>
+        <p><img src="https://i.imgur.com/xcFgd7x.png" draggable="false" width="839" height="560"/></p>
+        <p><span style="font-size: 18px">Don’t use “Select All” because that will select the entire page and you only want the code.</span><br>
+        If you're having problems selecting all the code, click the &quot;Raw&quot; button at the top right, it will only show the code.</p>
+        <p><span style="font-size: 18px">3. Open a new notepad file and paste the copied code in the new file and save it somewhere locally on your computer. Make sure you change the extension of your new file is .html</span></p>
+        <p><img src="https://i.imgur.com/WAafBfT.png" draggable="false"/></p>
+        <p><span style="font-size: 18px">4. Find your file in ‘Explorer’, select the file by clicking ONCE (left mouse button), hold down 
+the SHIFT key and right-click on the selected file. Select “Copy as path”.</span>        
+        <table width="587" border="0" align="center">
+          <tbody>
+            <tr>
+              <td width="541" align="center">
+<p style="margin-top: 0px;margin-bottom: 0px;"></p><center><span style="color: #ff8080; text-align: center;"><strong>Be careful not to double click this file because it will open in your selected default HTML program, most likely a normal browser and you will be exposed.</strong></span></center></td>
+            </tr>
+          </tbody>
+        </table>
+        <p><img src="https://i.imgur.com/c4UgKdQ.png" draggable="false"/>
+        <p><span style="font-size: 18px">5. Open your TOR browser and paste (CTRL-V) the copied path in the address bar of your TOR 
+browser. You have to remove the double quotes (“”) on each end or it won’t open. Hit enter 
+when you’ve removed the quotes.
+          <img src="https://i.imgur.com/dnylGgc.png" draggable="false" width="865" height="160"/></span></p>
+        <p><span style="font-size: 18px">Click Continue to start the flood!</span></p>
+        <p><img src="https://i.imgur.com/g7JVBzz.gif" draggable="false"/></p>
+        <blockquote>
+          <p><span style="font-size: 20px"><u>Step 5 (optional): SOCKS Proxy and proxychains</u></span></p></blockquote>
+        <p><span style="font-size: 18px">This next step is somewhat advanced and you will need a bit on Linux knowledge. If you’re really 
+paranoid you can also run your network connection through several proxy (socks) services but this 
+is not strictly necessary. Here’s a list of free proxy services (servers): </span></p>
+        <p><span style="font-size: 18px"><a href="https://spys.one/en/socks-proxy-list/" target="_blank">https://spys.one/en/socks-proxy-list/</a></span></p>
+		  <table width="710" border="0" align="center">
+          <tbody>
+            <tr>
+              <td width="698"><h3 style="margin-top: 0px;margin-bottom: 0px;"><span style="color:#FFFF00;margin-right: 550px;"> INFO :</span></h3>
+                <p style="margin-top: 0px;margin-bottom: 0px;">&nbsp;&nbsp;SOCKS is an Internet protocol that exchanges network packets between a client and server   through<br>
+&nbsp;                a proxy server. SOCKS5 optionally provides authentication so only authorized users   may access a<br>
+&nbsp; server. Practically, a SOCKS server proxies TCP connections to an arbitrary IP   address, and provides<br>
+&nbsp; a means for UDP packets to be forwarded.  SOCKS performs at Layer 5 of the OSI model (the session<br>
+&nbsp;&nbsp;layer, an intermediate layer between   the presentation layer and the transport layer).socks server<br>
+&nbsp; accepts incoming client   connection on TCP port 1080, as defined in RFC 1928</p></td>
+            </tr>
+          </tbody>
+        </table>
+        <p><span style="font-size: 18px">In Linux, you can achieve this added layer of security by using "proxychains". It's easy to install. 
+Open a terminal (commands for Kali so you may have to adjust slightly if you are using a different 
+distro/version)<br>
+<br>$ sudo apt install proxychains<br>
+<br>COMMAND TO START PROXYCHAINS (below):<br>
+<br>$ proxychains [browser name of choice] ipleak.net
+Example: $ proxychains firefox ipleak.net<br>
+<br>This will open up a special browser session that will route all traffic through a series of proxy 
+servers. If you are using anonsurf (also recommended and mentioned earlier in the document) 
+proxy chains will route AFTER tor (local>tor>proxychains>target). It also works with several 
+security related tools like nmap. <br>
+<br>Some distros already have proxy chains installed by default.<br>
+<br>Ty R3X, for this contribution on proxychains.
+</span></p>
+        <blockquote>
+          <p><span style="font-size: 20px"><u>Step 6 (optional): NMAP Port Scanner
+</u></span></p></blockquote>
+        <p><span style="font-size: 18px">Click Continue to start the flood!</span></p>
+        <p><span style="font-size: 18px"><a href="https://nmap.org/" target="_blank">https://nmap.org/</a></span></p>
+        <p><span style="font-size: 18px">Please read the manual carefully. NMAP is a very powerful tool with many options to discover open 
+ports. A good site to learn quickly is:</span></p>
+        <p><span style="font-size: 18px"><a href="https://www.freecodecamp.org/news/what-is-nmap-and-how-to-use-it-a-tutorial-for-the-greatest-scanning-tool-of-all-time/" target="_blank">https://www.freecodecamp.org/news/what-is-nmap-and-how-to-use-it-a-tutorial-for-the-greatest-scanning-tool-of-all-time/</a></span></p>
+        <p><span style="font-size: 18px">For the WINDOWS users among us, there is a GUI for nmap, called zenmap:</span></p>
+        <p><span style="font-size: 18px"><a href="https://nmap.org/zenmap/" target="_blank">https://nmap.org/zenmap/</a></span></p>
+        <p><span style="font-size: 18px">It does the same thing except it comes with a nice user-friendly GUI (Graphical User interface).</span></p>
+        <table width="710" height="126" border="0" align="center">
+          <tbody>
+            <tr>
+              <td width="698" height="116"><h3 style="margin-top: 0px;margin-bottom: 0px;"><span style="color:#FFFF00;margin-right: 550px;"> INFO :</span></h3>
+                <p style="margin-top: 0px;margin-bottom: 0px;">&nbsp;&nbsp;Anonymous also created a webpage with tools that you can use in order to help the war effort   in<br>
+&nbsp;&nbsp;Ukraine. Most tools will do the same as the tools described in this document, however they   are for<br>
+&nbsp;&nbsp;more advanced users. If you have no technical experience we suggest you follow the   rules outlined<br>
+&nbsp; in this document in order to stay safe and get yourself up and running in the shortest possible time.<br>
+                  <br>&nbsp;&nbsp;Never the less, great work Anonymous !!<br><br>
+<a href="https://anonymousworldwide.com/2022/02/26/anonymous-tools-for-oprussia-ukraineunderattack/" target="_blank">&nbsp;&nbsp;#Anonymous Tools for #OpRussia #UkraineUnderAttack – Anonymous Worldwide</a></p></td>
+            </tr>
+          </tbody>
+        </table>
+        <p><span style="font-size: 18px"></span></p>
+        <blockquote>
+          <p><span style="font-size: 20px"><u>TIPS and tricks:</u></span></p></blockquote>
+        <p><span style="font-size: 18px"><b>TIP 1: NMAP</b></span></p>
+        <p><span style="font-size: 18px">For anyone who has access to nmap already, nmap is pre-installed in Kali and ParrotOS. Check if you have this script by running this in the terminal "locate http-slowloris.nse" if you see this:</span></p>
+        <p><span style="font-size: 18px">/usr/share/nmap/scripts/http-slowloris.nse</span></p>
+        <p><span style="font-size: 18px">You can then use it on any desired IP.</span></p>
+        <p><span style="font-size: 18px">nmap -vv --script http-slowloris --max-parallelism 400 &lt;target IP&gt;</span></p>
+        <p><span style="font-size: 18px"><b>TIP 2: DNS</b></span></p>
+        <p><span style="font-size: 18px">We also recommend changing your DNS to 9.9.9.9. This is an open DNS recursive service for free security and high privacy since your local DNS service may not always give you what you need in terms of reliability.</span></p>
+        <p><span style="font-size: 18px"><a href="https://www.windowscentral.com/how-change-your-pcs-dns-settings-windows-10" target="_blank">https://www.windowscentral.com/how-change-your-pcs-dns-settings-windows-10</a></span></p>
+        <p><span style="font-size: 18px"><b>TIP 3: Randomized MAC addresses</b></span></p>
+        <p><span style="font-size: 18px">There's two controls for using random hardware addresses—one is for all Wi-Fi networks and the other is for the specific Wi-Fi network you choose. When you turn it on for all networks, random hardware addresses are used while your PC scans for networks and connects to any network. When it's turned on for a specific network you choose, random hardware addresses are used the next time you connect to that network.</span></p>
+        <p><span style="font-size: 18px"><a href="https://support.microsoft.com/en-us/windows/how-to-use-random-hardware-addresses-in-windows-ac58de34-35fc-31ff-c650-823fc48eb1bc#:~:text=a%20specific%20network%3A-,Select%20the%20Start%20button%2C%20then%20select%20Settings%20%3E%20Network%20%26%20Internet,hardware%20addresses%20for%20this%20network" target="_blank">https://support.microsoft.com/en-us/windows/how-to-use-random-hardware-addresses-in-windows</a></span></p>
+        <table width="710" height="113" border="0" align="center">
+          <tbody>
+            <tr>
+              <td width="698" height="103"><h3 style="margin-top: 0px;margin-bottom: 0px;"><span style="color:#FFFF00;margin-right: 550px;"> INFO :</span></h3>
+                <p style="margin-top: 0px;margin-bottom: 0px;">&nbsp;&nbsp;Some of the information (webbrowsers) in this article was taken from the following article : <br>
+                  <br>
+                  <a href="https://hackmd.io/pl_ucHTWQUmO9ubmzRT1tQ" target="_blank">&nbsp;&nbsp;https://hackmd.io/pl_ucHTWQUmO9ubmzRT1tQ</a><br>
+                  <br>
+                </p>
+                <h3 style="margin-top: 0px;margin-bottom: 0px;"></h3>
+                <p style="margin-top: 0px;margin-bottom: 0px;">&nbsp;&nbsp;Please check it out. It has a lot of additional information. Credit where credit due.</p></td>
+            </tr>
+          </tbody>
+        </table>
+        <p><span style="font-size: 18px">Many people in Russia have no idea what’s going on. It’s a myth that every single Russian citizen 
+supports the war. In fact, most Russian don’t even know that Russia is the aggressor and that there 
+even IS a war in the first place. So, in order to make them aware, you could go onto a popular 
+website like tripadvisor or Trivago, find a Russian restaurant or hotel and give them a review.<br><br>
+Anonymous had a standard text that you could use, however in order to bypass spam filters you 
+may alter the text slightly. Be creative with penetrating the minds of the average Russian citizen. <br><br>
+Here’s the Russian text :<br><br>
+Еда была хорошей! 
+К сожалению, Путин испортил нам аппетит, подло развязав войну с Украиной. 
+Россияне, пора восстать против диктатора, пока еще не поздно! Во избежание смертей 
+невинных людей и молодых российских солдат, которых кинули в мясорубку! Во имя 
+мирного неба над вашими же головами, во имя будущего ваших же детей. Пожалуйста, 
+встаньте, чтобы остановить эту бессмысленную войну. Украинцев убивают, ваши пацаны 
+гибнут из-за сумасшедшего эго, имперских амбиций, непомерной жадности и кошелька!<br><br>
+You can change random Cyrillic letters such as "a, e, c, o" to Latin, they will look the same to get passed 
+spam filters.<br><br>
+Translation:<br><br>
+The food was good!
+Unfortunately, Putin spoiled our appetite by vilely unleashing a war with Ukraine.
+Russians, it's time to rise up against the dictator before it's too late! In order to avoid the deaths of 
+innocent people and young Russian soldiers who were thrown into a meat grinder! In the name of 
+a peaceful sky above your own heads, in the name of the future of your own children. Please stand 
+up to stop this senseless war. Ukrainians are being killed, your boys are dying because of a crazy 
+ego, imperial ambitions, exorbitant greed and a wallet
+</span></p>
+        <p><span style="font-size: 18px"></span><img src="https://i.imgur.com/oRHuCxC.png" draggable="false"/></p>
+        <p><span style="font-size: 18px"><b>TIP 5: Find any Russian website you can and place a message.</b></span></p>
+        <p><span style="font-size: 18px">Our valued member Insschnimp made a great tutorial on spamming Russian websites:<br>
+          <br>
+          Russian websites where you can rate, blog or discuss as a quick way to get rid of messages.
+Sometimes they are checked before publishing, then at least the checker reads it. Maybe you can 
+find websites where small posts are published directly. He managed to do that in a short time! He
+was able to post 5 messages extremely quickly.<br>
+<br>
+Excellent work Insschnimp!</span></p>
+        </td>
+    </tr>
+    <tr>
+      <td width="190" height="98" align="center" valign="top" style="text-align: right; font-family: lato;"><br></td>
+      <td width="752" align="left" valign="top" style="text-align: left; font-family: lato;"><p><span style="font-size:20px;"><span style="color:#ff9999;"><b>So please always remember this order :</b></span></span><br>
+      </p>
+<p><span style="font-size:20px;"><span style="color:#ff9999;"><b>&nbsp; &nbsp; • Install OS</b><br />
+&nbsp; &nbsp;<b> • Hide identity !!</b><br />
+&nbsp; &nbsp;<b> • Attack (test)&nbsp;</b></span></span></p></td>
+    </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<p><!--Waves Container-->
+</p>
+<div>
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+<defs>
+<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+</defs>
+<g class="parallax">
+<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(252,186,3,0.7"></use>
+<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(252,186,3,0.5)"></use>
+<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(252,186,3,0.3)"></use>
+<use xlink:href="#gentle-wave" x="48" y="7" fill="#fcd303"></use>
+</g>
+</svg>
+</div>
+<!--Waves end-->
+</div>
+<!--embedded footer starts-->
+<iframe src="footer.htm" style="border:0px # none;text-align: center;margin-right: 0px;" name="HelpUKR-Footer" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" height="814px" width="100%" allowfullscreen=""></iframe>
+</body>
+</html>

